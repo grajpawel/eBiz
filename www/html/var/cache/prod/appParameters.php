@@ -1,0 +1,25 @@
+<?php return array (
+  'parameters' => 
+  array (
+    'database_host' => 'database',
+    'database_port' => '',
+    'database_name' => 'BE_druzyna_b_database',
+    'database_user' => 'root',
+    'database_password' => 'admin',
+    'database_prefix' => 'ps_',
+    'database_engine' => 'InnoDB',
+    'mailer_transport' => 'smtp',
+    'mailer_host' => '127.0.0.1',
+    'mailer_user' => NULL,
+    'mailer_password' => NULL,
+    'secret' => 'CHIchPTNuU7V8VgoGLpN3amNNJVgRQktjQRIPtsnDNGgno3iewWRmIT95EhScLVz',
+    'ps_caching' => 'CacheMemcache',
+    'ps_cache_enable' => false,
+    'ps_creation_date' => '2021-10-18',
+    'locale' => 'en-US',
+    'use_debug_toolbar' => true,
+    'cookie_key' => '6KJgsDcopgLn4bPQP8RfzWKKDYVvwkh14mVvhNwvQLCfWCKvAhjnnfwPIcK5BEGx',
+    'cookie_iv' => 'ps3ryz4aUJLJZu9tBw0aHzoJ6XWEDm6G',
+    'new_cookie_key' => 'def00000d33859f82cacdbc0bf019243405361af4993bd39691c6050529f282a7baba74f5c1ee1375180145517d9b400262277d9a1d71493eec1fd1e7825da7b9b51df8a',
+  ),
+);
