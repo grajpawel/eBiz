@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2021-10-25 15:57:22
+<?php /* Smarty version Smarty-3.1.19, created on 2021-11-07 19:43:04
          compiled from "/var/www/html/modules/dashproducts/views/templates/hook/dashboard_zone_two.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:78767521961744b4857d8b8-27070514%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:138418468461881e385420f3-82111895%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c0eed3b9df923c327f1706674c280218aa7eaf99' => 
     array (
       0 => '/var/www/html/modules/dashproducts/views/templates/hook/dashboard_zone_two.tpl',
-      1 => 1635013963,
+      1 => 1635607018,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '78767521961744b4857d8b8-27070514',
+  'nocache_hash' => '138418468461881e385420f3-82111895',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_61744b485d0318_25563663',
   'variables' => 
   array (
     'allow_push' => 0,
@@ -28,8 +26,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'DASHPRODUCT_NBR_SHOW_TOP_SEARCH' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_61881e38568061_35889318',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_61744b485d0318_25563663')) {function content_61744b485d0318_25563663($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_61881e38568061_35889318')) {function content_61881e38568061_35889318($_smarty_tpl) {?>
 
 <section id="dashproducts" class="panel widget <?php if ($_smarty_tpl->tpl_vars['allow_push']->value) {?> allow_push<?php }?>">
 	<header class="panel-heading">

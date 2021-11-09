@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2021-10-25 15:58:04
+<?php /* Smarty version Smarty-3.1.19, created on 2021-11-08 22:26:56
          compiled from "/var/www/html/admin0009e8qap/themes/new-theme/template/components/layout/confirmation_messages.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:147321659761744bb2258780-67290047%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2445493926189962051e863-14302170%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2319473cf083732e96612e9bb32cc113d5bf9f3e' => 
     array (
       0 => '/var/www/html/admin0009e8qap/themes/new-theme/template/components/layout/confirmation_messages.tpl',
-      1 => 1635013963,
+      1 => 1635607016,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '147321659761744bb2258780-67290047',
+  'nocache_hash' => '2445493926189962051e863-14302170',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_61744bb2293679_50874171',
   'variables' => 
   array (
     'confirmations' => 0,
     'conf' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_61899620527a00_74315568',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_61744bb2293679_50874171')) {function content_61744bb2293679_50874171($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_61899620527a00_74315568')) {function content_61899620527a00_74315568($_smarty_tpl) {?>
 <?php if (isset($_smarty_tpl->tpl_vars['confirmations']->value)&&count($_smarty_tpl->tpl_vars['confirmations']->value)&&$_smarty_tpl->tpl_vars['confirmations']->value) {?>
   <div class="bootstrap">
     <div class="alert alert-success" style="display:block;">

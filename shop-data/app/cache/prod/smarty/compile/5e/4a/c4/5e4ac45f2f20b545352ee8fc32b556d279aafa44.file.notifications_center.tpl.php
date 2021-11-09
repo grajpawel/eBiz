@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2021-10-25 15:58:03
+<?php /* Smarty version Smarty-3.1.19, created on 2021-11-08 22:26:56
          compiled from "/var/www/html/admin0009e8qap/themes/new-theme/template/components/layout/notifications_center.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:80703490661744bb0172090-52749809%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2453301936189962044d4e8-46417928%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5e4ac45f2f20b545352ee8fc32b556d279aafa44' => 
     array (
       0 => '/var/www/html/admin0009e8qap/themes/new-theme/template/components/layout/notifications_center.tpl',
-      1 => 1635013963,
+      1 => 1635607016,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '80703490661744bb0172090-52749809',
+  'nocache_hash' => '2453301936189962044d4e8-46417928',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_61744bb020c4e8_47929879',
   'variables' => 
   array (
     'show_new_orders' => 0,
@@ -28,8 +26,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'no_customer_message_tip' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_618996204809f5_79754165',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_61744bb020c4e8_47929879')) {function content_61744bb020c4e8_47929879($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_618996204809f5_79754165')) {function content_618996204809f5_79754165($_smarty_tpl) {?>
 <div id="notif" class="notification-center dropdown">
   <div class="notification js-notification dropdown-toggle">
     <i class="material-icons">notifications_none</i>

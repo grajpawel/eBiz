@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2021-10-25 15:57:05
+<?php /* Smarty version Smarty-3.1.19, created on 2021-11-08 22:35:16
          compiled from "/var/www/html/modules/dashactivity/views/templates/hook/dashboard_zone_one.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:135733635861744b43b16623-53858887%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:7435639796189981441dfe5-36395824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '87edddbbff0a1f7f853815f0732bda4bc5783332' => 
     array (
       0 => '/var/www/html/modules/dashactivity/views/templates/hook/dashboard_zone_one.tpl',
-      1 => 1635013963,
+      1 => 1636401283,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '135733635861744b43b16623-53858887',
+  'nocache_hash' => '7435639796189981441dfe5-36395824',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_61744b43bf6661_47888854',
   'variables' => 
   array (
     'allow_push' => 0,
@@ -30,8 +28,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'date_format' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_618998144784e9_41706428',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_61744b43bf6661_47888854')) {function content_61744b43bf6661_47888854($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_618998144784e9_41706428')) {function content_618998144784e9_41706428($_smarty_tpl) {?>
 <section id="dashactivity" class="panel widget<?php if ($_smarty_tpl->tpl_vars['allow_push']->value) {?> allow_push<?php }?>">
 	<div class="panel-heading">
 		<i class="icon-time"></i> <?php echo smartyTranslate(array('s'=>'Activity overview','d'=>'Modules.Dashactivity.Admin'),$_smarty_tpl);?>
@@ -171,7 +171,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</li>
 			<li>
 				<span class="data_label"><a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['escape'][0][0]->smartyEscape($_smarty_tpl->tpl_vars['link']->value->getAdminLink('AdminModules'),'html','UTF-8');?>
-&amp;configure=blocknewsletter&amp;module_name=blocknewsletter"><?php echo smartyTranslate(array('s'=>'Total Subscribers','d'=>'Modules.Dashactivity.Admin'),$_smarty_tpl);?>
+&amp;configure=ps_emailsubscription&amp;module_name=ps_emailsubscription"><?php echo smartyTranslate(array('s'=>'Total Subscribers','d'=>'Modules.Dashactivity.Admin'),$_smarty_tpl);?>
 </a></span>
 				<span class="data_value size_md">
 					<span id="total_suscribers"></span>
