@@ -22,3 +22,11 @@ c63143,172.23.0.1,POST,http://localhost/admin0009e8qap/index.php/module/manage/a
 24a75b,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/module/catalog/refresh?_token=y4CdBXQPwjtR05RMAV9cXZVwSyiv47jdzGYq86a3x0s,1636496914,,200
 a5dd65,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/module/catalog?_token=y4CdBXQPwjtR05RMAV9cXZVwSyiv47jdzGYq86a3x0s,1636497014,,200
 8029cc,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/module/catalog/refresh?_token=y4CdBXQPwjtR05RMAV9cXZVwSyiv47jdzGYq86a3x0s,1636497015,,200
+050cef,127.0.0.1,GET,http://localhost/admin0009e8qap/index.php/_fragment?_path=_format%3Dhtml%26_locale%3Dpl-PL%26_controller%3DPrestaShopBundle%255CController%255CAdmin%255CProductController%253A%253AlistAction,1636583836,46b357,200
+46b357,172.23.0.1,POST,http://localhost/admin0009e8qap/index.php/product/catalog/0/20/id_product?_token=3q3U_8PLfkDO61MQ94taC4V5104QFbgDG8ZtNj9PYjs,1636583836,,200
+4c98eb,127.0.0.1,GET,http://localhost/admin0009e8qap/index.php/_fragment?_path=_format%3Dhtml%26_locale%3Dpl-PL%26_controller%3DPrestaShopBundle%253AAdmin%252FProduct%253ArenderField,1636583847,60021d,200
+60021d,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/product/form/8933?_token=3q3U_8PLfkDO61MQ94taC4V5104QFbgDG8ZtNj9PYjs,1636583848,,200
+7bd1a9,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/combination/product-combinations/8933?_token=3q3U_8PLfkDO61MQ94taC4V5104QFbgDG8ZtNj9PYjs,1636583848,,200
+d2aa30,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/specific-price/list/8933?_token=3q3U_8PLfkDO61MQ94taC4V5104QFbgDG8ZtNj9PYjs,1636583848,,200
+17d442,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/attribute/product-form-images/8933?_token=3q3U_8PLfkDO61MQ94taC4V5104QFbgDG8ZtNj9PYjs,1636583848,,200
+e56c0d,172.23.0.1,GET,http://localhost/admin0009e8qap/index.php/combination/product-combinations/8933?_token=3q3U_8PLfkDO61MQ94taC4V5104QFbgDG8ZtNj9PYjs,1636583943,,200
