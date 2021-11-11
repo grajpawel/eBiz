@@ -15,8 +15,8 @@ class __TwigTemplate_3b9250fefe6903ccf2189e15b44646b51be64d5dffca6f8d61becc6c910
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_478ed50d44b3ecf696aa4fceb541fc321a073f44cfdb3b2b2ccd2a98fb31f1fc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_478ed50d44b3ecf696aa4fceb541fc321a073f44cfdb3b2b2ccd2a98fb31f1fc->enter($__internal_478ed50d44b3ecf696aa4fceb541fc321a073f44cfdb3b2b2ccd2a98fb31f1fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form-categories.html.twig"));
+        $__internal_a6613a71e51b301c740cda390366a827f1f1b19b5a9f9cd48eeb33c8a5371380 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a6613a71e51b301c740cda390366a827f1f1b19b5a9f9cd48eeb33c8a5371380->enter($__internal_a6613a71e51b301c740cda390366a827f1f1b19b5a9f9cd48eeb33c8a5371380_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form-categories.html.twig"));
 
         // line 25
         echo "<h2>";
@@ -150,7 +150,7 @@ class __TwigTemplate_3b9250fefe6903ccf2189e15b44646b51be64d5dffca6f8d61becc6c910
 </div>
 ";
         
-        $__internal_478ed50d44b3ecf696aa4fceb541fc321a073f44cfdb3b2b2ccd2a98fb31f1fc->leave($__internal_478ed50d44b3ecf696aa4fceb541fc321a073f44cfdb3b2b2ccd2a98fb31f1fc_prof);
+        $__internal_a6613a71e51b301c740cda390366a827f1f1b19b5a9f9cd48eeb33c8a5371380->leave($__internal_a6613a71e51b301c740cda390366a827f1f1b19b5a9f9cd48eeb33c8a5371380_prof);
 
     }
 

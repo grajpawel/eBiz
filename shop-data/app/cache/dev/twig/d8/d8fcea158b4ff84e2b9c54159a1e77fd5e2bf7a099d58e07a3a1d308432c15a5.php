@@ -15,8 +15,8 @@ class __TwigTemplate_a4dfb4b0de53de421a1f66a4a9fff5c320f3dd83f920f422596ac9fbf92
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_da2dfdc158c3cfb237065caecdcb9c6373e3b776606a31c2ba6c9ed055af5274 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_da2dfdc158c3cfb237065caecdcb9c6373e3b776606a31c2ba6c9ed055af5274->enter($__internal_da2dfdc158c3cfb237065caecdcb9c6373e3b776606a31c2ba6c9ed055af5274_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_manufacturer.html.twig"));
+        $__internal_60360a33146962d0e152187ba283942c81acb581a6b0273a7104e233b427d87d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_60360a33146962d0e152187ba283942c81acb581a6b0273a7104e233b427d87d->enter($__internal_60360a33146962d0e152187ba283942c81acb581a6b0273a7104e233b427d87d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_manufacturer.html.twig"));
 
         // line 25
         echo "<div id=\"manufacturer-content\" class=\"";
@@ -63,7 +63,7 @@ class __TwigTemplate_a4dfb4b0de53de421a1f66a4a9fff5c320f3dd83f920f422596ac9fbf92
 </div>
 ";
         
-        $__internal_da2dfdc158c3cfb237065caecdcb9c6373e3b776606a31c2ba6c9ed055af5274->leave($__internal_da2dfdc158c3cfb237065caecdcb9c6373e3b776606a31c2ba6c9ed055af5274_prof);
+        $__internal_60360a33146962d0e152187ba283942c81acb581a6b0273a7104e233b427d87d->leave($__internal_60360a33146962d0e152187ba283942c81acb581a6b0273a7104e233b427d87d_prof);
 
     }
 

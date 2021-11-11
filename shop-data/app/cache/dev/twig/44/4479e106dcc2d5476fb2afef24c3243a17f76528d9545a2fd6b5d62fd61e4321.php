@@ -24,23 +24,23 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c6125d6f8aad861748c3b99914424d17ac96198b9cac2f3901381ea0f1bf3c68 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c6125d6f8aad861748c3b99914424d17ac96198b9cac2f3901381ea0f1bf3c68->enter($__internal_c6125d6f8aad861748c3b99914424d17ac96198b9cac2f3901381ea0f1bf3c68_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_01acebc24ff1ffae1b86eca143a670286ae321940f21d99d3e1593f545f77546 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_01acebc24ff1ffae1b86eca143a670286ae321940f21d99d3e1593f545f77546->enter($__internal_01acebc24ff1ffae1b86eca143a670286ae321940f21d99d3e1593f545f77546_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         // line 25
         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->setTheme((isset($context["categories"]) ? $context["categories"] : $this->getContext($context, "categories")), array(0 => $this));
         // line 26
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c6125d6f8aad861748c3b99914424d17ac96198b9cac2f3901381ea0f1bf3c68->leave($__internal_c6125d6f8aad861748c3b99914424d17ac96198b9cac2f3901381ea0f1bf3c68_prof);
+        $__internal_01acebc24ff1ffae1b86eca143a670286ae321940f21d99d3e1593f545f77546->leave($__internal_01acebc24ff1ffae1b86eca143a670286ae321940f21d99d3e1593f545f77546_prof);
 
     }
 
     // line 28
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_8d9c312e167c58600bfa9f5664c393e6133aca242a540b88c4f6d7bac2dd10ee = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8d9c312e167c58600bfa9f5664c393e6133aca242a540b88c4f6d7bac2dd10ee->enter($__internal_8d9c312e167c58600bfa9f5664c393e6133aca242a540b88c4f6d7bac2dd10ee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_143baf56d6954d97d0f97991ba95eb06b0234c2ac471a46d43293f421e3abbfc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_143baf56d6954d97d0f97991ba95eb06b0234c2ac471a46d43293f421e3abbfc->enter($__internal_143baf56d6954d97d0f97991ba95eb06b0234c2ac471a46d43293f421e3abbfc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 29
         echo "  ";
@@ -64,15 +64,15 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
         echo "\"></script>
 ";
         
-        $__internal_8d9c312e167c58600bfa9f5664c393e6133aca242a540b88c4f6d7bac2dd10ee->leave($__internal_8d9c312e167c58600bfa9f5664c393e6133aca242a540b88c4f6d7bac2dd10ee_prof);
+        $__internal_143baf56d6954d97d0f97991ba95eb06b0234c2ac471a46d43293f421e3abbfc->leave($__internal_143baf56d6954d97d0f97991ba95eb06b0234c2ac471a46d43293f421e3abbfc_prof);
 
     }
 
     // line 36
     public function block_choice_tree_widget($context, array $blocks = array())
     {
-        $__internal_e4ac8b2c26da89e56279cb3ecdfb366603a5066cf93f997187e09650663ec995 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e4ac8b2c26da89e56279cb3ecdfb366603a5066cf93f997187e09650663ec995->enter($__internal_e4ac8b2c26da89e56279cb3ecdfb366603a5066cf93f997187e09650663ec995_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "choice_tree_widget"));
+        $__internal_c93bc3a5cc18411802072721317c655286fa17280fa31b57482e5ba3903c556d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c93bc3a5cc18411802072721317c655286fa17280fa31b57482e5ba3903c556d->enter($__internal_c93bc3a5cc18411802072721317c655286fa17280fa31b57482e5ba3903c556d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "choice_tree_widget"));
 
         // line 37
         echo "<div ";
@@ -117,15 +117,15 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
         echo "</ul>
     </div>";
         
-        $__internal_e4ac8b2c26da89e56279cb3ecdfb366603a5066cf93f997187e09650663ec995->leave($__internal_e4ac8b2c26da89e56279cb3ecdfb366603a5066cf93f997187e09650663ec995_prof);
+        $__internal_c93bc3a5cc18411802072721317c655286fa17280fa31b57482e5ba3903c556d->leave($__internal_c93bc3a5cc18411802072721317c655286fa17280fa31b57482e5ba3903c556d_prof);
 
     }
 
     // line 46
     public function block_choice_tree_item_widget($context, array $blocks = array())
     {
-        $__internal_5bc4b5c9cc077b0b132d4a3f9fe443534b590f287a56e54f3429b835f2d3a78f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5bc4b5c9cc077b0b132d4a3f9fe443534b590f287a56e54f3429b835f2d3a78f->enter($__internal_5bc4b5c9cc077b0b132d4a3f9fe443534b590f287a56e54f3429b835f2d3a78f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "choice_tree_item_widget"));
+        $__internal_f9ea98f2b7b68021ac411a5d406807707f643727aba1d44f593b2d3b3dea945f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f9ea98f2b7b68021ac411a5d406807707f643727aba1d44f593b2d3b3dea945f->enter($__internal_f9ea98f2b7b68021ac411a5d406807707f643727aba1d44f593b2d3b3dea945f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "choice_tree_item_widget"));
 
         // line 47
         echo "<li>
@@ -208,15 +208,15 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
         // line 69
         echo "    </li>";
         
-        $__internal_5bc4b5c9cc077b0b132d4a3f9fe443534b590f287a56e54f3429b835f2d3a78f->leave($__internal_5bc4b5c9cc077b0b132d4a3f9fe443534b590f287a56e54f3429b835f2d3a78f_prof);
+        $__internal_f9ea98f2b7b68021ac411a5d406807707f643727aba1d44f593b2d3b3dea945f->leave($__internal_f9ea98f2b7b68021ac411a5d406807707f643727aba1d44f593b2d3b3dea945f_prof);
 
     }
 
     // line 72
     public function block_content($context, array $blocks = array())
     {
-        $__internal_97c13c0797edd31224630bb266c3dfb0d28ae93b6b42859386449d9bb68f09ca = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_97c13c0797edd31224630bb266c3dfb0d28ae93b6b42859386449d9bb68f09ca->enter($__internal_97c13c0797edd31224630bb266c3dfb0d28ae93b6b42859386449d9bb68f09ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_2e256ab5f502d317554a7318982685716a5413c04a0b7342d1eca98d1973ddaa = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2e256ab5f502d317554a7318982685716a5413c04a0b7342d1eca98d1973ddaa->enter($__internal_2e256ab5f502d317554a7318982685716a5413c04a0b7342d1eca98d1973ddaa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 73
         echo "
@@ -757,45 +757,45 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
   ";
         // line 447
         echo "  ";
-        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 447, "955983119")->display(array_merge($context, array("id" => "catalog_duplicate_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Duplicating products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_duplicate_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Duplicating...", array(), "Admin.Catalog.Notification")), "actions" => array())));
+        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 447, "2140479231")->display(array_merge($context, array("id" => "catalog_duplicate_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Duplicating products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_duplicate_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Duplicating...", array(), "Admin.Catalog.Notification")), "actions" => array())));
         // line 466
         echo "
 
   ";
         // line 469
         echo "  ";
-        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 469, "1682444163")->display(array_merge($context, array("id" => "catalog_activate_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Activating products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_activate_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Activating...", array(), "Admin.Catalog.Notification")), "actions" => array())));
+        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 469, "117467364")->display(array_merge($context, array("id" => "catalog_activate_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Activating products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_activate_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Activating...", array(), "Admin.Catalog.Notification")), "actions" => array())));
         // line 488
         echo "
 
   ";
         // line 491
         echo "  ";
-        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 491, "30833321")->display(array_merge($context, array("id" => "catalog_deactivate_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deactivating products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_deactivate_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deactivating...", array(), "Admin.Catalog.Notification")), "actions" => array())));
+        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 491, "292005617")->display(array_merge($context, array("id" => "catalog_deactivate_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deactivating products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_deactivate_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deactivating...", array(), "Admin.Catalog.Notification")), "actions" => array())));
         // line 510
         echo "
 
   ";
         // line 513
         echo "  ";
-        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 513, "1033772374")->display(array_merge($context, array("id" => "catalog_delete_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deleting products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_delete_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deleting...", array(), "Admin.Catalog.Notification")), "actions" => array())));
+        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 513, "212511175")->display(array_merge($context, array("id" => "catalog_delete_all_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deleting products", array(), "Admin.Catalog.Notification"), "closable" => true, "progressbar" => array("id" => "catalog_delete_all_progression", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Deleting...", array(), "Admin.Catalog.Notification")), "actions" => array())));
         // line 532
         echo "
 
   ";
         // line 535
         echo "  ";
-        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 535, "1221066791")->display(array_merge($context, array("id" => "catalog_deletion_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Delete products?", array(), "Admin.Catalog.Feature"), "closable" => true, "actions" => array(0 => array("type" => "button", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Delete now", array(), "Admin.Actions"), "value" => "confirm", "class" => "btn btn-primary btn-lg")))));
+        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 535, "1419855966")->display(array_merge($context, array("id" => "catalog_deletion_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Delete products?", array(), "Admin.Catalog.Feature"), "closable" => true, "actions" => array(0 => array("type" => "button", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Delete now", array(), "Admin.Actions"), "value" => "confirm", "class" => "btn btn-primary btn-lg")))));
         // line 552
         echo "
   ";
         // line 553
-        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 553, "579944152")->display(array_merge($context, array("id" => "catalog_sql_query_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("SQL query", array(), "Admin.Global"), "closable" => true, "actions" => array(0 => array("type" => "button", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Export to SQL Manager", array(), "Admin.Actions"), "value" => "sql_manager", "class" => "btn btn-primary btn-lg")))));
+        $this->loadTemplate("PrestaShopBundle:Admin\\Product:catalog.html.twig", "PrestaShopBundle:Admin\\Product:catalog.html.twig", 553, "188496562")->display(array_merge($context, array("id" => "catalog_sql_query_modal", "title" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("SQL query", array(), "Admin.Global"), "closable" => true, "actions" => array(0 => array("type" => "button", "label" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Export to SQL Manager", array(), "Admin.Actions"), "value" => "sql_manager", "class" => "btn btn-primary btn-lg")))));
         // line 573
         echo "
 ";
         
-        $__internal_97c13c0797edd31224630bb266c3dfb0d28ae93b6b42859386449d9bb68f09ca->leave($__internal_97c13c0797edd31224630bb266c3dfb0d28ae93b6b42859386449d9bb68f09ca_prof);
+        $__internal_2e256ab5f502d317554a7318982685716a5413c04a0b7342d1eca98d1973ddaa->leave($__internal_2e256ab5f502d317554a7318982685716a5413c04a0b7342d1eca98d1973ddaa_prof);
 
     }
 
@@ -1404,7 +1404,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
 
 /* PrestaShopBundle:Admin\Product:catalog.html.twig */
-class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_955983119 extends Twig_Template
+class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_2140479231 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -1424,20 +1424,20 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_48a5fab2b444b1eb131979f95349d01d580c715d6072e4105394bcc755a06538 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_48a5fab2b444b1eb131979f95349d01d580c715d6072e4105394bcc755a06538->enter($__internal_48a5fab2b444b1eb131979f95349d01d580c715d6072e4105394bcc755a06538_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_aa8281b18eaa0c768499dd450a8f86be683bcc59260fa95459b19622d795fb31 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_aa8281b18eaa0c768499dd450a8f86be683bcc59260fa95459b19622d795fb31->enter($__internal_aa8281b18eaa0c768499dd450a8f86be683bcc59260fa95459b19622d795fb31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_48a5fab2b444b1eb131979f95349d01d580c715d6072e4105394bcc755a06538->leave($__internal_48a5fab2b444b1eb131979f95349d01d580c715d6072e4105394bcc755a06538_prof);
+        $__internal_aa8281b18eaa0c768499dd450a8f86be683bcc59260fa95459b19622d795fb31->leave($__internal_aa8281b18eaa0c768499dd450a8f86be683bcc59260fa95459b19622d795fb31_prof);
 
     }
 
     // line 457
     public function block_content($context, array $blocks = array())
     {
-        $__internal_05b8f675c9ad0bf206824cec2b26a79bdc018d2eee52821b0abbc862f607c33d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_05b8f675c9ad0bf206824cec2b26a79bdc018d2eee52821b0abbc862f607c33d->enter($__internal_05b8f675c9ad0bf206824cec2b26a79bdc018d2eee52821b0abbc862f607c33d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_8195b12f9c8af86d93d5ce975f07444c4fc2df0f96abd207a519a2f248066ffc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8195b12f9c8af86d93d5ce975f07444c4fc2df0f96abd207a519a2f248066ffc->enter($__internal_8195b12f9c8af86d93d5ce975f07444c4fc2df0f96abd207a519a2f248066ffc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 458
         echo "      <div class=\"modal-body\">
@@ -1454,7 +1454,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
       </div>
     ";
         
-        $__internal_05b8f675c9ad0bf206824cec2b26a79bdc018d2eee52821b0abbc862f607c33d->leave($__internal_05b8f675c9ad0bf206824cec2b26a79bdc018d2eee52821b0abbc862f607c33d_prof);
+        $__internal_8195b12f9c8af86d93d5ce975f07444c4fc2df0f96abd207a519a2f248066ffc->leave($__internal_8195b12f9c8af86d93d5ce975f07444c4fc2df0f96abd207a519a2f248066ffc_prof);
 
     }
 
@@ -2063,7 +2063,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
 
 /* PrestaShopBundle:Admin\Product:catalog.html.twig */
-class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_1682444163 extends Twig_Template
+class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_117467364 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -2083,20 +2083,20 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d5d7724398a32c27f4c3b03ad77137d7001562372a63d69330912b2b3533607f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d5d7724398a32c27f4c3b03ad77137d7001562372a63d69330912b2b3533607f->enter($__internal_d5d7724398a32c27f4c3b03ad77137d7001562372a63d69330912b2b3533607f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_154dd4608c680cef1c315e8809c5d639e0daf837b1ef114ed41cd16e42c3bb85 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_154dd4608c680cef1c315e8809c5d639e0daf837b1ef114ed41cd16e42c3bb85->enter($__internal_154dd4608c680cef1c315e8809c5d639e0daf837b1ef114ed41cd16e42c3bb85_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d5d7724398a32c27f4c3b03ad77137d7001562372a63d69330912b2b3533607f->leave($__internal_d5d7724398a32c27f4c3b03ad77137d7001562372a63d69330912b2b3533607f_prof);
+        $__internal_154dd4608c680cef1c315e8809c5d639e0daf837b1ef114ed41cd16e42c3bb85->leave($__internal_154dd4608c680cef1c315e8809c5d639e0daf837b1ef114ed41cd16e42c3bb85_prof);
 
     }
 
     // line 479
     public function block_content($context, array $blocks = array())
     {
-        $__internal_e559c065f959158c3e0fa0b986a3498f819ba95f4a846e0cabe2ca50dd0f579a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e559c065f959158c3e0fa0b986a3498f819ba95f4a846e0cabe2ca50dd0f579a->enter($__internal_e559c065f959158c3e0fa0b986a3498f819ba95f4a846e0cabe2ca50dd0f579a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_20a814908324554ac87e88e5c605f1f063297ff1e787419237d8882a4fa1b5d0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_20a814908324554ac87e88e5c605f1f063297ff1e787419237d8882a4fa1b5d0->enter($__internal_20a814908324554ac87e88e5c605f1f063297ff1e787419237d8882a4fa1b5d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 480
         echo "      <div class=\"modal-body\">
@@ -2113,7 +2113,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
       </div>
     ";
         
-        $__internal_e559c065f959158c3e0fa0b986a3498f819ba95f4a846e0cabe2ca50dd0f579a->leave($__internal_e559c065f959158c3e0fa0b986a3498f819ba95f4a846e0cabe2ca50dd0f579a_prof);
+        $__internal_20a814908324554ac87e88e5c605f1f063297ff1e787419237d8882a4fa1b5d0->leave($__internal_20a814908324554ac87e88e5c605f1f063297ff1e787419237d8882a4fa1b5d0_prof);
 
     }
 
@@ -2722,7 +2722,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
 
 /* PrestaShopBundle:Admin\Product:catalog.html.twig */
-class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_30833321 extends Twig_Template
+class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_292005617 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -2742,20 +2742,20 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_80f688f3c252ed3be46969c2ede0b1485d940fd8e55d27a063d46278ad544301 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_80f688f3c252ed3be46969c2ede0b1485d940fd8e55d27a063d46278ad544301->enter($__internal_80f688f3c252ed3be46969c2ede0b1485d940fd8e55d27a063d46278ad544301_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_24cfbfc47d13fe7e61aff9792d4c13376de32edbf99f91b7f6975f78a0939b39 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_24cfbfc47d13fe7e61aff9792d4c13376de32edbf99f91b7f6975f78a0939b39->enter($__internal_24cfbfc47d13fe7e61aff9792d4c13376de32edbf99f91b7f6975f78a0939b39_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_80f688f3c252ed3be46969c2ede0b1485d940fd8e55d27a063d46278ad544301->leave($__internal_80f688f3c252ed3be46969c2ede0b1485d940fd8e55d27a063d46278ad544301_prof);
+        $__internal_24cfbfc47d13fe7e61aff9792d4c13376de32edbf99f91b7f6975f78a0939b39->leave($__internal_24cfbfc47d13fe7e61aff9792d4c13376de32edbf99f91b7f6975f78a0939b39_prof);
 
     }
 
     // line 501
     public function block_content($context, array $blocks = array())
     {
-        $__internal_7172154f375c88dffbcec4f986b650fc4ba3d8c4a5b72f90ea7741c41c6b2c3f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7172154f375c88dffbcec4f986b650fc4ba3d8c4a5b72f90ea7741c41c6b2c3f->enter($__internal_7172154f375c88dffbcec4f986b650fc4ba3d8c4a5b72f90ea7741c41c6b2c3f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_93ec0771bb138d2a33f2e6f3da4646037c3c0b2330b82efeefd7b30186c657ff = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_93ec0771bb138d2a33f2e6f3da4646037c3c0b2330b82efeefd7b30186c657ff->enter($__internal_93ec0771bb138d2a33f2e6f3da4646037c3c0b2330b82efeefd7b30186c657ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 502
         echo "      <div class=\"modal-body\">
@@ -2772,7 +2772,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
       </div>
     ";
         
-        $__internal_7172154f375c88dffbcec4f986b650fc4ba3d8c4a5b72f90ea7741c41c6b2c3f->leave($__internal_7172154f375c88dffbcec4f986b650fc4ba3d8c4a5b72f90ea7741c41c6b2c3f_prof);
+        $__internal_93ec0771bb138d2a33f2e6f3da4646037c3c0b2330b82efeefd7b30186c657ff->leave($__internal_93ec0771bb138d2a33f2e6f3da4646037c3c0b2330b82efeefd7b30186c657ff_prof);
 
     }
 
@@ -3381,7 +3381,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
 
 /* PrestaShopBundle:Admin\Product:catalog.html.twig */
-class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_1033772374 extends Twig_Template
+class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_212511175 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -3401,20 +3401,20 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2fd1d4d4eb2226b1f05f2f8026411afd2d21e486196f1f57eace7147b8a84c2a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2fd1d4d4eb2226b1f05f2f8026411afd2d21e486196f1f57eace7147b8a84c2a->enter($__internal_2fd1d4d4eb2226b1f05f2f8026411afd2d21e486196f1f57eace7147b8a84c2a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_9450adbfb2272c9427ee167b1f1fd7a7086bb28653515d5bcddbb7141bd48de9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9450adbfb2272c9427ee167b1f1fd7a7086bb28653515d5bcddbb7141bd48de9->enter($__internal_9450adbfb2272c9427ee167b1f1fd7a7086bb28653515d5bcddbb7141bd48de9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2fd1d4d4eb2226b1f05f2f8026411afd2d21e486196f1f57eace7147b8a84c2a->leave($__internal_2fd1d4d4eb2226b1f05f2f8026411afd2d21e486196f1f57eace7147b8a84c2a_prof);
+        $__internal_9450adbfb2272c9427ee167b1f1fd7a7086bb28653515d5bcddbb7141bd48de9->leave($__internal_9450adbfb2272c9427ee167b1f1fd7a7086bb28653515d5bcddbb7141bd48de9_prof);
 
     }
 
     // line 523
     public function block_content($context, array $blocks = array())
     {
-        $__internal_03c63b908b095ddd8eac8d7627027f47304852676e03ffba8b2fbe2db9dd6b11 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_03c63b908b095ddd8eac8d7627027f47304852676e03ffba8b2fbe2db9dd6b11->enter($__internal_03c63b908b095ddd8eac8d7627027f47304852676e03ffba8b2fbe2db9dd6b11_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_f58c99ad45cce48cf92fede3ce23af501873e0a5a6ff14190ec87675f506ee43 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f58c99ad45cce48cf92fede3ce23af501873e0a5a6ff14190ec87675f506ee43->enter($__internal_f58c99ad45cce48cf92fede3ce23af501873e0a5a6ff14190ec87675f506ee43_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 524
         echo "      <div class=\"modal-body\">
@@ -3431,7 +3431,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
       </div>
     ";
         
-        $__internal_03c63b908b095ddd8eac8d7627027f47304852676e03ffba8b2fbe2db9dd6b11->leave($__internal_03c63b908b095ddd8eac8d7627027f47304852676e03ffba8b2fbe2db9dd6b11_prof);
+        $__internal_f58c99ad45cce48cf92fede3ce23af501873e0a5a6ff14190ec87675f506ee43->leave($__internal_f58c99ad45cce48cf92fede3ce23af501873e0a5a6ff14190ec87675f506ee43_prof);
 
     }
 
@@ -4040,7 +4040,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
 
 /* PrestaShopBundle:Admin\Product:catalog.html.twig */
-class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_1221066791 extends Twig_Template
+class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_1419855966 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -4060,20 +4060,20 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cc7cef20fed339fcd10d70a6fb68792f97b27b08dc21cb2a1f45fbceade321d7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cc7cef20fed339fcd10d70a6fb68792f97b27b08dc21cb2a1f45fbceade321d7->enter($__internal_cc7cef20fed339fcd10d70a6fb68792f97b27b08dc21cb2a1f45fbceade321d7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_a4e75bab3a626ca8ba56a2c64d4dda1c75c5ddf78e81d513fed4303821125192 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a4e75bab3a626ca8ba56a2c64d4dda1c75c5ddf78e81d513fed4303821125192->enter($__internal_a4e75bab3a626ca8ba56a2c64d4dda1c75c5ddf78e81d513fed4303821125192_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_cc7cef20fed339fcd10d70a6fb68792f97b27b08dc21cb2a1f45fbceade321d7->leave($__internal_cc7cef20fed339fcd10d70a6fb68792f97b27b08dc21cb2a1f45fbceade321d7_prof);
+        $__internal_a4e75bab3a626ca8ba56a2c64d4dda1c75c5ddf78e81d513fed4303821125192->leave($__internal_a4e75bab3a626ca8ba56a2c64d4dda1c75c5ddf78e81d513fed4303821125192_prof);
 
     }
 
     // line 546
     public function block_content($context, array $blocks = array())
     {
-        $__internal_057befa94c1c15fe5849bfe93e59fc9a72f00b4831f8dfd60fb3d4c892615598 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_057befa94c1c15fe5849bfe93e59fc9a72f00b4831f8dfd60fb3d4c892615598->enter($__internal_057befa94c1c15fe5849bfe93e59fc9a72f00b4831f8dfd60fb3d4c892615598_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_ed48271c84a59e3b20b4b3bdfea49f53d2fc4999d371726a16e2bd8ffcc852d1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ed48271c84a59e3b20b4b3bdfea49f53d2fc4999d371726a16e2bd8ffcc852d1->enter($__internal_ed48271c84a59e3b20b4b3bdfea49f53d2fc4999d371726a16e2bd8ffcc852d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 547
         echo "      <div class=\"modal-body\">
@@ -4084,7 +4084,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
       </div>
     ";
         
-        $__internal_057befa94c1c15fe5849bfe93e59fc9a72f00b4831f8dfd60fb3d4c892615598->leave($__internal_057befa94c1c15fe5849bfe93e59fc9a72f00b4831f8dfd60fb3d4c892615598_prof);
+        $__internal_ed48271c84a59e3b20b4b3bdfea49f53d2fc4999d371726a16e2bd8ffcc852d1->leave($__internal_ed48271c84a59e3b20b4b3bdfea49f53d2fc4999d371726a16e2bd8ffcc852d1_prof);
 
     }
 
@@ -4693,7 +4693,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
 
 /* PrestaShopBundle:Admin\Product:catalog.html.twig */
-class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_579944152 extends Twig_Template
+class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8b5b0d_188496562 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -4713,20 +4713,20 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a91589855795e61094ec63b454badc089691eb873f2d950b6f74130d42c23158 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a91589855795e61094ec63b454badc089691eb873f2d950b6f74130d42c23158->enter($__internal_a91589855795e61094ec63b454badc089691eb873f2d950b6f74130d42c23158_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
+        $__internal_979e728223d65149c7363b4e54ff788e5ae443c5024008d4feda61ff14f4e731 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_979e728223d65149c7363b4e54ff788e5ae443c5024008d4feda61ff14f4e731->enter($__internal_979e728223d65149c7363b4e54ff788e5ae443c5024008d4feda61ff14f4e731_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin\\Product:catalog.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a91589855795e61094ec63b454badc089691eb873f2d950b6f74130d42c23158->leave($__internal_a91589855795e61094ec63b454badc089691eb873f2d950b6f74130d42c23158_prof);
+        $__internal_979e728223d65149c7363b4e54ff788e5ae443c5024008d4feda61ff14f4e731->leave($__internal_979e728223d65149c7363b4e54ff788e5ae443c5024008d4feda61ff14f4e731_prof);
 
     }
 
     // line 564
     public function block_content($context, array $blocks = array())
     {
-        $__internal_2bcbb65932a4b59f1261d7a6d8e29ba0eaf25fb5ba932481912ff49407f90b70 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2bcbb65932a4b59f1261d7a6d8e29ba0eaf25fb5ba932481912ff49407f90b70->enter($__internal_2bcbb65932a4b59f1261d7a6d8e29ba0eaf25fb5ba932481912ff49407f90b70_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_729c12083a95f1383e6af57c8133a4c8a72c1fd2b91b5a9c03a71718a8a8bbcd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_729c12083a95f1383e6af57c8133a4c8a72c1fd2b91b5a9c03a71718a8a8bbcd->enter($__internal_729c12083a95f1383e6af57c8133a4c8a72c1fd2b91b5a9c03a71718a8a8bbcd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 565
         echo "      <form method=\"post\" action=\"";
@@ -4739,7 +4739,7 @@ class __TwigTemplate_5df8dfb7999b48a6f64639fcd5d85c8443ce4e3eb155765242d0d2082f8
       </form>
     ";
         
-        $__internal_2bcbb65932a4b59f1261d7a6d8e29ba0eaf25fb5ba932481912ff49407f90b70->leave($__internal_2bcbb65932a4b59f1261d7a6d8e29ba0eaf25fb5ba932481912ff49407f90b70_prof);
+        $__internal_729c12083a95f1383e6af57c8133a4c8a72c1fd2b91b5a9c03a71718a8a8bbcd->leave($__internal_729c12083a95f1383e6af57c8133a4c8a72c1fd2b91b5a9c03a71718a8a8bbcd_prof);
 
     }
 

@@ -15,8 +15,8 @@ class __TwigTemplate_e141ec8bf6792db08ca89d1cab17b97ab5d87245795c968c266166b53f3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c36a407b629ca4ccb385f87a2602f7d4bbeb26897603cea74a77e6db469e695c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c36a407b629ca4ccb385f87a2602f7d4bbeb26897603cea74a77e6db469e695c->enter($__internal_c36a407b629ca4ccb385f87a2602f7d4bbeb26897603cea74a77e6db469e695c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_feature.html.twig"));
+        $__internal_19f45dbc647beb17a2382df6e6a1bee1d8f4736e0f2097a1d1e8b4d38fab3641 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_19f45dbc647beb17a2382df6e6a1bee1d8f4736e0f2097a1d1e8b4d38fab3641->enter($__internal_19f45dbc647beb17a2382df6e6a1bee1d8f4736e0f2097a1d1e8b4d38fab3641_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_feature.html.twig"));
 
         // line 25
         echo "<div class=\"row\">
@@ -66,7 +66,7 @@ class __TwigTemplate_e141ec8bf6792db08ca89d1cab17b97ab5d87245795c968c266166b53f3
 <hr class=\"m-b-2 hidden-xl-up\" />
 ";
         
-        $__internal_c36a407b629ca4ccb385f87a2602f7d4bbeb26897603cea74a77e6db469e695c->leave($__internal_c36a407b629ca4ccb385f87a2602f7d4bbeb26897603cea74a77e6db469e695c_prof);
+        $__internal_19f45dbc647beb17a2382df6e6a1bee1d8f4736e0f2097a1d1e8b4d38fab3641->leave($__internal_19f45dbc647beb17a2382df6e6a1bee1d8f4736e0f2097a1d1e8b4d38fab3641_prof);
 
     }
 

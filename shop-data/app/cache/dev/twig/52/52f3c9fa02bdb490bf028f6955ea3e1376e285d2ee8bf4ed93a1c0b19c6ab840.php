@@ -15,8 +15,8 @@ class __TwigTemplate_6fb4dd08f2fa051edc9eb7715ed124d841886a4875f07ebd106f12a1acd
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4ee40de9c540be32d76292b75b2b7a78e2776b053ac2c78ea8bf13a671e774fa = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4ee40de9c540be32d76292b75b2b7a78e2776b053ac2c78ea8bf13a671e774fa->enter($__internal_4ee40de9c540be32d76292b75b2b7a78e2776b053ac2c78ea8bf13a671e774fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_related_products.html.twig"));
+        $__internal_4538396e309de62b3dddcf14d86cc679e5eacdf3af7ff175eb51f78909537311 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_4538396e309de62b3dddcf14d86cc679e5eacdf3af7ff175eb51f78909537311->enter($__internal_4538396e309de62b3dddcf14d86cc679e5eacdf3af7ff175eb51f78909537311_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_related_products.html.twig"));
 
         // line 25
         echo "<div id=\"related-content\" class=\"row ";
@@ -57,7 +57,7 @@ class __TwigTemplate_6fb4dd08f2fa051edc9eb7715ed124d841886a4875f07ebd106f12a1acd
 </div>
 ";
         
-        $__internal_4ee40de9c540be32d76292b75b2b7a78e2776b053ac2c78ea8bf13a671e774fa->leave($__internal_4ee40de9c540be32d76292b75b2b7a78e2776b053ac2c78ea8bf13a671e774fa_prof);
+        $__internal_4538396e309de62b3dddcf14d86cc679e5eacdf3af7ff175eb51f78909537311->leave($__internal_4538396e309de62b3dddcf14d86cc679e5eacdf3af7ff175eb51f78909537311_prof);
 
     }
 

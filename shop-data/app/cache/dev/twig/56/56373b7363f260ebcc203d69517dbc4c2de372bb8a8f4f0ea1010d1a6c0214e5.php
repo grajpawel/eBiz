@@ -15,8 +15,8 @@ class __TwigTemplate_b3bfb7e951b8650c710c80bb0d57c60f9d79758d26de604829d0ee5af37
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1a6c275d76f094fb9ea5dd9c71ca287d4b80a6657241c1e37a16f0463f587c3a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1a6c275d76f094fb9ea5dd9c71ca287d4b80a6657241c1e37a16f0463f587c3a->enter($__internal_1a6c275d76f094fb9ea5dd9c71ca287d4b80a6657241c1e37a16f0463f587c3a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_shipping.html.twig"));
+        $__internal_d4642b631e476e2913becd1a6d278f9085d29acf6c442705bc3a60b625dfa180 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d4642b631e476e2913becd1a6d278f9085d29acf6c442705bc3a60b625dfa180->enter($__internal_d4642b631e476e2913becd1a6d278f9085d29acf6c442705bc3a60b625dfa180_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Product/Include:form_shipping.html.twig"));
 
         // line 25
         list($context["dimension_unit"], $context["weight_unit"]) =         array($this->env->getExtension('PrestaShopBundle\Twig\LayoutExtension')->getConfiguration("PS_DIMENSION_UNIT"), $this->env->getExtension('PrestaShopBundle\Twig\LayoutExtension')->getConfiguration("PS_WEIGHT_UNIT"));
@@ -197,7 +197,7 @@ class __TwigTemplate_b3bfb7e951b8650c710c80bb0d57c60f9d79758d26de604829d0ee5af37
         echo "
 ";
         
-        $__internal_1a6c275d76f094fb9ea5dd9c71ca287d4b80a6657241c1e37a16f0463f587c3a->leave($__internal_1a6c275d76f094fb9ea5dd9c71ca287d4b80a6657241c1e37a16f0463f587c3a_prof);
+        $__internal_d4642b631e476e2913becd1a6d278f9085d29acf6c442705bc3a60b625dfa180->leave($__internal_d4642b631e476e2913becd1a6d278f9085d29acf6c442705bc3a60b625dfa180_prof);
 
     }
 

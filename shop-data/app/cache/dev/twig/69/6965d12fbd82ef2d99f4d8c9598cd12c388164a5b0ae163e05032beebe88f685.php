@@ -15,8 +15,8 @@ class __TwigTemplate_3bdc66f5d73389d9772ff718a2e8e9787561cb1445c44709590640f9b6b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1767dc57fc5e836c59490604ec1f3be9def98e1a35c38a9719cdcd8441bbc661 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1767dc57fc5e836c59490604ec1f3be9def98e1a35c38a9719cdcd8441bbc661->enter($__internal_1767dc57fc5e836c59490604ec1f3be9def98e1a35c38a9719cdcd8441bbc661_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin:Product/Include/form-specific-price.html.twig"));
+        $__internal_05f3529a398bb54287f29fe10b79a61f5ca5578645cf595a50c388cbb5ae2d84 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_05f3529a398bb54287f29fe10b79a61f5ca5578645cf595a50c388cbb5ae2d84->enter($__internal_05f3529a398bb54287f29fe10b79a61f5ca5578645cf595a50c388cbb5ae2d84_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin:Product/Include/form-specific-price.html.twig"));
 
         // line 25
         echo "<div class=\"card card-block\">
@@ -292,7 +292,7 @@ class __TwigTemplate_3bdc66f5d73389d9772ff718a2e8e9787561cb1445c44709590640f9b6b
 </div>
 ";
         
-        $__internal_1767dc57fc5e836c59490604ec1f3be9def98e1a35c38a9719cdcd8441bbc661->leave($__internal_1767dc57fc5e836c59490604ec1f3be9def98e1a35c38a9719cdcd8441bbc661_prof);
+        $__internal_05f3529a398bb54287f29fe10b79a61f5ca5578645cf595a50c388cbb5ae2d84->leave($__internal_05f3529a398bb54287f29fe10b79a61f5ca5578645cf595a50c388cbb5ae2d84_prof);
 
     }
 
