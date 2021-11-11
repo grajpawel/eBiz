@@ -15,8 +15,8 @@ class __TwigTemplate_d837a59190d504555fd217a7ec86317b393195a029011567cc55acd7f8c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_32714c3346bdc12f620d6a74d1f27773bd604bf64fca7ac5cd1ef53225bace8b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_32714c3346bdc12f620d6a74d1f27773bd604bf64fca7ac5cd1ef53225bace8b->enter($__internal_32714c3346bdc12f620d6a74d1f27773bd604bf64fca7ac5cd1ef53225bace8b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Module/Includes:menu_top.html.twig"));
+        $__internal_dc1da0dd3938da0ce215f403471a0331abdbcc6982c4a345b624cb9ef852e83c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_dc1da0dd3938da0ce215f403471a0331abdbcc6982c4a345b624cb9ef852e83c->enter($__internal_dc1da0dd3938da0ce215f403471a0331abdbcc6982c4a345b624cb9ef852e83c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PrestaShopBundle:Admin/Module/Includes:menu_top.html.twig"));
 
         // line 25
         echo "<div class=\"module-top-menu\">
@@ -65,7 +65,7 @@ class __TwigTemplate_d837a59190d504555fd217a7ec86317b393195a029011567cc55acd7f8c
         $context["js_translatable"] = twig_array_merge(array("Search - placeholder" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Search modules: keyword, name, author...", array(), "Admin.Modules.Help")),         // line 52
 (isset($context["js_translatable"]) ? $context["js_translatable"] : $this->getContext($context, "js_translatable")));
         
-        $__internal_32714c3346bdc12f620d6a74d1f27773bd604bf64fca7ac5cd1ef53225bace8b->leave($__internal_32714c3346bdc12f620d6a74d1f27773bd604bf64fca7ac5cd1ef53225bace8b_prof);
+        $__internal_dc1da0dd3938da0ce215f403471a0331abdbcc6982c4a345b624cb9ef852e83c->leave($__internal_dc1da0dd3938da0ce215f403471a0331abdbcc6982c4a345b624cb9ef852e83c_prof);
 
     }
 
