@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2021-11-09 23:30:19
+<?php /* Smarty version Smarty-3.1.19, created on 2021-11-11 01:35:22
          compiled from "/var/www/html/admin0009e8qap/themes/default/template/helpers/options/options.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:991177206618af67b96d2f7-52795641%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '806ec8db3de6f8a532f27caf0cb50edf81a67ca5' => 
     array (
       0 => '/var/www/html/admin0009e8qap/themes/default/template/helpers/options/options.tpl',
-      1 => 1636496035,
+      1 => 1636590388,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_618af67bc02e76_00520127',
   'variables' => 
   array (
     'current_id_lang' => 0,
@@ -48,8 +50,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ad' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_618af67bc02e76_00520127',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_618af67bc02e76_00520127')) {function content_618af67bc02e76_00520127($_smarty_tpl) {?><?php if (!is_callable('smarty_function_counter')) include '/var/www/html/vendor/prestashop/smarty/plugins/function.counter.php';
 if (!is_callable('smarty_modifier_replace')) include '/var/www/html/vendor/prestashop/smarty/plugins/modifier.replace.php';
@@ -352,9 +352,9 @@ _on" value="<?php echo intval($_smarty_tpl->tpl_vars['k']->value);?>
 										<div class="col-lg-9">
 											<textarea class="<?php if (isset($_smarty_tpl->tpl_vars['field']->value['autoload_rte'])&&$_smarty_tpl->tpl_vars['field']->value['autoload_rte']) {?>rte autoload_rte<?php } else { ?>textarea-autosize<?php }?>" name=<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
 <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['field']->value['cols'];?>
-<?php $_tmp1=ob_get_clean();?><?php if (isset($_tmp1)) {?> cols="<?php echo $_smarty_tpl->tpl_vars['field']->value['cols'];?>
+<?php $_tmp3=ob_get_clean();?><?php if (isset($_tmp3)) {?> cols="<?php echo $_smarty_tpl->tpl_vars['field']->value['cols'];?>
 "<?php }?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['field']->value['rows'];?>
-<?php $_tmp2=ob_get_clean();?><?php if (isset($_tmp2)) {?> rows="<?php echo $_smarty_tpl->tpl_vars['field']->value['rows'];?>
+<?php $_tmp4=ob_get_clean();?><?php if (isset($_tmp4)) {?> rows="<?php echo $_smarty_tpl->tpl_vars['field']->value['rows'];?>
 "<?php }?>"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['escape'][0][0]->smartyEscape($_smarty_tpl->tpl_vars['field']->value['value'],'html','UTF-8');?>
 </textarea>
 										</div>
