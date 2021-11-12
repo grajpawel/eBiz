@@ -1,13 +1,11 @@
+{shop_url}
 
-[{shop_url}] 
+Witaj {firstname} {lastname},
 
-Cześć 
+Here is a test email from your shop.
 
-To jest WIADOMOŚĆ TESTOWA z Twojego sklepu.
+If you can read this, it means the test is successful!
 
-Jeśli możesz ją przeczytać to znaczy, że test przebiegł
-pomyślnie!. 
+[{shop_name}]({shop_url})
 
-{shop_name} [{shop_url}] powered
-by PrestaShop(tm) [http://www.prestashop.com/] 
-
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

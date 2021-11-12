@@ -38,6 +38,7 @@ class AvgSessionsDataLoaders extends DataLoadersFactory
         $visitsKpi = $module->getService('ps_metrics.kpi.visits');
         $current = $this->getDatas($visitsKpi, $args[0]['InputData']['TimeDimension']['dateRange']);
         $previous = 0;
+
         if (true === $args[0]['InputData']['compareMode']) {
             $previous = $this->getDatas($visitsKpi, $this->switchDateRange($args[0]['InputData']['TimeDimension']['dateRange']));
         }

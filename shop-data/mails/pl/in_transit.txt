@@ -1,27 +1,19 @@
+{shop_url}
 
-[{shop_url}] 
+Witaj {firstname} {lastname},
 
-Witaj {firstname} {lastname}, 
+{meta_products}
 
-* 
+Order ID {order_name} - W transporcie
 
-{meta_products} 
+Your order with the reference {order_name} is on its way.
 
-* Twoje zamówienie o numerze {order_name} jest aktualnie w trakcie
-dostawy. 
+Możesz śledzić paczkę korzystając z poniższego linku: {followup}
 
-Możesz śledzić paczkę korzystając z poniższego linku:
-{followup} [{followup}] 		 
+Follow your order and download your invoice on our shop, go to the [Historia i szczegóły zamówień]({history_url}) section of your customer account.
 
-Możesz obejrzeć swoje zamówienie i pobrać fakturę na stronie
-"Historia zamówień" [{history_url}]
-logując się na swoje konto klienta za pomocą strony "Moje konto"
-[{my_account_url}] w naszym sklepie. 
+If you have a guest account, you can follow your order via the [Śledzenie Zamówienia]({guest_tracking_url}) section on our shop.
 
-Jeśli posiadasz konto gościa, możesz śledzić swoje
-zamówienie w sekcji "Śledzenie zamówienia"
-[{guest_tracking_url}?id_order={order_name}].
+[{shop_name}]({shop_url})
 
-{shop_name} [{shop_url}] powered
-by PrestaShop(tm) [http://www.prestashop.com/] 
-
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

@@ -1,16 +1,17 @@
+{shop_url}
 
-[{shop_url}] 
+Wiadomość od klienta {shop_name}
 
-Wiadomość od klienta {shop_name} 
+Customer Email Address: {email}
 
-ADRES E-MAIL KLIENTA: {email}
+Order ID #:  {order_name}
 
-WIADOMOŚĆ KLIENTA: {message}
+Załączony plik: {attached_file}
 
-NR ZAMÓWIENIA: {order_name}
+Wiadomość klienta:
 
-ZAŁĄCZONY PLIK: {attached_file} 		 
+{message}
 
-{shop_name} [{shop_url}] powered
-by PrestaShop(tm) [http://www.prestashop.com/] 
+[{shop_name}]({shop_url})
 
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

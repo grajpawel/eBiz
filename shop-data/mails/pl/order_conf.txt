@@ -1,69 +1,41 @@
-
-[{shop_url}] 
+{shop_url}
 
 Witaj {firstname} {lastname},
 
-Dziękujemy za zakupy na stronie {shop_name}! 
+Thank you for shopping on {shop_name}!
 
-ZAMÓWIENIE: {order_name} Złożone w {date}
+Szczegóły zamówienia
 
-PŁATNOŚĆ: {payment} 		 
+Zamówienie: {order_name} Złożone w {date}
 
-INDEKS
+Płatność: {payment}
 
-PRODUKT
+Indeks	Produkt	Cena jednostkowa	Ilość	Cena końcowa  {products_txt} {discounts_txt}
+Produkty	{total_products}
+Rabaty	{total_discounts}
+Pakowanie prezentowe	{total_wrapping}
+Wysyłka	{total_shipping}
+Including total tax	{total_tax_paid}
+Zapłacono w sumie	{total_paid}
 
-CENA JEDNOSTKOWA
+Wysyłka
 
-ILOŚĆ
+Przewoźnik: {carrier}
 
-CENA KOŃCOWA
+Płatność: {payment}
 
-{products_txt} 
+Adres dostawy
 
-{discounts} 
+{delivery_block_txt}
 
-PRODUKTY 
+Adres do faktury
 
-{total_products} 
+{invoice_block_txt}
 
-RABATY 
+Follow your order and download your invoice on our shop, go to the [Historia i szczegóły zamówień]({history_url}) section of your customer account.
 
-{total_discounts} 
+If you have a guest account, you can follow your order via the [Śledzenie Zamówienia]({guest_tracking_url}) section on our shop.
 
-PAKOWANIE PREZENTOWE 
+[{shop_name}]({shop_url})
 
-{total_wrapping} 
-
-WYSYŁKA 
-
-{total_shipping} 
-
-CAŁKOWITY ZAPŁACONY PODATEK 
-
-{total_tax_paid} 
-
-ZAPŁACONO W SUMIE 
-
-{total_paid} 
-
-PRZEWOŹNIK: {carrier}
-
-PŁATNOŚĆ: {payment} 		 
-
-{delivery_block_txt} 
-
-{invoice_block_txt} 
-
-Możesz obejrzeć swoje zamówienie i pobrać fakturę na stronie
-"Historia zamówień" [{history_url}]
-logując się na swoje konto klienta za pomocą strony "Moje konto"
-[{my_account_url}] w naszym sklepie. 
-
-Jeśli posiadasz konto gościa, możesz śledzić swoje
-zamówienie w sekcji "Śledzenie zamówienia"
-[{guest_tracking_url}?id_order={order_name}].
-
-{shop_name} [{shop_url}] powered
-by PrestaShop(tm) [http://www.prestashop.com/] 
-
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)

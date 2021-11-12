@@ -1,36 +1,29 @@
+{shop_url}
 
-[{shop_url}] 
+Witaj,
 
-Witaj, 
+Odebrano nowe żądanie zwrotu do {shop_name}.
 
-Odebrano nowe żądanie zwrotu do {shop_name}. 
+Return Details
 
-Szczegóły zwrotu 
+Zamówienie: {order_name} Złożone w {date}
 
-ZAMÓWIENIE: {order_name} Złożone w {date}
+Klient: {firstname} {lastname}, ({email})
 
-KLIENT: {firstname} {lastname}, ({email}) 
-
-INDEKS
-
-PRODUKT
-
-ILOŚĆ
-
-{items} 
+Indeks	Produkt	Ilość   {items}
 
 Adres dostawy
 
-{delivery_block_html} 		 
+{delivery_block_html}
 
 Adres do faktury
 
-{invoice_block_html} 
+{invoice_block_html}
 
-Wiadomość klienta: 
+Wiadomość klienta:
 
-{message} 
+{message}
 
-{shop_name} [{shop_url}] powered
-by PrestaShop(tm) [http://www.prestashop.com/] 
+[{shop_name}]({shop_url})
 
+Powered by [PrestaShop](https://www.prestashop.com/?utm_source=marchandprestashop&utm_medium=e-mail&utm_campaign=footer_1-7)
