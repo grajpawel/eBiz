@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-12 20:27:43
+/* Smarty version 3.1.39, created on 2021-11-13 14:33:14
   from '/var/www/html/admin0009e8qap/themes/default/template/controllers/login/content.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_618ec02fbeddd0_54441121',
+  'unifunc' => 'content_618fbe9a7d1fd9_61659222',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8b528289c3b371c21cbda4dcc2af98b371bc83c5' => 
     array (
       0 => '/var/www/html/admin0009e8qap/themes/default/template/controllers/login/content.tpl',
-      1 => 1636744557,
+      1 => 1636760254,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_618ec02fbeddd0_54441121 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618fbe9a7d1fd9_61659222 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/vendor/smarty/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <div id="login-panel">
