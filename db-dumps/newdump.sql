@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: db
--- Время создания: Ноя 13 2021 г., 14:27
--- Версия сервера: 5.7.36
--- Версия PHP: 7.4.20
+-- Host: db
+-- Czas generowania: 13 Lis 2021, 21:29
+-- Wersja serwera: 5.7.36
+-- Wersja PHP: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `db`
+-- Baza danych: `db`
 --
 CREATE DATABASE IF NOT EXISTS `db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `db`;
@@ -26,7 +26,7 @@ USE `db`;
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_access`
+-- Struktura tabeli dla tabeli `ps_access`
 --
 
 CREATE TABLE `ps_access` (
@@ -35,7 +35,7 @@ CREATE TABLE `ps_access` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_access`
+-- Zrzut danych tabeli `ps_access`
 --
 
 INSERT INTO `ps_access` (`id_profile`, `id_authorization_role`) VALUES
@@ -907,7 +907,7 @@ INSERT INTO `ps_access` (`id_profile`, `id_authorization_role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_accessory`
+-- Struktura tabeli dla tabeli `ps_accessory`
 --
 
 CREATE TABLE `ps_accessory` (
@@ -918,7 +918,7 @@ CREATE TABLE `ps_accessory` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_address`
+-- Struktura tabeli dla tabeli `ps_address`
 --
 
 CREATE TABLE `ps_address` (
@@ -949,7 +949,7 @@ CREATE TABLE `ps_address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_address`
+-- Zrzut danych tabeli `ps_address`
 --
 
 INSERT INTO `ps_address` (`id_address`, `id_country`, `id_state`, `id_customer`, `id_manufacturer`, `id_supplier`, `id_warehouse`, `alias`, `company`, `lastname`, `firstname`, `address1`, `address2`, `postcode`, `city`, `other`, `phone`, `phone_mobile`, `vat_number`, `dni`, `date_add`, `date_upd`, `active`, `deleted`) VALUES
@@ -958,12 +958,13 @@ INSERT INTO `ps_address` (`id_address`, `id_country`, `id_state`, `id_customer`,
 (3, 21, 35, 0, 1, 0, 0, 'manufacturer', 'Fashion', 'manufacturer', 'manufacturer', '767 Fifth Ave.', '', '10154', 'New York', '', '(212) 336-1666', '', '', '', '2021-10-23 19:40:30', '2021-10-23 19:40:30', 1, 0),
 (4, 21, 12, 1, 0, 0, 0, 'My address', 'My Company', 'DOE', 'John', '16, Main street', '2nd floor', '33133', 'Miami', '', '0102030405', '', '', '', '2021-10-23 19:40:30', '2021-10-23 19:40:30', 1, 0),
 (5, 14, 0, 2, 0, 0, 0, 'Anonymous', 'Anonymous', 'Anonymous', 'Anonymous', 'Anonymous', '', '00000', 'Anonymous', '', '0000000000', '0000000000', '0000', '0000', '2021-10-23 19:45:20', '2021-10-23 19:45:20', 1, 0),
-(6, 14, 0, 3, 0, 0, 0, 'Mój adres', '56', 'Grajkowski', 'Paweł', 'Batorego 39, 56', '56', '80-251', 'Gdańsk', '', '790765432', '', '', '', '2021-11-10 00:11:48', '2021-11-10 00:11:48', 1, 0);
+(6, 14, 0, 3, 0, 0, 0, 'Mój adres', '56', 'Grajkowski', 'Paweł', 'Batorego 39, 56', '56', '80-251', 'Gdańsk', '', '790765432', '', '', '', '2021-11-10 00:11:48', '2021-11-10 00:11:48', 1, 0),
+(7, 14, 0, 4, 0, 0, 0, 'Mój adres', '', 'kjhkjhk', 'Weronika', 'sfjdskf 7', '', '80-343', 'dsfhsd', '', '', '', '', '', '2021-11-13 21:08:58', '2021-11-13 21:08:58', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_address_format`
+-- Struktura tabeli dla tabeli `ps_address_format`
 --
 
 CREATE TABLE `ps_address_format` (
@@ -972,7 +973,7 @@ CREATE TABLE `ps_address_format` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_address_format`
+-- Zrzut danych tabeli `ps_address_format`
 --
 
 INSERT INTO `ps_address_format` (`id_country`, `format`) VALUES
@@ -1224,7 +1225,7 @@ INSERT INTO `ps_address_format` (`id_country`, `format`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_admin_filter`
+-- Struktura tabeli dla tabeli `ps_admin_filter`
 --
 
 CREATE TABLE `ps_admin_filter` (
@@ -1238,22 +1239,45 @@ CREATE TABLE `ps_admin_filter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Дамп данных таблицы `ps_admin_filter`
+-- Zrzut danych tabeli `ps_admin_filter`
 --
 
 INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`, `filter`, `filter_id`) VALUES
-(1, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"cuba\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
+(1, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"Cuba\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
 (2, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page_category'),
 (3, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page'),
 (4, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_order\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'order'),
 (5, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_request_sql\",\"sortOrder\":\"desc\",\"filters\":[]}', 'sql_request'),
 (6, 1, 1, 'backup', 'index', '{\"limit\":20,\"orderBy\":null,\"sortOrder\":null,\"filters\":[]}', ''),
-(7, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_order_slip\",\"sortOrder\":\"asc\",\"filters\":[]}', 'credit_slip');
+(7, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_order_slip\",\"sortOrder\":\"asc\",\"filters\":[]}', 'credit_slip'),
+(8, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_category_parent\":\"2\"}}', 'category'),
+(9, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'empty_category'),
+(10, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'no_qty_product_with_combination'),
+(11, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'no_qty_product_without_combination'),
+(12, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'disabled_product'),
+(13, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'product_without_image'),
+(14, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'product_without_description'),
+(15, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'product_without_price'),
+(16, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'manufacturer'),
+(17, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_address\",\"sortOrder\":\"desc\",\"filters\":[]}', 'manufacturer_address'),
+(18, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_attachment\",\"sortOrder\":\"asc\",\"filters\":[]}', 'attachment'),
+(19, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"date_add\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'customer'),
+(20, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_address\",\"sortOrder\":\"asc\",\"filters\":[]}', 'address'),
+(21, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_lang\",\"sortOrder\":\"ASC\",\"filters\":[]}', 'language'),
+(22, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_currency\",\"sortOrder\":\"asc\",\"filters\":[]}', 'currency'),
+(23, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_zone\",\"sortOrder\":\"asc\",\"filters\":[]}', 'zone'),
+(24, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_tax\",\"sortOrder\":\"asc\",\"filters\":[]}', 'tax'),
+(25, 1, 1, 'contacts', 'index', '{\"limit\":10,\"orderBy\":\"id_contact\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
+(26, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_meta\",\"sortOrder\":\"asc\",\"filters\":[]}', 'meta'),
+(27, 1, 1, 'email', 'index', '{\"limit\":50,\"orderBy\":\"id_mail\",\"sortOrder\":\"desc\",\"filters\":[]}', ''),
+(28, 1, 1, 'employee', 'index', '{\"limit\":50,\"orderBy\":\"id_employee\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
+(29, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_log\",\"sortOrder\":\"desc\",\"filters\":[]}', 'logs'),
+(30, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_webservice_account\",\"sortOrder\":\"asc\",\"filters\":[]}', 'webservice_key');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_advice`
+-- Struktura tabeli dla tabeli `ps_advice`
 --
 
 CREATE TABLE `ps_advice` (
@@ -1273,7 +1297,7 @@ CREATE TABLE `ps_advice` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_advice_lang`
+-- Struktura tabeli dla tabeli `ps_advice_lang`
 --
 
 CREATE TABLE `ps_advice_lang` (
@@ -1285,7 +1309,7 @@ CREATE TABLE `ps_advice_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_alias`
+-- Struktura tabeli dla tabeli `ps_alias`
 --
 
 CREATE TABLE `ps_alias` (
@@ -1298,7 +1322,7 @@ CREATE TABLE `ps_alias` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attachment`
+-- Struktura tabeli dla tabeli `ps_attachment`
 --
 
 CREATE TABLE `ps_attachment` (
@@ -1312,7 +1336,7 @@ CREATE TABLE `ps_attachment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attachment_lang`
+-- Struktura tabeli dla tabeli `ps_attachment_lang`
 --
 
 CREATE TABLE `ps_attachment_lang` (
@@ -1325,7 +1349,7 @@ CREATE TABLE `ps_attachment_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute`
+-- Struktura tabeli dla tabeli `ps_attribute`
 --
 
 CREATE TABLE `ps_attribute` (
@@ -1336,7 +1360,7 @@ CREATE TABLE `ps_attribute` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_attribute`
+-- Zrzut danych tabeli `ps_attribute`
 --
 
 INSERT INTO `ps_attribute` (`id_attribute`, `id_attribute_group`, `color`, `position`) VALUES
@@ -1368,7 +1392,7 @@ INSERT INTO `ps_attribute` (`id_attribute`, `id_attribute_group`, `color`, `posi
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute_group`
+-- Struktura tabeli dla tabeli `ps_attribute_group`
 --
 
 CREATE TABLE `ps_attribute_group` (
@@ -1379,7 +1403,7 @@ CREATE TABLE `ps_attribute_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_attribute_group`
+-- Zrzut danych tabeli `ps_attribute_group`
 --
 
 INSERT INTO `ps_attribute_group` (`id_attribute_group`, `is_color_group`, `group_type`, `position`) VALUES
@@ -1390,7 +1414,7 @@ INSERT INTO `ps_attribute_group` (`id_attribute_group`, `is_color_group`, `group
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute_group_lang`
+-- Struktura tabeli dla tabeli `ps_attribute_group_lang`
 --
 
 CREATE TABLE `ps_attribute_group_lang` (
@@ -1401,7 +1425,7 @@ CREATE TABLE `ps_attribute_group_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_attribute_group_lang`
+-- Zrzut danych tabeli `ps_attribute_group_lang`
 --
 
 INSERT INTO `ps_attribute_group_lang` (`id_attribute_group`, `id_lang`, `name`, `public_name`) VALUES
@@ -1412,7 +1436,7 @@ INSERT INTO `ps_attribute_group_lang` (`id_attribute_group`, `id_lang`, `name`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute_group_shop`
+-- Struktura tabeli dla tabeli `ps_attribute_group_shop`
 --
 
 CREATE TABLE `ps_attribute_group_shop` (
@@ -1421,7 +1445,7 @@ CREATE TABLE `ps_attribute_group_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_attribute_group_shop`
+-- Zrzut danych tabeli `ps_attribute_group_shop`
 --
 
 INSERT INTO `ps_attribute_group_shop` (`id_attribute_group`, `id_shop`) VALUES
@@ -1432,7 +1456,7 @@ INSERT INTO `ps_attribute_group_shop` (`id_attribute_group`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute_impact`
+-- Struktura tabeli dla tabeli `ps_attribute_impact`
 --
 
 CREATE TABLE `ps_attribute_impact` (
@@ -1446,7 +1470,7 @@ CREATE TABLE `ps_attribute_impact` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute_lang`
+-- Struktura tabeli dla tabeli `ps_attribute_lang`
 --
 
 CREATE TABLE `ps_attribute_lang` (
@@ -1456,7 +1480,7 @@ CREATE TABLE `ps_attribute_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_attribute_lang`
+-- Zrzut danych tabeli `ps_attribute_lang`
 --
 
 INSERT INTO `ps_attribute_lang` (`id_attribute`, `id_lang`, `name`) VALUES
@@ -1488,7 +1512,7 @@ INSERT INTO `ps_attribute_lang` (`id_attribute`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_attribute_shop`
+-- Struktura tabeli dla tabeli `ps_attribute_shop`
 --
 
 CREATE TABLE `ps_attribute_shop` (
@@ -1497,7 +1521,7 @@ CREATE TABLE `ps_attribute_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_attribute_shop`
+-- Zrzut danych tabeli `ps_attribute_shop`
 --
 
 INSERT INTO `ps_attribute_shop` (`id_attribute`, `id_shop`) VALUES
@@ -1529,7 +1553,7 @@ INSERT INTO `ps_attribute_shop` (`id_attribute`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_authorization_role`
+-- Struktura tabeli dla tabeli `ps_authorization_role`
 --
 
 CREATE TABLE `ps_authorization_role` (
@@ -1538,7 +1562,7 @@ CREATE TABLE `ps_authorization_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_authorization_role`
+-- Zrzut danych tabeli `ps_authorization_role`
 --
 
 INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
@@ -1598,6 +1622,14 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (484, 'ROLE_MOD_MODULE_PS_BANNER_DELETE'),
 (482, 'ROLE_MOD_MODULE_PS_BANNER_READ'),
 (483, 'ROLE_MOD_MODULE_PS_BANNER_UPDATE'),
+(901, 'ROLE_MOD_MODULE_PS_BESTSELLERS_CREATE'),
+(904, 'ROLE_MOD_MODULE_PS_BESTSELLERS_DELETE'),
+(902, 'ROLE_MOD_MODULE_PS_BESTSELLERS_READ'),
+(903, 'ROLE_MOD_MODULE_PS_BESTSELLERS_UPDATE'),
+(909, 'ROLE_MOD_MODULE_PS_CATEGORYPRODUCTS_CREATE'),
+(912, 'ROLE_MOD_MODULE_PS_CATEGORYPRODUCTS_DELETE'),
+(910, 'ROLE_MOD_MODULE_PS_CATEGORYPRODUCTS_READ'),
+(911, 'ROLE_MOD_MODULE_PS_CATEGORYPRODUCTS_UPDATE'),
 (485, 'ROLE_MOD_MODULE_PS_CATEGORYTREE_CREATE'),
 (488, 'ROLE_MOD_MODULE_PS_CATEGORYTREE_DELETE'),
 (486, 'ROLE_MOD_MODULE_PS_CATEGORYTREE_READ'),
@@ -1686,6 +1718,10 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (560, 'ROLE_MOD_MODULE_PS_SOCIALFOLLOW_DELETE'),
 (558, 'ROLE_MOD_MODULE_PS_SOCIALFOLLOW_READ'),
 (559, 'ROLE_MOD_MODULE_PS_SOCIALFOLLOW_UPDATE'),
+(905, 'ROLE_MOD_MODULE_PS_SPECIALS_CREATE'),
+(908, 'ROLE_MOD_MODULE_PS_SPECIALS_DELETE'),
+(906, 'ROLE_MOD_MODULE_PS_SPECIALS_READ'),
+(907, 'ROLE_MOD_MODULE_PS_SPECIALS_UPDATE'),
 (785, 'ROLE_MOD_MODULE_PS_THEMECUSTO_CREATE'),
 (788, 'ROLE_MOD_MODULE_PS_THEMECUSTO_DELETE'),
 (786, 'ROLE_MOD_MODULE_PS_THEMECUSTO_READ'),
@@ -2410,7 +2446,7 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_badge`
+-- Struktura tabeli dla tabeli `ps_badge`
 --
 
 CREATE TABLE `ps_badge` (
@@ -2425,7 +2461,7 @@ CREATE TABLE `ps_badge` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_badge`
+-- Zrzut danych tabeli `ps_badge`
 --
 
 INSERT INTO `ps_badge` (`id_badge`, `id_ps_badge`, `type`, `id_group`, `group_position`, `scoring`, `awb`, `validated`) VALUES
@@ -2558,11 +2594,11 @@ INSERT INTO `ps_badge` (`id_badge`, `id_ps_badge`, `type`, `id_group`, `group_po
 (127, 3, 'feature', 2, 2, 15, 0, 0),
 (128, 4, 'feature', 3, 1, 15, 0, 0),
 (129, 5, 'feature', 3, 2, 15, 0, 0),
-(130, 6, 'feature', 4, 1, 15, 0, 0),
-(131, 7, 'feature', 4, 2, 15, 0, 0),
+(130, 6, 'feature', 4, 1, 15, 0, 1),
+(131, 7, 'feature', 4, 2, 15, 0, 1),
 (132, 8, 'feature', 5, 1, 5, 0, 1),
 (133, 9, 'feature', 5, 2, 10, 0, 1),
-(134, 10, 'feature', 6, 1, 15, 0, 0),
+(134, 10, 'feature', 6, 1, 15, 0, 1),
 (135, 11, 'feature', 6, 2, 10, 0, 1),
 (136, 12, 'feature', 6, 3, 10, 0, 0),
 (137, 13, 'feature', 5, 3, 10, 0, 1),
@@ -2597,7 +2633,7 @@ INSERT INTO `ps_badge` (`id_badge`, `id_ps_badge`, `type`, `id_group`, `group_po
 (166, 42, 'achievement', 12, 4, 20, 0, 0),
 (167, 43, 'achievement', 12, 5, 25, 0, 0),
 (168, 44, 'achievement', 12, 6, 30, 0, 0),
-(169, 45, 'achievement', 13, 1, 5, 0, 0),
+(169, 45, 'achievement', 13, 1, 5, 0, 1),
 (170, 46, 'achievement', 13, 2, 10, 0, 0),
 (171, 47, 'achievement', 13, 3, 15, 0, 0),
 (172, 48, 'achievement', 13, 4, 20, 0, 0),
@@ -2667,7 +2703,7 @@ INSERT INTO `ps_badge` (`id_badge`, `id_ps_badge`, `type`, `id_group`, `group_po
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_badge_lang`
+-- Struktura tabeli dla tabeli `ps_badge_lang`
 --
 
 CREATE TABLE `ps_badge_lang` (
@@ -2679,7 +2715,7 @@ CREATE TABLE `ps_badge_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_badge_lang`
+-- Zrzut danych tabeli `ps_badge_lang`
 --
 
 INSERT INTO `ps_badge_lang` (`id_badge`, `id_lang`, `name`, `description`, `group_name`) VALUES
@@ -2921,7 +2957,7 @@ INSERT INTO `ps_badge_lang` (`id_badge`, `id_lang`, `name`, `description`, `grou
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_carrier`
+-- Struktura tabeli dla tabeli `ps_carrier`
 --
 
 CREATE TABLE `ps_carrier` (
@@ -2949,17 +2985,21 @@ CREATE TABLE `ps_carrier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_carrier`
+-- Zrzut danych tabeli `ps_carrier`
 --
 
 INSERT INTO `ps_carrier` (`id_carrier`, `id_reference`, `id_tax_rules_group`, `name`, `url`, `active`, `deleted`, `shipping_handling`, `range_behavior`, `is_module`, `is_free`, `shipping_external`, `need_range`, `external_module_name`, `shipping_method`, `position`, `max_width`, `max_height`, `max_depth`, `max_weight`, `grade`) VALUES
-(1, 1, 0, '0', '', 1, 0, 0, 0, 0, 1, 0, 0, '', 0, 0, 0, 0, 0, '0.000000', 0),
-(2, 2, 0, 'My carrier', '', 1, 0, 1, 0, 0, 0, 0, 0, '', 0, 1, 0, 0, 0, '0.000000', 0);
+(1, 1, 0, 'jaśniej - sklep z lampami', '', 1, 1, 0, 0, 0, 1, 0, 0, '', 1, 0, 0, 0, 0, '0.000000', 0),
+(2, 2, 0, 'My carrier', '', 1, 1, 1, 0, 0, 0, 0, 0, '', 1, 1, 0, 0, 0, '0.000000', 0),
+(3, 2, 0, 'Kurier DHL', '', 1, 0, 0, 0, 0, 0, 0, 0, '', 2, 1, 0, 0, 0, '0.000000', 0),
+(4, 4, 0, 'Kurier DPD', '', 1, 0, 0, 0, 0, 0, 0, 0, '', 2, 2, 0, 0, 0, '0.000000', 0),
+(5, 1, 0, 'jaśniej - sklep z lampami', '', 1, 1, 0, 0, 0, 1, 0, 0, '', 1, 0, 0, 0, 0, '0.000000', 0),
+(6, 1, 0, 'Jaśniej', '', 1, 0, 0, 0, 0, 1, 0, 0, '', 1, 0, 0, 0, 0, '0.000000', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_carrier_group`
+-- Struktura tabeli dla tabeli `ps_carrier_group`
 --
 
 CREATE TABLE `ps_carrier_group` (
@@ -2968,7 +3008,7 @@ CREATE TABLE `ps_carrier_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_carrier_group`
+-- Zrzut danych tabeli `ps_carrier_group`
 --
 
 INSERT INTO `ps_carrier_group` (`id_carrier`, `id_group`) VALUES
@@ -2977,12 +3017,24 @@ INSERT INTO `ps_carrier_group` (`id_carrier`, `id_group`) VALUES
 (1, 3),
 (2, 1),
 (2, 2),
-(2, 3);
+(2, 3),
+(3, 1),
+(3, 2),
+(3, 3),
+(4, 1),
+(4, 2),
+(4, 3),
+(5, 1),
+(5, 2),
+(5, 3),
+(6, 1),
+(6, 2),
+(6, 3);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_carrier_lang`
+-- Struktura tabeli dla tabeli `ps_carrier_lang`
 --
 
 CREATE TABLE `ps_carrier_lang` (
@@ -2993,17 +3045,21 @@ CREATE TABLE `ps_carrier_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_carrier_lang`
+-- Zrzut danych tabeli `ps_carrier_lang`
 --
 
 INSERT INTO `ps_carrier_lang` (`id_carrier`, `id_shop`, `id_lang`, `delay`) VALUES
 (1, 1, 1, 'Odbiór w sklepie'),
-(2, 1, 1, 'Dostawa następnego dnia!');
+(2, 1, 1, 'Dostawa następnego dnia!'),
+(3, 1, 1, 'Dostawa następnego dnia!'),
+(4, 1, 1, '2 - 3 dni robocze'),
+(5, 1, 1, 'Odbiór w sklepie'),
+(6, 1, 1, 'Odbiór w sklepie');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_carrier_shop`
+-- Struktura tabeli dla tabeli `ps_carrier_shop`
 --
 
 CREATE TABLE `ps_carrier_shop` (
@@ -3012,17 +3068,21 @@ CREATE TABLE `ps_carrier_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_carrier_shop`
+-- Zrzut danych tabeli `ps_carrier_shop`
 --
 
 INSERT INTO `ps_carrier_shop` (`id_carrier`, `id_shop`) VALUES
 (1, 1),
-(2, 1);
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_carrier_tax_rules_group_shop`
+-- Struktura tabeli dla tabeli `ps_carrier_tax_rules_group_shop`
 --
 
 CREATE TABLE `ps_carrier_tax_rules_group_shop` (
@@ -3032,17 +3092,21 @@ CREATE TABLE `ps_carrier_tax_rules_group_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_carrier_tax_rules_group_shop`
+-- Zrzut danych tabeli `ps_carrier_tax_rules_group_shop`
 --
 
 INSERT INTO `ps_carrier_tax_rules_group_shop` (`id_carrier`, `id_tax_rules_group`, `id_shop`) VALUES
 (1, 1, 1),
-(2, 1, 1);
+(2, 1, 1),
+(3, 0, 1),
+(4, 0, 1),
+(5, 1, 1),
+(6, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_carrier_zone`
+-- Struktura tabeli dla tabeli `ps_carrier_zone`
 --
 
 CREATE TABLE `ps_carrier_zone` (
@@ -3051,18 +3115,23 @@ CREATE TABLE `ps_carrier_zone` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_carrier_zone`
+-- Zrzut danych tabeli `ps_carrier_zone`
 --
 
 INSERT INTO `ps_carrier_zone` (`id_carrier`, `id_zone`) VALUES
 (1, 1),
 (2, 1),
-(2, 2);
+(2, 2),
+(3, 1),
+(3, 2),
+(4, 1),
+(5, 1),
+(6, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart`
+-- Struktura tabeli dla tabeli `ps_cart`
 --
 
 CREATE TABLE `ps_cart` (
@@ -3089,7 +3158,7 @@ CREATE TABLE `ps_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cart`
+-- Zrzut danych tabeli `ps_cart`
 --
 
 INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `delivery_option`, `id_lang`, `id_address_delivery`, `id_address_invoice`, `id_currency`, `id_customer`, `id_guest`, `secure_key`, `recyclable`, `gift`, `gift_message`, `mobile_theme`, `allow_seperated_package`, `date_add`, `date_upd`, `checkout_session_data`) VALUES
@@ -3098,12 +3167,13 @@ INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `del
 (3, 1, 1, 2, 'a:1:{i:3;s:2:\"2,\";}', 1, 4, 4, 1, 1, 1, 'b44a6d9efd7a0076a0fbce6b15eaf3b1', 0, 0, '', 0, 0, '2021-10-23 19:40:30', '2021-10-23 19:40:30', NULL),
 (4, 1, 1, 2, 'a:1:{i:3;s:2:\"2,\";}', 1, 4, 4, 1, 1, 1, 'b44a6d9efd7a0076a0fbce6b15eaf3b1', 0, 0, '', 0, 0, '2021-10-23 19:40:30', '2021-10-23 19:40:30', NULL),
 (5, 1, 1, 2, 'a:1:{i:3;s:2:\"2,\";}', 1, 4, 4, 1, 1, 1, 'b44a6d9efd7a0076a0fbce6b15eaf3b1', 0, 0, '', 0, 0, '2021-10-23 19:40:30', '2021-10-23 19:40:30', NULL),
-(6, 1, 1, 1, 'a:1:{i:6;s:2:\"1,\";}', 1, 6, 6, 1, 3, 6, '26e617fba0e83785f1bbc649bac54437', 0, 0, '', 0, 0, '2021-11-09 23:36:22', '2021-11-10 00:11:52', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"99bb59b598f9b98d028754d2793720132ab9908f\"}');
+(6, 1, 1, 1, 'a:1:{i:6;s:2:\"1,\";}', 1, 6, 6, 1, 3, 6, '26e617fba0e83785f1bbc649bac54437', 0, 0, '', 0, 0, '2021-11-09 23:36:22', '2021-11-10 00:11:52', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"99bb59b598f9b98d028754d2793720132ab9908f\"}'),
+(7, 1, 1, 0, '', 1, 7, 7, 1, 4, 9, '363374dfd47ebe4887e3cd3c2c766498', 0, 0, '', 0, 0, '2021-11-13 21:08:08', '2021-11-13 21:11:18', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checkout-payment-step\":{\"step_is_reachable\":false,\"step_is_complete\":false},\"checksum\":\"ca90905e0992206e03459dbf06a14e9239186f6e\"}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_cart_rule`
+-- Struktura tabeli dla tabeli `ps_cart_cart_rule`
 --
 
 CREATE TABLE `ps_cart_cart_rule` (
@@ -3114,7 +3184,7 @@ CREATE TABLE `ps_cart_cart_rule` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_product`
+-- Struktura tabeli dla tabeli `ps_cart_product`
 --
 
 CREATE TABLE `ps_cart_product` (
@@ -3131,7 +3201,7 @@ CREATE TABLE `ps_cart_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule`
+-- Struktura tabeli dla tabeli `ps_cart_rule`
 --
 
 CREATE TABLE `ps_cart_rule` (
@@ -3173,7 +3243,7 @@ CREATE TABLE `ps_cart_rule` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_carrier`
+-- Struktura tabeli dla tabeli `ps_cart_rule_carrier`
 --
 
 CREATE TABLE `ps_cart_rule_carrier` (
@@ -3184,7 +3254,7 @@ CREATE TABLE `ps_cart_rule_carrier` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_combination`
+-- Struktura tabeli dla tabeli `ps_cart_rule_combination`
 --
 
 CREATE TABLE `ps_cart_rule_combination` (
@@ -3195,7 +3265,7 @@ CREATE TABLE `ps_cart_rule_combination` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_country`
+-- Struktura tabeli dla tabeli `ps_cart_rule_country`
 --
 
 CREATE TABLE `ps_cart_rule_country` (
@@ -3206,7 +3276,7 @@ CREATE TABLE `ps_cart_rule_country` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_group`
+-- Struktura tabeli dla tabeli `ps_cart_rule_group`
 --
 
 CREATE TABLE `ps_cart_rule_group` (
@@ -3217,7 +3287,7 @@ CREATE TABLE `ps_cart_rule_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_lang`
+-- Struktura tabeli dla tabeli `ps_cart_rule_lang`
 --
 
 CREATE TABLE `ps_cart_rule_lang` (
@@ -3229,7 +3299,7 @@ CREATE TABLE `ps_cart_rule_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_product_rule`
+-- Struktura tabeli dla tabeli `ps_cart_rule_product_rule`
 --
 
 CREATE TABLE `ps_cart_rule_product_rule` (
@@ -3241,7 +3311,7 @@ CREATE TABLE `ps_cart_rule_product_rule` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_product_rule_group`
+-- Struktura tabeli dla tabeli `ps_cart_rule_product_rule_group`
 --
 
 CREATE TABLE `ps_cart_rule_product_rule_group` (
@@ -3253,7 +3323,7 @@ CREATE TABLE `ps_cart_rule_product_rule_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_product_rule_value`
+-- Struktura tabeli dla tabeli `ps_cart_rule_product_rule_value`
 --
 
 CREATE TABLE `ps_cart_rule_product_rule_value` (
@@ -3264,7 +3334,7 @@ CREATE TABLE `ps_cart_rule_product_rule_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cart_rule_shop`
+-- Struktura tabeli dla tabeli `ps_cart_rule_shop`
 --
 
 CREATE TABLE `ps_cart_rule_shop` (
@@ -3275,7 +3345,7 @@ CREATE TABLE `ps_cart_rule_shop` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_category`
+-- Struktura tabeli dla tabeli `ps_category`
 --
 
 CREATE TABLE `ps_category` (
@@ -3293,7 +3363,7 @@ CREATE TABLE `ps_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_category`
+-- Zrzut danych tabeli `ps_category`
 --
 
 INSERT INTO `ps_category` (`id_category`, `id_parent`, `id_shop_default`, `level_depth`, `nleft`, `nright`, `active`, `date_add`, `date_upd`, `position`, `is_root_category`) VALUES
@@ -3313,7 +3383,7 @@ INSERT INTO `ps_category` (`id_category`, `id_parent`, `id_shop_default`, `level
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_category_group`
+-- Struktura tabeli dla tabeli `ps_category_group`
 --
 
 CREATE TABLE `ps_category_group` (
@@ -3322,7 +3392,7 @@ CREATE TABLE `ps_category_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_category_group`
+-- Zrzut danych tabeli `ps_category_group`
 --
 
 INSERT INTO `ps_category_group` (`id_category`, `id_group`) VALUES
@@ -3364,7 +3434,7 @@ INSERT INTO `ps_category_group` (`id_category`, `id_group`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_category_lang`
+-- Struktura tabeli dla tabeli `ps_category_lang`
 --
 
 CREATE TABLE `ps_category_lang` (
@@ -3380,7 +3450,7 @@ CREATE TABLE `ps_category_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_category_lang`
+-- Zrzut danych tabeli `ps_category_lang`
 --
 
 INSERT INTO `ps_category_lang` (`id_category`, `id_shop`, `id_lang`, `name`, `description`, `link_rewrite`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
@@ -3400,7 +3470,7 @@ INSERT INTO `ps_category_lang` (`id_category`, `id_shop`, `id_lang`, `name`, `de
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_category_product`
+-- Struktura tabeli dla tabeli `ps_category_product`
 --
 
 CREATE TABLE `ps_category_product` (
@@ -3410,7 +3480,7 @@ CREATE TABLE `ps_category_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_category_product`
+-- Zrzut danych tabeli `ps_category_product`
 --
 
 INSERT INTO `ps_category_product` (`id_category`, `id_product`, `position`) VALUES
@@ -4097,7 +4167,7 @@ INSERT INTO `ps_category_product` (`id_category`, `id_product`, `position`) VALU
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_category_shop`
+-- Struktura tabeli dla tabeli `ps_category_shop`
 --
 
 CREATE TABLE `ps_category_shop` (
@@ -4107,7 +4177,7 @@ CREATE TABLE `ps_category_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_category_shop`
+-- Zrzut danych tabeli `ps_category_shop`
 --
 
 INSERT INTO `ps_category_shop` (`id_category`, `id_shop`, `position`) VALUES
@@ -4127,7 +4197,7 @@ INSERT INTO `ps_category_shop` (`id_category`, `id_shop`, `position`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms`
+-- Struktura tabeli dla tabeli `ps_cms`
 --
 
 CREATE TABLE `ps_cms` (
@@ -4139,20 +4209,19 @@ CREATE TABLE `ps_cms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms`
+-- Zrzut danych tabeli `ps_cms`
 --
 
 INSERT INTO `ps_cms` (`id_cms`, `id_cms_category`, `position`, `active`, `indexation`) VALUES
 (1, 1, 0, 1, 0),
 (2, 1, 1, 1, 0),
 (3, 1, 2, 1, 0),
-(4, 1, 3, 1, 0),
-(5, 1, 4, 1, 0);
+(4, 1, 3, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_category`
+-- Struktura tabeli dla tabeli `ps_cms_category`
 --
 
 CREATE TABLE `ps_cms_category` (
@@ -4166,7 +4235,7 @@ CREATE TABLE `ps_cms_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms_category`
+-- Zrzut danych tabeli `ps_cms_category`
 --
 
 INSERT INTO `ps_cms_category` (`id_cms_category`, `id_parent`, `level_depth`, `active`, `date_add`, `date_upd`, `position`) VALUES
@@ -4177,7 +4246,7 @@ INSERT INTO `ps_cms_category` (`id_cms_category`, `id_parent`, `level_depth`, `a
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_category_lang`
+-- Struktura tabeli dla tabeli `ps_cms_category_lang`
 --
 
 CREATE TABLE `ps_cms_category_lang` (
@@ -4193,7 +4262,7 @@ CREATE TABLE `ps_cms_category_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms_category_lang`
+-- Zrzut danych tabeli `ps_cms_category_lang`
 --
 
 INSERT INTO `ps_cms_category_lang` (`id_cms_category`, `id_lang`, `id_shop`, `name`, `description`, `link_rewrite`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
@@ -4204,7 +4273,7 @@ INSERT INTO `ps_cms_category_lang` (`id_cms_category`, `id_lang`, `id_shop`, `na
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_category_shop`
+-- Struktura tabeli dla tabeli `ps_cms_category_shop`
 --
 
 CREATE TABLE `ps_cms_category_shop` (
@@ -4213,7 +4282,7 @@ CREATE TABLE `ps_cms_category_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms_category_shop`
+-- Zrzut danych tabeli `ps_cms_category_shop`
 --
 
 INSERT INTO `ps_cms_category_shop` (`id_cms_category`, `id_shop`) VALUES
@@ -4224,7 +4293,7 @@ INSERT INTO `ps_cms_category_shop` (`id_cms_category`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_lang`
+-- Struktura tabeli dla tabeli `ps_cms_lang`
 --
 
 CREATE TABLE `ps_cms_lang` (
@@ -4240,20 +4309,20 @@ CREATE TABLE `ps_cms_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms_lang`
+-- Zrzut danych tabeli `ps_cms_lang`
 --
 
 INSERT INTO `ps_cms_lang` (`id_cms`, `id_lang`, `id_shop`, `meta_title`, `head_seo_title`, `meta_description`, `meta_keywords`, `content`, `link_rewrite`) VALUES
-(1, 1, 1, 'Dostawa', NULL, 'Our terms and conditions of delivery', 'conditions, delivery, delay, shipment, pack', '<h2>Shipments and returns</h2>\n<h3>Your pack shipment</h3>\n<p>Packages are generally dispatched within 2 days after receipt of payment and are shipped via UPS with tracking and drop-off without signature. If you prefer delivery by UPS Extra with required signature, an additional cost will be applied, so please contact us before choosing this method. Whichever shipment choice you make, we will provide you with a link to track your package online.</p>\n<p>Shipping fees include handling and packing fees as well as postage costs. Handling fees are fixed, whereas transport fees vary according to total weight of the shipment. We advise you to group your items in one order. We cannot group two distinct orders placed separately, and shipping fees will apply to each of them. Your package will be dispatched at your own risk, but special care is taken to protect fragile objects.<br /><br />Boxes are amply sized and your items are well-protected.</p>', 'delivery'),
-(2, 1, 1, 'Legal Notice', NULL, 'Legal notice', 'notice, legal, credits', '<h2>Legal</h2><h3>Credits</h3><p>Concept and production:</p><p>This Web site was created using <a href=\"http://www.prestashop.com\">PrestaShop</a>&trade; open-source software.</p>', 'legal-notice'),
-(3, 1, 1, 'Terms and conditions of use', NULL, 'Our terms and conditions of use', 'conditions, terms, use, sell', '<h2>Your terms and conditions of use</h2><h3>Rule 1</h3><p>Here is the rule 1 content</p>\r\n<h3>Rule 2</h3><p>Here is the rule 2 content</p>\r\n<h3>Rule 3</h3><p>Here is the rule 3 content</p>', 'terms-and-conditions-of-use'),
-(4, 1, 1, 'About us', NULL, 'Learn more about us', 'about us, informations', '<h2>About us</h2>\r\n<h3>Our company</h3><p>Our company</p>\r\n<h3>Our team</h3><p>Our team</p>\r\n<h3>Informations</h3><p>Informations</p>', 'about-us'),
-(5, 1, 1, 'Secure payment', NULL, 'Our secure payment mean', 'secure payment, ssl, visa, mastercard, paypal', '<h2>Secure payment</h2>\r\n<h3>Our secure payment</h3><p>With SSL</p>\r\n<h3>Using Visa/Mastercard/Paypal</h3><p>About this services</p>', 'secure-payment');
+(1, 1, 1, 'Dostawa', '', '', '', '<h3>Dostawa<br /><br />Masz u nas trzy rodzaje dostawy</h3>\n<p>1) Odbiór osobisty w naszym sklepie<br /><br />2) Kurier DHL<br /><br />3) Kurier DPD</p>', 'dostawa'),
+(2, 1, 1, 'Polityka Cookies', '', '', '', '\n<h5 style=\"margin-top:0px;margin-bottom:15px;font-weight:300;line-height:1;font-size:4rem;text-transform:uppercase;\">POLITYKA COOKIES</h5>\n\n\n<h2 style=\"margin-top:0px;margin-bottom:1em;font-weight:400;line-height:normal;font-size:1.8rem;text-transform:uppercase;\"></h2>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">1. Serwis zbiera w sposób automatyczny tylko informacje zawarte w plikach cookies.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">2. Pliki (cookies) są plikami tekstowymi, które przechowywane są w urządzeniu końcowym użytkownika serwisu. Przeznaczone są do korzystania ze stron serwisu. Przede wszystkim zawierają nazwę strony internetowej swojego pochodzenia, swój unikalny numer, czas przechowywania na urządzeniu końcowym.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">3. Operator serwisu (tu nazwa i ewentualnie adres) jest podmiotem zamieszczającym na urządzeniu końcowym swojego użytkownika pliki cookies oraz mającym do nich dostęp.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">4. Operator serwisu wykorzystuje pliki (cookies) w celu:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">dopasowania zawartości strony internetowej do indywidualnych preferencji użytkownika, przede wszystkim pliki te rozpoznają jego urządzenie, aby zgodnie z jego preferencjami wyświetlić stronę;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">przygotowywania statystyk pomagających poznaniu preferencji i zachowań użytkowników, analiza tych statystyk jest anonimowa i umożliwia dostosowanie zawartości i wyglądu serwisu do panujących trendów, statystyki stosuje się też do oceny popularności strony;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">możliwości logowania do serwisu;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">utrzymania logowania użytkownika na każdej kolejnej stronie serwisu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">5. Serwis stosuje dwa zasadnicze rodzaje plików (cookies) - sesyjne i stałe. Pliki sesyjne są tymczasowe, przechowuje się je do momentu opuszczenia strony serwisu (poprzez wejście na inną stronę, wylogowanie lub wyłączenie przeglądarki). Pliki stałe przechowywane są w urządzeniu końcowym użytkownika do czasu ich usunięcia przez użytkownika lub przez czas wynikający z ich ustawień.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">6. Użytkownik może w każdej chwili dokonać zmiany ustawień swojej przeglądarki, aby zablokować obsługę plików (cookies) lub każdorazowo uzyskiwać informacje o ich umieszczeniu w swoim urządzeniu. Inne dostępne opcje można sprawdzić w ustawieniach swojej przeglądarki internetowej. Należy pamiętać, że większość przeglądarek domyślnie jest ustawione na akceptację zapisu plików (cookies)w urządzeniu końcowym.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">7. Operator Serwisu informuje, że zmiany ustawień w przeglądarce internetowej użytkownika mogą ograniczyć dostęp do niektórych funkcji strony internetowej serwisu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">8. Pliki (cookies) z których korzysta serwis (zamieszczane w urządzeniu końcowym użytkownika) mogą być udostępnione jego partnerom oraz współpracującym z nim reklamodawcą.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">9. Informacje dotyczące ustawień przeglądarek internetowych dostępne są w jej menu (pomoc) lub na stronie jej producenta.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;\">10. Bardziej szczegółowe informacje na temat plików (cookies) dostępne są na stronie ciasteczka.org.pl</p>\n', 'polityka-cookies'),
+(3, 1, 1, 'Polityka prywatności', '', '', '', '<h2>RODO</h2>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Szanowni Państwo,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">od dnia 25 maja 2018 r. przy przetwarzaniu danych osobowych należy stosować Rozporządzenie Parlamentu Europejskiego i Rady UE 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">W związku z powyższym chcielibyśmy Państwa poinformować, że dochowaliśmy wszelkich starań, aby zadbać o bezpieczeństwo danych osobowych znajdujących się w naszej bazie bez względu na to czy zostały one pozyskane bezpośrednio od osoby, której dane dotyczą czy też z innych źródeł.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">W świetle powyższego pragniemy poinformować Państwa, że:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Administratorem Państwa danych osobowych jest:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Jaśniej, al.Grunwaldzka 54, 80-241 Gdańsk</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Dane kontaktowe Administratora Bezpieczeństwa Informacji (Inspektora Ochrony Danych) są tożsame z danymi kontaktowymi Administratora wskazanymi jak  wyżej.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Jako administrator przetwarzamy Państwa dane w celach handlowych oraz związanych ze świadczeniem Państwu naszych usług, w tym na potrzeby bieżącego kontaktu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Pozyskane przez Administratora dane osobowe będą przetwarzane w następujących celach:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1.      zawarcie i realizacja umowy (świadczenia usług),</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2.      sprzedaż produktów i usług</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3.      udzielanie odpowiedzi na zapytania, pisma i wnioski;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4.      archiwizacja;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5.      dochodzenie roszczeń;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6.      wypełnianie obowiązku prawnego ciążącego na administratorze (np. ustawa o rachunkowości);</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">7.      oraz zgodnie z treścią udzielonych Administratorowi zgód.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Podstawą prawną przetwarzania Państwa danych jest zgoda osoby, której dane dotyczą udzielona w celu realizacji zawartych umów lub zgoda podjęcia działań na Państwa żądanie przed zawarciem umowy.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Kategorie danych przetwarzanych przez Administratora to:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">adres zamieszkania, adres dostawy, adres e-mail, nr telefonu, nr rachunku bankowego itp. (w tym inne dane niezbędne do realizacji umów).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Dane będą przetwarzane do czasu, w którym ustanie cel, dla którego zostały zebrane lub sprzeciwu, co do przetwarzania danych osobowych, której dane dotyczą, w zależności co nastąpi pierwsze.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Okres przetwarzania Państwa danych osobowych jest uzależniony od celu, w  jakim dane są przetwarzane i może zostać każdorazowo przedłużony o okres przedawnienia roszczeń, jeżeli przetwarzanie danych osobowych będzie niezbędne dla dochodzenia ewentualnych roszczeń lub obrony przed takimi roszczeniami.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">W związku z realizacją naszych celów Państwa dane osobowe mogą być przekazywane następującym podmiotom:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">- naszym podwykonawcom i podmiotom współpracującym oraz kontrahentom,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">- kancelariom prawnym,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">- kancelariom notarialnym,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">- dostawcom rozwiązań informatycznych,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">- firmom kurierskim i pocztowym, które będą dostarczać do Państwa przesyłki,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">- podmiotom lub organom uprawnionym na podstawie przepisów prawa.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Przysługuje Państwu prawo żądania od Administratora dostępu do danych osobowych, ich sprostowania, usunięcia ograniczenia przetwarzania, a także prawo przenoszenia danych i wniesienia sprzeciwu wobec ich przetwarzania, jeśli prawo (np. podatkowe, ubezpieczeniowe itd.) na to pozwala. Ponadto informujemy, że mają Państwo prawo do żądania uzupełnienia niekompletnych danych osobowych poprzez przedstawienie dodatkowego oświadczenia.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Mają Państwo prawo do cofnięcia wyrażonej zgody na przetwarzanie danych osobowych w dowolnym momencie. Wycofanie zgody nie ma wpływu na zgodność z prawem przetwarzania Państwa danych, którego dokonano na podstawie udzielonej zgody przed jej cofnięciem.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Przysługuje Państwu także prawo wniesienia skargi do organu nadzorczego zajmującego się ochroną danych osobowych, gdy uznają Państwo, że przetwarzanie Państwa danych osobowych narusza przepisy Rozporządzenia.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Wszelką korespondencję w sprawach związanych z przetwarzaniem Państwa danych osobowych prosimy kierować na adres administratora z dopiskiem \"Dane osobowe\" lub poprze email: admin@jasniej.pl</p>', 'polityka-prywatnosci');
+INSERT INTO `ps_cms_lang` (`id_cms`, `id_lang`, `id_shop`, `meta_title`, `head_seo_title`, `meta_description`, `meta_keywords`, `content`, `link_rewrite`) VALUES
+(4, 1, 1, 'Regulamin sprzedaży', '', '', '', '<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Rozdział I</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Postanowienia wstępne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 1</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Postanowienia ogólne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Sklep internetowy (e-sklep) jaśniej.com</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">(dalej „Sklep”) prowadzi sprzedaż detaliczną za pośrednictwem Internetu na obszarze Rzeczpospolitej Polskiej, na podstawie niniejszego Regulaminu (dalej „Regulamin”).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Regulamin określa zasady i warunki korzystania ze Sklepu, a także prawa i obowiązki Właściciela Sklepu i Klientów.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Przed rozpoczęcie korzystania ze Sklepu Klient jest zobowiązany zapoznać się z niniejszym Regulaminem, a rozpoczęcie korzystania ze Sklepu jest równoznaczne z akceptacją wszystkich jego postanowień. Regulamin jest integralną częścią umowy sprzedaży zawieranej z Klientem.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Właścicielem Sklepu jest: Jaśniej, al.Grunwaldzka 54, 80-241 Gdańsk admin@jasniej.pl, tel: +48 58 380 00 77, (Działalność gospodarcza zarejstrowana w ewidencji prowadzonej przez Burmistrza miasta Sławno pod numerem SSE-45/2004)</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. Umowy w Sklepie internetowym są zawierane w języku polskim.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6. Wszystkie produkty oferowane w Sklepie są nowe.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">7. Zamieszczone w Sklepie zdjęcia towarów mogą odbiegać kolorystycznie od kolorów rzeczywistych towaru z uwagi na różną konfigurację sprzętu komputerowego Klientów.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 2</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Definicje</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Na potrzeby niniejszego Regulaminu poniższe pojęcia oznaczają:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) Regulamin – niniejszy regulamin działalności Sklepu internetowego,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) Sprzedawca – właściciel Sklepu,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">c) Sklep – prowadzony przez Sprzedawcę serwis sprzedaży on-line, dostępny dla Klientów, w ramach którego Klient ma możliwość nabywania Towarów. Sklep internetowy dostępny jest na stronie: http://www.jasniej.pl</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">d) Formularz zakupu – skrypt będący częścią sklepu służący do złożenia zamówienia przez Klienta,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">e) Towar – produkt/y oferowany/e Klientowi przez Sprzedawcę za pośrednictwem Sklepu internetowego,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">f) Klient – osoba fizyczna, która ukończyła 18 lat i jest zdolna do zawierania wiążących umów lub osoba prawna bądź inny podmiot zdolny do zawierania umów.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">g) Konsument – osoba fizyczna dokonująca z przedsiębiorcą czynności prawnej – zakupu – niezwiązanego bezpośrednio z prowadzoną przez nią działalnością gospodarczą lub zawodową.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 3</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Wymagania techniczne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Do współpracy z systemem teleinformatycznym Sprzedawcy wymagane jest posiadanie przez Klienta urządzenia podłączonego do Internetu z zainstalowaną dowolną przeglądarką internetową obsługującą stronę kodową UFT-8 (i ewentualnie arkuszami stylów, dzięki czemu portal sklepu internetowego będzie wyglądał przejrzyście); nie jest wymagane instalowanie dodatkowych rozszerzeń lub wtyczek.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Do dokonania zakupów w Sklepie wymagane jest posiadanie przez Klienta aktywnego konta poczty elektronicznej (skrzynki elektronicznej).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 4</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Ceny i oferty promocyjne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Wszystkie ceny Towarów podane na stronie internetowej Sklepu są cenami brutto (zawierają podatek VAT).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Wiążąca dla stron transakcji jest cena widniejąca przy Towarze w momencie złożenia zamówienia przez Klienta.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Sprzedawca zastrzega, iż produkty umieszczone w kategorii „Promocja” oraz „Wyprzedaż” w oferowanych tam cenach dostępne są do wyczerpania zapasów.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Szczegółowe zasady korzystania z promocji cenowych reguluje Załącznik nr 1 do niniejszego Regulaminu w postaci Regulaminu promocji cenowych.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Rozdział II</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Składanie i realizacja zamówienia</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 1</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Warunki składania zamówień i zawarcie umowy sprzedaży</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Klient, składając zamówienie w Sklepie, jednocześnie oświadcza, że zapoznał się z Regulaminem i akceptuje zawarte w nim postanowienia.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Zamówienia w Sklepie można składać przez całą dobę, we wszystkie dni roku.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Zawartość witryny internetowej Sklepu stanowi zaproszenie do zawarcia umowy w rozumieniu art. 71 Kodeksu cywilnego, a zatem samo złożenie zamówienia przez Klienta nie oznacza natychmiastowego zawarcia umowy.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Zamówienia w Sklepie Klient może składać w następujący sposób:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) poprzez formularz dostępny na stronie internetowej Sklepu,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) e-mailem na adres dostępny na stronie internetowej Sklepu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. W trakcie procesu rejestracji wymagane jest wyrażenie zgody na przechowywanie i przetwarzanie przez Sprzedawcę danych osobowych podanych podczas rejestracji oraz w zamówieniach, zgodnie z przepisami ustawy o ochronie danych osobowych (t.j. Dz.U. z 2014 r. poz. 1182).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6. Klient składa Sprzedawcy zobowiązanie w momencie, kiedy akceptuje zamówienie, klikając ikonę „Zamówienie z obowiązkiem zapłaty”.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">7. Po wysłaniu zamówienia Klient otrzymuje od Sprzedawcy potwierdzenie otrzymania zamówienia czyli e-mail, który potwierdza otrzymanie zamówienia wraz z nadanym mu numerem oraz informacjami, tj.:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– dane Sprzedawcy i poszczególne pozycje zamówienia,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– łączna cena brutto,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– sposób i termin zapłaty,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– sposób i termin realizacji zamówienia,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– prawo odstąpienia od umowy – wzór pouczenia o odstąpieniu od umowy stanowi Załącznik nr 4 do niniejszego Regulaminu,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– informacja konsumencka.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">8. Potwierdzenie otrzymania zamówienia potwierdza fakt, że do Sprzedawcy wpłynęło zamówienie Klienta.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">9. Po przygotowaniu zamówienia i otrzymaniu zapłaty (w przypadku wyboru przez Klienta płatności za pobraniem otrzymanie zapłaty nie jest wymagane) Sprzedawca prześle do Klienta w formie e maila potwierdzenie realizacji zamówienia i rozpocznie wysyłkę zamówienia do Klienta.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">10. Wysyłka potwierdzenia realizacji zamówienia potwierdza zawarcie pomiędzy stronami umowy sprzedaży.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">11. Status zamówienia Klient może śledzić na swoim koncie w zakładce „Zamówienia”.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">12. Zamówienia realizowane będą na adres znajdujący się na terenie</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">(np. Polski)</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">13. Sklep zastrzega sobie możliwość potwierdzenia przyjęcia zamówienia poprzez kontakt telefoniczny lub pocztą elektroniczną oraz weryfikacji danych konsumenta. Sklep zastrzega sobie możliwość anulowania zamówienia w przypadku braku możliwości kontaktu z Klientem.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 2</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Sposób płatności</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Klient ma do wyboru następujące formy płatności:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) przelewem za pośrednictwem usługi płatności paynow,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) zwykłym przelewem na rachunek bankowy, z zastrzeżeniem iż w tytule zapłaty należy podać numer zamówienia,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">c) kartą kredytową za posrednictwem paynow,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Zamówienia nieopłacone  przez Klienta w ciągu 7 dni od chwili złożenia zamówienia będą automatycznie anulowane.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 3</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Termin płatności</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. W razie wyboru płatności przelewem elektronicznym lub kartą kredytową Klient zobowiązany jest zapłacić za produkty i koszt dostawy w terminie 4 dni od dnia przyjęcia zamówienia przez Sprzedawcę.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Za datę zapłaty uznaje się datę uznania rachunku bankowego Sprzedawcy.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. W razie braku zapłaty pełnej ceny w terminie Sprzedawca może anulować zamówienie Klienta, o czym Klient zostanie poinformowany. Jeżeli Klient zapłacił część ceny, Sprzedawca zwraca mu całą wpłaconą kwotę.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Dokonując płatności przelewem elektronicznym, w tytule przelewu należy podać numer zamówienia nadany przez Sprzedawcę.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. W razie niepodania w tytule przelewu numeru zamówienia Sprzedawca podejmuje starania w celu ustalenia tego numeru, w szczególności kontaktuje się z Klientem. W razie niemożliwości ustalenia numeru zamówienia do danego przelewu Sprzedawca zwraca wpłaconą kwotę na rachunek bankowy, z którego został nadany przelew, a zamówienie jest anulowane.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 4</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Realizacja zamówienia</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Sprzedawca oświadcza, iż dołoży wszelkich starań, aby zamówienie Klienta zostało zrealizowane w terminie podanym na karcie zamawianego produktu - „wysyłamy w ciągu:”, licząc od następnego dnia roboczego po otrzymaniu przez Sprzedawcę płatności.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Warunek dokonania płatności nie obowiązuje w sytuacji, gdy Klient dokonuje płatności za pobraniem.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Sprzedawca oświadcza, iż maksymalny termin realizacji zamówienia nie powinien przekroczyć 3 dni, z tym zastrzeżeniem, iż w przypadku chwilowego braku zamówionego Towaru w Sklepie internetowym czas ten może się wydłużyć, jednak nie dłużej niż trzydzieści dni od dnia zawarcia umowy.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. W sytuacji gdy Sprzedawca nie jest w stanie zrealizować całego zamówienia, Klient ma prawo wyboru, czy zrealizuje zamówienie tylko w części, czy rezygnuje z zamówienia.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. Dowodem zakupu dla Klientów będących konsumentami jak i niebędących konsumentami jest faktura VAT.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 5</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Korekta zamówienia</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Korekty do zamówień składane mogą być wyłącznie do momentu wysłania do Klienta potwierdzenia wysyłki ze sklepu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Korekty można dokonać wyłącznie wysyłając e-mail na adres sklep@jasniej.com.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 6</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Sposób i koszty dostawy Towaru</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Klient może wybrać następujące formy dostawy zamówionego towaru:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) odbiór osobisty we wskazanym punkcie/oddziale/salonie Sprzedawcy (po wcześniejszym opłaceniu zamówienia) – bezpłatnie,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) dostawa za pośrednictwem firmy kurierskiej – koszt 15,99 zł</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Koszt dostawy ponosi Klient, chyba że Sprzedawca określi odmiennie w Sklepie.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Przed odebraniem przesyłki od kuriera Klient zobowiązany jest sprawdzić, czy opakowanie nie uległo uszkodzeniu w transporcie. W przypadku, gdy opakowanie przesyłki nosi znamiona uszkodzenia, należy nie przyjmować przesyłki i w obecności kuriera sporządzić protokół szkody oraz skontaktować się jak najszybciej ze Sprzedawcą w celu wyjaśnienia sprawy.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Po odebraniu przesyłki w paczkomacie Klient zobowiązany jest sprawdzić, czy opakowanie nie zostało uszkodzone. Jeśli taka sytuacja zaistniała, Klient zobowiązany jest sprawdzić, czy zawartość przesyłki nie została uszkodzona. Jeśli zawartość jest uszkodzona, Klient powinien złożyć reklamację, kierując się wskazówkami pojawiającymi się na wyświetlaczu paczkomatu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Rozdział III</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Odpowiedzialność za Towar i reklamacje</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 1</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Odpowiedzialność za wady rzeczy</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Sprzedawca jest odpowiedzialny względem Klienta, jeżeli sprzedany towar ma wadę fizyczną (rękojmia).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Wada fizyczna polega na niezgodności rzeczy sprzedanej z umową. W szczególności rzecz sprzedana jest niezgodna z umową, jeżeli:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1) nie ma właściwości, które rzecz tego rodzaju powinna mieć ze względu na cel w umowie oznaczony albo wynikający z okoliczności lub z przeznaczenia;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2) nie ma właściwości, o których istnieniu sprzedawca zapewnił kupującego, w tym przedstawiając próbkę lub wzór;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3) nie nadaje się do celu, o którym kupujący poinformował sprzedawcę przy zawarciu umowy, a sprzedawca nie zgłosił zastrzeżenia co do takiego jej przeznaczenia;</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4) została kupującemu wydana w stanie niezupełnym.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Sprzedawca odpowiada za niezgodność towaru z umową jedynie w przypadku jej stwierdzenia przed upływem dwóch lat od wydania tego Towaru Klientowi. Termin ten biegnie na nowo w razie wymiany produktu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. W razie niezgodności towaru z umową Klient najpóźniej w terminie roku od dnia stwierdzenia tej niezgodności jest zobowiązany wysłać zawiadomienie (oświadczenie) o stwierdzonej niezgodności na adres Sprzedawcy, wskazany w Rozdziale 1 § 1 Regulaminu. Dla zachowania terminu wystarczy wysłanie zawiadomienia (oświadczenia) przed jego upływem. Klient zobowiązany jest sporządzić na piśmie opis stwierdzonej niezgodności Towaru z umową oraz wskazać zakres roszczenia (patrz pkt 5).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. Jeżeli rzecz sprzedana ma wadę, Klient może:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) żądać wymiany rzeczy na wolną od wad,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) żądać usunięcia wady,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">c) żądać obniżenia ceny,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">d) odstąpić od umowy, chyba że Sprzedawca niezwłocznie i bez nadmiernych niedogodności dla Klienta wymieni rzecz wadliwą na wolną od wad albo wadę usunie.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6. Sprzedawca jest obowiązany – na swój koszt – wymienić rzecz wadliwą na wolną od wad albo usunąć wadę w rozsądnym czasie bez nadmiernych niedogodności dla Klienta. Przyjmuje się, iż termin ten wynosi do 14 dni.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. W przypadku stwierdzenia wad lub niezgodności Towaru z umową Klient może złożyć reklamację </p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">e-mailem: admin@jasniej.pl lub wysłać na koszt Sprzedawcy reklamowany Towar </p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">na adres: Jasniej, al.Grunwaldzka 54, 80-241 Gdańsk</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6. Klient odsyłający reklamowany Towar do Sprzedawcy jest zobowiązany do załączenia pisemnego oświadczenia zawierającego następujące dane: dane reklamującego – imię i nazwisko, dokładny adres zamieszkania oraz adres e-mail, datę nabycia Towaru, nazwę Towaru, cenę nabycia, dokładnie opisaną wadę oraz okoliczności jej powstania, żądania reklamującego. Składając reklamację, Klient zobowiązany jest również do załączenia dowodu sprzedaży – najlepiej oryginału lub kopii paragonu lub faktury VAT lub innego niebudzącego wątpliwości dowodu zakupu. Gotowy formularz reklamacyjny stanowi Załącznik nr 2 do niniejszego Regulaminu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">7. W przypadku jakichkolwiek wątpliwości związanych z procedurą składania reklamacji Klient może uzyskać wskazówki, dzwoniąc pod numer telefonu +48 58 555 04 45 (koszt połączenia jak za połączenia lokalne).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 2</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Odstąpienie od umowy konsumenta</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Zgodnie z art. 27 ustawy z dnia 30 maja 2014 r. o prawach konsumenta (Dz.U. poz. 827) Klient będący konsumentem, który zakupił towar na odległość – za pośrednictwem sklepu internetowego – ma prawo do odstąpienia od umowy bez podawania przyczyn w terminie 14 dni (do zachowania terminu wystarczy wysłanie oświadczenia przed jego upływem).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Termin do odstąpienia od umowy wygasa po upływie 14 dni od dnia, w którym weszli Państwo w posiadanie ostatniej z rzeczy lub w którym osoba trzecia inna niż przewoźnik i wskazana przez Państwa weszła w posiadanie ostatniej z rzeczy.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Zwracany Towar nie może nosić śladów korzystania poza koniecznymi do stwierdzenia charakteru, cech i funkcjonalności Towaru.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Wzór formularza odstąpienia od umowy dostępny jest na stronie sklepu: <a href=\"https://jasniej.com/content/2-wzor-formularza-odstapienia-od-umowy\" style=\"color:#212121;background-color:transparent;\">https://jasniej.pl/</a></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4.Oświadczenie można złożyć na kilka sposobów:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Wysyłając oświadczenie drogą pocztową na adres: Jaśniej, al.Grunwaldzka 54, 80-241 Gdańsk.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Wysyłając wiadomość e-mail na adres admin@jasniej.pl</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\"></p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. Konsument ma obowiązek zwrócić towar Sprzedawcy – na swój koszt – niezwłocznie, jednak nie później niż 14 dni od dnia, w którym odstąpił od umowy (do zachowania terminu wystarczy odesłanie towaru przed jego upływem).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6. Sprzedawca ma obowiązek niezwłocznie, nie później niż w terminie 14 dni od otrzymania oświadczenia konsumenta o odstąpieniu od umowy, zwrócić konsumentowi wszystkie dokonane przez niego płatności, w tym koszty dostarczenia (Sprzedawca zwraca najtańszy oferowany w Sklepie koszt dostarczenia Towaru).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">7. Jeżeli Klient wraz z oświadczeniem o odstąpieniu nie odesłał Towaru, Sprzedawca wstrzymuje się do zwrotu dokonanych przez Klienta płatności do dnia otrzymania Towaru.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">8. Klient może przesłać zwracany Towar na swój koszt na adres: Jaśniej, al.Grunwaldzka 54, 80-241 Gdańsk.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">9. Prosimy o odsyłanie Towaru w miarę możliwości w oryginalnym nieuszkodzonym opakowaniu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">10. Zwrot należności nastąpi w takiej formie, w jakiej dokonywany był zakup: konto bankowe lub na kartę, a w przypadku zakupu za pobraniem – na wskazane przez Klienta konto.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">11. Przesyłki ze zwracanym Towarem nadane za pobraniem lub na koszt odbiorcy (Sprzedawcy) nie będą przyjmowane.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">12. Kupującemu nie przysługuje prawo odstąpienia od umowy w przypadku towaru w postaci nagrań dźwiękowych lub wizualnych albo programów komputerowych dostarczonych w zapieczętowanym opakowaniu, jeśli opakowanie to zostało otwarte po dostarczeniu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 3</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Gwarancja przy sprzedaży</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Rozdział IV</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Postanowienia wspólne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 1</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Ochrona danych osobowych</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Sprzedawca gwarantuje poufność wszelkich udostępnionych mu danych osobowych.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Dane osobowe umieszczone w bazie danych Sprzedawcy są przetwarzane wyłącznie w celu realizacji zamówienia i są to:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) imię i nazwisko,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) adres korespondencyjny,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">c) numer telefonu,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">d) adres e-mail,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">e) informacje zawarte w logach systemowych – w celach technicznych i statystycznych,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">f) w przypadku uzyskania przez administratora wiadomości o korzystaniu przez użytkownika z usługi świadczonej drogą elektroniczną niezgodnie z regulaminem lub z obowiązującymi przepisami (niedozwolone korzystanie) administrator może przetwarzać dane osobowe użytkownika w zakresie niezbędnym do ustalenia odpowiedzialności użytkownika.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Składając zamówienie, Klient wyraża zgodę na przetwarzanie i wykorzystywanie jego danych osobowych w celu realizacji zamówienia, w szczególności na przekazanie jego danych osobowych firmie kurierskiej w celu realizacji wybranej przez Klienta formy wysyłki Towaru.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Dane osobowe mogą zostać udostępnione jedynie w celu realizacji wybranej formy wysyłki.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">5. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione, a ich przetwarzanie odbywa się w zgodzie oraz na warunkach określonych szczegółowo w:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) ustawie z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (t.j. Dz.U. z 2013 r. poz. 1422);</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) ustawie z dnia 29 sierpnia 1997 r. o ochronie danych osobowych (t.j. Dz.U. z 2014 r. poz. 1182);</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">c) rozporządzeniu Ministra Spraw Wewnętrznych i Administracji z dnia 29 kwietnia 2004 r. w sprawie dokumentacji przetwarzania danych osobowych oraz warunków technicznych i organizacyjnych, jakim powinny odpowiadać urządzenia i systemy informatyczne służące do przetwarzania danych osobowych (Dz.U. Nr 100, poz. 1024);</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">d) innych aktach prawa powszechnie obowiązującego.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">6. Klientowi przysługują prawa określone w aktach prawnych, o których mowa w ust. 6, w tym w szczególności do:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">a) wglądu do swoich danych osobowych,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">b) żądania uzupełnienia, uaktualnienia, sprostowania danych osobowych, czasowego lub stałego wstrzymania ich przetwarzania lub ich usunięcia, jeżeli są one niekompletne, nieaktualne, nieprawdziwe lub zostały zebrane z naruszeniem ustawy albo są już zbędne do realizacji celu, dla którego zostały zebrane.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 2</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Prawa autorskie i pokrewne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Wszelkie treści zamieszczane w Sklepie, łącznie z tekstami, zdjęciami, grafiką, plikami audio i wideo są własnością Sprzedawcy, jeśli wyraźnie nie stwierdzono inaczej.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Treści te są chronione prawem autorskim i bez zgody właściciela mogą być używane jedynie do osobistego użytku, nie mogą być publicznie wykorzystywane w jakikolwiek sposób bez pisemnej zgody właściciela, powielane, zmieniane itp.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Bezprawne użycie zastrzeżonego logo i nazwy Sprzedawcy jest zabronione.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Sprzedawca ostrzega, że naruszenie praw autorskich i innych będzie ścigane na drodze cywilnej lub karnej.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 3</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Polityka cookies</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Sklep posługuje się tzw. plikami cookies (ciasteczka).</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Pliki te są zapisywane na komputerze Klienta przez serwer Sprzedawcy i dostarczają danych statystycznych o aktywności Klienta, w celu dobrania naszej oferty do jego indywidualnych potrzeb i zainteresowań.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Oprogramowanie Sklepu zapisuje informacje w plikach cookies dotyczących następujących obszarów:</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– informacje na temat sesji,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">– ostatnio oglądane produkty,</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">4. Klient w każdej chwili może wyłączyć w swojej przeglądarce internetowej opcję przyjmowania cookies, choć musi mieć świadomość, że w niektórych przypadkach odłączenie tych plików może wpłynąć na utrudnienia w korzystaniu z oferty Sklepu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 4</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Wyłączenie odpowiedzialności</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Na stronie internetowej Sprzedawcy znajdują się hiperłącza do innych stron internetowych. Sprzedawca nie ponosi odpowiedzialności za treści zamieszczone na tych stronach i ich niezgodność z obowiązującym prawem.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Korzystanie z serwisu i pobieranie plików odbywa się na odpowiedzialność Klienta.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Rozdział V</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Postanowienia końcowe</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 1</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Postanowienia ogólne</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Regulamin jest częścią zawieranej przez Sprzedawcę oraz Klienta umowy sprzedaży.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Prawem właściwym dla umów sprzedaży pomiędzy Klientem a Sprzedawcą na warunkach określonych w Regulaminie jest prawo polskie.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">3. Wszelkie spory wynikłe w związku z realizowaniem umów sprzedaży między Sprzedawcą a Klientem będą rozstrzygane w pierwszej kolejności na drodze negocjacji, z intencją polubownego zakończenia sporu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">§ 2</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">Wejście w życie i zmiany Regulaminu</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">1. Regulamin wchodzi w życie z dniem publikacji na stronie internetowej Sklepu.</p>\n<p style=\"margin:0px 0px 1.4em;line-height:1.4;color:#212121;font-family:\'Open Sans\', sans-serif;font-size:14px;text-align:justify;background-color:#ffffff;\">2. Sklep zastrzega sobie możliwość zmian w Regulaminie, które wchodzą w życie z dniem ich publikacji na stronie internetowej Sklepu. Do umów zawartych przed zmianą Regulaminu stosuje się wersję Regulaminu obowiązującą w dacie złożenia Zamówienia przez Klienta. Nowa treść Regulaminu obowiązywać będzie Klienta po zaakceptowaniu przez niego zmian, o których został powiadomiony.</p>', 'regulamin-sprzedazy');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_role`
+-- Struktura tabeli dla tabeli `ps_cms_role`
 --
 
 CREATE TABLE `ps_cms_role` (
@@ -4263,7 +4332,7 @@ CREATE TABLE `ps_cms_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms_role`
+-- Zrzut danych tabeli `ps_cms_role`
 --
 
 INSERT INTO `ps_cms_role` (`id_cms_role`, `name`, `id_cms`) VALUES
@@ -4273,7 +4342,7 @@ INSERT INTO `ps_cms_role` (`id_cms_role`, `name`, `id_cms`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_role_lang`
+-- Struktura tabeli dla tabeli `ps_cms_role_lang`
 --
 
 CREATE TABLE `ps_cms_role_lang` (
@@ -4286,7 +4355,7 @@ CREATE TABLE `ps_cms_role_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_cms_shop`
+-- Struktura tabeli dla tabeli `ps_cms_shop`
 --
 
 CREATE TABLE `ps_cms_shop` (
@@ -4295,20 +4364,19 @@ CREATE TABLE `ps_cms_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_cms_shop`
+-- Zrzut danych tabeli `ps_cms_shop`
 --
 
 INSERT INTO `ps_cms_shop` (`id_cms`, `id_shop`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
-(4, 1),
-(5, 1);
+(4, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_condition`
+-- Struktura tabeli dla tabeli `ps_condition`
 --
 
 CREATE TABLE `ps_condition` (
@@ -4327,260 +4395,260 @@ CREATE TABLE `ps_condition` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_condition`
+-- Zrzut danych tabeli `ps_condition`
 --
 
 INSERT INTO `ps_condition` (`id_condition`, `id_ps_condition`, `type`, `request`, `operator`, `value`, `result`, `calculation_type`, `calculation_detail`, `validated`, `date_add`, `date_upd`) VALUES
-(1, 1, 'configuration', 'PS_REWRITING_SETTINGS', '==', '1', '1', 'hook', 'actionAdminMetaControllerUpdate_optionsAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(2, 2, 'configuration', 'PS_SMARTY_FORCE_COMPILE', '!=', '2', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(3, 3, 'configuration', 'PS_CSS_THEME_CACHE', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(4, 4, 'configuration', 'PS_CIPHER_ALGORITHM', '==', '1', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(5, 5, 'configuration', 'PS_MEDIA_SERVERS', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(6, 6, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '0', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:55', '2021-11-13 13:13:42'),
-(7, 7, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:55', '2021-11-13 13:13:42'),
-(8, 8, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '0', '0', 'hook', 'actionObjectCarrierAddAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(9, 9, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '1', '0', 'hook', 'actionObjectCarrierAddAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(10, 10, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '0', '5', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(11, 11, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9', '10', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(12, 12, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99', '100', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(13, 13, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '999', '679', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-10 23:36:55', '2021-11-11 01:06:29'),
-(14, 14, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9999', '679', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-10 23:36:55', '2021-11-11 01:06:29'),
-(15, 15, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99999', '679', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-10 23:36:55', '2021-11-11 01:06:29'),
-(16, 16, 'configuration', 'PS_SHOP_PHONE', '!=', '0', '', 'hook', 'actionAdminStoresControllerUpdate_optionsAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(17, 17, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '2', '3', 'hook', 'actionObjectContactAddAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(18, 18, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '4', '3', 'hook', 'actionObjectContactAddAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(19, 19, 'install', '', '>', '0', '1', 'time', '1', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(20, 20, 'install', '', '>=', '7', '1', 'time', '1', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(21, 21, 'configuration', 'PS_LOGO', '!=', 'logo.jpg', '1', 'hook', 'actionAdminThemesControllerUpdate_optionsAfter', 1, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(22, 22, 'sql', 'SELECT COUNT(*) FROM PREFIX_theme WHERE directory != \"default\" AND directory != \"prestashop\" AND directory ! \"default-bootstrap\"', '>', '0', '0', 'hook', 'actionObjectShopUpdateAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(23, 23, 'configuration', 'PS_LOGGED_ON_ADDONS', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:55', '2021-11-13 12:36:14'),
-(24, 24, 'configuration', 'PS_MULTISHOP_FEATURE_ACTIVE', '==', '1', '', 'hook', 'actionAdminPreferencesControllerUpdate_optionsAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(25, 25, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '1', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(26, 26, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '4', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(27, 27, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '5', '1', 'hook', 'actionObjectShopGroupAddAfter 	', 0, '2021-11-10 23:36:55', '2021-11-10 23:36:55'),
-(28, 28, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '1', '1', 'hook', 'actionObjectShopGroupAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(29, 29, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '2', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(30, 30, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '2', '0', 'hook', 'actionObjectCarrierAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(31, 31, 'sql', 'SELECT SUM(total_paid_tax_excl / c.conversion_rate)\r\nFROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '200', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(32, 32, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '2000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(33, 33, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '20000', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(34, 34, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '200000', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(35, 35, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '2000000', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(36, 36, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '20000000', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(37, 37, 'install', '', '>=', '30', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(38, 38, 'install', '', '>=', '182', '', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(39, 39, 'install', '', '>=', '365', '', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(40, 40, 'install', '', '>=', '730', '', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(41, 41, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10', '7', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(42, 42, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100', '7', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(43, 43, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000', '7', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(44, 44, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10000', '6', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(45, 45, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100000', '7', 'time', '3', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(46, 46, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000000', '5', 'time', '4', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(47, 47, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '2', '1', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(48, 48, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10', '1', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(49, 49, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100', '1', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(50, 50, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '1000', '1', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(51, 51, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10000', '0', 'time', '4', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(52, 52, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100000', '0', 'time', '8', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(53, 53, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1', '1', 'hook', 'actionObjectOrderAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(54, 54, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10', '1', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(55, 55, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100', '1', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(56, 56, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1000', '1', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(57, 57, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10000', '1', 'time', '4', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(58, 58, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100000', '1', 'time', '8', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(59, 59, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1', '1', 'hook', 'actionObjectCustomerAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(60, 60, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10', '2', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(61, 61, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100', '2', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(62, 62, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(63, 63, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10000', '2', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(64, 64, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100000', '1', 'time', '4', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(65, 65, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(66, 66, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(67, 67, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(68, 68, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1000', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(69, 69, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10000', '0', 'time', '4', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(70, 70, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100000', '0', 'time', '8', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(71, 76, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"CA\",\r\n\"GL\",\r\n\"PM\",\r\n\"US\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(72, 79, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"UM\",\r\n\"AS\",\r\n\"AU\",\r\n\"CK\",\r\n\"FJ\",\r\n\"FM\",\r\n\"GU\",\r\n\"KI\",\r\n\"MH,\"\r\n\"MP\",\r\n\"NC\",\r\n\"NF\",\r\n\"NR\",\r\n\"NU\",\r\n\"NZ\",\r\n\"PF\",\r\n\"PG\",\r\n\"PN\",\r\n\"PW\",\r\n\"SB\",\r\n\"TK\",\r\n\"TO\",\r\n\"TV\",\r\n\"VU\",\r\n\"WF\",\r\n\"WS\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(73, 85, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"KG\",\r\n\"KZ\",\r\n\"TJ\",\r\n\"TM\",\r\n\"UZ\",\r\n\"AE\",\r\n\"AM\",\r\n\"AZ\",\r\n\"BH\",\r\n\"CY\",\r\n\"GE\",\r\n\"IL\",\r\n\"IQ\",\r\n\"IR\",\r\n\"JO\",\r\n\"KW\",\r\n\"LB\",\r\n\"OM\",\r\n\"QA\",\r\n\"SA\",\r\n\"SY\",\r\n\"TR\",\r\n\"YE\",\r\n\"AF\",\r\n\"BD\",\r\n\"BT\",\r\n\"IN\",\r\n\"IO\",\r\n\"LK\",\r\n\"MV\",\r\n\"NP\",\r\n\"PK\",\r\n\"CN\",\r\n\"HK\",\r\n\"JP\",\r\n\"KP\",\r\n\"KR\",\r\n\"MO\",\r\n\"TW\",\r\n\"MN\",\r\n\"BN\",\r\n\"CC\",\r\n\"CX\",\r\n\"ID\",\r\n\"KH\",\r\n\"LA\",\r\n\"MM\",\r\n\"MY\",\r\n\"PH\",\r\n\"SG\",\r\n\"TH\",\r\n\"TP\",\r\n\"VN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(74, 86, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BZ\",\r\n\"CR\",\r\n\"GT\",\r\n\"HN\",\r\n\"MX\",\r\n\"NI\",\r\n\"PA\",\r\n\"SV\",\r\n\"AG\",\r\n\"AI\",\r\n\"AN\",\r\n\"AW\",\r\n\"BB\",\r\n\"BM\",\r\n\"BS\",\r\n\"CU\",\r\n\"DM\",\r\n\"DO\",\r\n\"GD\",\r\n\"GP\",\r\n\"HT\",\r\n\"JM\",\r\n\"KN\",\r\n\"KY\",\r\n\"LC\",\r\n\"MQ\",\r\n\"MS\",\r\n\"PR\",\r\n\"TC\",\r\n\"TT\",\r\n\"VC\",\r\n\"VG\",\r\n\"VI\",\r\n\"AR\",\r\n\"BO\",\r\n\"BR\",\r\n\"CL\",\r\n\"CO\",\r\n\"EC\",\r\n\"FK\",\r\n\"GF\",\r\n\"GY\",\r\n\"PE\",\r\n\"PY\",\r\n\"SR\",\r\n\"UY\",\r\n\"VE\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(75, 87, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BE\",\r\n\"DE\",\r\n\"FR\",\r\n\"FX\",\r\n\"GB\",\r\n\"IE\",\r\n\"LU\",\r\n\"MC\",\r\n\"NL\",\r\n\"IT\",\r\n\"MT\",\r\n\"SM\",\r\n\"VA\",\r\n\"AD\",\r\n\"ES\",\r\n\"GI\",\r\n\"PT\",\r\n\"BY\",\r\n\"EE\",\r\n\"LT\",\r\n\"LV\",\r\n\"MD\",\r\n\"PL\",\r\n\"UA\",\r\n\"AL\",\r\n\"BA\",\r\n\"BG\",\r\n\"GR\",\r\n\"HR\",\r\n\"MK\",\r\n\"RO\",\r\n\"SI\",\r\n\"YU\",\r\n\"RU\",\r\n\"AT\",\r\n\"CH\",\r\n\"CZ\",\r\n\"HU\",\r\n\"LI\",\r\n\"SK\",\r\n\"DK\",\r\n\"FI\",\r\n\"FO\",\r\n\"IS\",\r\n\"NO\",\r\n\"SE\",\r\n\"SJ\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(76, 88, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BI\",\r\n\"CF\",\r\n\"CG\",\r\n\"RW\",\r\n\"TD\",\r\n\"ZR\",\r\n\"DJ\",\r\n\"ER\",\r\n\"ET\",\r\n\"KE\",\r\n\"SO\",\r\n\"TZ\",\r\n\"UG\",\r\n\"KM\",\r\n\"MG\",\r\n\"MU\",\r\n\"RE\",\r\n\"SC\",\r\n\"YT\",\r\n\"AO\",\r\n\"BW\",\r\n\"LS\",\r\n\"MW\",\r\n\"MZ\",\r\n\"NA\",\r\n\"SZ\",\r\n\"ZA\",\r\n\"ZM\",\r\n\"ZW\",\r\n\"BF\",\r\n\"BJ\",\r\n\"CI\",\r\n\"CM\",\r\n\"CV\",\r\n\"GA\",\r\n\"GH\",\r\n\"GM\",\r\n\"GN\",\r\n\"GQ\",\r\n\"GW\",\r\n\"LR\",\r\n\"ML\",\r\n\"MR\",\r\n\"NE\",\r\n\"NG\",\r\n\"SL\",\r\n\"SN\",\r\n\"ST\",\r\n\"TG\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(77, 89, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"DZ\",\r\n\"EG\",\r\n\"EH\",\r\n\"LY\",\r\n\"MA\",\r\n\"SD\",\r\n\"TN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(78, 90, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '2', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(79, 91, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '3', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(80, 92, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '5', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(81, 93, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '10', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(82, 94, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '20', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(83, 95, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '40', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(84, 96, 'sql', 'SELECT id_image FROM PREFIX_image WHERE id_image > 26', '>', '0', '27', 'hook', 'actionObjectImageAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(85, 97, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50', '60', 'hook', 'actionObjectImageAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(86, 98, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '100', '101', 'hook', 'actionObjectImageAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(87, 99, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '1000', '1659', 'time', '2', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(88, 100, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '10000', '1659', 'time', '4', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(89, 101, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50000', '1659', 'time', '8', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(90, 102, 'sql', 'SELECT id_cms FROM PREFIX_cms WHERE id_cms > 5', '>', '0', '6', 'hook', 'actionObjectCMSAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(91, 103, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(92, 104, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '10', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(93, 105, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '100', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(94, 106, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(95, 107, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '500', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(96, 108, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '5000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(97, 109, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1', '0', 'hook', 'newOrder', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(98, 110, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(99, 111, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '100', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(100, 112, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(101, 113, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(102, 114, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '5000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(103, 132, 'sql', 'SELECT count(id_configuration) FROM PREFIX_configuration WHERE `name` = \'PS_SHOP_DOMAIN\' AND value IN (\'127.0.0.1\', \'localhost\' )', '==', '1', '1', 'time', '1', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(104, 136, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ebay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(105, 140, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%moneybookers%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(106, 142, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypal%\"', '>=', '1', '1', 'hook', 'actionModuleInstallAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(107, 158, 'install', '', '>=', '90', '', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(108, 159, 'install', '', '<=', '90', '1', 'time', '2', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(109, 165, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '0', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(110, 166, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '1', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(111, 167, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '4', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(112, 168, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '9', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(113, 169, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '19', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(114, 170, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '49', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(115, 171, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '1', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(116, 172, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '2', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(117, 173, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '3', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(118, 174, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '4', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(119, 175, 'sql', 'SELECT count(*) FROM	 PREFIX_configuration WHERE name = \'PS_HOSTED_MODE\'', '==', '0', '0', 'time', '1', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(120, 209, 'configuration', 'EBAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(121, 320, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shopgate%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(122, 322, 'configuration', 'SHOPGATE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(123, 323, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(124, 324, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '==', '0', '0', 'time', '1', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(125, 325, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURATION_OK\' OR name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURED\'', '>=', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(126, 326, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'MONEYBOOKERS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'MB_PAY_TO_EMAIL \') AND ( value != \'testaccount2@moneybookers.com \'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(127, 358, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1', '>=', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(128, 359, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(129, 375, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(130, 376, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(131, 377, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%moneybookers%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(132, 394, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%sofortbanking%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(133, 399, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '499', '500', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(134, 424, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%alliance3%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(135, 425, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ALLIANCE3_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ALLIANCE_DEMO\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(136, 426, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(137, 427, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(138, 428, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%authorizeaim%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(139, 429, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'AUTHORIZEAIM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AUTHORIZE_AIM_SANDBOX\') AND ( value = \'0\'))', '==', '2', '', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(140, 430, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(141, 431, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(142, 434, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluepay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(143, 435, 'configuration', 'BLUEPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(144, 436, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(145, 437, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(146, 438, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payplug%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(147, 439, 'configuration', 'PAYPLUG_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(148, 440, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(149, 441, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '10000', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(150, 442, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%affinityitems%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(151, 443, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'AFFINITYITEMS_CONFIGURATION_OK\' AND value = \'1\'', '==', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(152, 446, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%dpdpoland%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(153, 447, 'configuration', 'DPDPOLAND_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(154, 448, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(155, 449, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(156, 450, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%envoimoinscher%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(157, 451, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ENVOIMOINSCHER_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'EMC_ENV \') AND ( value != \'TEST\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(158, 452, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(159, 453, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(160, 454, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%klikandpay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(161, 455, 'configuration', 'KLIKANDPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(162, 456, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(163, 457, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(164, 458, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%clickline%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(165, 459, 'configuration', 'CLICKLINE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(166, 460, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(167, 461, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(168, 462, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%cdiscount%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(169, 463, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(170, 464, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(171, 465, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 365 DAY)', '>=', '500', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(172, 467, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%erpillicopresta%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(173, 468, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ERPILLICOPRESTA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ERP_LICENCE_VALIDITY \') AND ( value == \'1\')) OR (( name LIKE \'ERP_MONTH_FREE_ACTIVE \') AND ( value == \'0\'))', '==', '3', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(174, 469, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(175, 470, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(176, 471, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%netreviews%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(177, 472, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'NETREVIEWS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AVISVERIFIES_URLCERTIFICAT \') AND ( value IS NOT LIKE \'%preprod%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(178, 473, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(179, 474, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(180, 475, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluesnap%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(181, 476, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'BLUESNAP_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'BLUESNAP_SANDBOX \') AND ( value NOT LIKE \'%sandbox%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(182, 477, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(183, 478, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(184, 479, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%desjardins%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(185, 480, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'DESJARDINS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'DESJARDINS_MODE \') AND ( value NOT LIKE \'%test%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(186, 481, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(187, 482, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(188, 483, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%firstdata%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(189, 484, 'configuration', 'FIRSTDATA_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(190, 485, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(191, 486, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(192, 487, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%giveit%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(193, 488, 'sql', 'GIVEIT_CONFIGURATION_OK', '>=', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(194, 489, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(195, 490, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(196, 491, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ganalytics%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(197, 492, 'configuration', 'GANALYTICS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(198, 493, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(199, 494, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(200, 496, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%pagseguro%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(201, 497, 'configuration', 'PAGSEGURO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(202, 498, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(203, 499, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(204, 500, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalmx%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(205, 501, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALMX_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_MX_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(206, 502, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(207, 503, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(208, 505, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalusa%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(209, 506, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALUSA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_USA_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(210, 507, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalusa%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58');
+(1, 1, 'configuration', 'PS_REWRITING_SETTINGS', '==', '1', '1', 'hook', 'actionAdminMetaControllerUpdate_optionsAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(2, 2, 'configuration', 'PS_SMARTY_FORCE_COMPILE', '!=', '2', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(3, 3, 'configuration', 'PS_CSS_THEME_CACHE', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(4, 4, 'configuration', 'PS_CIPHER_ALGORITHM', '==', '1', '1', 'hook', 'actionAdminPerformanceControllerSaveAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(5, 5, 'configuration', 'PS_MEDIA_SERVERS', '==', '1', '', 'hook', 'actionAdminPerformanceControllerSaveAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(6, 6, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '0', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:53', '2021-11-13 22:04:05'),
+(7, 7, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:53', '2021-11-13 22:04:05'),
+(8, 8, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '0', '2', 'hook', 'actionObjectCarrierAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 21:07:58'),
+(9, 9, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '1', '2', 'hook', 'actionObjectCarrierAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 21:07:58'),
+(10, 10, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '0', '5', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(11, 11, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9', '10', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(12, 12, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99', '100', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(13, 13, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '999', '679', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(14, 14, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '9999', '679', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(15, 15, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '99999', '679', 'hook', 'actionObjectProductAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(16, 16, 'configuration', 'PS_SHOP_PHONE', '!=', '0', '1', 'hook', 'actionAdminStoresControllerUpdate_optionsAfter', 1, '2021-11-13 20:39:53', '2021-11-13 21:38:14'),
+(17, 17, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '2', '3', 'hook', 'actionObjectContactAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(18, 18, 'sql', 'SELECT COUNT(*) FROM PREFIX_contact', '>', '4', '3', 'hook', 'actionObjectContactAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 21:38:14'),
+(19, 19, 'install', '', '>', '0', '1', 'time', '1', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(20, 20, 'install', '', '>=', '7', '1', 'time', '1', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(21, 21, 'configuration', 'PS_LOGO', '!=', 'logo.jpg', '1', 'hook', 'actionAdminThemesControllerUpdate_optionsAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(22, 22, 'sql', 'SELECT COUNT(*) FROM PREFIX_theme WHERE directory != \"default\" AND directory != \"prestashop\" AND directory ! \"default-bootstrap\"', '>', '0', '0', 'hook', 'actionObjectShopUpdateAfter', 0, '2021-11-13 20:39:53', '2021-11-13 22:28:34'),
+(23, 23, 'configuration', 'PS_LOGGED_ON_ADDONS', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(24, 24, 'configuration', 'PS_MULTISHOP_FEATURE_ACTIVE', '==', '1', '', 'hook', 'actionAdminPreferencesControllerUpdate_optionsAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(25, 25, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '1', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(26, 26, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop', '>', '4', '1', 'hook', 'actionObjectShopAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(27, 27, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '5', '1', 'hook', 'actionObjectShopGroupAddAfter 	', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(28, 28, 'sql', 'SELECT COUNT(*) FROM PREFIX_shop_group', '>', '1', '1', 'hook', 'actionObjectShopGroupAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(29, 29, 'sql', 'SELECT COUNT(distinct m.id_module) FROM PREFIX_hook h LEFT JOIN PREFIX_hook_module hm ON h.id_hook = hm.id_hook LEFT JOIN PREFIX_module m ON hm.id_module = m.id_module\r\nWHERE (h.name = \"displayPayment\" OR h.name = \"payment\") AND m.name NOT IN (\"bankwire\", \"cheque\", \"cashondelivery\")', '>', '2', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:53', '2021-11-13 22:04:05'),
+(30, 30, 'sql', 'SELECT COUNT(*) FROM PREFIX_carrier WHERE name NOT IN (\"0\", \"My carrier\")', '>', '2', '2', 'hook', 'actionObjectCarrierAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 21:07:59'),
+(31, 31, 'sql', 'SELECT SUM(total_paid_tax_excl / c.conversion_rate)\r\nFROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '200', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(32, 32, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '2000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(33, 33, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1 AND reference != \"XKBKNABJK\"', '>=', '20000', '0', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(34, 34, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '200000', '0', 'time', '7', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(35, 35, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '2000000', '0', 'time', '7', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(36, 36, 'sql', ' 	SELECT SUM(total_paid_tax_excl / c.conversion_rate) FROM PREFIX_orders o INNER JOIN PREFIX_currency c ON c.id_currency = o.id_currency WHERE valid = 1', '>=', '20000000', '0', 'time', '7', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(37, 37, 'install', '', '>=', '30', '', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(38, 38, 'install', '', '>=', '182', '', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(39, 39, 'install', '', '>=', '365', '', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(40, 40, 'install', '', '>=', '730', '', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(41, 41, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10', '7', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(42, 42, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100', '7', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(43, 43, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000', '7', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(44, 44, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '10000', '6', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(45, 45, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '100000', '7', 'time', '3', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(46, 46, 'sql', 'SELECT COUNT(*) FROM PREFIX_guest', '>=', '1000000', '5', 'time', '4', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(47, 47, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '2', '2', 'hook', 'actionObjectCartAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 21:08:08'),
+(48, 48, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10', '2', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 21:09:24'),
+(49, 49, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100', '2', 'hook', 'actionObjectCartAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 21:09:24'),
+(50, 50, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 21:09:24'),
+(51, 51, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '10000', '2', 'time', '4', 0, '2021-11-13 20:39:53', '2021-11-13 21:09:24'),
+(52, 52, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart WHERE secure_key != \"b44a6d9efd7a0076a0fbce6b15eaf3b1\"', '>=', '100000', '2', 'time', '8', 0, '2021-11-13 20:39:53', '2021-11-13 21:09:24'),
+(53, 53, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1', '1', 'hook', 'actionObjectOrderAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(54, 54, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10', '1', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(55, 55, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100', '1', 'hook', 'actionObjectOrderAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(56, 56, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '1000', '1', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(57, 57, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '10000', '1', 'time', '4', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(58, 58, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders WHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\")', '>=', '100000', '1', 'time', '8', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(59, 59, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1', '1', 'hook', 'actionObjectCustomerAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(60, 60, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10', '3', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 21:08:47'),
+(61, 61, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100', '3', 'hook', 'actionObjectCustomerAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 21:08:47'),
+(62, 62, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '1000', '2', 'time', '1', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(63, 63, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '10000', '2', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(64, 64, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer WHERE email != \"pub@prestashop.com\"', '>=', '100000', '1', 'time', '4', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(65, 65, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(66, 66, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(67, 67, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100', '0', 'hook', 'actionObjectCustomerThreadAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(68, 68, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '1000', '0', 'time', '2', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(69, 69, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '10000', '0', 'time', '4', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(70, 70, 'sql', 'SELECT COUNT(*) FROM PREFIX_customer_thread', '>=', '100000', '0', 'time', '8', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(71, 76, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"CA\",\r\n\"GL\",\r\n\"PM\",\r\n\"US\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(72, 79, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"UM\",\r\n\"AS\",\r\n\"AU\",\r\n\"CK\",\r\n\"FJ\",\r\n\"FM\",\r\n\"GU\",\r\n\"KI\",\r\n\"MH,\"\r\n\"MP\",\r\n\"NC\",\r\n\"NF\",\r\n\"NR\",\r\n\"NU\",\r\n\"NZ\",\r\n\"PF\",\r\n\"PG\",\r\n\"PN\",\r\n\"PW\",\r\n\"SB\",\r\n\"TK\",\r\n\"TO\",\r\n\"TV\",\r\n\"VU\",\r\n\"WF\",\r\n\"WS\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(73, 85, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"KG\",\r\n\"KZ\",\r\n\"TJ\",\r\n\"TM\",\r\n\"UZ\",\r\n\"AE\",\r\n\"AM\",\r\n\"AZ\",\r\n\"BH\",\r\n\"CY\",\r\n\"GE\",\r\n\"IL\",\r\n\"IQ\",\r\n\"IR\",\r\n\"JO\",\r\n\"KW\",\r\n\"LB\",\r\n\"OM\",\r\n\"QA\",\r\n\"SA\",\r\n\"SY\",\r\n\"TR\",\r\n\"YE\",\r\n\"AF\",\r\n\"BD\",\r\n\"BT\",\r\n\"IN\",\r\n\"IO\",\r\n\"LK\",\r\n\"MV\",\r\n\"NP\",\r\n\"PK\",\r\n\"CN\",\r\n\"HK\",\r\n\"JP\",\r\n\"KP\",\r\n\"KR\",\r\n\"MO\",\r\n\"TW\",\r\n\"MN\",\r\n\"BN\",\r\n\"CC\",\r\n\"CX\",\r\n\"ID\",\r\n\"KH\",\r\n\"LA\",\r\n\"MM\",\r\n\"MY\",\r\n\"PH\",\r\n\"SG\",\r\n\"TH\",\r\n\"TP\",\r\n\"VN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(74, 86, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BZ\",\r\n\"CR\",\r\n\"GT\",\r\n\"HN\",\r\n\"MX\",\r\n\"NI\",\r\n\"PA\",\r\n\"SV\",\r\n\"AG\",\r\n\"AI\",\r\n\"AN\",\r\n\"AW\",\r\n\"BB\",\r\n\"BM\",\r\n\"BS\",\r\n\"CU\",\r\n\"DM\",\r\n\"DO\",\r\n\"GD\",\r\n\"GP\",\r\n\"HT\",\r\n\"JM\",\r\n\"KN\",\r\n\"KY\",\r\n\"LC\",\r\n\"MQ\",\r\n\"MS\",\r\n\"PR\",\r\n\"TC\",\r\n\"TT\",\r\n\"VC\",\r\n\"VG\",\r\n\"VI\",\r\n\"AR\",\r\n\"BO\",\r\n\"BR\",\r\n\"CL\",\r\n\"CO\",\r\n\"EC\",\r\n\"FK\",\r\n\"GF\",\r\n\"GY\",\r\n\"PE\",\r\n\"PY\",\r\n\"SR\",\r\n\"UY\",\r\n\"VE\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(75, 87, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BE\",\r\n\"DE\",\r\n\"FR\",\r\n\"FX\",\r\n\"GB\",\r\n\"IE\",\r\n\"LU\",\r\n\"MC\",\r\n\"NL\",\r\n\"IT\",\r\n\"MT\",\r\n\"SM\",\r\n\"VA\",\r\n\"AD\",\r\n\"ES\",\r\n\"GI\",\r\n\"PT\",\r\n\"BY\",\r\n\"EE\",\r\n\"LT\",\r\n\"LV\",\r\n\"MD\",\r\n\"PL\",\r\n\"UA\",\r\n\"AL\",\r\n\"BA\",\r\n\"BG\",\r\n\"GR\",\r\n\"HR\",\r\n\"MK\",\r\n\"RO\",\r\n\"SI\",\r\n\"YU\",\r\n\"RU\",\r\n\"AT\",\r\n\"CH\",\r\n\"CZ\",\r\n\"HU\",\r\n\"LI\",\r\n\"SK\",\r\n\"DK\",\r\n\"FI\",\r\n\"FO\",\r\n\"IS\",\r\n\"NO\",\r\n\"SE\",\r\n\"SJ\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(76, 88, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"BI\",\r\n\"CF\",\r\n\"CG\",\r\n\"RW\",\r\n\"TD\",\r\n\"ZR\",\r\n\"DJ\",\r\n\"ER\",\r\n\"ET\",\r\n\"KE\",\r\n\"SO\",\r\n\"TZ\",\r\n\"UG\",\r\n\"KM\",\r\n\"MG\",\r\n\"MU\",\r\n\"RE\",\r\n\"SC\",\r\n\"YT\",\r\n\"AO\",\r\n\"BW\",\r\n\"LS\",\r\n\"MW\",\r\n\"MZ\",\r\n\"NA\",\r\n\"SZ\",\r\n\"ZA\",\r\n\"ZM\",\r\n\"ZW\",\r\n\"BF\",\r\n\"BJ\",\r\n\"CI\",\r\n\"CM\",\r\n\"CV\",\r\n\"GA\",\r\n\"GH\",\r\n\"GM\",\r\n\"GN\",\r\n\"GQ\",\r\n\"GW\",\r\n\"LR\",\r\n\"ML\",\r\n\"MR\",\r\n\"NE\",\r\n\"NG\",\r\n\"SL\",\r\n\"SN\",\r\n\"ST\",\r\n\"TG\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(77, 89, 'sql', 'SELECT IFNULL(id_order, 0) FROM PREFIX_orders o LEFT JOIN PREFIX_address a ON o.id_address_delivery = a.id_address LEFT JOIN PREFIX_country c ON c.id_country = a.id_country WHERE o.valid = 1 AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\" AND c.iso_code IN (\r\n\"DZ\",\r\n\"EG\",\r\n\"EH\",\r\n\"LY\",\r\n\"MA\",\r\n\"SD\",\r\n\"TN\"\r\n)', '!=', '0', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(78, 90, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '2', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(79, 91, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '3', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(80, 92, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '5', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(81, 93, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '10', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(82, 94, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '20', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(83, 95, 'sql', 'SELECT COUNT(*) FROM PREFIX_employee', '>=', '40', '1', 'hook', 'actionObjectEmployeeAddAfter', 0, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(84, 96, 'sql', 'SELECT id_image FROM PREFIX_image WHERE id_image > 26', '>', '0', '27', 'hook', 'actionObjectImageAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(85, 97, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50', '60', 'hook', 'actionObjectImageAddAfter', 1, '2021-11-13 20:39:53', '2021-11-13 20:39:53'),
+(86, 98, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '100', '101', 'hook', 'actionObjectImageAddAfter', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(87, 99, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '1000', '1659', 'time', '2', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(88, 100, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '10000', '1659', 'time', '4', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(89, 101, 'sql', 'SELECT COUNT(*) FROM PREFIX_image', '>=', '50000', '1659', 'time', '8', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(90, 102, 'sql', 'SELECT id_cms FROM PREFIX_cms WHERE id_cms > 5', '>', '0', '6', 'hook', 'actionObjectCMSAddAfter', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(91, 103, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(92, 104, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '10', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(93, 105, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '100', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(94, 106, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '1000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(95, 107, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '500', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(96, 108, 'sql', 'SELECT COUNT(*) FROM PREFIX_cart_rule', '>=', '5000', '0', 'hook', 'actionObjectCartRuleAddAfter 	', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(97, 109, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1', '0', 'hook', 'newOrder', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(98, 110, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(99, 111, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '100', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(100, 112, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '10000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(101, 113, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '1000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(102, 114, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o INNER JOIN PREFIX_address a ON a.id_address = o.id_address_delivery\r\nWHERE reference NOT IN (\"XKBKNABJK\", \"OHSATSERP\", \"FFATNOMMJ\", \"UOYEVOLI\", \"KHWLILZLL\") AND a.id_country != \"{config}PS_COUNTRY_DEFAULT{/config}\"', '>=', '5000', '0', 'hook', 'actionOrderStatusUpdate', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(103, 132, 'sql', 'SELECT count(id_configuration) FROM PREFIX_configuration WHERE `name` = \'PS_SHOP_DOMAIN\' AND value IN (\'127.0.0.1\', \'localhost\' )', '==', '1', '1', 'time', '1', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(104, 136, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ebay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(105, 140, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%moneybookers%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(106, 142, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypal%\"', '>=', '1', '1', 'hook', 'actionModuleInstallAfter', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(107, 158, 'install', '', '>=', '90', '', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(108, 159, 'install', '', '<=', '90', '1', 'time', '2', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(109, 165, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '0', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(110, 166, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '1', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(111, 167, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '4', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(112, 168, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '9', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(113, 169, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '19', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(114, 170, 'sql', 'SELECT COUNT(s.`id_store`) FROM PREFIX_store s WHERE `latitude` NOT IN (\'25.76500500\', \'26.13793600\', \'26.00998700\', \'25.73629600\', \'25.88674000\') AND `longitude` NOT IN (\'-80.24379700\', \'-80.13943500\', \'-80.29447200\', \'-80.24479700\', \'-80.16329200\')', '>', '49', '0', 'hook', 'actionAdminStoresControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(115, 171, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '1', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(116, 172, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '2', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(117, 173, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '3', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(118, 174, 'sql', 'SELECT COUNT(*) FROM PREFIX_webservice_account', '>=', '4', '0', 'hook', 'actionAdminWebserviceControllerSaveAfter', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(119, 175, 'sql', 'SELECT count(*) FROM	 PREFIX_configuration WHERE name = \'PS_HOSTED_MODE\'', '==', '0', '0', 'time', '1', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(120, 209, 'configuration', 'EBAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(121, 320, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shopgate%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(122, 322, 'configuration', 'SHOPGATE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(123, 323, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(124, 324, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%shoppingfluxexport%\" ', '==', '0', '0', 'time', '1', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(125, 325, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURATION_OK\' OR name LIKE \'SHOPPINGFLUXEXPORT_CONFIGURED\'', '>=', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(126, 326, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'MONEYBOOKERS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'MB_PAY_TO_EMAIL \') AND ( value != \'testaccount2@moneybookers.com \'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(127, 358, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1', '>=', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(128, 359, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%ebay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(129, 375, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(130, 376, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%shopgate%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(131, 377, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%moneybookers%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(132, 394, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%sofortbanking%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(133, 399, 'sql', 'SELECT COUNT(*) FROM PREFIX_product WHERE reference NOT LIKE \"demo_%\"', '>', '499', '500', 'hook', 'actionObjectProductAddAfter', 1, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(134, 424, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%alliance3%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(135, 425, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ALLIANCE3_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ALLIANCE_DEMO\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(136, 426, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(137, 427, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%alliance3%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(138, 428, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%authorizeaim%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(139, 429, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'AUTHORIZEAIM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AUTHORIZE_AIM_SANDBOX\') AND ( value = \'0\'))', '==', '2', '', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(140, 430, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(141, 431, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%authorizeaim%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(142, 434, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluepay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(143, 435, 'configuration', 'BLUEPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(144, 436, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(145, 437, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluepay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(146, 438, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payplug%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(147, 439, 'configuration', 'PAYPLUG_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(148, 440, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(149, 441, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payplug%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '10000', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(150, 442, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%affinityitems%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(151, 443, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE name LIKE \'AFFINITYITEMS_CONFIGURATION_OK\' AND value = \'1\'', '==', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(152, 446, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%dpdpoland%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(153, 447, 'configuration', 'DPDPOLAND_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(154, 448, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(155, 449, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%dpdpoland%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(156, 450, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%envoimoinscher%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(157, 451, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ENVOIMOINSCHER_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'EMC_ENV \') AND ( value != \'TEST\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(158, 452, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(159, 453, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%envoimoinscher%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(160, 454, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%klikandpay%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(161, 455, 'configuration', 'KLIKANDPAY_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(162, 456, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(163, 457, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%klikandpay%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(164, 458, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%clickline%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(165, 459, 'configuration', 'CLICKLINE_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(166, 460, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(167, 461, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state LEFT JOIN PREFIX_carrier c ON c.id_carrier = o.id_carrier WHERE c.name like \"%clickline%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '100', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(168, 462, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%cdiscount%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(169, 463, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(170, 464, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(171, 465, 'sql', 'SELECT SUM(o.total_paid) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%cdiscount%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 365 DAY)', '>=', '500', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(172, 467, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%erpillicopresta%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(173, 468, 'configuration', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'ERPILLICOPRESTA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'ERP_LICENCE_VALIDITY \') AND ( value == \'1\')) OR (( name LIKE \'ERP_MONTH_FREE_ACTIVE \') AND ( value == \'0\'))', '==', '3', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(174, 469, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(175, 470, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(176, 471, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%netreviews%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(177, 472, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'NETREVIEWS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'AVISVERIFIES_URLCERTIFICAT \') AND ( value IS NOT LIKE \'%preprod%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(178, 473, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(179, 474, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '100', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(180, 475, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%bluesnap%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(181, 476, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'BLUESNAP_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'BLUESNAP_SANDBOX \') AND ( value NOT LIKE \'%sandbox%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(182, 477, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(183, 478, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%bluesnap%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(184, 479, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%desjardins%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(185, 480, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'DESJARDINS_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'DESJARDINS_MODE \') AND ( value NOT LIKE \'%test%\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(186, 481, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(187, 482, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%desjardins%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(188, 483, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%firstdata%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(189, 484, 'configuration', 'FIRSTDATA_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(190, 485, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(191, 486, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%firstdata%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(192, 487, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%giveit%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(193, 488, 'sql', 'GIVEIT_CONFIGURATION_OK', '>=', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(194, 489, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(195, 490, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(196, 491, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%ganalytics%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(197, 492, 'configuration', 'GANALYTICS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(198, 493, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(199, 494, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(200, 496, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%pagseguro%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(201, 497, 'configuration', 'PAGSEGURO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(202, 498, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(203, 499, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%pagseguro%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(204, 500, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalmx%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(205, 501, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALMX_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_MX_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(206, 502, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(207, 503, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(208, 505, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%paypalusa%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(209, 506, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYPALUSA_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYPAL_USA_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(210, 507, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalusa%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54');
 INSERT INTO `ps_condition` (`id_condition`, `id_ps_condition`, `type`, `request`, `operator`, `value`, `result`, `calculation_type`, `calculation_detail`, `validated`, `date_add`, `date_upd`) VALUES
-(211, 508, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(212, 509, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payulatam%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(213, 510, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYULATAM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYU_LATAM_TEST\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(214, 511, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(215, 512, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(216, 513, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%prestastats%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(217, 514, 'configuration', 'PRESTASTATS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(218, 515, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(219, 516, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(220, 517, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%riskified%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(221, 518, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'RISKIFIED_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'RISKIFIED_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(222, 519, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(223, 520, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(224, 521, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%simplifycommerce%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(225, 522, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'SIMPLIFY_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'SIMPLIFY_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(226, 523, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(227, 524, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(228, 525, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%vtpayment%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(229, 526, 'configuration', 'VTPAYMENT_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(230, 527, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-10 23:36:56', '2021-11-12 23:33:58'),
-(231, 528, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(232, 529, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(233, 530, 'configuration', 'YOTPO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(234, 531, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(235, 532, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(236, 533, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(237, 534, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'YOUSTICERESOLUTIONSYSTEM_CONF_OK\') AND ( value = \'1\')) OR (( name LIKE \'YRS_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(238, 535, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(239, 536, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(240, 537, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%loyaltylion%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-10 23:36:56', '2021-11-13 13:13:42'),
-(241, 538, 'configuration', 'LOYALTYLION_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14'),
-(242, 539, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(243, 540, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-10 23:36:56', '2021-11-10 23:36:56'),
-(244, 542, 'sql', 'SELECT \'{config} PS_VERSION_DB{/config}\' >= \'1.7.0.0\' AND < \'1.8.0.0\'', '==', '1', '0', 'time', '1', 0, '2021-11-10 23:36:56', '2021-11-13 12:36:14');
+(211, 508, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%paypalmx%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(212, 509, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%payulatam%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(213, 510, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'PAYULATAM_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'PAYU_LATAM_TEST\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(214, 511, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(215, 512, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%payulatam%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(216, 513, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%prestastats%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(217, 514, 'configuration', 'PRESTASTATS_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(218, 515, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(219, 516, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(220, 517, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%riskified%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(221, 518, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'RISKIFIED_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'RISKIFIED_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(222, 519, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(223, 520, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%riskified%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(224, 521, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%simplifycommerce%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(225, 522, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'SIMPLIFY_CONFIGURATION_OK\') AND ( value = \'1\')) OR (( name LIKE \'SIMPLIFY_MODE\') AND ( value = \'1\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(226, 523, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(227, 524, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%simplifycommerce%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(228, 525, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%vtpayment%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(229, 526, 'configuration', 'VTPAYMENT_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(230, 527, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1', '>=', '1', '0', 'time', '2', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(231, 528, 'sql', 'SELECT COUNT(*) FROM PREFIX_orders o LEFT JOIN PREFIX_order_state os ON os.id_order_state = o.current_state WHERE o.module like \"%vtpayment%\" AND os.logable = 1 AND o.date_add > DATE_SUB(NOW(), INTERVAL 90 DAY)', '>=', '30', '0', 'time', '7', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(232, 529, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(233, 530, 'configuration', 'YOTPO_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(234, 531, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(235, 532, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(236, 533, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%yotpo%\"', '==', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(237, 534, 'sql', 'SELECT COUNT(*) FROM PREFIX_configuration WHERE (( name LIKE \'YOUSTICERESOLUTIONSYSTEM_CONF_OK\') AND ( value = \'1\')) OR (( name LIKE \'YRS_SANDBOX\') AND ( value = \'0\'))', '==', '2', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(238, 535, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(239, 536, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(240, 537, 'sql', 'SELECT COUNT( id_module ) FROM PREFIX_module WHERE `name` like \"%loyaltylion%\"', '>=', '1', '0', 'hook', 'actionModuleInstallAfter', 0, '2021-11-13 20:39:54', '2021-11-13 22:04:05'),
+(241, 538, 'configuration', 'LOYALTYLION_CONFIGURATION_OK', '==', '1', '', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(242, 539, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(243, 540, 'sql', 'SELECT 1', '!=', '1', '1', 'time', '365', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54'),
+(244, 542, 'sql', 'SELECT \'{config} PS_VERSION_DB{/config}\' >= \'1.7.0.0\' AND < \'1.8.0.0\'', '==', '1', '0', 'time', '1', 0, '2021-11-13 20:39:54', '2021-11-13 20:39:54');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_condition_advice`
+-- Struktura tabeli dla tabeli `ps_condition_advice`
 --
 
 CREATE TABLE `ps_condition_advice` (
@@ -4592,7 +4660,7 @@ CREATE TABLE `ps_condition_advice` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_condition_badge`
+-- Struktura tabeli dla tabeli `ps_condition_badge`
 --
 
 CREATE TABLE `ps_condition_badge` (
@@ -4601,7 +4669,7 @@ CREATE TABLE `ps_condition_badge` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_condition_badge`
+-- Zrzut danych tabeli `ps_condition_badge`
 --
 
 INSERT INTO `ps_condition_badge` (`id_condition`, `id_badge`) VALUES
@@ -4845,7 +4913,7 @@ INSERT INTO `ps_condition_badge` (`id_condition`, `id_badge`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_configuration`
+-- Struktura tabeli dla tabeli `ps_configuration`
 --
 
 CREATE TABLE `ps_configuration` (
@@ -4859,14 +4927,14 @@ CREATE TABLE `ps_configuration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_configuration`
+-- Zrzut danych tabeli `ps_configuration`
 --
 
 INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, `name`, `value`, `date_add`, `date_upd`) VALUES
 (1, NULL, NULL, 'PS_LANG_DEFAULT', '1', '2021-10-23 19:39:43', '2021-10-23 19:39:43'),
 (2, NULL, NULL, 'PS_VERSION_DB', '1.7.8.0', '2021-10-23 19:39:43', '2021-10-23 19:39:43'),
 (3, NULL, NULL, 'PS_INSTALL_VERSION', '1.7.2.4', '2021-10-23 19:39:43', '2021-10-23 19:39:43'),
-(4, NULL, NULL, 'PS_CARRIER_DEFAULT', '1', '2021-10-23 19:40:02', '2021-10-23 19:40:02'),
+(4, NULL, NULL, 'PS_CARRIER_DEFAULT', '3', '2021-10-23 19:40:02', '2021-11-13 21:33:03'),
 (5, NULL, NULL, 'PS_GROUP_FEATURE_ACTIVE', '1', '2021-10-23 19:40:02', '2021-10-23 19:40:02'),
 (6, NULL, NULL, 'PS_SEARCH_INDEXATION', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (7, NULL, NULL, 'PS_CURRENCY_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4880,7 +4948,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (15, NULL, NULL, 'PS_GIFT_WRAPPING_PRICE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (16, NULL, NULL, 'PS_STOCK_MANAGEMENT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (17, NULL, NULL, 'PS_NAVIGATION_PIPE', '>', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(18, NULL, NULL, 'PS_PRODUCTS_PER_PAGE', '12', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(18, NULL, NULL, 'PS_PRODUCTS_PER_PAGE', '15', '0000-00-00 00:00:00', '2021-11-13 21:36:15'),
 (19, NULL, NULL, 'PS_PURCHASE_MINIMUM', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (20, NULL, NULL, 'PS_PRODUCTS_ORDER_WAY', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (21, NULL, NULL, 'PS_PRODUCTS_ORDER_BY', '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4891,7 +4959,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (26, NULL, NULL, 'PS_SHIPPING_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (27, NULL, NULL, 'PS_TAX', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (28, NULL, NULL, 'PS_SHOP_ENABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(29, NULL, NULL, 'PS_NB_DAYS_NEW_PRODUCT', '20', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, NULL, NULL, 'PS_NB_DAYS_NEW_PRODUCT', '0', '0000-00-00 00:00:00', '2021-11-13 20:47:37'),
 (30, NULL, NULL, 'PS_SSL_ENABLED', '1', '0000-00-00 00:00:00', '2021-11-13 00:15:50'),
 (31, NULL, NULL, 'PS_WEIGHT_UNIT', 'kg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (32, NULL, NULL, 'PS_BLOCK_CART_AJAX', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -4973,7 +5041,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (108, NULL, NULL, 'PS_COOKIE_CHECKIP', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (109, NULL, NULL, 'PS_USE_ECOTAX', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (110, NULL, NULL, 'PS_CANONICAL_REDIRECT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(111, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1636309585', '0000-00-00 00:00:00', '2021-11-07 19:26:25'),
+(111, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1636834494', '0000-00-00 00:00:00', '2021-11-13 21:14:54'),
 (112, NULL, NULL, 'PS_BACKUP_DROP_TABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (113, NULL, NULL, 'PS_OS_CHEQUE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (114, NULL, NULL, 'PS_OS_PAYMENT', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5005,7 +5073,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (140, NULL, NULL, 'PS_VIRTUAL_PROD_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2021-10-23 19:52:14'),
 (141, NULL, NULL, 'PS_CUSTOMIZATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2021-10-23 19:55:01'),
 (142, NULL, NULL, 'PS_CART_RULE_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(143, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2021-10-23 19:58:58'),
+(143, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2021-11-13 21:04:20'),
 (144, NULL, NULL, 'PS_ALIAS_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2021-11-07 19:49:10'),
 (145, NULL, NULL, 'PS_TAX_ADDRESS_TYPE', 'id_address_delivery', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (146, NULL, NULL, 'PS_SHOP_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5094,8 +5162,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (232, NULL, NULL, 'PS_SHOP_EMAIL', 'admin@jasniej.pl', '0000-00-00 00:00:00', '2021-10-23 19:40:17'),
 (233, NULL, NULL, 'PS_MAIL_METHOD', '2', '0000-00-00 00:00:00', '2021-11-09 23:38:25'),
 (234, NULL, NULL, 'PS_SHOP_ACTIVITY', '13', '0000-00-00 00:00:00', '2021-10-23 19:40:15'),
-(235, NULL, NULL, 'PS_LOGO', 'jasniej-sklep-z-lampami-logo-1636308047.jpg', '0000-00-00 00:00:00', '2021-11-07 19:00:47'),
-(236, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '2021-11-07 19:26:25'),
+(235, NULL, NULL, 'PS_LOGO', 'logo-1636834446.jpg', '0000-00-00 00:00:00', '2021-11-13 21:14:06'),
+(236, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '2021-11-13 21:14:54'),
 (237, NULL, NULL, 'PS_STORES_ICON', 'logo_stores.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (238, NULL, NULL, 'PS_ROOT_CATEGORY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (239, NULL, NULL, 'PS_HOME_CATEGORY', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5162,7 +5230,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (301, NULL, NULL, 'PS_LAYERED_FILTER_CATEGORY_DEPTH', '1', '2021-10-23 19:41:03', '2021-10-23 19:41:03'),
 (302, NULL, NULL, 'PS_LAYERED_FILTER_PRICE_ROUNDING', '1', '2021-10-23 19:41:03', '2021-10-23 19:41:03'),
 (303, NULL, NULL, 'PS_LAYERED_INDEXED', '1', '2021-10-23 19:41:08', '2021-10-23 19:41:08'),
-(304, NULL, NULL, 'HOME_FEATURED_CAT', '2', '2021-10-23 19:41:08', '2021-10-23 19:41:08'),
+(304, NULL, NULL, 'HOME_FEATURED_CAT', '12', '2021-10-23 19:41:08', '2021-11-13 22:00:41'),
 (305, NULL, NULL, 'HOMESLIDER_PAUSE_ON_HOVER', '1', '2021-10-23 19:41:08', '2021-10-23 19:41:08'),
 (306, NULL, NULL, 'HOMESLIDER_WRAP', '1', '2021-10-23 19:41:08', '2021-10-23 19:41:08'),
 (307, NULL, NULL, 'PS_SC_TWITTER', '1', '2021-10-23 19:41:10', '2021-10-23 19:41:10'),
@@ -5181,8 +5249,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (320, NULL, NULL, 'CONF_PS_WIREPAYMENT_VAR_FOREIGN', '2', '2021-10-23 19:41:10', '2021-10-23 19:41:10'),
 (321, NULL, NULL, 'GF_INSTALL_CALC', '1', '2021-10-23 19:45:19', '2021-10-23 19:50:22'),
 (322, NULL, NULL, 'GF_CURRENT_LEVEL', '2', '2021-10-23 19:45:19', '2021-11-07 19:29:21'),
-(323, NULL, NULL, 'GF_CURRENT_LEVEL_PERCENT', '20', '2021-10-23 19:45:19', '2021-11-10 00:13:27'),
-(324, NULL, NULL, 'GF_NOTIFICATION', '14', '2021-10-23 19:45:19', '2021-11-10 00:13:27'),
+(323, NULL, NULL, 'GF_CURRENT_LEVEL_PERCENT', '70', '2021-10-23 19:45:19', '2021-11-13 21:38:14'),
+(324, NULL, NULL, 'GF_NOTIFICATION', '18', '2021-10-23 19:45:19', '2021-11-13 21:38:14'),
 (325, NULL, NULL, 'PSGDPR_CREATION_FORM_SWITCH', '1', '2021-10-23 19:45:19', '2021-10-23 19:45:19'),
 (326, NULL, NULL, 'PSGDPR_CREATION_FORM', NULL, '2021-10-23 19:45:19', '2021-10-23 19:45:19'),
 (327, NULL, NULL, 'PSGDPR_CUSTOMER_FORM_SWITCH', '1', '2021-10-23 19:45:19', '2021-10-23 19:45:19'),
@@ -5202,7 +5270,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (341, NULL, NULL, '9', 'PS_FACEBOOK_PRODUCT_SYNC_FIRST_START', '2021-10-23 19:45:27', '2021-10-23 19:45:27'),
 (342, NULL, NULL, '10', 'PS_FACEBOOK_PRODUCT_SYNC_ON', '2021-10-23 19:45:27', '2021-10-23 19:45:27'),
 (343, NULL, NULL, 'BLOCKREASSURANCE_NBBLOCKS', '5', '2021-10-23 19:46:07', '2021-10-23 19:46:07'),
-(344, NULL, NULL, 'GF_NOT_VIEWED_BADGE', '175', '2021-10-23 19:50:23', '2021-11-10 00:13:27'),
+(344, NULL, NULL, 'GF_NOT_VIEWED_BADGE', '134', '2021-10-23 19:50:23', '2021-11-13 21:38:14'),
 (345, NULL, NULL, 'ONBOARDINGV2_SHUT_DOWN', '1', '2021-10-23 19:50:26', '2021-10-23 19:50:26'),
 (346, NULL, NULL, 'ONBOARDINGV2_CURRENT_STEP', '14', '2021-11-07 19:15:17', '2021-11-07 19:15:17'),
 (347, NULL, NULL, 'PS_CSS_THEME_CACHE', '0', '2021-11-07 19:21:28', '2021-11-07 19:21:28'),
@@ -5288,7 +5356,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (427, NULL, NULL, 'PS_DISPLAY_MANUFACTURERS', '1', '2021-11-12 22:39:12', '2021-11-13 00:15:50'),
 (428, NULL, NULL, 'PS_ORDER_PRODUCTS_NB_PER_PAGE', '8', '2021-11-12 22:39:12', '2021-11-12 22:39:12'),
 (429, NULL, NULL, 'PS_COOKIE_SAMESITE', 'Lax', '2021-11-12 22:39:19', '2021-11-12 22:39:19'),
-(430, NULL, NULL, 'PS_SHOW_LABEL_OOS_LISTING_PAGES', '1', '2021-11-12 22:39:19', '2021-11-12 22:39:19'),
+(430, NULL, NULL, 'PS_SHOW_LABEL_OOS_LISTING_PAGES', '1', '2021-11-12 22:39:19', '2021-11-13 20:58:24'),
 (431, NULL, NULL, 'ADDONS_API_MODULE_CHANNEL', 'stable', '2021-11-12 22:39:19', '2021-11-12 22:39:19'),
 (432, NULL, NULL, 'PSR_HOOK_HEADER', '0', '2021-11-12 23:39:30', '2021-11-12 23:39:30'),
 (433, NULL, NULL, 'PSR_HOOK_FOOTER', '0', '2021-11-12 23:39:30', '2021-11-12 23:39:30'),
@@ -5301,12 +5369,35 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (440, NULL, NULL, 'GA_ACCOUNT_ID', 'UA-212801011-1', '2021-11-13 13:30:19', '2021-11-13 15:19:19'),
 (441, NULL, NULL, 'GANALYTICS_CONFIGURATION_OK', '1', '2021-11-13 13:30:19', '2021-11-13 15:24:41'),
 (442, NULL, NULL, 'GA_USERID_ENABLED', '1', '2021-11-13 14:28:50', '2021-11-13 15:24:41'),
-(443, NULL, NULL, 'GA_TRACK_BACKOFFICE_ENABLED', NULL, '2021-11-13 15:19:19', '2021-11-13 15:24:41');
+(443, NULL, NULL, 'GA_TRACK_BACKOFFICE_ENABLED', NULL, '2021-11-13 15:19:19', '2021-11-13 15:24:41'),
+(444, NULL, NULL, 'PS_QTY_DISCOUNT_ON_COMBINATION', '0', '2021-11-13 20:47:37', '2021-11-13 20:47:37'),
+(445, NULL, NULL, 'PS_FORCE_FRIENDLY_PRODUCT', '0', '2021-11-13 20:47:37', '2021-11-13 20:47:37'),
+(446, NULL, NULL, 'PS_PRODUCT_ACTIVATION_DEFAULT', '0', '2021-11-13 20:47:37', '2021-11-13 20:47:37'),
+(447, NULL, NULL, 'PS_CCCJS_VERSION', '3', '2021-11-13 20:47:38', '2021-11-13 21:36:15'),
+(448, NULL, NULL, 'PS_CCCCSS_VERSION', '3', '2021-11-13 20:47:38', '2021-11-13 21:36:15'),
+(449, NULL, NULL, 'PS_LABEL_DELIVERY_TIME_AVAILABLE', NULL, '2021-11-13 20:58:24', '2021-11-13 20:58:24'),
+(450, NULL, NULL, 'PS_LABEL_DELIVERY_TIME_OOSBOA', NULL, '2021-11-13 20:58:24', '2021-11-13 20:58:24'),
+(451, NULL, NULL, 'PS_SHOWCASECARD_CMS_PAGES_CLOSED', '1', '2021-11-13 21:26:31', '2021-11-13 21:26:31'),
+(452, NULL, NULL, 'PS_SHOP_DETAILS', NULL, '2021-11-13 21:38:14', '2021-11-13 21:38:14'),
+(453, NULL, NULL, 'PS_SHOP_ADDR1', 'ul. Wyspiańskiego 2', '2021-11-13 21:38:14', '2021-11-13 21:38:53'),
+(454, NULL, NULL, 'PS_SHOP_ADDR2', ' 80-343  Gdańsk', '2021-11-13 21:38:14', '2021-11-13 21:38:53'),
+(455, NULL, NULL, 'PS_SHOP_CODE', NULL, '2021-11-13 21:38:14', '2021-11-13 21:38:14'),
+(456, NULL, NULL, 'PS_SHOP_CITY', NULL, '2021-11-13 21:38:14', '2021-11-13 21:38:53'),
+(457, NULL, NULL, 'PS_SHOP_COUNTRY_ID', '14', '2021-11-13 21:38:14', '2021-11-13 21:38:14'),
+(458, NULL, NULL, 'PS_SHOP_COUNTRY', 'Polska', '2021-11-13 21:38:14', '2021-11-13 21:38:14'),
+(459, NULL, NULL, 'PS_SHOP_PHONE', '58 380 00 77', '2021-11-13 21:38:14', '2021-11-13 21:38:14'),
+(460, NULL, NULL, 'PS_SHOP_FAX', NULL, '2021-11-13 21:38:14', '2021-11-13 21:38:14'),
+(461, NULL, NULL, 'PS_BLOCK_BESTSELLERS_TO_DISPLAY', '8', '2021-11-13 21:57:26', '2021-11-13 21:57:26'),
+(462, NULL, NULL, 'BLOCKSPECIALS_SPECIALS_NBR', '8', '2021-11-13 21:58:06', '2021-11-13 21:58:06'),
+(463, NULL, NULL, 'HOME_FEATURED_RANDOMIZE', '1', '2021-11-13 21:59:24', '2021-11-13 22:00:41'),
+(464, NULL, NULL, 'BLOCKSOCIAL_LINKEDIN', NULL, '2021-11-13 22:02:18', '2021-11-13 22:02:18'),
+(465, NULL, NULL, 'CATEGORYPRODUCTS_DISPLAY_PRICE', '1', '2021-11-13 22:04:06', '2021-11-13 22:04:06'),
+(466, NULL, NULL, 'CATEGORYPRODUCTS_DISPLAY_PRODUCTS', '16', '2021-11-13 22:04:06', '2021-11-13 22:04:06');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_configuration_kpi`
+-- Struktura tabeli dla tabeli `ps_configuration_kpi`
 --
 
 CREATE TABLE `ps_configuration_kpi` (
@@ -5320,7 +5411,7 @@ CREATE TABLE `ps_configuration_kpi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_configuration_kpi`
+-- Zrzut danych tabeli `ps_configuration_kpi`
 --
 
 INSERT INTO `ps_configuration_kpi` (`id_configuration_kpi`, `id_shop_group`, `id_shop`, `name`, `value`, `date_add`, `date_upd`) VALUES
@@ -5381,12 +5472,26 @@ INSERT INTO `ps_configuration_kpi` (`id_configuration_kpi`, `id_shop_group`, `id
 (55, NULL, NULL, 'ABANDONED_CARTS', '0', '2021-11-13 14:39:40', '2021-11-13 14:39:40'),
 (56, NULL, NULL, 'ABANDONED_CARTS_EXPIRE', '1636814380', '2021-11-13 14:39:40', '2021-11-13 14:39:40'),
 (57, NULL, NULL, 'AVG_ORDER_VALUE', '0,00 zł', '2021-11-13 14:39:41', '2021-11-13 14:39:41'),
-(58, NULL, NULL, 'AVG_ORDER_VALUE_EXPIRE', '1636844400', '2021-11-13 14:39:41', '2021-11-13 14:39:41');
+(58, NULL, NULL, 'AVG_ORDER_VALUE_EXPIRE', '1636844400', '2021-11-13 14:39:41', '2021-11-13 14:39:41'),
+(59, NULL, NULL, 'AVG_CUSTOMER_AGE', NULL, '2021-11-13 21:13:21', '2021-11-13 21:13:21'),
+(60, NULL, NULL, 'AVG_CUSTOMER_AGE_EXPIRE', NULL, '2021-11-13 21:13:21', '2021-11-13 21:13:21'),
+(61, NULL, NULL, 'CUSTOMER_MAIN_GENDER', NULL, '2021-11-13 21:13:22', '2021-11-13 21:13:22'),
+(62, NULL, NULL, 'CUSTOMER_MAIN_GENDER_EXPIRE', NULL, '2021-11-13 21:13:22', '2021-11-13 21:13:22'),
+(63, NULL, NULL, 'NEWSLETTER_REGISTRATIONS', '2', '2021-11-13 21:13:22', '2021-11-13 21:13:22'),
+(64, NULL, NULL, 'NEWSLETTER_REGISTRATIONS_EXPIRE', '1636856002', '2021-11-13 21:13:22', '2021-11-13 21:13:22'),
+(65, NULL, NULL, 'ORDERS_PER_CUSTOMER', '0', '2021-11-13 21:13:24', '2021-11-13 21:13:24'),
+(66, NULL, NULL, 'ORDERS_PER_CUSTOMER_EXPIRE', '1636920804', '2021-11-13 21:13:24', '2021-11-13 21:13:24'),
+(67, NULL, NULL, 'MAIN_COUNTRY', NULL, '2021-11-13 21:34:59', '2021-11-13 21:34:59'),
+(68, NULL, NULL, 'MAIN_COUNTRY_EXPIRE', NULL, '2021-11-13 21:34:59', '2021-11-13 21:34:59'),
+(69, NULL, NULL, 'ENABLED_LANGUAGES', '1', '2021-11-13 21:35:01', '2021-11-13 21:35:01'),
+(70, NULL, NULL, 'ENABLED_LANGUAGES_EXPIRE', '1636835761', '2021-11-13 21:35:01', '2021-11-13 21:35:01'),
+(71, NULL, NULL, 'FRONTOFFICE_TRANSLATIONS', '0%', '2021-11-13 21:35:01', '2021-11-13 21:35:01'),
+(72, NULL, NULL, 'FRONTOFFICE_TRANSLATIONS_EXPIRE', '1636835821', '2021-11-13 21:35:01', '2021-11-13 21:35:01');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_configuration_kpi_lang`
+-- Struktura tabeli dla tabeli `ps_configuration_kpi_lang`
 --
 
 CREATE TABLE `ps_configuration_kpi_lang` (
@@ -5397,17 +5502,23 @@ CREATE TABLE `ps_configuration_kpi_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_configuration_kpi_lang`
+-- Zrzut danych tabeli `ps_configuration_kpi_lang`
 --
 
 INSERT INTO `ps_configuration_kpi_lang` (`id_configuration_kpi`, `id_lang`, `value`, `date_upd`) VALUES
 (37, 1, 'T-shirts', '2021-10-25 17:23:56'),
-(38, 1, '1635261836', '2021-10-25 17:23:56');
+(38, 1, '1635261836', '2021-10-25 17:23:56'),
+(59, 1, '52 lat', '2021-11-13 21:13:21'),
+(60, 1, '1636920801', '2021-11-13 21:13:21'),
+(61, 1, '67% Klientów Mężczyzn', '2021-11-13 21:13:22'),
+(62, 1, '1636920802', '2021-11-13 21:13:22'),
+(67, 1, 'Brak zamówień', '2021-11-13 21:34:59'),
+(68, 1, '1636922099', '2021-11-13 21:34:59');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_configuration_lang`
+-- Struktura tabeli dla tabeli `ps_configuration_lang`
 --
 
 CREATE TABLE `ps_configuration_lang` (
@@ -5418,7 +5529,7 @@ CREATE TABLE `ps_configuration_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_configuration_lang`
+-- Zrzut danych tabeli `ps_configuration_lang`
 --
 
 INSERT INTO `ps_configuration_lang` (`id_configuration`, `id_lang`, `value`, `date_upd`) VALUES
@@ -5427,21 +5538,26 @@ INSERT INTO `ps_configuration_lang` (`id_configuration`, `id_lang`, `value`, `da
 (44, 1, '#ZW', NULL),
 (51, 1, 'ach|aj|albo|bardzo|bez|bo|być|ci|cię|ciebie|co|czy|daleko|dla|dlaczego|dlatego|do|dobrze|dokąd|dość|dużo|dwa|dwaj|dwie|dwoje|dziś|dzisiaj|gdyby|gdzie|go|ich|ile|im|inny|ja|ją|jak|jakby|jaki|je|jeden|jedna|jedno|jego|jej|jemu|jeśli|jest|jestem|jeżeli|już|każdy|kiedy|kierunku|kto|ku|lub|ma|mają|mam|mi|mną|mnie|moi|mój|moja|moje|może|mu|my|na|nam|nami|nas|nasi|nasz|nasza|nasze|natychmiast|nią|nic|nich|nie|niego|niej|niemu|nigdy|nim|nimi|niż|obok|od|okolo|on|ona|one|oni|ono|owszem|po|pod|ponieważ|przed|przedtem|są|sam|sama|się|skąd|tak|taki|tam|ten|to|tobą|tobie|tu|tutaj|twoi|twój|twoja|twoje|ty|wam|wami|was|wasi|wasz|wasza|wasze|we|więc|wszystko|wtedy|wy|żaden|zawsze|że', NULL),
 (77, 1, 'Szanowny Kliencie!\n\nZ poważaniem,\nObsługa klienta', NULL),
+(208, 1, 'https://www.facebook.com/jasniejcom/', '2021-11-13 22:02:18'),
 (277, 1, 'Aktualizujemy nasz sklep i wkrótce będziemy z powrotem.\nDziękujemy za cierpliwość.', NULL),
-(288, 1, 'ffd8be9030f79c5007d1b6f33b343d4e.png', '2021-11-09 22:21:06'),
+(288, 1, 'f059d554761f84a013281212548273f1.jpg', '2021-11-13 20:53:43'),
 (289, 1, 'http://localhost/21-szynoprzewody-1f', '2021-11-09 22:21:06'),
 (290, 1, 'szynoprzewody', '2021-11-09 22:21:06'),
 (297, 1, 'Możesz zrezygnować w każdej chwili. W tym celu należy odnaleźć szczegóły w naszej informacji prawnej.', '2021-10-23 19:41:01'),
+(315, 1, 'https://www.instagram.com/jasniejcom/', '2021-11-13 22:02:18'),
 (326, 1, 'Akceptuję ogólne warunki użytkowania i politykę prywatności', '2021-10-23 19:45:19'),
 (328, 1, 'Akceptuję ogólne warunki użytkowania i politykę prywatności', '2021-10-23 19:45:19'),
-(420, 1, 'In Stock', '2021-11-12 23:39:09'),
-(421, 1, 'Product available for orders', '2021-11-12 23:39:09'),
-(422, 1, 'Out-of-Stock', '2021-11-12 23:39:09');
+(420, 1, 'W magazynie', '2021-11-13 19:58:24'),
+(421, 1, 'Produkty możliwe do zamówienia', '2021-11-13 19:58:24'),
+(422, 1, 'Wyprzedane', '2021-11-13 19:58:24'),
+(449, 1, NULL, '2021-11-13 20:58:24'),
+(450, 1, NULL, '2021-11-13 20:58:24'),
+(464, 1, '', '2021-11-13 22:02:18');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_connections`
+-- Struktura tabeli dla tabeli `ps_connections`
 --
 
 CREATE TABLE `ps_connections` (
@@ -5456,7 +5572,7 @@ CREATE TABLE `ps_connections` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_connections`
+-- Zrzut danych tabeli `ps_connections`
 --
 
 INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_guest`, `id_page`, `ip_address`, `date_add`, `http_referer`) VALUES
@@ -5482,12 +5598,14 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (20, 1, 1, 7, 2, 2886860801, '2021-11-13 13:40:58', ''),
 (21, 1, 1, 8, 1, 2886860801, '2021-11-13 14:29:25', ''),
 (22, 1, 1, 7, 1, 2886860801, '2021-11-13 14:39:10', ''),
-(23, 1, 1, 7, 1, 2886860801, '2021-11-13 15:14:21', '');
+(23, 1, 1, 7, 1, 2886860801, '2021-11-13 15:14:21', ''),
+(24, 1, 1, 9, 1, 2886860801, '2021-11-13 20:38:43', ''),
+(25, 1, 1, 9, 3, 2886860801, '2021-11-13 21:48:24', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_connections_page`
+-- Struktura tabeli dla tabeli `ps_connections_page`
 --
 
 CREATE TABLE `ps_connections_page` (
@@ -5500,7 +5618,7 @@ CREATE TABLE `ps_connections_page` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_connections_source`
+-- Struktura tabeli dla tabeli `ps_connections_source`
 --
 
 CREATE TABLE `ps_connections_source` (
@@ -5515,7 +5633,7 @@ CREATE TABLE `ps_connections_source` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_contact`
+-- Struktura tabeli dla tabeli `ps_contact`
 --
 
 CREATE TABLE `ps_contact` (
@@ -5526,7 +5644,7 @@ CREATE TABLE `ps_contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_contact`
+-- Zrzut danych tabeli `ps_contact`
 --
 
 INSERT INTO `ps_contact` (`id_contact`, `email`, `customer_service`, `position`) VALUES
@@ -5537,7 +5655,7 @@ INSERT INTO `ps_contact` (`id_contact`, `email`, `customer_service`, `position`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_contact_lang`
+-- Struktura tabeli dla tabeli `ps_contact_lang`
 --
 
 CREATE TABLE `ps_contact_lang` (
@@ -5548,7 +5666,7 @@ CREATE TABLE `ps_contact_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_contact_lang`
+-- Zrzut danych tabeli `ps_contact_lang`
 --
 
 INSERT INTO `ps_contact_lang` (`id_contact`, `id_lang`, `name`, `description`) VALUES
@@ -5559,7 +5677,7 @@ INSERT INTO `ps_contact_lang` (`id_contact`, `id_lang`, `name`, `description`) V
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_contact_shop`
+-- Struktura tabeli dla tabeli `ps_contact_shop`
 --
 
 CREATE TABLE `ps_contact_shop` (
@@ -5568,7 +5686,7 @@ CREATE TABLE `ps_contact_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_contact_shop`
+-- Zrzut danych tabeli `ps_contact_shop`
 --
 
 INSERT INTO `ps_contact_shop` (`id_contact`, `id_shop`) VALUES
@@ -5579,7 +5697,7 @@ INSERT INTO `ps_contact_shop` (`id_contact`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_country`
+-- Struktura tabeli dla tabeli `ps_country`
 --
 
 CREATE TABLE `ps_country` (
@@ -5597,7 +5715,7 @@ CREATE TABLE `ps_country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_country`
+-- Zrzut danych tabeli `ps_country`
 --
 
 INSERT INTO `ps_country` (`id_country`, `id_zone`, `id_currency`, `iso_code`, `call_prefix`, `active`, `contains_states`, `need_identification_number`, `need_zip_code`, `zip_code_format`, `display_tax_label`) VALUES
@@ -5849,7 +5967,7 @@ INSERT INTO `ps_country` (`id_country`, `id_zone`, `id_currency`, `iso_code`, `c
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_country_lang`
+-- Struktura tabeli dla tabeli `ps_country_lang`
 --
 
 CREATE TABLE `ps_country_lang` (
@@ -5859,7 +5977,7 @@ CREATE TABLE `ps_country_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_country_lang`
+-- Zrzut danych tabeli `ps_country_lang`
 --
 
 INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
@@ -5894,7 +6012,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (29, 1, 'Izrael'),
 (30, 1, 'Republika Południowej Afryki'),
 (31, 1, 'Nigeria'),
-(32, 1, 'Côte D’Ivoire'),
+(32, 1, 'Côte d’Ivoire'),
 (33, 1, 'Togo'),
 (34, 1, 'Boliwia'),
 (35, 1, 'Mauritius'),
@@ -5905,7 +6023,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (40, 1, 'Andora'),
 (41, 1, 'Angola'),
 (42, 1, 'Anguilla'),
-(43, 1, 'Antigua I Barbuda'),
+(43, 1, 'Antigua i Barbuda'),
 (44, 1, 'Argentyna'),
 (45, 1, 'Armenia'),
 (46, 1, 'Aruba'),
@@ -5921,7 +6039,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (56, 1, 'Bhutan'),
 (57, 1, 'Botswana'),
 (58, 1, 'Brazylia'),
-(59, 1, 'Brunei Darussalam'),
+(59, 1, 'Brunei'),
 (60, 1, 'Burkina Faso'),
 (61, 1, 'Mjanma (Birma)'),
 (62, 1, 'Burundi'),
@@ -5963,7 +6081,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (98, 1, 'Gwadelupa'),
 (99, 1, 'Guam'),
 (100, 1, 'Gwatemala'),
-(101, 1, 'Wyspa Guernsey'),
+(101, 1, 'Guernsey'),
 (102, 1, 'Gwinea'),
 (103, 1, 'Gwinea Bissau'),
 (104, 1, 'Gujana'),
@@ -5978,7 +6096,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (113, 1, 'Irak'),
 (114, 1, 'Wyspa Man'),
 (115, 1, 'Jamajka'),
-(116, 1, 'Wyspa Jersey'),
+(116, 1, 'Jersey'),
 (117, 1, 'Jordania'),
 (118, 1, 'Kazachstan'),
 (119, 1, 'Kenia'),
@@ -5995,7 +6113,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (130, 1, 'Liechtenstein'),
 (131, 1, 'Litwa'),
 (132, 1, 'SRA Makau (Chiny)'),
-(133, 1, 'Macedonia'),
+(133, 1, 'Macedonia Północna'),
 (134, 1, 'Madagaskar'),
 (135, 1, 'Malawi'),
 (136, 1, 'Malezja'),
@@ -6042,14 +6160,14 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (177, 1, 'Rosja'),
 (178, 1, 'Rwanda'),
 (179, 1, 'Saint-Barthélemy'),
-(180, 1, 'Saint Kitts I Nevis'),
+(180, 1, 'Saint Kitts i Nevis'),
 (181, 1, 'Saint Lucia'),
 (182, 1, 'Saint-Martin'),
-(183, 1, 'Saint-Pierre I Miquelon'),
-(184, 1, 'Saint Vincent I Grenadyny'),
+(183, 1, 'Saint-Pierre i Miquelon'),
+(184, 1, 'Saint Vincent i Grenadyny'),
 (185, 1, 'Samoa'),
 (186, 1, 'San Marino'),
-(187, 1, 'Wyspy Świętego Tomasza I Książęca'),
+(187, 1, 'Wyspy Świętego Tomasza i Książęca'),
 (188, 1, 'Arabia Saudyjska'),
 (189, 1, 'Senegal'),
 (190, 1, 'Serbia'),
@@ -6058,12 +6176,12 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (193, 1, 'Słowenia'),
 (194, 1, 'Wyspy Salomona'),
 (195, 1, 'Somalia'),
-(196, 1, 'Georgia Południowa I Sandwich Południowy'),
+(196, 1, 'Georgia Południowa i Sandwich Południowy'),
 (197, 1, 'Sri Lanka'),
 (198, 1, 'Sudan'),
 (199, 1, 'Surinam'),
-(200, 1, 'Svalbard I Jan Mayen'),
-(201, 1, 'Suazi'),
+(200, 1, 'Svalbard i Jan Mayen'),
+(201, 1, 'Eswatini'),
 (202, 1, 'Syria'),
 (203, 1, 'Tajwan'),
 (204, 1, 'Tadżykistan'),
@@ -6071,11 +6189,11 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (206, 1, 'Tajlandia'),
 (207, 1, 'Tokelau'),
 (208, 1, 'Tonga'),
-(209, 1, 'Trynidad I Tobago'),
+(209, 1, 'Trynidad i Tobago'),
 (210, 1, 'Tunezja'),
 (211, 1, 'Turcja'),
 (212, 1, 'Turkmenistan'),
-(213, 1, 'Turks I Caicos'),
+(213, 1, 'Turks i Caicos'),
 (214, 1, 'Tuvalu'),
 (215, 1, 'Uganda'),
 (216, 1, 'Ukraina'),
@@ -6087,15 +6205,15 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (222, 1, 'Wietnam'),
 (223, 1, 'Brytyjskie Wyspy Dziewicze'),
 (224, 1, 'Wyspy Dziewicze Stanów Zjednoczonych'),
-(225, 1, 'Wallis I Futuna'),
+(225, 1, 'Wallis i Futuna'),
 (226, 1, 'Sahara Zachodnia'),
 (227, 1, 'Jemen'),
 (228, 1, 'Zambia'),
 (229, 1, 'Zimbabwe'),
 (230, 1, 'Albania'),
 (231, 1, 'Afganistan'),
-(232, 1, 'Antarktyka'),
-(233, 1, 'Bośnia I Hercegowina'),
+(232, 1, 'Antarktyda'),
+(233, 1, 'Bośnia i Hercegowina'),
 (234, 1, 'Wyspa Bouveta'),
 (235, 1, 'Brytyjskie Terytorium Oceanu Indyjskiego'),
 (236, 1, 'Bułgaria'),
@@ -6105,13 +6223,13 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 (240, 1, 'Wyspy Cooka'),
 (241, 1, 'Gujana Francuska'),
 (242, 1, 'Polinezja Francuska'),
-(243, 1, 'Francuskie Terytoria Południowe'),
+(243, 1, 'Francuskie Terytoria Południowe i Antarktyczne'),
 (244, 1, 'Wyspy Alandzkie');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_country_shop`
+-- Struktura tabeli dla tabeli `ps_country_shop`
 --
 
 CREATE TABLE `ps_country_shop` (
@@ -6120,7 +6238,7 @@ CREATE TABLE `ps_country_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_country_shop`
+-- Zrzut danych tabeli `ps_country_shop`
 --
 
 INSERT INTO `ps_country_shop` (`id_country`, `id_shop`) VALUES
@@ -6372,7 +6490,7 @@ INSERT INTO `ps_country_shop` (`id_country`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_currency`
+-- Struktura tabeli dla tabeli `ps_currency`
 --
 
 CREATE TABLE `ps_currency` (
@@ -6389,7 +6507,7 @@ CREATE TABLE `ps_currency` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_currency`
+-- Zrzut danych tabeli `ps_currency`
 --
 
 INSERT INTO `ps_currency` (`id_currency`, `name`, `iso_code`, `numeric_iso_code`, `precision`, `conversion_rate`, `deleted`, `active`, `unofficial`, `modified`) VALUES
@@ -6398,7 +6516,7 @@ INSERT INTO `ps_currency` (`id_currency`, `name`, `iso_code`, `numeric_iso_code`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_currency_lang`
+-- Struktura tabeli dla tabeli `ps_currency_lang`
 --
 
 CREATE TABLE `ps_currency_lang` (
@@ -6410,7 +6528,7 @@ CREATE TABLE `ps_currency_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_currency_lang`
+-- Zrzut danych tabeli `ps_currency_lang`
 --
 
 INSERT INTO `ps_currency_lang` (`id_currency`, `id_lang`, `name`, `symbol`, `pattern`) VALUES
@@ -6419,7 +6537,7 @@ INSERT INTO `ps_currency_lang` (`id_currency`, `id_lang`, `name`, `symbol`, `pat
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_currency_shop`
+-- Struktura tabeli dla tabeli `ps_currency_shop`
 --
 
 CREATE TABLE `ps_currency_shop` (
@@ -6429,7 +6547,7 @@ CREATE TABLE `ps_currency_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_currency_shop`
+-- Zrzut danych tabeli `ps_currency_shop`
 --
 
 INSERT INTO `ps_currency_shop` (`id_currency`, `id_shop`, `conversion_rate`) VALUES
@@ -6438,7 +6556,7 @@ INSERT INTO `ps_currency_shop` (`id_currency`, `id_shop`, `conversion_rate`) VAL
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customer`
+-- Struktura tabeli dla tabeli `ps_customer`
 --
 
 CREATE TABLE `ps_customer` (
@@ -6478,18 +6596,19 @@ CREATE TABLE `ps_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_customer`
+-- Zrzut danych tabeli `ps_customer`
 --
 
 INSERT INTO `ps_customer` (`id_customer`, `id_shop_group`, `id_shop`, `id_gender`, `id_default_group`, `id_lang`, `id_risk`, `company`, `siret`, `ape`, `firstname`, `lastname`, `email`, `passwd`, `last_passwd_gen`, `birthday`, `newsletter`, `ip_registration_newsletter`, `newsletter_date_add`, `optin`, `website`, `outstanding_allow_amount`, `show_public_prices`, `max_payment_days`, `secure_key`, `note`, `active`, `is_guest`, `deleted`, `date_add`, `date_upd`, `reset_password_token`, `reset_password_validity`) VALUES
 (1, 1, 1, 1, 3, 1, 0, '', '', '', 'John', 'DOE', 'pub@prestashop.com', '5f9b1528cd8e5689bfd066e07f2611bf', '2021-10-23 13:40:29', '1970-01-15', 1, '', '2013-12-13 08:19:15', 1, '', '0.000000', 0, 0, '4ac029b8a0bf4c1e6601a5d4f08e64a5', '', 1, 0, 0, '2021-10-23 19:40:29', '2021-10-23 19:40:29', '', '0000-00-00 00:00:00'),
 (2, 1, 1, 1, 3, 1, 0, '', '', '', 'Anonymous', 'Anonymous', 'anonymous@psgdpr.com', 'prestashop', '2021-10-23 13:45:20', '0000-00-00', 0, '', '0000-00-00 00:00:00', 1, '', '0.000000', 0, 0, 'fc8cdfa703922c4bf69c5d24aef0af19', '', 0, 0, 0, '2021-10-23 19:45:20', '2021-10-23 19:45:20', '', '0000-00-00 00:00:00'),
-(3, 1, 1, 1, 3, 1, 0, '', '', '', 'Paweł', 'Grajkowski', 'pawielgraj@wp.pl', '$2y$10$9r.Fsm6CUebUy6zx3LMmM.Vk71AaXdeh/2IzOAIUgldpbodDmswci', '2021-11-09 17:36:22', '0000-00-00', 1, '', '2021-11-09 23:36:22', 1, '', '0.000000', 0, 0, '26e617fba0e83785f1bbc649bac54437', '', 1, 0, 0, '2021-11-09 23:36:22', '2021-11-09 23:36:22', '', '0000-00-00 00:00:00');
+(3, 1, 1, 1, 3, 1, 0, '', '', '', 'Paweł', 'Grajkowski', 'pawielgraj@wp.pl', '$2y$10$9r.Fsm6CUebUy6zx3LMmM.Vk71AaXdeh/2IzOAIUgldpbodDmswci', '2021-11-09 17:36:22', '0000-00-00', 1, '', '2021-11-09 23:36:22', 1, '', '0.000000', 0, 0, '26e617fba0e83785f1bbc649bac54437', '', 1, 0, 0, '2021-11-09 23:36:22', '2021-11-09 23:36:22', '', '0000-00-00 00:00:00'),
+(4, 1, 1, 2, 2, 1, 0, NULL, NULL, NULL, 'Weronika', 'kjhkjhk', 'admin@jasniej.pl', '$2y$10$N/bZ1HxSYS0MyvuayM2Vi.pMBOJwonnk0nMrq1yQBPMP3i8Cn5dsq', '2021-11-13 15:08:47', '0000-00-00', 0, NULL, '0000-00-00 00:00:00', 0, NULL, '0.000000', 0, 0, '363374dfd47ebe4887e3cd3c2c766498', NULL, 1, 1, 0, '2021-11-13 21:08:47', '2021-11-13 21:10:59', NULL, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customer_group`
+-- Struktura tabeli dla tabeli `ps_customer_group`
 --
 
 CREATE TABLE `ps_customer_group` (
@@ -6498,10 +6617,11 @@ CREATE TABLE `ps_customer_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_customer_group`
+-- Zrzut danych tabeli `ps_customer_group`
 --
 
 INSERT INTO `ps_customer_group` (`id_customer`, `id_group`) VALUES
+(4, 2),
 (1, 3),
 (2, 3),
 (3, 3);
@@ -6509,7 +6629,7 @@ INSERT INTO `ps_customer_group` (`id_customer`, `id_group`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customer_message`
+-- Struktura tabeli dla tabeli `ps_customer_message`
 --
 
 CREATE TABLE `ps_customer_message` (
@@ -6529,7 +6649,7 @@ CREATE TABLE `ps_customer_message` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customer_message_sync_imap`
+-- Struktura tabeli dla tabeli `ps_customer_message_sync_imap`
 --
 
 CREATE TABLE `ps_customer_message_sync_imap` (
@@ -6539,7 +6659,7 @@ CREATE TABLE `ps_customer_message_sync_imap` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customer_session`
+-- Struktura tabeli dla tabeli `ps_customer_session`
 --
 
 CREATE TABLE `ps_customer_session` (
@@ -6548,10 +6668,18 @@ CREATE TABLE `ps_customer_session` (
   `token` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_customer_session`
+--
+
+INSERT INTO `ps_customer_session` (`id_customer_session`, `id_customer`, `token`) VALUES
+(1, 4, '9194dd7d0d4155c41e5f8d475ce73c7c52ae6bc1'),
+(2, 4, '7402d08c56bb82b10ddd79be542548b0c51ca570');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customer_thread`
+-- Struktura tabeli dla tabeli `ps_customer_thread`
 --
 
 CREATE TABLE `ps_customer_thread` (
@@ -6572,7 +6700,7 @@ CREATE TABLE `ps_customer_thread` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customization`
+-- Struktura tabeli dla tabeli `ps_customization`
 --
 
 CREATE TABLE `ps_customization` (
@@ -6590,7 +6718,7 @@ CREATE TABLE `ps_customization` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customization_field`
+-- Struktura tabeli dla tabeli `ps_customization_field`
 --
 
 CREATE TABLE `ps_customization_field` (
@@ -6605,7 +6733,7 @@ CREATE TABLE `ps_customization_field` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customization_field_lang`
+-- Struktura tabeli dla tabeli `ps_customization_field_lang`
 --
 
 CREATE TABLE `ps_customization_field_lang` (
@@ -6618,7 +6746,7 @@ CREATE TABLE `ps_customization_field_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_customized_data`
+-- Struktura tabeli dla tabeli `ps_customized_data`
 --
 
 CREATE TABLE `ps_customized_data` (
@@ -6634,7 +6762,7 @@ CREATE TABLE `ps_customized_data` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_date_range`
+-- Struktura tabeli dla tabeli `ps_date_range`
 --
 
 CREATE TABLE `ps_date_range` (
@@ -6646,7 +6774,7 @@ CREATE TABLE `ps_date_range` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_delivery`
+-- Struktura tabeli dla tabeli `ps_delivery`
 --
 
 CREATE TABLE `ps_delivery` (
@@ -6661,19 +6789,27 @@ CREATE TABLE `ps_delivery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_delivery`
+-- Zrzut danych tabeli `ps_delivery`
 --
 
 INSERT INTO `ps_delivery` (`id_delivery`, `id_shop`, `id_shop_group`, `id_carrier`, `id_range_price`, `id_range_weight`, `id_zone`, `price`) VALUES
 (1, NULL, NULL, 2, 0, 1, 1, '5.000000'),
 (2, NULL, NULL, 2, 0, 1, 2, '5.000000'),
 (3, NULL, NULL, 2, 1, 0, 1, '5.000000'),
-(4, NULL, NULL, 2, 1, 0, 2, '5.000000');
+(4, NULL, NULL, 2, 1, 0, 2, '5.000000'),
+(7, NULL, NULL, 3, 2, NULL, 1, '15.000000'),
+(8, NULL, NULL, 3, 2, NULL, 2, '15.000000'),
+(11, NULL, NULL, 3, 3, NULL, 1, '10.000000'),
+(12, NULL, NULL, 3, 3, NULL, 2, '10.000000'),
+(15, NULL, NULL, 3, 4, NULL, 1, '0.000000'),
+(16, NULL, NULL, 3, 4, NULL, 2, '0.000000'),
+(18, NULL, NULL, 4, 5, NULL, 1, '20.000000'),
+(20, NULL, NULL, 4, 6, NULL, 1, '0.000000');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_emailsubscription`
+-- Struktura tabeli dla tabeli `ps_emailsubscription`
 --
 
 CREATE TABLE `ps_emailsubscription` (
@@ -6691,7 +6827,7 @@ CREATE TABLE `ps_emailsubscription` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_employee`
+-- Struktura tabeli dla tabeli `ps_employee`
 --
 
 CREATE TABLE `ps_employee` (
@@ -6727,7 +6863,7 @@ CREATE TABLE `ps_employee` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_employee`
+-- Zrzut danych tabeli `ps_employee`
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
@@ -6736,7 +6872,7 @@ INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_employee_session`
+-- Struktura tabeli dla tabeli `ps_employee_session`
 --
 
 CREATE TABLE `ps_employee_session` (
@@ -6746,19 +6882,20 @@ CREATE TABLE `ps_employee_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_employee_session`
+-- Zrzut danych tabeli `ps_employee_session`
 --
 
 INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`) VALUES
 (1, 1, '1a7ce6b6537d443ce1a09bf006415b236ff99bc6'),
 (2, 1, '27041782c9fa7cb1218584284d710e09f67e3d31'),
 (3, 1, 'f0b5c051e2a79e58fbb21851ae24e1d0baf9158f'),
-(4, 1, '1aa7917030e05544cd3fb9ba621c2b989ba5eb2e');
+(4, 1, '1aa7917030e05544cd3fb9ba621c2b989ba5eb2e'),
+(5, 1, '4c1834f8dfb8fd745861f0aaafc98fcd8f25646d');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_employee_shop`
+-- Struktura tabeli dla tabeli `ps_employee_shop`
 --
 
 CREATE TABLE `ps_employee_shop` (
@@ -6767,7 +6904,7 @@ CREATE TABLE `ps_employee_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_employee_shop`
+-- Zrzut danych tabeli `ps_employee_shop`
 --
 
 INSERT INTO `ps_employee_shop` (`id_employee`, `id_shop`) VALUES
@@ -6776,7 +6913,7 @@ INSERT INTO `ps_employee_shop` (`id_employee`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_eventbus_deleted_objects`
+-- Struktura tabeli dla tabeli `ps_eventbus_deleted_objects`
 --
 
 CREATE TABLE `ps_eventbus_deleted_objects` (
@@ -6789,7 +6926,7 @@ CREATE TABLE `ps_eventbus_deleted_objects` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_eventbus_incremental_sync`
+-- Struktura tabeli dla tabeli `ps_eventbus_incremental_sync`
 --
 
 CREATE TABLE `ps_eventbus_incremental_sync` (
@@ -6801,11 +6938,13 @@ CREATE TABLE `ps_eventbus_incremental_sync` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_eventbus_incremental_sync`
+-- Zrzut danych tabeli `ps_eventbus_incremental_sync`
 --
 
 INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lang_iso`, `created_at`) VALUES
+('carrier', 0, 1, 'pl', '2021-11-13 21:33:32'),
 ('carts', 6, 1, 'pl', '2021-11-10 00:11:52'),
+('carts', 7, 1, 'pl', '2021-11-13 21:11:18'),
 ('orders', 6, 1, 'pl', '2021-11-10 00:11:58'),
 ('products', 363, 1, 'pl', '2021-11-11 01:04:12'),
 ('products', 1521, 1, 'pl', '2021-11-11 00:59:33'),
@@ -6849,8 +6988,8 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 2552, 1, 'pl', '2021-11-11 00:59:32'),
 ('products', 2553, 1, 'pl', '2021-11-11 00:59:35'),
 ('products', 2554, 1, 'pl', '2021-11-11 00:59:35'),
-('products', 2685, 1, 'pl', '2021-11-11 00:59:31'),
-('products', 2686, 1, 'pl', '2021-11-11 00:59:28'),
+('products', 2685, 1, 'pl', '2021-11-13 20:49:58'),
+('products', 2686, 1, 'pl', '2021-11-13 20:49:31'),
 ('products', 2690, 1, 'pl', '2021-11-11 00:59:54'),
 ('products', 2691, 1, 'pl', '2021-11-11 00:59:53'),
 ('products', 2692, 1, 'pl', '2021-11-11 00:59:52'),
@@ -6878,7 +7017,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 2764, 1, 'pl', '2021-11-11 00:59:48'),
 ('products', 2770, 1, 'pl', '2021-11-11 01:04:24'),
 ('products', 2771, 1, 'pl', '2021-11-11 01:04:23'),
-('products', 2772, 1, 'pl', '2021-11-11 01:04:22'),
+('products', 2772, 1, 'pl', '2021-11-13 20:54:40'),
 ('products', 2774, 1, 'pl', '2021-11-11 01:04:23'),
 ('products', 2777, 1, 'pl', '2021-11-11 00:59:45'),
 ('products', 2778, 1, 'pl', '2021-11-11 01:04:25'),
@@ -6918,7 +7057,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 7705, 1, 'pl', '2021-11-11 01:05:39'),
 ('products', 7706, 1, 'pl', '2021-11-11 01:05:43'),
 ('products', 7707, 1, 'pl', '2021-11-11 01:06:20'),
-('products', 7708, 1, 'pl', '2021-11-11 01:05:38'),
+('products', 7708, 1, 'pl', '2021-11-13 20:52:52'),
 ('products', 7709, 1, 'pl', '2021-11-11 01:05:40'),
 ('products', 7710, 1, 'pl', '2021-11-11 01:05:50'),
 ('products', 7711, 1, 'pl', '2021-11-11 01:06:27'),
@@ -7042,7 +7181,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 8634, 1, 'pl', '2021-11-11 01:05:10'),
 ('products', 8636, 1, 'pl', '2021-11-11 01:05:12'),
 ('products', 8638, 1, 'pl', '2021-11-11 01:05:11'),
-('products', 8714, 1, 'pl', '2021-11-11 00:56:53'),
+('products', 8714, 1, 'pl', '2021-11-13 21:04:20'),
 ('products', 8722, 1, 'pl', '2021-11-11 00:56:51'),
 ('products', 8729, 1, 'pl', '2021-11-11 00:56:49'),
 ('products', 8730, 1, 'pl', '2021-11-11 00:56:52'),
@@ -7107,7 +7246,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 8904, 1, 'pl', '2021-11-11 00:59:15'),
 ('products', 8905, 1, 'pl', '2021-11-11 00:58:13'),
 ('products', 8906, 1, 'pl', '2021-11-11 00:58:10'),
-('products', 8914, 1, 'pl', '2021-11-11 00:58:12'),
+('products', 8914, 1, 'pl', '2021-11-13 20:46:20'),
 ('products', 8915, 1, 'pl', '2021-11-11 00:59:14'),
 ('products', 8916, 1, 'pl', '2021-11-11 00:59:11'),
 ('products', 8917, 1, 'pl', '2021-11-11 00:59:12'),
@@ -7126,7 +7265,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 8930, 1, 'pl', '2021-11-11 00:58:48'),
 ('products', 8931, 1, 'pl', '2021-11-11 00:58:49'),
 ('products', 8932, 1, 'pl', '2021-11-11 00:58:53'),
-('products', 8933, 1, 'pl', '2021-11-11 00:57:38'),
+('products', 8933, 1, 'pl', '2021-11-13 21:01:54'),
 ('products', 8934, 1, 'pl', '2021-11-11 00:57:35'),
 ('products', 8935, 1, 'pl', '2021-11-11 00:57:34'),
 ('products', 8936, 1, 'pl', '2021-11-11 00:57:36'),
@@ -7252,7 +7391,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 15303, 1, 'pl', '2021-11-11 01:03:38'),
 ('products', 15307, 1, 'pl', '2021-11-11 01:00:03'),
 ('products', 15308, 1, 'pl', '2021-11-11 01:00:01'),
-('products', 15606, 1, 'pl', '2021-11-11 01:05:36'),
+('products', 15606, 1, 'pl', '2021-11-13 20:55:39'),
 ('products', 15607, 1, 'pl', '2021-11-11 01:03:35'),
 ('products', 15665, 1, 'pl', '2021-11-11 01:04:19'),
 ('products', 15666, 1, 'pl', '2021-11-11 01:04:21'),
@@ -7288,7 +7427,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 19128, 1, 'pl', '2021-11-11 01:06:10'),
 ('products', 19129, 1, 'pl', '2021-11-11 01:05:52'),
 ('products', 19130, 1, 'pl', '2021-11-11 01:06:02'),
-('products', 19131, 1, 'pl', '2021-11-11 01:06:09'),
+('products', 19131, 1, 'pl', '2021-11-13 20:51:27'),
 ('products', 19186, 1, 'pl', '2021-11-11 00:58:44'),
 ('products', 19187, 1, 'pl', '2021-11-11 00:58:42'),
 ('products', 19188, 1, 'pl', '2021-11-11 00:59:04'),
@@ -7328,7 +7467,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 ('products', 23632, 1, 'pl', '2021-11-11 01:01:22'),
 ('products', 23672, 1, 'pl', '2021-11-11 01:01:23'),
 ('products', 23673, 1, 'pl', '2021-11-11 01:01:24'),
-('products', 23709, 1, 'pl', '2021-11-11 01:05:08'),
+('products', 23709, 1, 'pl', '2021-11-13 20:54:01'),
 ('products', 26017, 1, 'pl', '2021-11-11 01:03:05'),
 ('products', 26018, 1, 'pl', '2021-11-11 01:02:58'),
 ('products', 26019, 1, 'pl', '2021-11-11 01:03:03'),
@@ -7490,7 +7629,7 @@ INSERT INTO `ps_eventbus_incremental_sync` (`type`, `id_object`, `id_shop`, `lan
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_eventbus_job`
+-- Struktura tabeli dla tabeli `ps_eventbus_job`
 --
 
 CREATE TABLE `ps_eventbus_job` (
@@ -7501,7 +7640,7 @@ CREATE TABLE `ps_eventbus_job` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_eventbus_type_sync`
+-- Struktura tabeli dla tabeli `ps_eventbus_type_sync`
 --
 
 CREATE TABLE `ps_eventbus_type_sync` (
@@ -7516,7 +7655,7 @@ CREATE TABLE `ps_eventbus_type_sync` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_fb_category_match`
+-- Struktura tabeli dla tabeli `ps_fb_category_match`
 --
 
 CREATE TABLE `ps_fb_category_match` (
@@ -7532,7 +7671,7 @@ CREATE TABLE `ps_fb_category_match` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature`
+-- Struktura tabeli dla tabeli `ps_feature`
 --
 
 CREATE TABLE `ps_feature` (
@@ -7541,7 +7680,7 @@ CREATE TABLE `ps_feature` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_feature`
+-- Zrzut danych tabeli `ps_feature`
 --
 
 INSERT INTO `ps_feature` (`id_feature`, `position`) VALUES
@@ -7556,7 +7695,7 @@ INSERT INTO `ps_feature` (`id_feature`, `position`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature_flag`
+-- Struktura tabeli dla tabeli `ps_feature_flag`
 --
 
 CREATE TABLE `ps_feature_flag` (
@@ -7570,7 +7709,7 @@ CREATE TABLE `ps_feature_flag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `ps_feature_flag`
+-- Zrzut danych tabeli `ps_feature_flag`
 --
 
 INSERT INTO `ps_feature_flag` (`id_feature_flag`, `name`, `state`, `label_wording`, `label_domain`, `description_wording`, `description_domain`) VALUES
@@ -7579,7 +7718,7 @@ INSERT INTO `ps_feature_flag` (`id_feature_flag`, `name`, `state`, `label_wordin
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature_lang`
+-- Struktura tabeli dla tabeli `ps_feature_lang`
 --
 
 CREATE TABLE `ps_feature_lang` (
@@ -7589,7 +7728,7 @@ CREATE TABLE `ps_feature_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_feature_lang`
+-- Zrzut danych tabeli `ps_feature_lang`
 --
 
 INSERT INTO `ps_feature_lang` (`id_feature`, `id_lang`, `name`) VALUES
@@ -7604,7 +7743,7 @@ INSERT INTO `ps_feature_lang` (`id_feature`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature_product`
+-- Struktura tabeli dla tabeli `ps_feature_product`
 --
 
 CREATE TABLE `ps_feature_product` (
@@ -7616,7 +7755,7 @@ CREATE TABLE `ps_feature_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature_shop`
+-- Struktura tabeli dla tabeli `ps_feature_shop`
 --
 
 CREATE TABLE `ps_feature_shop` (
@@ -7625,7 +7764,7 @@ CREATE TABLE `ps_feature_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_feature_shop`
+-- Zrzut danych tabeli `ps_feature_shop`
 --
 
 INSERT INTO `ps_feature_shop` (`id_feature`, `id_shop`) VALUES
@@ -7640,7 +7779,7 @@ INSERT INTO `ps_feature_shop` (`id_feature`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature_value`
+-- Struktura tabeli dla tabeli `ps_feature_value`
 --
 
 CREATE TABLE `ps_feature_value` (
@@ -7650,7 +7789,7 @@ CREATE TABLE `ps_feature_value` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_feature_value`
+-- Zrzut danych tabeli `ps_feature_value`
 --
 
 INSERT INTO `ps_feature_value` (`id_feature_value`, `id_feature`, `custom`) VALUES
@@ -7691,7 +7830,7 @@ INSERT INTO `ps_feature_value` (`id_feature_value`, `id_feature`, `custom`) VALU
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_feature_value_lang`
+-- Struktura tabeli dla tabeli `ps_feature_value_lang`
 --
 
 CREATE TABLE `ps_feature_value_lang` (
@@ -7701,7 +7840,7 @@ CREATE TABLE `ps_feature_value_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_feature_value_lang`
+-- Zrzut danych tabeli `ps_feature_value_lang`
 --
 
 INSERT INTO `ps_feature_value_lang` (`id_feature_value`, `id_lang`, `value`) VALUES
@@ -7742,7 +7881,7 @@ INSERT INTO `ps_feature_value_lang` (`id_feature_value`, `id_lang`, `value`) VAL
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_ganalytics`
+-- Struktura tabeli dla tabeli `ps_ganalytics`
 --
 
 CREATE TABLE `ps_ganalytics` (
@@ -7758,7 +7897,7 @@ CREATE TABLE `ps_ganalytics` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_ganalytics_data`
+-- Struktura tabeli dla tabeli `ps_ganalytics_data`
 --
 
 CREATE TABLE `ps_ganalytics_data` (
@@ -7770,7 +7909,7 @@ CREATE TABLE `ps_ganalytics_data` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_gender`
+-- Struktura tabeli dla tabeli `ps_gender`
 --
 
 CREATE TABLE `ps_gender` (
@@ -7779,7 +7918,7 @@ CREATE TABLE `ps_gender` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_gender`
+-- Zrzut danych tabeli `ps_gender`
 --
 
 INSERT INTO `ps_gender` (`id_gender`, `type`) VALUES
@@ -7789,7 +7928,7 @@ INSERT INTO `ps_gender` (`id_gender`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_gender_lang`
+-- Struktura tabeli dla tabeli `ps_gender_lang`
 --
 
 CREATE TABLE `ps_gender_lang` (
@@ -7799,7 +7938,7 @@ CREATE TABLE `ps_gender_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_gender_lang`
+-- Zrzut danych tabeli `ps_gender_lang`
 --
 
 INSERT INTO `ps_gender_lang` (`id_gender`, `id_lang`, `name`) VALUES
@@ -7809,7 +7948,7 @@ INSERT INTO `ps_gender_lang` (`id_gender`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_group`
+-- Struktura tabeli dla tabeli `ps_group`
 --
 
 CREATE TABLE `ps_group` (
@@ -7822,7 +7961,7 @@ CREATE TABLE `ps_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_group`
+-- Zrzut danych tabeli `ps_group`
 --
 
 INSERT INTO `ps_group` (`id_group`, `reduction`, `price_display_method`, `show_prices`, `date_add`, `date_upd`) VALUES
@@ -7833,7 +7972,7 @@ INSERT INTO `ps_group` (`id_group`, `reduction`, `price_display_method`, `show_p
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_group_lang`
+-- Struktura tabeli dla tabeli `ps_group_lang`
 --
 
 CREATE TABLE `ps_group_lang` (
@@ -7843,7 +7982,7 @@ CREATE TABLE `ps_group_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_group_lang`
+-- Zrzut danych tabeli `ps_group_lang`
 --
 
 INSERT INTO `ps_group_lang` (`id_group`, `id_lang`, `name`) VALUES
@@ -7854,7 +7993,7 @@ INSERT INTO `ps_group_lang` (`id_group`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_group_reduction`
+-- Struktura tabeli dla tabeli `ps_group_reduction`
 --
 
 CREATE TABLE `ps_group_reduction` (
@@ -7867,7 +8006,7 @@ CREATE TABLE `ps_group_reduction` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_group_shop`
+-- Struktura tabeli dla tabeli `ps_group_shop`
 --
 
 CREATE TABLE `ps_group_shop` (
@@ -7876,7 +8015,7 @@ CREATE TABLE `ps_group_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_group_shop`
+-- Zrzut danych tabeli `ps_group_shop`
 --
 
 INSERT INTO `ps_group_shop` (`id_group`, `id_shop`) VALUES
@@ -7887,7 +8026,7 @@ INSERT INTO `ps_group_shop` (`id_group`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_guest`
+-- Struktura tabeli dla tabeli `ps_guest`
 --
 
 CREATE TABLE `ps_guest` (
@@ -7910,7 +8049,7 @@ CREATE TABLE `ps_guest` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_guest`
+-- Zrzut danych tabeli `ps_guest`
 --
 
 INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id_customer`, `javascript`, `screen_resolution_x`, `screen_resolution_y`, `screen_color`, `sun_java`, `adobe_flash`, `adobe_director`, `apple_quicktime`, `real_player`, `windows_media`, `accept_language`, `mobile_theme`) VALUES
@@ -7921,12 +8060,13 @@ INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id
 (5, 6, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'en', 0),
 (6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0),
 (7, 6, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
-(8, 6, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
+(8, 6, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(9, 6, 11, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'pl', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_homeslider`
+-- Struktura tabeli dla tabeli `ps_homeslider`
 --
 
 CREATE TABLE `ps_homeslider` (
@@ -7935,7 +8075,7 @@ CREATE TABLE `ps_homeslider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_homeslider`
+-- Zrzut danych tabeli `ps_homeslider`
 --
 
 INSERT INTO `ps_homeslider` (`id_homeslider_slides`, `id_shop`) VALUES
@@ -7945,7 +8085,7 @@ INSERT INTO `ps_homeslider` (`id_homeslider_slides`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_homeslider_slides`
+-- Struktura tabeli dla tabeli `ps_homeslider_slides`
 --
 
 CREATE TABLE `ps_homeslider_slides` (
@@ -7955,7 +8095,7 @@ CREATE TABLE `ps_homeslider_slides` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_homeslider_slides`
+-- Zrzut danych tabeli `ps_homeslider_slides`
 --
 
 INSERT INTO `ps_homeslider_slides` (`id_homeslider_slides`, `position`, `active`) VALUES
@@ -7965,7 +8105,7 @@ INSERT INTO `ps_homeslider_slides` (`id_homeslider_slides`, `position`, `active`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_homeslider_slides_lang`
+-- Struktura tabeli dla tabeli `ps_homeslider_slides_lang`
 --
 
 CREATE TABLE `ps_homeslider_slides_lang` (
@@ -7979,7 +8119,7 @@ CREATE TABLE `ps_homeslider_slides_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_homeslider_slides_lang`
+-- Zrzut danych tabeli `ps_homeslider_slides_lang`
 --
 
 INSERT INTO `ps_homeslider_slides_lang` (`id_homeslider_slides`, `id_lang`, `title`, `description`, `legend`, `url`, `image`) VALUES
@@ -7989,7 +8129,7 @@ INSERT INTO `ps_homeslider_slides_lang` (`id_homeslider_slides`, `id_lang`, `tit
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_hook`
+-- Struktura tabeli dla tabeli `ps_hook`
 --
 
 CREATE TABLE `ps_hook` (
@@ -8002,7 +8142,7 @@ CREATE TABLE `ps_hook` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_hook`
+-- Zrzut danych tabeli `ps_hook`
 --
 
 INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `position`) VALUES
@@ -8727,12 +8867,15 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `pos
 (725, 'actionAfterCreateOrderReturnStateFormHandler', 'Modify order return state identifiable object data after creating it', 'This hook allows to modify order return state identifiable object forms data after it was created', 1, 1),
 (726, 'actionAfterCreateZoneFormHandler', 'Modify zone identifiable object data after creating it', 'This hook allows to modify zone identifiable object forms data after it was created', 1, 1),
 (731, 'displayFooterAfter', 'displayFooterAfter', '', 1, 1),
-(732, 'actionObjectCustomerUpdateBefore', 'actionObjectCustomerUpdateBefore', '', 1, 1);
+(732, 'actionObjectCustomerUpdateBefore', 'actionObjectCustomerUpdateBefore', '', 1, 1),
+(733, 'actionObjectSpecificPriceCoreDeleteAfter', 'actionObjectSpecificPriceCoreDeleteAfter', '', 1, 1),
+(734, 'actionObjectSpecificPriceCoreAddAfter', 'actionObjectSpecificPriceCoreAddAfter', '', 1, 1),
+(735, 'actionObjectSpecificPriceCoreUpdateAfter', 'actionObjectSpecificPriceCoreUpdateAfter', '', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_hook_alias`
+-- Struktura tabeli dla tabeli `ps_hook_alias`
 --
 
 CREATE TABLE `ps_hook_alias` (
@@ -8742,7 +8885,7 @@ CREATE TABLE `ps_hook_alias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_hook_alias`
+-- Zrzut danych tabeli `ps_hook_alias`
 --
 
 INSERT INTO `ps_hook_alias` (`id_hook_alias`, `alias`, `name`) VALUES
@@ -8838,7 +8981,7 @@ INSERT INTO `ps_hook_alias` (`id_hook_alias`, `alias`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_hook_module`
+-- Struktura tabeli dla tabeli `ps_hook_module`
 --
 
 CREATE TABLE `ps_hook_module` (
@@ -8849,7 +8992,7 @@ CREATE TABLE `ps_hook_module` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_hook_module`
+-- Zrzut danych tabeli `ps_hook_module`
 --
 
 INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VALUES
@@ -8876,24 +9019,16 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (15, 1, 40, 1),
 (15, 1, 41, 1),
 (15, 1, 112, 1),
-(15, 1, 165, 1),
 (15, 1, 732, 1),
 (16, 1, 73, 1),
 (16, 1, 75, 1),
-(16, 1, 79, 1),
 (16, 1, 80, 1),
 (16, 1, 81, 1),
-(16, 1, 82, 1),
 (16, 1, 83, 1),
 (16, 1, 84, 1),
 (16, 1, 85, 1),
-(16, 1, 86, 1),
-(16, 1, 87, 1),
-(16, 1, 88, 1),
-(16, 1, 89, 1),
 (16, 1, 90, 1),
 (16, 1, 91, 1),
-(16, 1, 92, 1),
 (16, 1, 93, 1),
 (16, 1, 95, 1),
 (16, 1, 166, 1),
@@ -8973,9 +9108,10 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (55, 1, 197, 1),
 (55, 1, 198, 1),
 (56, 1, 19, 1),
+(56, 1, 22, 1),
+(56, 1, 165, 1),
 (56, 1, 200, 1),
 (56, 1, 731, 1),
-(57, 1, 22, 1),
 (57, 1, 27, 1),
 (57, 1, 30, 1),
 (57, 1, 31, 1),
@@ -9027,6 +9163,9 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (62, 1, 148, 1),
 (63, 1, 55, 1),
 (63, 1, 68, 1),
+(65, 1, 733, 1),
+(65, 1, 734, 1),
+(65, 1, 735, 1),
 (1, 1, 148, 2),
 (2, 1, 149, 2),
 (2, 1, 155, 2),
@@ -9034,13 +9173,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (4, 1, 150, 2),
 (11, 1, 199, 2),
 (12, 1, 35, 2),
+(15, 1, 165, 2),
 (16, 1, 12, 2),
 (17, 1, 13, 2),
 (21, 1, 74, 2),
 (21, 1, 170, 2),
 (22, 1, 21, 2),
 (24, 1, 14, 2),
-(25, 1, 165, 2),
 (28, 1, 48, 2),
 (37, 1, 40, 2),
 (51, 1, 64, 2),
@@ -9054,16 +9193,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (54, 1, 189, 2),
 (55, 1, 152, 2),
 (55, 1, 157, 2),
-(56, 1, 22, 2),
 (56, 1, 130, 2),
 (56, 1, 197, 2),
 (57, 1, 29, 2),
 (57, 1, 39, 2),
-(57, 1, 51, 2),
 (57, 1, 62, 2),
 (57, 1, 159, 2),
 (57, 1, 196, 2),
-(57, 1, 200, 2),
 (59, 1, 207, 2),
 (60, 1, 171, 2),
 (60, 1, 172, 2),
@@ -9081,6 +9217,8 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (63, 1, 27, 2),
 (63, 1, 30, 2),
 (63, 1, 493, 2),
+(64, 1, 17, 2),
+(64, 1, 18, 2),
 (3, 1, 149, 3),
 (3, 1, 155, 3),
 (4, 1, 156, 3),
@@ -9089,16 +9227,19 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (13, 1, 199, 3),
 (15, 1, 197, 3),
 (16, 1, 74, 3),
+(25, 1, 165, 3),
 (29, 1, 48, 3),
 (51, 1, 150, 3),
 (53, 1, 40, 3),
 (55, 1, 14, 3),
 (55, 1, 64, 3),
-(56, 1, 165, 3),
 (60, 1, 185, 3),
-(61, 1, 51, 3),
 (63, 1, 39, 3),
 (63, 1, 62, 3),
+(64, 1, 24, 3),
+(65, 1, 17, 3),
+(65, 1, 18, 3),
+(66, 1, 27, 3),
 (4, 1, 149, 4),
 (5, 1, 155, 4),
 (14, 1, 13, 4),
@@ -9108,12 +9249,15 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (57, 1, 14, 4),
 (59, 1, 64, 4),
 (60, 1, 150, 4),
-(63, 1, 35, 4),
+(64, 1, 62, 4),
+(65, 1, 24, 4),
+(66, 1, 17, 4),
+(66, 1, 18, 4),
 (31, 1, 48, 5),
 (51, 1, 155, 5),
 (61, 1, 14, 5),
-(63, 1, 13, 5),
 (63, 1, 64, 5),
+(66, 1, 24, 5),
 (32, 1, 48, 6),
 (53, 1, 155, 6),
 (33, 1, 48, 7),
@@ -9137,7 +9281,7 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_hook_module_exceptions`
+-- Struktura tabeli dla tabeli `ps_hook_module_exceptions`
 --
 
 CREATE TABLE `ps_hook_module_exceptions` (
@@ -9151,7 +9295,7 @@ CREATE TABLE `ps_hook_module_exceptions` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_image`
+-- Struktura tabeli dla tabeli `ps_image`
 --
 
 CREATE TABLE `ps_image` (
@@ -9162,7 +9306,7 @@ CREATE TABLE `ps_image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_image`
+-- Zrzut danych tabeli `ps_image`
 --
 
 INSERT INTO `ps_image` (`id_image`, `id_product`, `position`, `cover`) VALUES
@@ -10831,12 +10975,16 @@ INSERT INTO `ps_image` (`id_image`, `id_product`, `position`, `cover`) VALUES
 (1663, 7711, 2, NULL),
 (1664, 7727, 1, 1),
 (1665, 7695, 1, 1),
-(1666, 7695, 2, NULL);
+(1666, 7695, 2, NULL),
+(1667, 8933, 4, NULL),
+(1668, 8933, 5, NULL),
+(1669, 8714, 4, NULL),
+(1670, 8714, 5, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_image_lang`
+-- Struktura tabeli dla tabeli `ps_image_lang`
 --
 
 CREATE TABLE `ps_image_lang` (
@@ -10846,7 +10994,7 @@ CREATE TABLE `ps_image_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_image_lang`
+-- Zrzut danych tabeli `ps_image_lang`
 --
 
 INSERT INTO `ps_image_lang` (`id_image`, `id_lang`, `legend`) VALUES
@@ -12515,12 +12663,16 @@ INSERT INTO `ps_image_lang` (`id_image`, `id_lang`, `legend`) VALUES
 (1663, 1, ''),
 (1664, 1, ''),
 (1665, 1, ''),
-(1666, 1, '');
+(1666, 1, ''),
+(1667, 1, ''),
+(1668, 1, ''),
+(1669, 1, ''),
+(1670, 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_image_shop`
+-- Struktura tabeli dla tabeli `ps_image_shop`
 --
 
 CREATE TABLE `ps_image_shop` (
@@ -12531,7 +12683,7 @@ CREATE TABLE `ps_image_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_image_shop`
+-- Zrzut danych tabeli `ps_image_shop`
 --
 
 INSERT INTO `ps_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUES
@@ -13109,6 +13261,8 @@ INSERT INTO `ps_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUE
 (8638, 1433, 1, 1),
 (8714, 23, 1, NULL),
 (8714, 24, 1, NULL),
+(8714, 1669, 1, NULL),
+(8714, 1670, 1, NULL),
 (8714, 22, 1, 1),
 (8722, 17, 1, NULL),
 (8722, 18, 1, NULL),
@@ -13361,6 +13515,8 @@ INSERT INTO `ps_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUE
 (8932, 342, 1, 1),
 (8933, 142, 1, NULL),
 (8933, 143, 1, NULL),
+(8933, 1667, 1, NULL),
+(8933, 1668, 1, NULL),
 (8933, 141, 1, 1),
 (8934, 136, 1, NULL),
 (8934, 137, 1, NULL),
@@ -14205,7 +14361,7 @@ INSERT INTO `ps_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_image_type`
+-- Struktura tabeli dla tabeli `ps_image_type`
 --
 
 CREATE TABLE `ps_image_type` (
@@ -14221,7 +14377,7 @@ CREATE TABLE `ps_image_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_image_type`
+-- Zrzut danych tabeli `ps_image_type`
 --
 
 INSERT INTO `ps_image_type` (`id_image_type`, `name`, `width`, `height`, `products`, `categories`, `manufacturers`, `suppliers`, `stores`) VALUES
@@ -14236,7 +14392,7 @@ INSERT INTO `ps_image_type` (`id_image_type`, `name`, `width`, `height`, `produc
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_import_match`
+-- Struktura tabeli dla tabeli `ps_import_match`
 --
 
 CREATE TABLE `ps_import_match` (
@@ -14247,7 +14403,7 @@ CREATE TABLE `ps_import_match` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_import_match`
+-- Zrzut danych tabeli `ps_import_match`
 --
 
 INSERT INTO `ps_import_match` (`id_import_match`, `name`, `match`, `skip`) VALUES
@@ -14259,7 +14415,7 @@ INSERT INTO `ps_import_match` (`id_import_match`, `name`, `match`, `skip`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_info`
+-- Struktura tabeli dla tabeli `ps_info`
 --
 
 CREATE TABLE `ps_info` (
@@ -14267,7 +14423,7 @@ CREATE TABLE `ps_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_info`
+-- Zrzut danych tabeli `ps_info`
 --
 
 INSERT INTO `ps_info` (`id_info`) VALUES
@@ -14276,7 +14432,7 @@ INSERT INTO `ps_info` (`id_info`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_info_lang`
+-- Struktura tabeli dla tabeli `ps_info_lang`
 --
 
 CREATE TABLE `ps_info_lang` (
@@ -14287,16 +14443,16 @@ CREATE TABLE `ps_info_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_info_lang`
+-- Zrzut danych tabeli `ps_info_lang`
 --
 
 INSERT INTO `ps_info_lang` (`id_info`, `id_shop`, `id_lang`, `text`) VALUES
-(1, 1, 1, '<h3>jasniej.com</h3>\n<h4>Najlepszy sklep z lampami</h4>\n<p>Tu nic nie działa XD</p>');
+(1, 1, 1, '<p>Witaj na stronie jaśniej - u nas na pewno znajdziesz swoją wymarzoną lampę :)</p>');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_info_shop`
+-- Struktura tabeli dla tabeli `ps_info_shop`
 --
 
 CREATE TABLE `ps_info_shop` (
@@ -14305,7 +14461,7 @@ CREATE TABLE `ps_info_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_info_shop`
+-- Zrzut danych tabeli `ps_info_shop`
 --
 
 INSERT INTO `ps_info_shop` (`id_info`, `id_shop`) VALUES
@@ -14314,7 +14470,7 @@ INSERT INTO `ps_info_shop` (`id_info`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_lang`
+-- Struktura tabeli dla tabeli `ps_lang`
 --
 
 CREATE TABLE `ps_lang` (
@@ -14330,7 +14486,7 @@ CREATE TABLE `ps_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_lang`
+-- Zrzut danych tabeli `ps_lang`
 --
 
 INSERT INTO `ps_lang` (`id_lang`, `name`, `active`, `iso_code`, `language_code`, `locale`, `date_format_lite`, `date_format_full`, `is_rtl`) VALUES
@@ -14339,7 +14495,7 @@ INSERT INTO `ps_lang` (`id_lang`, `name`, `active`, `iso_code`, `language_code`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_lang_shop`
+-- Struktura tabeli dla tabeli `ps_lang_shop`
 --
 
 CREATE TABLE `ps_lang_shop` (
@@ -14348,7 +14504,7 @@ CREATE TABLE `ps_lang_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_lang_shop`
+-- Zrzut danych tabeli `ps_lang_shop`
 --
 
 INSERT INTO `ps_lang_shop` (`id_lang`, `id_shop`) VALUES
@@ -14357,7 +14513,7 @@ INSERT INTO `ps_lang_shop` (`id_lang`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_category`
+-- Struktura tabeli dla tabeli `ps_layered_category`
 --
 
 CREATE TABLE `ps_layered_category` (
@@ -14374,7 +14530,7 @@ CREATE TABLE `ps_layered_category` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_filter`
+-- Struktura tabeli dla tabeli `ps_layered_filter`
 --
 
 CREATE TABLE `ps_layered_filter` (
@@ -14386,7 +14542,7 @@ CREATE TABLE `ps_layered_filter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_layered_filter`
+-- Zrzut danych tabeli `ps_layered_filter`
 --
 
 INSERT INTO `ps_layered_filter` (`id_layered_filter`, `name`, `filters`, `n_categories`, `date_add`) VALUES
@@ -14395,7 +14551,7 @@ INSERT INTO `ps_layered_filter` (`id_layered_filter`, `name`, `filters`, `n_cate
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_filter_block`
+-- Struktura tabeli dla tabeli `ps_layered_filter_block`
 --
 
 CREATE TABLE `ps_layered_filter_block` (
@@ -14403,10 +14559,20 @@ CREATE TABLE `ps_layered_filter_block` (
   `data` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Zrzut danych tabeli `ps_layered_filter_block`
+--
+
+INSERT INTO `ps_layered_filter_block` (`hash`, `data`) VALUES
+('26317fbedceac39413bcc23434c639f9', 'a:1:{s:7:\"filters\";a:0:{}}'),
+('329438549f1b548ebb8ac2f36d141d32', 'a:1:{s:7:\"filters\";a:0:{}}'),
+('624352309b7e0484de018d8a2f505058', 'a:1:{s:7:\"filters\";a:0:{}}'),
+('7294acbb02cf4688c3709ca50e31fccf', 'a:1:{s:7:\"filters\";a:0:{}}');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_filter_shop`
+-- Struktura tabeli dla tabeli `ps_layered_filter_shop`
 --
 
 CREATE TABLE `ps_layered_filter_shop` (
@@ -14415,7 +14581,7 @@ CREATE TABLE `ps_layered_filter_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_layered_filter_shop`
+-- Zrzut danych tabeli `ps_layered_filter_shop`
 --
 
 INSERT INTO `ps_layered_filter_shop` (`id_layered_filter`, `id_shop`) VALUES
@@ -14424,7 +14590,7 @@ INSERT INTO `ps_layered_filter_shop` (`id_layered_filter`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_indexable_attribute_group`
+-- Struktura tabeli dla tabeli `ps_layered_indexable_attribute_group`
 --
 
 CREATE TABLE `ps_layered_indexable_attribute_group` (
@@ -14433,7 +14599,7 @@ CREATE TABLE `ps_layered_indexable_attribute_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_layered_indexable_attribute_group`
+-- Zrzut danych tabeli `ps_layered_indexable_attribute_group`
 --
 
 INSERT INTO `ps_layered_indexable_attribute_group` (`id_attribute_group`, `indexable`) VALUES
@@ -14444,7 +14610,7 @@ INSERT INTO `ps_layered_indexable_attribute_group` (`id_attribute_group`, `index
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_indexable_attribute_group_lang_value`
+-- Struktura tabeli dla tabeli `ps_layered_indexable_attribute_group_lang_value`
 --
 
 CREATE TABLE `ps_layered_indexable_attribute_group_lang_value` (
@@ -14457,7 +14623,7 @@ CREATE TABLE `ps_layered_indexable_attribute_group_lang_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_indexable_attribute_lang_value`
+-- Struktura tabeli dla tabeli `ps_layered_indexable_attribute_lang_value`
 --
 
 CREATE TABLE `ps_layered_indexable_attribute_lang_value` (
@@ -14470,7 +14636,7 @@ CREATE TABLE `ps_layered_indexable_attribute_lang_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_indexable_feature`
+-- Struktura tabeli dla tabeli `ps_layered_indexable_feature`
 --
 
 CREATE TABLE `ps_layered_indexable_feature` (
@@ -14479,7 +14645,7 @@ CREATE TABLE `ps_layered_indexable_feature` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_layered_indexable_feature`
+-- Zrzut danych tabeli `ps_layered_indexable_feature`
 --
 
 INSERT INTO `ps_layered_indexable_feature` (`id_feature`, `indexable`) VALUES
@@ -14494,7 +14660,7 @@ INSERT INTO `ps_layered_indexable_feature` (`id_feature`, `indexable`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_indexable_feature_lang_value`
+-- Struktura tabeli dla tabeli `ps_layered_indexable_feature_lang_value`
 --
 
 CREATE TABLE `ps_layered_indexable_feature_lang_value` (
@@ -14507,7 +14673,7 @@ CREATE TABLE `ps_layered_indexable_feature_lang_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_indexable_feature_value_lang_value`
+-- Struktura tabeli dla tabeli `ps_layered_indexable_feature_value_lang_value`
 --
 
 CREATE TABLE `ps_layered_indexable_feature_value_lang_value` (
@@ -14520,7 +14686,7 @@ CREATE TABLE `ps_layered_indexable_feature_value_lang_value` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_price_index`
+-- Struktura tabeli dla tabeli `ps_layered_price_index`
 --
 
 CREATE TABLE `ps_layered_price_index` (
@@ -14533,7 +14699,7 @@ CREATE TABLE `ps_layered_price_index` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_layered_price_index`
+-- Zrzut danych tabeli `ps_layered_price_index`
 --
 
 INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `price_min`, `price_max`, `id_country`) VALUES
@@ -14579,8 +14745,8 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (2552, 1, 1, '169.00000', '208.00000', 0),
 (2553, 1, 1, '169.00000', '208.00000', 0),
 (2554, 1, 1, '169.00000', '208.00000', 0),
-(2685, 1, 1, '129.00000', '159.00000', 0),
-(2686, 1, 1, '348.00000', '429.00000', 0),
+(2685, 1, 1, '143.10000', '159.00000', 14),
+(2686, 1, 1, '386.10000', '429.00000', 14),
 (2690, 1, 1, '283.00000', '349.00000', 0),
 (2691, 1, 1, '356.00000', '438.00000', 0),
 (2692, 1, 1, '357.00000', '440.00000', 0),
@@ -14608,7 +14774,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (2764, 1, 1, '324.00000', '399.00000', 0),
 (2770, 1, 1, '24.00000', '30.00000', 0),
 (2771, 1, 1, '34.00000', '43.00000', 0),
-(2772, 1, 1, '11.00000', '14.00000', 0),
+(2772, 1, 1, '12.60000', '14.00000', 14),
 (2774, 1, 1, '16.00000', '20.00000', 0),
 (2777, 1, 1, '2519.00000', '3099.00000', 0),
 (2778, 1, 1, '21.00000', '26.00000', 0),
@@ -14648,7 +14814,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (7705, 1, 1, '95.00000', '118.00000', 0),
 (7706, 1, 1, '68.00000', '84.00000', 0),
 (7707, 1, 1, '68.00000', '84.00000', 0),
-(7708, 1, 1, '68.00000', '84.00000', 0),
+(7708, 1, 1, '84.00000', '84.00000', 14),
 (7709, 1, 1, '68.00000', '84.00000', 0),
 (7710, 1, 1, '104.00000', '129.00000', 0),
 (7711, 1, 1, '104.00000', '129.00000', 0),
@@ -14772,7 +14938,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (8634, 1, 1, '31.00000', '39.00000', 0),
 (8636, 1, 1, '45.00000', '56.00000', 0),
 (8638, 1, 1, '31.00000', '39.00000', 0),
-(8714, 1, 1, '403.00000', '496.00000', 0),
+(8714, 1, 1, '421.33650', '495.69000', 14),
 (8722, 1, 1, '220.00000', '271.00000', 0),
 (8729, 1, 1, '257.00000', '316.00000', 0),
 (8730, 1, 1, '440.00000', '541.00000', 0),
@@ -14837,7 +15003,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (8904, 1, 1, '147.00000', '181.00000', 0),
 (8905, 1, 1, '550.00000', '677.00000', 0),
 (8906, 1, 1, '403.00000', '496.00000', 0),
-(8914, 1, 1, '147.00000', '181.00000', 0),
+(8914, 1, 1, '162.72900', '180.81000', 14),
 (8915, 1, 1, '129.00000', '159.00000', 0),
 (8916, 1, 1, '84.00000', '103.00000', 0),
 (8917, 1, 1, '147.00000', '181.00000', 0),
@@ -14856,7 +15022,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (8930, 1, 1, '81.00000', '100.00000', 0),
 (8931, 1, 1, '184.00000', '226.00000', 0),
 (8932, 1, 1, '184.00000', '226.00000', 0),
-(8933, 1, 1, '257.00000', '316.00000', 0),
+(8933, 1, 1, '252.88800', '316.11000', 14),
 (8934, 1, 1, '257.00000', '316.00000', 0),
 (8935, 1, 1, '275.00000', '338.00000', 0),
 (8936, 1, 1, '257.00000', '316.00000', 0),
@@ -14982,7 +15148,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (15303, 1, 1, '354.00000', '435.00000', 0),
 (15307, 1, 1, '110.00000', '135.00000', 0),
 (15308, 1, 1, '133.00000', '164.00000', 0),
-(15606, 1, 1, '324.00000', '399.00000', 0),
+(15606, 1, 1, '358.66800', '398.52000', 14),
 (15607, 1, 1, '499.00000', '614.00000', 0),
 (15665, 1, 1, '229.00000', '282.00000', 0),
 (15666, 1, 1, '204.00000', '252.00000', 0),
@@ -15018,7 +15184,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (19128, 1, 1, '227.00000', '280.00000', 0),
 (19129, 1, 1, '227.00000', '280.00000', 0),
 (19130, 1, 1, '227.00000', '280.00000', 0),
-(19131, 1, 1, '227.00000', '280.00000', 0),
+(19131, 1, 1, '252.00000', '280.00000', 14),
 (19186, 1, 1, '104.00000', '129.00000', 0),
 (19187, 1, 1, '104.00000', '129.00000', 0),
 (19188, 1, 1, '104.00000', '129.00000', 0),
@@ -15058,7 +15224,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (23632, 1, 1, '369.00000', '455.00000', 0),
 (23672, 1, 1, '1865.00000', '2295.00000', 0),
 (23673, 1, 1, '1865.00000', '2295.00000', 0),
-(23709, 1, 1, '93.00000', '115.00000', 0),
+(23709, 1, 1, '103.50900', '115.01000', 14),
 (26017, 1, 1, '527.00000', '649.00000', 0),
 (26018, 1, 1, '649.00000', '799.00000', 0),
 (26019, 1, 1, '382.00000', '470.00000', 0),
@@ -15220,7 +15386,7 @@ INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_layered_product_attribute`
+-- Struktura tabeli dla tabeli `ps_layered_product_attribute`
 --
 
 CREATE TABLE `ps_layered_product_attribute` (
@@ -15231,7 +15397,7 @@ CREATE TABLE `ps_layered_product_attribute` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_layered_product_attribute`
+-- Zrzut danych tabeli `ps_layered_product_attribute`
 --
 
 INSERT INTO `ps_layered_product_attribute` (`id_attribute`, `id_product`, `id_attribute_group`, `id_shop`) VALUES
@@ -15256,11 +15422,17 @@ INSERT INTO `ps_layered_product_attribute` (`id_attribute`, `id_product`, `id_at
 (3, 5, 1, 1),
 (3, 6, 1, 1),
 (3, 7, 1, 1),
+(5, 8714, 3, 1),
+(5, 8933, 3, 1),
 (7, 4, 3, 1),
 (8, 2, 3, 1),
 (8, 6, 3, 1),
 (11, 2, 3, 1),
 (11, 5, 3, 1),
+(11, 8714, 3, 1),
+(11, 8933, 3, 1),
+(12, 8714, 3, 1),
+(12, 8933, 3, 1),
 (13, 1, 3, 1),
 (13, 3, 3, 1),
 (13, 5, 3, 1),
@@ -15275,7 +15447,7 @@ INSERT INTO `ps_layered_product_attribute` (`id_attribute`, `id_product`, `id_at
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_linksmenutop`
+-- Struktura tabeli dla tabeli `ps_linksmenutop`
 --
 
 CREATE TABLE `ps_linksmenutop` (
@@ -15287,7 +15459,7 @@ CREATE TABLE `ps_linksmenutop` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_linksmenutop_lang`
+-- Struktura tabeli dla tabeli `ps_linksmenutop_lang`
 --
 
 CREATE TABLE `ps_linksmenutop_lang` (
@@ -15301,7 +15473,7 @@ CREATE TABLE `ps_linksmenutop_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_link_block`
+-- Struktura tabeli dla tabeli `ps_link_block`
 --
 
 CREATE TABLE `ps_link_block` (
@@ -15312,17 +15484,17 @@ CREATE TABLE `ps_link_block` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_link_block`
+-- Zrzut danych tabeli `ps_link_block`
 --
 
 INSERT INTO `ps_link_block` (`id_link_block`, `id_hook`, `position`, `content`) VALUES
-(1, 35, 1, '{\"cms\":[false],\"product\":[\"prices-drop\",\"new-products\",\"best-sales\"],\"static\":[false]}'),
-(2, 35, 2, '{\"cms\":[\"1\",\"2\",\"3\",\"4\",\"5\"],\"product\":[false],\"static\":[\"contact\",\"sitemap\",\"stores\"]}');
+(1, 35, 1, '{\"cms\":[false],\"static\":[false],\"product\":[\"prices-drop\"],\"category\":[\"19\",\"21\"]}'),
+(2, 35, 2, '{\"cms\":[\"1\",\"2\",\"3\",\"4\"],\"static\":[\"contact\"],\"product\":[false],\"category\":[false]}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_link_block_lang`
+-- Struktura tabeli dla tabeli `ps_link_block_lang`
 --
 
 CREATE TABLE `ps_link_block_lang` (
@@ -15333,17 +15505,17 @@ CREATE TABLE `ps_link_block_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_link_block_lang`
+-- Zrzut danych tabeli `ps_link_block_lang`
 --
 
 INSERT INTO `ps_link_block_lang` (`id_link_block`, `id_lang`, `name`, `custom_content`) VALUES
-(1, 1, 'Produkty', NULL),
+(1, 1, 'Polecamy', NULL),
 (2, 1, 'Nasza firma', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_link_block_shop`
+-- Struktura tabeli dla tabeli `ps_link_block_shop`
 --
 
 CREATE TABLE `ps_link_block_shop` (
@@ -15353,7 +15525,7 @@ CREATE TABLE `ps_link_block_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_link_block_shop`
+-- Zrzut danych tabeli `ps_link_block_shop`
 --
 
 INSERT INTO `ps_link_block_shop` (`id_link_block`, `id_shop`, `position`) VALUES
@@ -15363,7 +15535,7 @@ INSERT INTO `ps_link_block_shop` (`id_link_block`, `id_shop`, `position`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_log`
+-- Struktura tabeli dla tabeli `ps_log`
 --
 
 CREATE TABLE `ps_log` (
@@ -15383,7 +15555,7 @@ CREATE TABLE `ps_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_log`
+-- Zrzut danych tabeli `ps_log`
 --
 
 INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_type`, `object_id`, `id_shop`, `id_shop_group`, `id_lang`, `id_employee`, `date_add`, `date_upd`, `in_all_shops`) VALUES
@@ -15931,12 +16103,31 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (541, 3, 0, '[PS_METRICS] Unable to create data cache', '', 0, 1, NULL, 1, 1, '2021-11-13 00:15:24', '2021-11-13 00:15:24', 0),
 (542, 1, 0, 'Połączenie z panelem administracyjnym z 172.18.0.1', '', 0, NULL, NULL, 1, 1, '2021-11-13 00:42:10', '2021-11-13 00:42:10', 1),
 (543, 1, 0, 'Protect vendor folder in module ps_googleanalytics', '', 0, 1, NULL, 1, 1, '2021-11-13 13:13:42', '2021-11-13 13:13:42', 0),
-(544, 1, 0, 'Połączenie z panelem administracyjnym z 172.18.0.1', '', 0, NULL, NULL, 1, 1, '2021-11-13 14:33:19', '2021-11-13 14:33:19', 1);
+(544, 1, 0, 'Połączenie z panelem administracyjnym z 172.18.0.1', '', 0, NULL, NULL, 1, 1, '2021-11-13 14:33:19', '2021-11-13 14:33:19', 1),
+(545, 1, 0, 'Połączenie z panelem administracyjnym z 172.18.0.1', '', 0, NULL, NULL, 1, 1, '2021-11-13 20:33:57', '2021-11-13 20:33:57', 1),
+(546, 1, 0, 'Product modification', 'Product', 8933, 1, NULL, 1, 1, '2021-11-13 20:45:19', '2021-11-13 20:45:19', 0),
+(547, 1, 0, 'Product modification', 'Product', 8914, 1, NULL, 1, 1, '2021-11-13 20:46:20', '2021-11-13 20:46:20', 0),
+(548, 1, 0, 'Product modification', 'Product', 8714, 1, NULL, 1, 1, '2021-11-13 20:47:00', '2021-11-13 20:47:00', 0),
+(549, 1, 0, 'Product modification', 'Product', 2686, 1, NULL, 1, 1, '2021-11-13 20:49:31', '2021-11-13 20:49:31', 0),
+(550, 1, 0, 'Product modification', 'Product', 2685, 1, NULL, 1, 1, '2021-11-13 20:49:58', '2021-11-13 20:49:58', 0),
+(551, 1, 0, 'Product modification', 'Product', 19131, 1, NULL, 1, 1, '2021-11-13 20:51:02', '2021-11-13 20:51:02', 0),
+(552, 1, 0, 'Product modification', 'Product', 19131, 1, NULL, 1, 1, '2021-11-13 20:51:27', '2021-11-13 20:51:27', 0),
+(553, 1, 0, 'Product modification', 'Product', 7708, 1, NULL, 1, 1, '2021-11-13 20:52:52', '2021-11-13 20:52:52', 0),
+(554, 1, 0, 'Product modification', 'Product', 23709, 1, NULL, 1, 1, '2021-11-13 20:54:01', '2021-11-13 20:54:01', 0),
+(555, 1, 0, 'Product modification', 'Product', 2772, 1, NULL, 1, 1, '2021-11-13 20:54:40', '2021-11-13 20:54:40', 0),
+(556, 1, 0, 'Product modification', 'Product', 15606, 1, NULL, 1, 1, '2021-11-13 20:55:39', '2021-11-13 20:55:39', 0),
+(557, 1, 0, 'Product modification', 'Product', 8933, 1, NULL, 1, 1, '2021-11-13 20:59:36', '2021-11-13 20:59:36', 0),
+(558, 1, 0, 'Product modification', 'Product', 8933, 1, NULL, 1, 1, '2021-11-13 21:01:37', '2021-11-13 21:01:37', 0),
+(559, 1, 0, 'Product modification', 'Product', 8933, 1, NULL, 1, 1, '2021-11-13 21:01:54', '2021-11-13 21:01:54', 0),
+(560, 1, 0, 'Product modification', 'Product', 8714, 1, NULL, 1, 1, '2021-11-13 21:03:36', '2021-11-13 21:03:36', 0),
+(561, 1, 0, 'Product modification', 'Product', 8714, 1, NULL, 1, 1, '2021-11-13 21:04:20', '2021-11-13 21:04:20', 0),
+(562, 3, 500, 'cURL error 60: SSL certificate problem: unable to get local issuer certificate', '', 0, 1, NULL, 1, 1, '2021-11-13 21:13:31', '2021-11-13 21:13:31', 0),
+(563, 1, 0, 'Protect vendor folder in module ps_featuredproducts', '', 0, 1, NULL, 1, 1, '2021-11-13 22:12:30', '2021-11-13 22:12:30', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_mail`
+-- Struktura tabeli dla tabeli `ps_mail`
 --
 
 CREATE TABLE `ps_mail` (
@@ -15949,7 +16140,7 @@ CREATE TABLE `ps_mail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_mail`
+-- Zrzut danych tabeli `ps_mail`
 --
 
 INSERT INTO `ps_mail` (`id_mail`, `recipient`, `template`, `subject`, `id_lang`, `date_add`) VALUES
@@ -15963,12 +16154,18 @@ INSERT INTO `ps_mail` (`id_mail`, `recipient`, `template`, `subject`, `id_lang`,
 (8, 'admin@jasniej.pl', 'log_alert', '[jaśniej - sklep z lampami] Log: masz nowe ostrzeżenie z Twojego sklepu', 1, '2021-11-11 00:53:37'),
 (9, 'admin@jasniej.pl', 'import', '[jaśniej - sklep z lampami] Import zakończony', 1, '2021-11-11 01:06:30'),
 (10, 'admin@jasniej.pl', 'log_alert', '[jaśniej - sklep z lampami] Log: masz nowe ostrzeżenie z Twojego sklepu', 1, '2021-11-11 01:35:14'),
-(11, 'admin@jasniej.pl', 'log_alert', '[jaśniej - sklep z lampami] Log: masz nowe ostrzeżenie z Twojego sklepu', 1, '2021-11-12 23:33:54');
+(11, 'admin@jasniej.pl', 'log_alert', '[jaśniej - sklep z lampami] Log: masz nowe ostrzeżenie z Twojego sklepu', 1, '2021-11-12 23:33:54'),
+(12, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2021-11-13 20:45:21'),
+(13, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2021-11-13 20:46:22'),
+(14, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2021-11-13 20:47:02'),
+(15, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2021-11-13 20:51:05'),
+(16, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2021-11-13 20:59:38'),
+(17, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2021-11-13 21:03:38');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_mailalert_customer_oos`
+-- Struktura tabeli dla tabeli `ps_mailalert_customer_oos`
 --
 
 CREATE TABLE `ps_mailalert_customer_oos` (
@@ -15983,7 +16180,7 @@ CREATE TABLE `ps_mailalert_customer_oos` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_manufacturer`
+-- Struktura tabeli dla tabeli `ps_manufacturer`
 --
 
 CREATE TABLE `ps_manufacturer` (
@@ -15995,7 +16192,7 @@ CREATE TABLE `ps_manufacturer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_manufacturer`
+-- Zrzut danych tabeli `ps_manufacturer`
 --
 
 INSERT INTO `ps_manufacturer` (`id_manufacturer`, `name`, `date_add`, `date_upd`, `active`) VALUES
@@ -16047,7 +16244,7 @@ INSERT INTO `ps_manufacturer` (`id_manufacturer`, `name`, `date_add`, `date_upd`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_manufacturer_lang`
+-- Struktura tabeli dla tabeli `ps_manufacturer_lang`
 --
 
 CREATE TABLE `ps_manufacturer_lang` (
@@ -16061,7 +16258,7 @@ CREATE TABLE `ps_manufacturer_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_manufacturer_lang`
+-- Zrzut danych tabeli `ps_manufacturer_lang`
 --
 
 INSERT INTO `ps_manufacturer_lang` (`id_manufacturer`, `id_lang`, `description`, `short_description`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
@@ -16113,7 +16310,7 @@ INSERT INTO `ps_manufacturer_lang` (`id_manufacturer`, `id_lang`, `description`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_manufacturer_shop`
+-- Struktura tabeli dla tabeli `ps_manufacturer_shop`
 --
 
 CREATE TABLE `ps_manufacturer_shop` (
@@ -16122,7 +16319,7 @@ CREATE TABLE `ps_manufacturer_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_manufacturer_shop`
+-- Zrzut danych tabeli `ps_manufacturer_shop`
 --
 
 INSERT INTO `ps_manufacturer_shop` (`id_manufacturer`, `id_shop`) VALUES
@@ -16174,7 +16371,7 @@ INSERT INTO `ps_manufacturer_shop` (`id_manufacturer`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_memcached_servers`
+-- Struktura tabeli dla tabeli `ps_memcached_servers`
 --
 
 CREATE TABLE `ps_memcached_servers` (
@@ -16187,7 +16384,7 @@ CREATE TABLE `ps_memcached_servers` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_message`
+-- Struktura tabeli dla tabeli `ps_message`
 --
 
 CREATE TABLE `ps_message` (
@@ -16204,7 +16401,7 @@ CREATE TABLE `ps_message` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_message_readed`
+-- Struktura tabeli dla tabeli `ps_message_readed`
 --
 
 CREATE TABLE `ps_message_readed` (
@@ -16216,7 +16413,7 @@ CREATE TABLE `ps_message_readed` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_meta`
+-- Struktura tabeli dla tabeli `ps_meta`
 --
 
 CREATE TABLE `ps_meta` (
@@ -16226,7 +16423,7 @@ CREATE TABLE `ps_meta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_meta`
+-- Zrzut danych tabeli `ps_meta`
 --
 
 INSERT INTO `ps_meta` (`id_meta`, `page`, `configurable`) VALUES
@@ -16282,7 +16479,7 @@ INSERT INTO `ps_meta` (`id_meta`, `page`, `configurable`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_meta_lang`
+-- Struktura tabeli dla tabeli `ps_meta_lang`
 --
 
 CREATE TABLE `ps_meta_lang` (
@@ -16296,7 +16493,7 @@ CREATE TABLE `ps_meta_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_meta_lang`
+-- Zrzut danych tabeli `ps_meta_lang`
 --
 
 INSERT INTO `ps_meta_lang` (`id_meta`, `id_shop`, `id_lang`, `title`, `description`, `keywords`, `url_rewrite`) VALUES
@@ -16344,7 +16541,7 @@ INSERT INTO `ps_meta_lang` (`id_meta`, `id_shop`, `id_lang`, `title`, `descripti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module`
+-- Struktura tabeli dla tabeli `ps_module`
 --
 
 CREATE TABLE `ps_module` (
@@ -16355,7 +16552,7 @@ CREATE TABLE `ps_module` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module`
+-- Zrzut danych tabeli `ps_module`
 --
 
 INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
@@ -16419,12 +16616,15 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 (60, 'ps_eventbus', 1, '1.5.0'),
 (61, 'ps_emailalerts', 1, '2.3.0'),
 (62, 'autoupgrade', 1, '4.13.0'),
-(63, 'ps_googleanalytics', 1, '4.1.0');
+(63, 'ps_googleanalytics', 1, '4.1.0'),
+(64, 'ps_bestsellers', 1, '1.0.3'),
+(65, 'ps_specials', 1, '1.0.1'),
+(66, 'ps_categoryproducts', 1, '1.0.4');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_access`
+-- Struktura tabeli dla tabeli `ps_module_access`
 --
 
 CREATE TABLE `ps_module_access` (
@@ -16433,7 +16633,7 @@ CREATE TABLE `ps_module_access` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module_access`
+-- Zrzut danych tabeli `ps_module_access`
 --
 
 INSERT INTO `ps_module_access` (`id_profile`, `id_authorization_role`) VALUES
@@ -16680,12 +16880,24 @@ INSERT INTO `ps_module_access` (`id_profile`, `id_authorization_role`) VALUES
 (1, 897),
 (1, 898),
 (1, 899),
-(1, 900);
+(1, 900),
+(1, 901),
+(1, 902),
+(1, 903),
+(1, 904),
+(1, 905),
+(1, 906),
+(1, 907),
+(1, 908),
+(1, 909),
+(1, 910),
+(1, 911),
+(1, 912);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_carrier`
+-- Struktura tabeli dla tabeli `ps_module_carrier`
 --
 
 CREATE TABLE `ps_module_carrier` (
@@ -16695,19 +16907,21 @@ CREATE TABLE `ps_module_carrier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module_carrier`
+-- Zrzut danych tabeli `ps_module_carrier`
 --
 
 INSERT INTO `ps_module_carrier` (`id_module`, `id_shop`, `id_reference`) VALUES
 (26, 1, 1),
 (26, 1, 2),
+(26, 1, 4),
 (57, 1, 1),
-(57, 1, 2);
+(57, 1, 2),
+(57, 1, 4);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_country`
+-- Struktura tabeli dla tabeli `ps_module_country`
 --
 
 CREATE TABLE `ps_module_country` (
@@ -16717,7 +16931,7 @@ CREATE TABLE `ps_module_country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module_country`
+-- Zrzut danych tabeli `ps_module_country`
 --
 
 INSERT INTO `ps_module_country` (`id_module`, `id_shop`, `id_country`) VALUES
@@ -16970,7 +17184,7 @@ INSERT INTO `ps_module_country` (`id_module`, `id_shop`, `id_country`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_currency`
+-- Struktura tabeli dla tabeli `ps_module_currency`
 --
 
 CREATE TABLE `ps_module_currency` (
@@ -16980,7 +17194,7 @@ CREATE TABLE `ps_module_currency` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module_currency`
+-- Zrzut danych tabeli `ps_module_currency`
 --
 
 INSERT INTO `ps_module_currency` (`id_module`, `id_shop`, `id_currency`) VALUES
@@ -16990,7 +17204,7 @@ INSERT INTO `ps_module_currency` (`id_module`, `id_shop`, `id_currency`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_group`
+-- Struktura tabeli dla tabeli `ps_module_group`
 --
 
 CREATE TABLE `ps_module_group` (
@@ -17000,7 +17214,7 @@ CREATE TABLE `ps_module_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module_group`
+-- Zrzut danych tabeli `ps_module_group`
 --
 
 INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
@@ -17186,12 +17400,21 @@ INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
 (62, 1, 3),
 (63, 1, 1),
 (63, 1, 2),
-(63, 1, 3);
+(63, 1, 3),
+(64, 1, 1),
+(64, 1, 2),
+(64, 1, 3),
+(65, 1, 1),
+(65, 1, 2),
+(65, 1, 3),
+(66, 1, 1),
+(66, 1, 2),
+(66, 1, 3);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_history`
+-- Struktura tabeli dla tabeli `ps_module_history`
 --
 
 CREATE TABLE `ps_module_history` (
@@ -17203,23 +17426,23 @@ CREATE TABLE `ps_module_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Дамп данных таблицы `ps_module_history`
+-- Zrzut danych tabeli `ps_module_history`
 --
 
 INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `date_upd`) VALUES
 (1, 1, 26, '2021-11-07 19:24:07', '2021-11-07 19:24:07'),
-(2, 1, 21, '2021-11-07 19:33:42', '2021-11-07 19:40:03'),
-(3, 1, 7, '2021-11-09 23:19:13', '2021-11-09 23:19:13'),
-(4, 1, 18, '2021-11-09 23:21:48', '2021-11-09 23:21:48'),
-(5, 1, 14, '2021-11-09 23:23:47', '2021-11-09 23:23:47'),
+(2, 1, 21, '2021-11-07 19:33:42', '2021-11-13 21:54:40'),
+(3, 1, 7, '2021-11-09 23:19:13', '2021-11-13 21:49:03'),
+(4, 1, 18, '2021-11-09 23:21:48', '2021-11-13 21:48:54'),
+(5, 1, 14, '2021-11-09 23:23:47', '2021-11-13 21:48:46'),
 (6, 1, 61, '2021-11-09 23:27:50', '2021-11-09 23:27:50'),
 (7, 1, 62, '2021-11-12 23:35:25', '2021-11-12 23:35:25'),
-(8, 1, 63, '2021-11-13 13:14:26', '2021-11-13 15:24:16');
+(8, 1, 63, '2021-11-13 13:14:26', '2021-11-13 20:43:23');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_preference`
+-- Struktura tabeli dla tabeli `ps_module_preference`
 --
 
 CREATE TABLE `ps_module_preference` (
@@ -17233,7 +17456,7 @@ CREATE TABLE `ps_module_preference` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_module_shop`
+-- Struktura tabeli dla tabeli `ps_module_shop`
 --
 
 CREATE TABLE `ps_module_shop` (
@@ -17243,7 +17466,7 @@ CREATE TABLE `ps_module_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_module_shop`
+-- Zrzut danych tabeli `ps_module_shop`
 --
 
 INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
@@ -17307,12 +17530,14 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 (60, 1, 7),
 (61, 1, 7),
 (62, 1, 7),
-(63, 1, 7);
+(63, 1, 7),
+(65, 1, 7),
+(66, 1, 7);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_operating_system`
+-- Struktura tabeli dla tabeli `ps_operating_system`
 --
 
 CREATE TABLE `ps_operating_system` (
@@ -17321,7 +17546,7 @@ CREATE TABLE `ps_operating_system` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_operating_system`
+-- Zrzut danych tabeli `ps_operating_system`
 --
 
 INSERT INTO `ps_operating_system` (`id_operating_system`, `name`) VALUES
@@ -17338,7 +17563,7 @@ INSERT INTO `ps_operating_system` (`id_operating_system`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_orders`
+-- Struktura tabeli dla tabeli `ps_orders`
 --
 
 CREATE TABLE `ps_orders` (
@@ -17392,7 +17617,7 @@ CREATE TABLE `ps_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_orders`
+-- Zrzut danych tabeli `ps_orders`
 --
 
 INSERT INTO `ps_orders` (`id_order`, `reference`, `id_shop_group`, `id_shop`, `id_carrier`, `id_lang`, `id_customer`, `id_cart`, `id_currency`, `id_address_delivery`, `id_address_invoice`, `current_state`, `secure_key`, `payment`, `conversion_rate`, `module`, `recyclable`, `gift`, `gift_message`, `mobile_theme`, `shipping_number`, `total_discounts`, `total_discounts_tax_incl`, `total_discounts_tax_excl`, `total_paid`, `total_paid_tax_incl`, `total_paid_tax_excl`, `total_paid_real`, `total_products`, `total_products_wt`, `total_shipping`, `total_shipping_tax_incl`, `total_shipping_tax_excl`, `carrier_tax_rate`, `total_wrapping`, `total_wrapping_tax_incl`, `total_wrapping_tax_excl`, `round_mode`, `round_type`, `invoice_number`, `delivery_number`, `invoice_date`, `delivery_date`, `valid`, `date_add`, `date_upd`, `note`) VALUES
@@ -17406,7 +17631,7 @@ INSERT INTO `ps_orders` (`id_order`, `reference`, `id_shop_group`, `id_shop`, `i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_carrier`
+-- Struktura tabeli dla tabeli `ps_order_carrier`
 --
 
 CREATE TABLE `ps_order_carrier` (
@@ -17422,7 +17647,7 @@ CREATE TABLE `ps_order_carrier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_carrier`
+-- Zrzut danych tabeli `ps_order_carrier`
 --
 
 INSERT INTO `ps_order_carrier` (`id_order_carrier`, `id_order`, `id_carrier`, `id_order_invoice`, `weight`, `shipping_cost_tax_excl`, `shipping_cost_tax_incl`, `tracking_number`, `date_add`) VALUES
@@ -17436,7 +17661,7 @@ INSERT INTO `ps_order_carrier` (`id_order_carrier`, `id_order`, `id_carrier`, `i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_cart_rule`
+-- Struktura tabeli dla tabeli `ps_order_cart_rule`
 --
 
 CREATE TABLE `ps_order_cart_rule` (
@@ -17454,7 +17679,7 @@ CREATE TABLE `ps_order_cart_rule` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_detail`
+-- Struktura tabeli dla tabeli `ps_order_detail`
 --
 
 CREATE TABLE `ps_order_detail` (
@@ -17510,7 +17735,7 @@ CREATE TABLE `ps_order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_detail`
+-- Zrzut danych tabeli `ps_order_detail`
 --
 
 INSERT INTO `ps_order_detail` (`id_order_detail`, `id_order`, `id_order_invoice`, `id_warehouse`, `id_shop`, `product_id`, `product_attribute_id`, `id_customization`, `product_name`, `product_quantity`, `product_quantity_in_stock`, `product_quantity_refunded`, `product_quantity_return`, `product_quantity_reinjected`, `product_price`, `reduction_percent`, `reduction_amount`, `reduction_amount_tax_incl`, `reduction_amount_tax_excl`, `group_reduction`, `product_quantity_discount`, `product_ean13`, `product_isbn`, `product_upc`, `product_mpn`, `product_reference`, `product_supplier_reference`, `product_weight`, `id_tax_rules_group`, `tax_computation_method`, `tax_name`, `tax_rate`, `ecotax`, `ecotax_tax_rate`, `discount_quantity_applied`, `download_hash`, `download_nb`, `download_deadline`, `total_price_tax_incl`, `total_price_tax_excl`, `unit_price_tax_incl`, `unit_price_tax_excl`, `total_shipping_price_tax_incl`, `total_shipping_price_tax_excl`, `purchase_supplier_price`, `original_product_price`, `original_wholesale_price`, `total_refunded_tax_excl`, `total_refunded_tax_incl`) VALUES
@@ -17534,7 +17759,7 @@ INSERT INTO `ps_order_detail` (`id_order_detail`, `id_order`, `id_order_invoice`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_detail_tax`
+-- Struktura tabeli dla tabeli `ps_order_detail_tax`
 --
 
 CREATE TABLE `ps_order_detail_tax` (
@@ -17545,7 +17770,7 @@ CREATE TABLE `ps_order_detail_tax` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_detail_tax`
+-- Zrzut danych tabeli `ps_order_detail_tax`
 --
 
 INSERT INTO `ps_order_detail_tax` (`id_order_detail`, `id_tax`, `unit_amount`, `total_amount`) VALUES
@@ -17554,7 +17779,7 @@ INSERT INTO `ps_order_detail_tax` (`id_order_detail`, `id_tax`, `unit_amount`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_history`
+-- Struktura tabeli dla tabeli `ps_order_history`
 --
 
 CREATE TABLE `ps_order_history` (
@@ -17566,7 +17791,7 @@ CREATE TABLE `ps_order_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_history`
+-- Zrzut danych tabeli `ps_order_history`
 --
 
 INSERT INTO `ps_order_history` (`id_order_history`, `id_employee`, `id_order`, `id_order_state`, `date_add`) VALUES
@@ -17582,7 +17807,7 @@ INSERT INTO `ps_order_history` (`id_order_history`, `id_employee`, `id_order`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_invoice`
+-- Struktura tabeli dla tabeli `ps_order_invoice`
 --
 
 CREATE TABLE `ps_order_invoice` (
@@ -17610,7 +17835,7 @@ CREATE TABLE `ps_order_invoice` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_invoice_payment`
+-- Struktura tabeli dla tabeli `ps_order_invoice_payment`
 --
 
 CREATE TABLE `ps_order_invoice_payment` (
@@ -17622,7 +17847,7 @@ CREATE TABLE `ps_order_invoice_payment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_invoice_tax`
+-- Struktura tabeli dla tabeli `ps_order_invoice_tax`
 --
 
 CREATE TABLE `ps_order_invoice_tax` (
@@ -17635,7 +17860,7 @@ CREATE TABLE `ps_order_invoice_tax` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_message`
+-- Struktura tabeli dla tabeli `ps_order_message`
 --
 
 CREATE TABLE `ps_order_message` (
@@ -17644,7 +17869,7 @@ CREATE TABLE `ps_order_message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_message`
+-- Zrzut danych tabeli `ps_order_message`
 --
 
 INSERT INTO `ps_order_message` (`id_order_message`, `date_add`) VALUES
@@ -17654,7 +17879,7 @@ INSERT INTO `ps_order_message` (`id_order_message`, `date_add`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_message_lang`
+-- Struktura tabeli dla tabeli `ps_order_message_lang`
 --
 
 CREATE TABLE `ps_order_message_lang` (
@@ -17665,7 +17890,7 @@ CREATE TABLE `ps_order_message_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_message_lang`
+-- Zrzut danych tabeli `ps_order_message_lang`
 --
 
 INSERT INTO `ps_order_message_lang` (`id_order_message`, `id_lang`, `name`, `message`) VALUES
@@ -17675,7 +17900,7 @@ INSERT INTO `ps_order_message_lang` (`id_order_message`, `id_lang`, `name`, `mes
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_payment`
+-- Struktura tabeli dla tabeli `ps_order_payment`
 --
 
 CREATE TABLE `ps_order_payment` (
@@ -17696,7 +17921,7 @@ CREATE TABLE `ps_order_payment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_return`
+-- Struktura tabeli dla tabeli `ps_order_return`
 --
 
 CREATE TABLE `ps_order_return` (
@@ -17712,7 +17937,7 @@ CREATE TABLE `ps_order_return` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_return_detail`
+-- Struktura tabeli dla tabeli `ps_order_return_detail`
 --
 
 CREATE TABLE `ps_order_return_detail` (
@@ -17725,7 +17950,7 @@ CREATE TABLE `ps_order_return_detail` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_return_state`
+-- Struktura tabeli dla tabeli `ps_order_return_state`
 --
 
 CREATE TABLE `ps_order_return_state` (
@@ -17734,7 +17959,7 @@ CREATE TABLE `ps_order_return_state` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_return_state`
+-- Zrzut danych tabeli `ps_order_return_state`
 --
 
 INSERT INTO `ps_order_return_state` (`id_order_return_state`, `color`) VALUES
@@ -17747,7 +17972,7 @@ INSERT INTO `ps_order_return_state` (`id_order_return_state`, `color`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_return_state_lang`
+-- Struktura tabeli dla tabeli `ps_order_return_state_lang`
 --
 
 CREATE TABLE `ps_order_return_state_lang` (
@@ -17757,7 +17982,7 @@ CREATE TABLE `ps_order_return_state_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_return_state_lang`
+-- Zrzut danych tabeli `ps_order_return_state_lang`
 --
 
 INSERT INTO `ps_order_return_state_lang` (`id_order_return_state`, `id_lang`, `name`) VALUES
@@ -17770,7 +17995,7 @@ INSERT INTO `ps_order_return_state_lang` (`id_order_return_state`, `id_lang`, `n
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_slip`
+-- Struktura tabeli dla tabeli `ps_order_slip`
 --
 
 CREATE TABLE `ps_order_slip` (
@@ -17794,7 +18019,7 @@ CREATE TABLE `ps_order_slip` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_slip_detail`
+-- Struktura tabeli dla tabeli `ps_order_slip_detail`
 --
 
 CREATE TABLE `ps_order_slip_detail` (
@@ -17812,7 +18037,7 @@ CREATE TABLE `ps_order_slip_detail` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_slip_detail_tax`
+-- Struktura tabeli dla tabeli `ps_order_slip_detail_tax`
 --
 
 CREATE TABLE `ps_order_slip_detail_tax` (
@@ -17825,7 +18050,7 @@ CREATE TABLE `ps_order_slip_detail_tax` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_state`
+-- Struktura tabeli dla tabeli `ps_order_state`
 --
 
 CREATE TABLE `ps_order_state` (
@@ -17846,7 +18071,7 @@ CREATE TABLE `ps_order_state` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_state`
+-- Zrzut danych tabeli `ps_order_state`
 --
 
 INSERT INTO `ps_order_state` (`id_order_state`, `invoice`, `send_email`, `module_name`, `color`, `unremovable`, `hidden`, `logable`, `delivery`, `shipped`, `paid`, `pdf_invoice`, `pdf_delivery`, `deleted`) VALUES
@@ -17868,7 +18093,7 @@ INSERT INTO `ps_order_state` (`id_order_state`, `invoice`, `send_email`, `module
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_order_state_lang`
+-- Struktura tabeli dla tabeli `ps_order_state_lang`
 --
 
 CREATE TABLE `ps_order_state_lang` (
@@ -17879,7 +18104,7 @@ CREATE TABLE `ps_order_state_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_order_state_lang`
+-- Zrzut danych tabeli `ps_order_state_lang`
 --
 
 INSERT INTO `ps_order_state_lang` (`id_order_state`, `id_lang`, `name`, `template`) VALUES
@@ -17901,7 +18126,7 @@ INSERT INTO `ps_order_state_lang` (`id_order_state`, `id_lang`, `name`, `templat
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_pack`
+-- Struktura tabeli dla tabeli `ps_pack`
 --
 
 CREATE TABLE `ps_pack` (
@@ -17914,7 +18139,7 @@ CREATE TABLE `ps_pack` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_page`
+-- Struktura tabeli dla tabeli `ps_page`
 --
 
 CREATE TABLE `ps_page` (
@@ -17924,17 +18149,18 @@ CREATE TABLE `ps_page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_page`
+-- Zrzut danych tabeli `ps_page`
 --
 
 INSERT INTO `ps_page` (`id_page`, `id_page_type`, `id_object`) VALUES
 (1, 1, NULL),
-(2, 2, NULL);
+(2, 2, NULL),
+(3, 3, 21);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_pagenotfound`
+-- Struktura tabeli dla tabeli `ps_pagenotfound`
 --
 
 CREATE TABLE `ps_pagenotfound` (
@@ -17949,7 +18175,7 @@ CREATE TABLE `ps_pagenotfound` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_page_type`
+-- Struktura tabeli dla tabeli `ps_page_type`
 --
 
 CREATE TABLE `ps_page_type` (
@@ -17958,17 +18184,18 @@ CREATE TABLE `ps_page_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_page_type`
+-- Zrzut danych tabeli `ps_page_type`
 --
 
 INSERT INTO `ps_page_type` (`id_page_type`, `name`) VALUES
+(3, 'category'),
 (1, 'index'),
 (2, 'pagenotfound');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_page_viewed`
+-- Struktura tabeli dla tabeli `ps_page_viewed`
 --
 
 CREATE TABLE `ps_page_viewed` (
@@ -17982,7 +18209,7 @@ CREATE TABLE `ps_page_viewed` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_paypal_capture`
+-- Struktura tabeli dla tabeli `ps_paypal_capture`
 --
 
 CREATE TABLE `ps_paypal_capture` (
@@ -17998,7 +18225,7 @@ CREATE TABLE `ps_paypal_capture` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_paypal_ipn`
+-- Struktura tabeli dla tabeli `ps_paypal_ipn`
 --
 
 CREATE TABLE `ps_paypal_ipn` (
@@ -18012,7 +18239,7 @@ CREATE TABLE `ps_paypal_ipn` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_paypal_order`
+-- Struktura tabeli dla tabeli `ps_paypal_order`
 --
 
 CREATE TABLE `ps_paypal_order` (
@@ -18036,7 +18263,7 @@ CREATE TABLE `ps_paypal_order` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_paypal_processlogger`
+-- Struktura tabeli dla tabeli `ps_paypal_processlogger`
 --
 
 CREATE TABLE `ps_paypal_processlogger` (
@@ -18056,7 +18283,7 @@ CREATE TABLE `ps_paypal_processlogger` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_paypal_vaulting`
+-- Struktura tabeli dla tabeli `ps_paypal_vaulting`
 --
 
 CREATE TABLE `ps_paypal_vaulting` (
@@ -18072,7 +18299,7 @@ CREATE TABLE `ps_paypal_vaulting` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product`
+-- Struktura tabeli dla tabeli `ps_product`
 --
 
 CREATE TABLE `ps_product` (
@@ -18134,7 +18361,7 @@ CREATE TABLE `ps_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_product`
+-- Zrzut danych tabeli `ps_product`
 --
 
 INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_category_default`, `id_shop_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ean13`, `isbn`, `upc`, `mpn`, `ecotax`, `quantity`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `reference`, `supplier_reference`, `location`, `width`, `height`, `depth`, `weight`, `out_of_stock`, `additional_delivery_times`, `quantity_discount`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_is_pack`, `cache_has_attachments`, `is_virtual`, `cache_default_attribute`, `date_add`, `date_upd`, `advanced_stock_management`, `pack_stock_type`, `state`, `product_type`) VALUES
@@ -18180,8 +18407,8 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (2552, 0, 6, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '169.105691', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:26', '2021-11-11 00:59:26', 0, 3, 1, 'standard'),
 (2553, 0, 6, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '169.105691', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:33', '2021-11-11 00:59:33', 0, 3, 1, 'standard'),
 (2554, 0, 6, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '169.105691', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:33', '2021-11-11 00:59:33', 0, 3, 1, 'standard'),
-(2685, 0, 7, 19, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '129.268293', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:26', '2021-11-11 00:59:26', 0, 3, 1, 'standard'),
-(2686, 0, 7, 19, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '348.780488', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:26', '2021-11-11 00:59:26', 0, 3, 1, 'standard'),
+(2685, 0, 7, 19, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '129.268293', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:26', '2021-11-13 20:49:58', 0, 3, 1, 'standard'),
+(2686, 0, 7, 19, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '348.780488', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:26', '2021-11-13 20:49:31', 0, 3, 1, 'standard'),
 (2690, 0, 11, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '283.739837', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:52', '2021-11-11 00:59:52', 0, 3, 1, 'standard'),
 (2691, 0, 11, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '356.097561', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:52', '2021-11-11 00:59:52', 0, 3, 1, 'standard'),
 (2692, 0, 11, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '357.723577', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:52', '2021-11-11 00:59:52', 0, 3, 1, 'standard'),
@@ -18209,7 +18436,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (2764, 0, 10, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '324.390244', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:45', '2021-11-11 00:59:45', 0, 3, 1, 'standard'),
 (2770, 0, 10, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '24.390244', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:24', '2021-11-11 01:04:24', 0, 3, 1, 'standard'),
 (2771, 0, 10, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '34.959350', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 0, 3, 1, 'standard'),
-(2772, 0, 10, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '11.382114', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 0, 3, 1, 'standard'),
+(2772, 0, 10, 15, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.382114', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:18', '2021-11-13 20:54:40', 0, 3, 1, 'standard'),
 (2774, 0, 10, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '16.260163', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 0, 3, 1, 'standard'),
 (2777, 0, 10, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '2519.512195', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:45', '2021-11-11 00:59:45', 0, 3, 1, 'standard'),
 (2778, 0, 10, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '21.138211', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:24', '2021-11-11 01:04:24', 0, 3, 1, 'standard'),
@@ -18249,7 +18476,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (7705, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '95.934959', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 0, 3, 1, 'standard'),
 (7706, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 0, 3, 1, 'standard'),
 (7707, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:06:20', '2021-11-11 01:06:20', 0, 3, 1, 'standard'),
-(7708, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 0, 3, 1, 'standard'),
+(7708, 0, 3, 21, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:37', '2021-11-13 20:52:51', 0, 3, 1, 'standard'),
 (7709, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 0, 3, 1, 'standard'),
 (7710, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:48', '2021-11-11 01:05:48', 0, 3, 1, 'standard'),
 (7711, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:06:25', '2021-11-11 01:06:25', 0, 3, 1, 'standard'),
@@ -18374,7 +18601,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (8634, 0, 3, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '31.707317', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:10', '2021-11-11 01:05:10', 0, 3, 1, 'standard'),
 (8636, 0, 3, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '45.528455', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:10', '2021-11-11 01:05:10', 0, 3, 1, 'standard'),
 (8638, 0, 3, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '31.707317', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:10', '2021-11-11 01:05:10', 0, 3, 1, 'standard'),
-(8714, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '403.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:56:51', '2021-11-11 00:56:51', 0, 3, 1, 'standard'),
+(8714, 0, 2, 17, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '403.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 4, '2021-11-11 00:56:51', '2021-11-13 21:04:20', 0, 3, 1, 'combinations'),
 (8722, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '220.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:56:51', '2021-11-11 00:56:51', 0, 3, 1, 'standard'),
 (8729, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:56:45', '2021-11-11 00:56:45', 0, 3, 1, 'standard'),
 (8730, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '440.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:56:51', '2021-11-11 00:56:51', 0, 3, 1, 'standard'),
@@ -18440,7 +18667,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (8904, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:14', '2021-11-11 00:59:14', 0, 3, 1, 'standard'),
 (8905, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '550.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:12', '2021-11-11 00:58:12', 0, 3, 1, 'standard'),
 (8906, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '403.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:08', '2021-11-11 00:58:08', 0, 3, 1, 'standard'),
-(8914, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:12', '2021-11-11 00:58:12', 0, 3, 1, 'standard'),
+(8914, 0, 2, 17, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:12', '2021-11-13 20:46:20', 0, 3, 1, 'standard'),
 (8915, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '129.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:14', '2021-11-11 00:59:14', 0, 3, 1, 'standard'),
 (8916, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '84.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:07', '2021-11-11 00:59:07', 0, 3, 1, 'standard'),
 (8917, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:07', '2021-11-11 00:59:07', 0, 3, 1, 'standard'),
@@ -18459,7 +18686,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (8930, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '81.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:47', '2021-11-11 00:58:47', 0, 3, 1, 'standard'),
 (8931, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '184.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:47', '2021-11-11 00:58:47', 0, 3, 1, 'standard'),
 (8932, 0, 2, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '184.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:53', '2021-11-11 00:58:53', 0, 3, 1, 'standard'),
-(8933, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:57:36', '2021-11-11 00:57:36', 0, 3, 1, 'standard'),
+(8933, 0, 2, 17, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 1, '2021-11-11 00:57:36', '2021-11-13 21:01:54', 0, 3, 1, 'combinations'),
 (8934, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:57:30', '2021-11-11 00:57:30', 0, 3, 1, 'standard'),
 (8935, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '275.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:57:30', '2021-11-11 00:57:30', 0, 3, 1, 'standard'),
 (8936, 0, 2, 17, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:57:36', '2021-11-11 00:57:36', 0, 3, 1, 'standard'),
@@ -18586,7 +18813,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (15303, 0, 14, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '354.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:03:38', '2021-11-11 01:03:38', 0, 3, 1, 'standard'),
 (15307, 0, 15, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '110.032520', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:00:01', '2021-11-11 01:00:01', 0, 3, 1, 'standard'),
 (15308, 0, 15, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '133.203252', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:00:01', '2021-11-11 01:00:01', 0, 3, 1, 'standard'),
-(15606, 0, 38, 16, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '324.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:33', '2021-11-11 01:05:33', 0, 3, 1, 'standard'),
+(15606, 0, 38, 16, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '324.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:33', '2021-11-13 20:55:39', 0, 3, 1, 'standard'),
 (15607, 0, 38, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '499.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:03:33', '2021-11-11 01:03:33', 0, 3, 1, 'standard'),
 (15665, 0, 40, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '229.268293', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 0, 3, 1, 'standard'),
 (15666, 0, 40, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '204.878049', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 0, 3, 1, 'standard'),
@@ -18622,7 +18849,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (19128, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:06:07', '2021-11-11 01:06:07', 0, 3, 1, 'standard'),
 (19129, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:48', '2021-11-11 01:05:48', 0, 3, 1, 'standard'),
 (19130, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:06:00', '2021-11-11 01:06:00', 0, 3, 1, 'standard'),
-(19131, 0, 3, 21, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:06:07', '2021-11-11 01:06:07', 0, 3, 1, 'standard'),
+(19131, 0, 3, 21, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:06:07', '2021-11-13 20:51:27', 0, 3, 1, 'standard'),
 (19186, 0, 3, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:42', '2021-11-11 00:58:42', 0, 3, 1, 'standard'),
 (19187, 0, 3, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:58:42', '2021-11-11 00:58:42', 0, 3, 1, 'standard'),
 (19188, 0, 3, 18, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 00:59:02', '2021-11-11 00:59:02', 0, 3, 1, 'standard'),
@@ -18662,7 +18889,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (23632, 0, 21, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '369.918699', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:01:20', '2021-11-11 01:01:20', 0, 3, 1, 'standard'),
 (23672, 0, 21, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '1865.853659', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:01:23', '2021-11-11 01:01:23', 0, 3, 1, 'standard'),
 (23673, 0, 21, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '1865.853659', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:01:23', '2021-11-11 01:01:23', 0, 3, 1, 'standard'),
-(23709, 0, 21, 15, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '93.504065', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:08', '2021-11-11 01:05:08', 0, 3, 1, 'standard'),
+(23709, 0, 21, 15, 1, 1, 1, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '93.504065', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:05:08', '2021-11-13 20:54:01', 0, 3, 1, 'standard'),
 (26017, 0, 31, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '527.642276', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:02:46', '2021-11-11 01:02:46', 0, 3, 1, 'standard'),
 (26018, 0, 31, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '649.593496', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:02:46', '2021-11-11 01:02:46', 0, 3, 1, 'standard'),
 (26019, 0, 31, 20, 1, 1, 0, 0, '', '', '', NULL, '0.000000', 0, 1, NULL, 0, '382.105691', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2021-11-11 01:02:46', '2021-11-11 01:02:46', 0, 3, 1, 'standard'),
@@ -18825,7 +19052,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_attachment`
+-- Struktura tabeli dla tabeli `ps_product_attachment`
 --
 
 CREATE TABLE `ps_product_attachment` (
@@ -18836,7 +19063,7 @@ CREATE TABLE `ps_product_attachment` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_attribute`
+-- Struktura tabeli dla tabeli `ps_product_attribute`
 --
 
 CREATE TABLE `ps_product_attribute` (
@@ -18862,10 +19089,22 @@ CREATE TABLE `ps_product_attribute` (
   `available_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_product_attribute`
+--
+
+INSERT INTO `ps_product_attribute` (`id_product_attribute`, `id_product`, `reference`, `supplier_reference`, `location`, `ean13`, `isbn`, `upc`, `mpn`, `wholesale_price`, `price`, `ecotax`, `quantity`, `weight`, `unit_price_impact`, `default_on`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `available_date`) VALUES
+(1, 8933, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 10, '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(2, 8933, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 30, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(3, 8933, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 20, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(4, 8714, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 0, '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(5, 8714, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 0, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(6, 8714, '', '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', 0, '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_attribute_combination`
+-- Struktura tabeli dla tabeli `ps_product_attribute_combination`
 --
 
 CREATE TABLE `ps_product_attribute_combination` (
@@ -18873,10 +19112,22 @@ CREATE TABLE `ps_product_attribute_combination` (
   `id_product_attribute` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_product_attribute_combination`
+--
+
+INSERT INTO `ps_product_attribute_combination` (`id_attribute`, `id_product_attribute`) VALUES
+(5, 1),
+(12, 2),
+(11, 3),
+(5, 4),
+(12, 5),
+(11, 6);
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_attribute_image`
+-- Struktura tabeli dla tabeli `ps_product_attribute_image`
 --
 
 CREATE TABLE `ps_product_attribute_image` (
@@ -18884,10 +19135,20 @@ CREATE TABLE `ps_product_attribute_image` (
   `id_image` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_product_attribute_image`
+--
+
+INSERT INTO `ps_product_attribute_image` (`id_product_attribute`, `id_image`) VALUES
+(3, 1667),
+(2, 1668),
+(5, 1669),
+(6, 1670);
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_attribute_shop`
+-- Struktura tabeli dla tabeli `ps_product_attribute_shop`
 --
 
 CREATE TABLE `ps_product_attribute_shop` (
@@ -18906,10 +19167,22 @@ CREATE TABLE `ps_product_attribute_shop` (
   `available_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_product_attribute_shop`
+--
+
+INSERT INTO `ps_product_attribute_shop` (`id_product`, `id_product_attribute`, `id_shop`, `wholesale_price`, `price`, `ecotax`, `weight`, `unit_price_impact`, `default_on`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `available_date`) VALUES
+(8933, 1, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(8933, 2, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(8933, 3, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(8714, 4, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(8714, 5, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(8714, 6, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_carrier`
+-- Struktura tabeli dla tabeli `ps_product_carrier`
 --
 
 CREATE TABLE `ps_product_carrier` (
@@ -18921,7 +19194,7 @@ CREATE TABLE `ps_product_carrier` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_country_tax`
+-- Struktura tabeli dla tabeli `ps_product_country_tax`
 --
 
 CREATE TABLE `ps_product_country_tax` (
@@ -18933,7 +19206,7 @@ CREATE TABLE `ps_product_country_tax` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_download`
+-- Struktura tabeli dla tabeli `ps_product_download`
 --
 
 CREATE TABLE `ps_product_download` (
@@ -18952,7 +19225,7 @@ CREATE TABLE `ps_product_download` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_group_reduction_cache`
+-- Struktura tabeli dla tabeli `ps_product_group_reduction_cache`
 --
 
 CREATE TABLE `ps_product_group_reduction_cache` (
@@ -18964,7 +19237,7 @@ CREATE TABLE `ps_product_group_reduction_cache` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_lang`
+-- Struktura tabeli dla tabeli `ps_product_lang`
 --
 
 CREATE TABLE `ps_product_lang` (
@@ -18985,7 +19258,7 @@ CREATE TABLE `ps_product_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_product_lang`
+-- Zrzut danych tabeli `ps_product_lang`
 --
 
 INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`, `description_short`, `link_rewrite`, `meta_description`, `meta_keywords`, `meta_title`, `name`, `available_now`, `available_later`, `delivery_in_stock`, `delivery_out_stock`) VALUES
@@ -19031,8 +19304,8 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (2552, 1, 1, '<br /><br /><br /> Opis<br /><br />Szerokość<br />    7 cm<br />Light source<br />    E27<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    14 cm<br />Kolor<br />    Biały<br />', 'Wysyłamy 2-21 dni', 'teti-white', '', '', '', 'Teti White', '', '', NULL, NULL),
 (2553, 1, 1, '<br /><br /><br /> Opis<br /><br />Szerokość<br />    7 cm<br />Light source<br />    E27<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    14 cm<br />Kolor<br />    Pomarańczowy<br />', 'Ostatnie sztuki w magazynie', 'teti-orange', '', '', '', 'Teti Orange', '', '', NULL, NULL),
 (2554, 1, 1, '<br /><br /><br /> Opis<br /><br />Szerokość<br />    7 cm<br />Light source<br />    E27<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    14 cm<br />Kolor<br />    Szary<br />', 'Ostatnie sztuki w magazynie', 'teti-anthracite-grey', '', '', '', 'Teti Anthracite grey', '', '', NULL, NULL),
-(2685, 1, 1, '<br /><br /><br /> Opis<br /><br />Długość<br />    10 m<br />Light source<br />    10 x E27<br />Styl<br />    Industrialny<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Kolor<br />    Czarny<br />', 'Wysyłamy 2-7 dni', 'girlanda-10m-e27-ip44', '', '', '', 'GIRLANDA 10m E27 IP44', '', '', NULL, NULL),
-(2686, 1, 1, '<br /><br /><br /> Opis<br /><br />Długość<br />    22 m<br />Light source<br />    20 x E27<br />Styl<br />    Industrialny<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Kolor<br />    Czarny<br />', 'Wysyłamy 2-7 dni', 'girlanda-20m-e27-ip44', '', '', '', 'GIRLANDA 20m E27 IP44', '', '', NULL, NULL),
+(2685, 1, 1, '<br /><br /><br /> Opis<br /><br />Długość<br />    10 m<br />Light source<br />    10 x E27<br />Styl<br />    Industrialny<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Kolor<br />    Czarny<br />', 'Wysyłamy 2-7 dni', 'girlanda-10m-e27-ip44', '', '', '', 'GIRLANDA 10m E27 IP44', '', '', '', ''),
+(2686, 1, 1, '<br /><br /><br /> Opis<br /><br />Długość<br />    22 m<br />Light source<br />    20 x E27<br />Styl<br />    Industrialny<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Kolor<br />    Czarny<br />', 'Wysyłamy 2-7 dni', 'girlanda-20m-e27-ip44', '', '', '', 'GIRLANDA 20m E27 IP44', '', '', '', ''),
 (2690, 1, 1, 'Plafon wykonany w całołci z jednego materiału - tekstylnego abażuruł  <br />\\- co zapewnia rłwnomierne rozprowadzenie miłkkiego łwiatła nawet przy ułyciu mocnych łrłdeł<br /><br />(w zalełnołci od modelu 3-5 żarówek E27 - duły gwint).<br /><br />Ułycie do montału magnesłw neodymowych pozwala na łatwe odpiłcie abażura od podstawy.<br /><br />Absolutny mistrz uzytecznołci!<br /><br /><br /> Opis<br /><br />Light source<br />    2 x E27<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    40 cm<br />Wysokość<br />    16 cm<br />Kolor<br />    Szary<br />', 'Wysyłamy od 2-14 dni', 'plafon-brava-p-400-czarny-szary-bezowy-bia', '', '', '', 'Plafon Brava P-400 czarny/szary/beżowy/bia', '', '', NULL, NULL),
 (2691, 1, 1, 'Plafon wykonany w całołci z jednego materiału - tekstylnego abażuru   <br />\\- co zapewnia rłwnomierne rozprowadzenie miłkkiego łwiatła nawet przy ułyciu mocnych łrłdeł<br /><br />(w zalełnołci od modelu 3-5 żarówek E27 - duły gwint).<br /><br />Ułycie do montału magnesłw neodymowych pozwala na łatwe odpiłcie abażura od podstawy.<br /><br />Absolutny mistrz uzytecznołci!<br /><br /><br /> Opis<br /><br />Light source<br />    3 x E27<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    50 cm<br />Wysokość<br />    18 cm<br />Kolor<br />    Biały<br />', 'Wysyłamy od 2-14 dni', 'plafon-brava-p-500-czarny-szary-bezowy-bia', '', '', '', 'Plafon Brava P-500 czarny/szary/beżowy/bia', '', '', NULL, NULL),
 (2692, 1, 1, 'Plafon wykonany w całołci z jednego materiału - tekstylnego abażuruł  <br />\\- co zapewnia rłwnomierne rozprowadzenie miłkkiego łwiatła nawet przy ułyciu mocnych łrłdeł<br /><br />(w zalełnołci od modelu 3-5 żarówek E27 - duły gwint).<br /><br />Ułycie do montału magnesłw neodymowych pozwala na łatwe odpiłcie abażura od podstawy.<br /><br />Absolutny mistrz uzytecznołci!<br /><br /><br /> Opis<br /><br />Light source<br />    3 x E27<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    60 cm<br />Wysokość<br />    18 cm<br />Kolor<br />    Szary<br />', 'Wysyłamy od 2-14 dni', 'plafon-brava-p-600-czarny-szary-bezowy-bia', '', '', '', 'Plafon Brava P-600 czarny/szary/beżowy/bia', '', '', NULL, NULL),
@@ -19060,7 +19333,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (2764, 1, 1, '<br /><br /><br /> Opis<br /><br />Styl<br />    Modern Classic<br />Wymiary<br />    średnica 30 cm. wysokość 20cm<br />Kolor<br />    Srebrny<br />', 'Wysyłamy 1-3 dni', 'plafon-sydney-c01055wh-au', '', '', '', 'Plafon SYDNEY C01055WH AU', '', '', NULL, NULL),
 (2770, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    E27<br />Kolor<br />    Przezroczysty<br />', 'Wysyłamy 1-3 dni', 'zarowka-dekoracyjna-loft-tube-30cm-40w-e27', '', '', '', 'Żarówka dekoracyjna Loft Tube 30CM 40W E27', '', '', NULL, NULL),
 (2771, 1, 1, '<br /><br /><br /> Specyficzne kody<br />', 'Wysyłamy 1-3 dni', 'zarowka-dekoracyjna-led-filament-st64-6w-e', '', '', '', 'Żarówka dekoracyjna LED filament ST64 6W E', '', '', NULL, NULL),
-(2772, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    E27<br />', 'Produkt chwilowo niedostępny - zapytaj o termin', 'zarowka-dekoracyjna-straight-st64-40w-e27', '', '', '', 'Żarówka dekoracyjna Straight ST64 40W E27', '', '', NULL, NULL),
+(2772, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    E27<br />', 'Produkt chwilowo niedostępny - zapytaj o termin', 'zarowka-dekoracyjna-straight-st64-40w-e27', '', '', '', 'Żarówka dekoracyjna Straight ST64 40W E27', '', '', '', ''),
 (2774, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    E27<br />', 'Wysyłamy 1-3 dni', 'zarowka-dekoracyjna-vintage-a19-40w-e27', '', '', '', 'Żarówka dekoracyjna Vintage A19 40W E27', '', '', NULL, NULL),
 (2777, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    E14<br />Styl<br />    Modern Classic<br />Wymiary<br />    średnica 80 cm. wysokość 35cm<br />Kolor<br />    Srebrny<br />', 'Wysyłamy 1-3 dni', 'plafon-roma-c08529ch', '', '', '', 'Plafon ROMA C08529CH', '', '', NULL, NULL),
 (2778, 1, 1, '<br /><br /><br /> Opis<br /><br />Kolor<br />    Przezroczysty<br />', 'Wysyłamy 1-3 dni', 'zarowka-dekoracyjna-straight-g80-40w-e27', '', '', '', 'Żarówka dekoracyjna Straight G80 40W E27', '', '', NULL, NULL),
@@ -19100,7 +19373,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (7705, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    78<br />Light source<br />    LED 750 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Wysokość<br />    147-78<br />Wysokość<br />    147<br />Barwa światła<br />    3000<br />Głębokość<br />    118<br />Kolor<br />    Biały<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lighting-track-lamps-led-750-lm', '', '', '', 'Track Lighting Track lamps LED 750 LM', '', '', NULL, NULL),
 (7706, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    58<br />Light source<br />    LED 480 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Wysokość<br />    130-58<br />Wysokość<br />    130<br />Barwa światła<br />    4000<br />Głębokość<br />    98<br />Kolor<br />    Biały<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lighting-track-lamps-led-480-lm', '', '', '', 'Track Lighting Track lamps LED 480 LM', '', '', NULL, NULL),
 (7707, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    58<br />Light source<br />    LED 480 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Wysokość<br />    130-58<br />Wysokość<br />    130<br />Barwa światła<br />    4000<br />Głębokość<br />    98<br />Kolor<br />    Czarny<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lighting-track-lamps-led-480-lm', '', '', '', 'Track Lighting Track lamps LED 480 LM', '', '', NULL, NULL),
-(7708, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    58<br />Light source<br />    LED 450 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Wysokość<br />    130-58<br />Wysokość<br />    130<br />Barwa światła<br />    3000<br />Głębokość<br />    98<br />Kolor<br />    Czarny<br />', 'Ostatnie sztuki w magazynie', 'track-lighting-track-lamps-led-450-lm', '', '', '', 'Track Lighting Track lamps LED 450 LM', '', '', NULL, NULL),
+(7708, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    58<br />Light source<br />    LED 450 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Wysokość<br />    130-58<br />Wysokość<br />    130<br />Barwa światła<br />    3000<br />Głębokość<br />    98<br />Kolor<br />    Czarny<br />', 'Ostatnie sztuki w magazynie', 'track-lighting-track-lamps-led-450-lm', '', '', '', 'Track Lighting Track lamps LED 450 LM', '', '', '', ''),
 (7709, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    58<br />Light source<br />    LED 450 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Wysokość<br />    130-58<br />Wysokość<br />    130<br />Barwa światła<br />    3000<br />Głębokość<br />    98<br />Kolor<br />    Biały<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lighting-track-lamps-led-450-lm', '', '', '', 'Track Lighting Track lamps LED 450 LM', '', '', NULL, NULL),
 (7710, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    60<br />Light source<br />    1GU10 50W<br />Light source<br />    1 x GU10 50W<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Wysokość<br />    210-60<br />Wysokość<br />    210<br />Głębokość<br />    130<br />Kolor<br />    Biały<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lighting-track-lamps-1gu10-50w', '', '', '', 'Track Lighting Track lamps 1GU10 50W', '', '', NULL, NULL),
 (7711, 1, 1, 'Extruded aluminum tracklight. White or black powder coating. Adjustable 355st.<br /><br /><br /> Opis<br /><br />Szerokość<br />    60<br />Light source<br />    1GU10 50W<br />Light source<br />    1 x GU10 50W<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Wysokość<br />    210-60<br />Wysokość<br />    210<br />Głębokość<br />    130<br />Kolor<br />    Czarny<br />', 'Ostatnie sztuki w magazynie', 'track-lighting-track-lamps-1gu10-50w', '', '', '', 'Track Lighting Track lamps 1GU10 50W', '', '', NULL, NULL),
@@ -19225,7 +19498,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (8634, 1, 1, '<br /><br /><br /> Specyficzne kody<br />', 'Wysyłamy w 3-4 dni', 'landscape-lighting-lampshade', '', '', '', 'Landscape Lighting Lampshade', '', '', NULL, NULL),
 (8636, 1, 1, '<br /><br /><br /> Specyficzne kody<br />', 'Wysyłamy w 3-4 dni', 'landscape-lighting-lampshade', '', '', '', 'Landscape Lighting Lampshade', '', '', NULL, NULL),
 (8638, 1, 1, '<br /><br /><br /> Specyficzne kody<br />', 'Wysyłamy w 3 – 4 dni', 'landscape-lighting-lampshade', '', '', '', 'Landscape Lighting Lampshade', '', '', NULL, NULL),
-(8714, 1, 1, 'Producent: Lutec  <br />Nazwa: CUBA  <br />Symbol: 7193801118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 237<br />  * głębokość (mm): 110<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 23W 1000lm 3000K<br />  * max moc źródła: 23 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/tworzywo<br />  * IP: 54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'cuba-stojaca', '', '', '', 'CUBA STOJĄCA', '', '', NULL, NULL),
+(8714, 1, 1, 'Producent: Lutec  <br />Nazwa: CUBA  <br />Symbol: 7193801118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 237<br />  * głębokość (mm): 110<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 23W 1000lm 3000K<br />  * max moc źródła: 23 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/tworzywo<br />  * IP: 54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'cuba-stojaca', '', '', '', 'CUBA STOJĄCA', '', '', '', ''),
 (8722, 1, 1, 'Producent: Lutec  <br />Nazwa: EXPLORER  <br />Symbol: 6609205118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 430<br />  * szerokość (mm): 90<br />  * głębokość (mm): 91<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 7W 430lm 27006500K<br />  * max moc źródła: 7 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/tworzywo<br />  * IP: 54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'explorer-stojaca', '', '', '', 'EXPLORER STOJĄCA', '', '', NULL, NULL),
 (8729, 1, 1, 'Producent: Lutec  <br />Nazwa: QUBO  <br />Symbol: 7193001118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 92<br />  * głębokość (mm): 110<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 18W 1100lm 3000K<br />  * max moc źródła: 18 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/tworzywo<br />  * IP: 54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'qubo-stojaca', '', '', '', 'QUBO STOJĄCA', '', '', NULL, NULL),
 (8730, 1, 1, 'Producent: Lutec  <br />Nazwa: QUBO  <br />Symbol: 7193002118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 110<br />  * głębokość (mm): 93<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 16W 1000lm 27006500K<br />  * max moc źródła: 16 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/tworzywo<br />  * IP: 54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'qubo-stojaca', '', '', '', 'QUBO STOJĄCA', '', '', NULL, NULL),
@@ -19291,7 +19564,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (8904, 1, 1, 'Producent: Lutec  <br />Nazwa: TRUMPET  <br />Symbol: 5626001118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 94<br />  * szerokość (mm): 116<br />  * głębokość (mm): 94<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 11W 840lm 4000K<br />  * max moc źródła: 11 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/szkło<br />  * IP: 54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'trumpet-sufitowa', '', '', '', 'TRUMPET SUFITOWA', '', '', NULL, NULL),
 (8905, 1, 1, 'Producent: Lutec  <br />Nazwa: MINI LEDSPOT  <br />Symbol: 7214604118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 616<br />  * szerokość (mm): 46<br />  * głębokość (mm): 210<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 18W 1210lm 4000K<br />  * max moc źródła: 18 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/szkło<br />  * IP: 65<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'mini-ledspot-stojaca', '', '', '', 'MINI LEDSPOT STOJĄCA', '', '', NULL, NULL),
 (8906, 1, 1, 'Producent: Lutec  <br />Nazwa: MINI LEDSPOT  <br />Symbol: 7214603118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 526<br />  * szerokość (mm): 46<br />  * głębokość (mm): 210<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. 9W 605lm 4000K<br />  * max moc źródła: 9 W<br />  * napięcie: 230<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: Antracyt<br />  * materiał: aluminium/szkło<br />  * IP: 65<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'mini-ledspot-stojaca', '', '', '', 'MINI LEDSPOT STOJĄCA', '', '', NULL, NULL),
-(8914, 1, 1, 'Producent: Lutec  <br />Nazwa: CUBA  <br />Symbol: 5193803118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 148<br />  * szerokość (mm): 100<br />  * głębokość (mm): 116<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,12 W ,600 lm ,3000K<br />  * max moc źródła: 12 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'cuba-stojaca', '', '', '', 'CUBA STOJĄCA', '', '', NULL, NULL),
+(8914, 1, 1, 'Producent: Lutec  <br />Nazwa: CUBA  <br />Symbol: 5193803118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 148<br />  * szerokość (mm): 100<br />  * głębokość (mm): 116<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,12 W ,600 lm ,3000K<br />  * max moc źródła: 12 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '10 dni', 'cuba-stojaca', '', '', '', 'CUBA STOJĄCA', '', '', '', ''),
 (8915, 1, 1, 'Producent: Lutec  <br />Nazwa: HILL  <br />Symbol: 5195801001  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 164<br />  * szerokość (mm): 178<br />  * głębokość (mm): 103<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,8 W ,650 lm ,3000K<br />  * max moc źródła: 8 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '11 dni', 'hill-sufitowa', '', '', '', 'HILL SUFITOWA', '', '', NULL, NULL),
 (8916, 1, 1, 'Producent: Lutec  <br />Nazwa: URBAN  <br />Symbol: 5196501118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 92<br />  * szerokość (mm): 124<br />  * głębokość (mm): 220<br />  * ilość źródeł / rodzaj trzonka: 1 x GU10 ,7 W <br />  * max moc źródła: 7 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: brak<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '12 dni', 'urban-sufitowa', '', '', '', 'URBAN SUFITOWA', '', '', NULL, NULL),
 (8917, 1, 1, 'Producent: Lutec  <br />Nazwa: CYRA  <br />Symbol: 5198104118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 134<br />  * szerokość (mm): 78<br />  * głębokość (mm): 78<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,8 W ,500 lm ,3000K<br />  * max moc źródła: 8 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '13 dni', 'cyra-sufitowa', '', '', '', 'CYRA SUFITOWA', '', '', NULL, NULL),
@@ -19310,7 +19583,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (8930, 1, 1, 'Producent: Lutec  <br />Nazwa: BULLO  <br />Symbol: 6383001445  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 86<br />  * szerokość (mm): 102<br />  * głębokość (mm): 193<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,15 W ,700 lm ,3000K<br />  * max moc źródła: 15 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: brązowy<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '26 dni', 'bullo-sufitowa', '', '', '', 'BULLO SUFITOWA', '', '', NULL, NULL),
 (8931, 1, 1, 'Producent: Lutec  <br />Nazwa: FLAIR  <br />Symbol: 6588801012  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 272<br />  * szerokość (mm): 120<br />  * głębokość (mm): 120<br />  * ilość źródeł / rodzaj trzonka: 1 x E27 ,40 W <br />  * max moc źródła: 40 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: brak<br />  * kolor lampy: czarny<br />  * materiał: aluminium/szkło<br />  * IP: IP44<br /><br /><br /><br /><br /> Specyficzne kody<br />', '27 dni', 'flair-sufitowa', '', '', '', 'FLAIR SUFITOWA', '', '', NULL, NULL),
 (8932, 1, 1, 'Producent: Lutec  <br />Nazwa: CURTIS - CZUJNIK RUCHU  <br />Symbol: 6934601118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 190<br />  * szerokość (mm): 95<br />  * głębokość (mm): 165<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,3 W ,300 lm ,3000K<br />  * max moc źródła: 3 W<br />  * napięcie: brak<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '28 dni', 'curtis-czujnik-ruchu-sufitowa', '', '', '', 'CURTIS - CZUJNIK RUCHU SUFITOWA', '', '', NULL, NULL),
-(8933, 1, 1, 'Producent: Lutec  <br />Nazwa: CUBA  <br />Symbol: 7193802118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 110<br />  * głębokość (mm): 237<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,12 W ,600 lm ,3000K<br />  * max moc źródła: 12 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '29 dni', 'cuba-stojaca', '', '', '', 'CUBA STOJĄCA', '', '', NULL, NULL),
+(8933, 1, 1, 'Producent: Lutec  <br />Nazwa: CUBA  <br />Symbol: 7193802118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 110<br />  * głębokość (mm): 237<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,12 W ,600 lm ,3000K<br />  * max moc źródła: 12 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '29 dni', 'cuba-stojaca', '', '', '', 'CUBA STOJĄCA', '', '', '', ''),
 (8934, 1, 1, 'Producent: Lutec  <br />Nazwa: CYRA  <br />Symbol: 7198101118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 650<br />  * szerokość (mm): 78<br />  * głębokość (mm): 78<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,8 W ,500 lm ,3000K<br />  * max moc źródła: 8 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '30 dni', 'cyra-stojaca', '', '', '', 'CYRA STOJĄCA', '', '', NULL, NULL),
 (8935, 1, 1, 'Producent: Lutec  <br />Nazwa: CRUZ  <br />Symbol: 7199201118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 750<br />  * szerokość (mm): 140<br />  * głębokość (mm): 140<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,13 W ,1000 lm ,3000K<br />  * max moc źródła: 13 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '31 dni', 'cruz-stojaca', '', '', '', 'CRUZ STOJĄCA', '', '', NULL, NULL),
 (8936, 1, 1, 'Producent: Lutec  <br />Nazwa: DAKOTA  <br />Symbol: 7288601118  <br />Parametry<br /><br />  * średnica (mm): <br />  * wysokość (mm): 650<br />  * szerokość (mm): 147<br />  * głębokość (mm): 120<br />  * ilość źródeł / rodzaj trzonka: 1 x LED zintegr. ,12 W ,800 lm ,270-06500K<br />  * max moc źródła: 12 W<br />  * napięcie: 240 V<br />  * źródło w zestawie: LED zintegr.<br />  * kolor lampy: szary<br />  * materiał: aluminium/tworzywo<br />  * IP: IP54<br /><br /><br /><br /><br /> Specyficzne kody<br />', '32 dni', 'dakota-stojaca', '', '', '', 'DAKOTA STOJĄCA', '', '', NULL, NULL),
@@ -19438,7 +19711,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (15303, 1, 1, '<br /><br /><br /> Opis<br /><br />Materiał<br />    Powder coated metal; Opal<br />Szerokość<br />    15<br />Styl<br />    Skandynawski<br />Styl<br />    Minimalistyczny<br />Styl<br />    Nowoczesny<br />Wysokość<br />    250<br />Średnica klosza<br />    15<br />Źródło Światła<br />    G9 2<br />Kolor<br />    Czarny<br />', 'Wysyłamy w 2-7 dni', 'baby-moon-150-black', '', '', '', 'Baby Moon 150 Black', '', '', NULL, NULL),
 (15307, 1, 1, '<br /><br /><br /> Opis<br /><br />Średnica<br />    22,5cm<br />Źródło światła<br />    LED 1500lm 3000K<br />Wysokość<br />    3,5cm<br />Kolor<br />    Biały<br />', 'Wysyłamy 2-10 dni', 'disc-surface-led-20w-3000k-o225-mm-1500lm', '', '', '', 'DISC SURFACE  LED 20W 3000K Ø225 MM 1500lm', '', '', NULL, NULL),
 (15308, 1, 1, '<br /><br /><br /> Opis<br /><br />Średnica<br />    30cm<br />Źródło światła<br />    LED 1800lm 3000K<br />Wysokość<br />    3,5cm<br />Kolor<br />    Biały<br />', 'Wysyłamy 2-10 dni', 'disc-surface-led-24w-3000k-o300-mm-1800lm', '', '', '', 'DISC SURFACE  LED 24W 3000K Ø300 MM 1800lm', '', '', NULL, NULL),
-(15606, 1, 1, 'Box: PNOE SALMO (GLOSSY) , Middle: PNOE FLAVA (GLOSSY) , Shutter: NITOR LUTEA (GLOSSY) , type of screws: Stainless , typ przełączania: 105 świecznikowy | ROO<br /><br /><br /> Specyficzne kody<br />', 'Ostatnie sztuki w magazynie', 'wylacznik-porcelanowy-z-dwoma-przyciskami', '', '', '', 'Wyłącznik porcelanowy, z dwoma przyciskami', '', '', NULL, NULL),
+(15606, 1, 1, 'Box: PNOE SALMO (GLOSSY) , Middle: PNOE FLAVA (GLOSSY) , Shutter: NITOR LUTEA (GLOSSY) , type of screws: Stainless , typ przełączania: 105 świecznikowy | ROO<br /><br /><br /> Specyficzne kody<br />', 'Ostatnie sztuki w magazynie', 'wylacznik-porcelanowy-z-dwoma-przyciskami', '', '', '', 'Wyłącznik porcelanowy, z dwoma przyciskami', '', '', '', ''),
 (15607, 1, 1, 'Zabawna i elegancka porcelanowa lampa ROTO.<br /><br />Oprawa ROTO została zaprojektowana przez słynnego czeskiego projektanta(https://www.katypaty.pl/o-nas/) i ceramika, który nadał oprawie idealnie czysty i energetyczny kształt. Doskonale odzwierciedla on ręcznie odlewaną porcelanę<br /><br /><br /> Opis<br /><br />Materiał<br />    ceramika<br />Kolor<br />    Czerwony<br />', 'Ostatnie sztuki w magazynie', 'lampa-scienna-i-sufitowa-roto-nitor-rosea', '', '', '', 'LAMPA ŚCIENNA I SUFITOWA ROTO NITOR ROSEA', '', '', NULL, NULL),
 (15665, 1, 1, 'Szerokość | 5,5  <br />---|---  <br />Wysokość | 81  <br />Głębokość | 5  <br />Źródło światła | 1 x G9  <br />Średnica klosza 1 | 2 cm  <br />Materiał | metal  <br />Kolor | jasnozłoty<br /><br /><br /> Opis<br /><br />Kolor<br />    Złoty<br />', 'Brak na stanie', 'stick-1-long-gold', '', '', '', 'STICK 1 LONG GOLD', '', '', NULL, NULL),
 (15666, 1, 1, 'Szerokość | 5,5  <br />---|---  <br />Wysokość | 81  <br />Głębokość | 5  <br />Źródło światła | 1 X G9  <br />Kolor | czarno-złoty<br /><br /><br /> Opis<br /><br />Kolor<br />    Złoty<br />', 'Brak na stanie', 'stick-1-long-black', '', '', '', 'STICK 1 LONG BLACK', '', '', NULL, NULL),
@@ -19474,7 +19747,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (19128, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 3200 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    89<br />Wysokość<br />    165<br />Barwa światła<br />    3000<br />Kolor<br />    Czarny<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lamps-track-lighting-black-led-3200', '', '', '', 'Track lamps Track Lighting Black LED 3200', '', '', NULL, NULL),
 (19129, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 3200 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    89<br />Wysokość<br />    165<br />Barwa światła<br />    3000<br />Kolor<br />    Biały<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lamps-track-lighting-white-led-3200', '', '', '', 'Track lamps Track Lighting White LED 3200', '', '', NULL, NULL),
 (19130, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 3200 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    89<br />Wysokość<br />    165<br />Barwa światła<br />    4000<br />Kolor<br />    Biały<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lamps-track-lighting-white-led-3200', '', '', '', 'Track lamps Track Lighting White LED 3200', '', '', NULL, NULL),
-(19131, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 3200 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    89<br />Wysokość<br />    165<br />Barwa światła<br />    4000<br />Kolor<br />    Czarny<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lamps-track-lighting-black-led-3200', '', '', '', 'Track lamps Track Lighting Black LED 3200', '', '', NULL, NULL),
+(19131, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 3200 LM<br />Styl<br />    Nowoczesny<br />Styl<br />    Minimalistyczny<br />Średnica<br />    89<br />Wysokość<br />    165<br />Barwa światła<br />    4000<br />Kolor<br />    Czarny<br />', 'Chwilowo niedostępne – zapytaj o termin', 'track-lamps-track-lighting-black-led-3200', '', '', '', 'Track lamps Track Lighting Black LED 3200', '', '', '', ''),
 (19186, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 60 LM<br />Średnica<br />    62<br />Wysokość<br />    58<br />Barwa światła<br />    3000<br />Kolor<br />    Czarny<br />', 'Wysyłamy w 3-4 dni', 'biscotti-downlight-black-led-60-lm', '', '', '', 'Biscotti Downlight Black LED 60 LM', '', '', NULL, NULL),
 (19187, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 30 LM<br />Średnica<br />    62<br />Wysokość<br />    58<br />Barwa światła<br />    3000<br />Kolor<br />    Biały<br />', 'Wysyłamy w 3-4 dni', 'biscotti-downlight-white-led-30-lm', '', '', '', 'Biscotti Downlight White LED 30 LM', '', '', NULL, NULL),
 (19188, 1, 1, '<br /><br /><br /> Opis<br /><br />Light source<br />    LED 30 LM<br />Średnica<br />    62<br />Wysokość<br />    58<br />Barwa światła<br />    3000<br />Kolor<br />    Czarny<br />', 'Wysyłamy w 3-4 dni', 'biscotti-downlight-black-led-30-lm', '', '', '', 'Biscotti Downlight Black LED 30 LM', '', '', NULL, NULL),
@@ -19514,7 +19787,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (23632, 1, 1, '<br /><br /><br /> Opis<br /><br />Kolor<br />    Biały<br />', 'Wysyłamy w 2-14 dni', 'kinkiet-plafon-z-pior-eos-up-mini-o-30-cm', '', '', '', 'Kinkiet  plafon z piór Eos Up Mini Ø 30 cm', '', '', NULL, NULL),
 (23672, 1, 1, '<br /><br /><br /> Opis<br /><br />Kolor<br />    Biały<br />', 'Chwilowo niedostępny – zapytaj o termin', 'plafon-asteria-up-pearl-perlowa-biel', '', '', '', 'Plafon Asteria Up pearl - perłowa biel', '', '', NULL, NULL),
 (23673, 1, 1, '<br /><br /><br /> Opis<br /><br />Kolor<br />    Metaliczny<br />', 'Chwilowo niedostępne - zapytaj o termin', 'plafon-asteria-up-anthracite-antracytowy', '', '', '', 'Plafon Asteria Up anthracite - antracytowy', '', '', NULL, NULL),
-(23709, 1, 1, '<br /><br /><br /> Opis<br /><br />Kolor<br />    Biały<br />', 'Chwilowo niedostępny – zapytaj o termin', 'zarowka-dekoracyjna-e27-3w-idea-led-a-srednica-125-mm', '', '', '', 'Żarówka dekoracyjna E27 3W Idea LED A+ średnica 125 mm', '', '', NULL, NULL),
+(23709, 1, 1, '<br /><br /><br /> Opis<br /><br />Kolor<br />    Biały<br />', 'Chwilowo niedostępny – zapytaj o termin', 'zarowka-dekoracyjna-e27-3w-idea-led-a-srednica-125-mm', '', '', '', 'Żarówka dekoracyjna E27 3W Idea LED A+ średnica 125 mm', '', '', '', ''),
 (26017, 1, 1, '<br /><br /><br /> Opis<br /><br />Materiał<br />    bambus<br />Szerokość<br />    40<br />Styl<br />    Skandynawski<br />Źródło światła<br />    E27<br />Wysokość<br />    20<br />Kolor<br />    Brązowy jasny<br />', 'Obecnie brak na stanie', 'lampa-sufitowa-bromo-s', '', '', '', 'Lampa sufitowa BROMO S', '', '', NULL, NULL),
 (26018, 1, 1, '<br /><br /><br /> Opis<br /><br />Materiał<br />    bambus<br />Szerokość<br />    60<br />Styl<br />    Skandynawski<br />Źródło światła<br />    E27<br />Wysokość<br />    20<br />Kolor<br />    Brązowy jasny<br />', 'Obecnie brak na stanie', 'lampa-sufitowa-bromo-l', '', '', '', 'Lampa sufitowa BROMO L', '', '', NULL, NULL),
 (26019, 1, 1, '<br /><br /><br /> Opis<br /><br />Materiał<br />    bambus<br />Szerokość<br />    40<br />Styl<br />    Skandynawski<br />Źródło światła<br />    E27<br />Wysokość<br />    13<br />Kolor<br />    Brązowy jasny<br />', 'Obecnie brak na stanie', 'lampa-sufitowa-bromo-asymetryczna-s', '', '', '', 'Lampa sufitowa BROMO asymetryczna S', '', '', NULL, NULL),
@@ -19677,7 +19950,7 @@ INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_sale`
+-- Struktura tabeli dla tabeli `ps_product_sale`
 --
 
 CREATE TABLE `ps_product_sale` (
@@ -19687,10 +19960,23 @@ CREATE TABLE `ps_product_sale` (
   `date_upd` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_product_sale`
+--
+
+INSERT INTO `ps_product_sale` (`id_product`, `quantity`, `sale_nbr`, `date_upd`) VALUES
+(1, 3, 3, '2021-11-13'),
+(2, 4, 4, '2021-11-13'),
+(3, 3, 3, '2021-11-13'),
+(5, 1, 1, '2021-11-13'),
+(6, 2, 2, '2021-11-13'),
+(7, 2, 2, '2021-11-13'),
+(7708, 1, 1, '2021-11-13');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_shop`
+-- Struktura tabeli dla tabeli `ps_product_shop`
 --
 
 CREATE TABLE `ps_product_shop` (
@@ -19730,7 +20016,7 @@ CREATE TABLE `ps_product_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_product_shop`
+-- Zrzut danych tabeli `ps_product_shop`
 --
 
 INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ecotax`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_default_attribute`, `advanced_stock_management`, `date_add`, `date_upd`, `pack_stock_type`) VALUES
@@ -19776,8 +20062,8 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (2552, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '169.105691', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:26', '2021-11-11 00:59:26', 3),
 (2553, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '169.105691', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:33', '2021-11-11 00:59:33', 3),
 (2554, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '169.105691', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:33', '2021-11-11 00:59:33', 3),
-(2685, 1, 19, 1, 0, 0, '0.000000', 1, NULL, 0, '129.268293', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:26', '2021-11-11 00:59:26', 3),
-(2686, 1, 19, 1, 0, 0, '0.000000', 1, NULL, 0, '348.780488', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:26', '2021-11-11 00:59:26', 3),
+(2685, 1, 19, 1, 1, 0, '0.000000', 1, NULL, 0, '129.268293', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:26', '2021-11-13 20:49:58', 3),
+(2686, 1, 19, 1, 1, 0, '0.000000', 1, NULL, 0, '348.780488', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:26', '2021-11-13 20:49:31', 3),
 (2690, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '283.739837', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:52', '2021-11-11 00:59:52', 3),
 (2691, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '356.097561', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:52', '2021-11-11 00:59:52', 3),
 (2692, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '357.723577', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:52', '2021-11-11 00:59:52', 3),
@@ -19805,7 +20091,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (2764, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '324.390244', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:45', '2021-11-11 00:59:45', 3),
 (2770, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '24.390244', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:24', '2021-11-11 01:04:24', 3),
 (2771, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '34.959350', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 3),
-(2772, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '11.382114', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 3),
+(2772, 1, 15, 1, 1, 0, '0.000000', 1, NULL, 0, '11.382114', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:18', '2021-11-13 20:54:40', 3),
 (2774, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '16.260163', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 3),
 (2777, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '2519.512195', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:45', '2021-11-11 00:59:45', 3),
 (2778, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '21.138211', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:24', '2021-11-11 01:04:24', 3),
@@ -19845,7 +20131,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (7705, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '95.934959', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 3),
 (7706, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 3),
 (7707, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:06:20', '2021-11-11 01:06:20', 3),
-(7708, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 3),
+(7708, 1, 21, 1, 1, 0, '0.000000', 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:37', '2021-11-13 20:52:51', 3),
 (7709, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '68.292683', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:37', '2021-11-11 01:05:37', 3),
 (7710, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:48', '2021-11-11 01:05:48', 3),
 (7711, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:06:25', '2021-11-11 01:06:25', 3),
@@ -19970,7 +20256,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (8634, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '31.707317', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:10', '2021-11-11 01:05:10', 3),
 (8636, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '45.528455', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:10', '2021-11-11 01:05:10', 3),
 (8638, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '31.707317', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:10', '2021-11-11 01:05:10', 3),
-(8714, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '403.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:56:51', '2021-11-11 00:56:51', 3),
+(8714, 1, 17, 1, 1, 0, '0.000000', 1, NULL, 0, '403.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 4, 0, '2021-11-11 00:56:51', '2021-11-13 21:04:20', 3),
 (8722, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '220.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:56:51', '2021-11-11 00:56:51', 3),
 (8729, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:56:45', '2021-11-11 00:56:45', 3),
 (8730, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '440.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:56:51', '2021-11-11 00:56:51', 3),
@@ -20035,7 +20321,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (8904, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:14', '2021-11-11 00:59:14', 3),
 (8905, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '550.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:12', '2021-11-11 00:58:12', 3),
 (8906, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '403.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:08', '2021-11-11 00:58:08', 3),
-(8914, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:12', '2021-11-11 00:58:12', 3),
+(8914, 1, 17, 1, 1, 0, '0.000000', 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:12', '2021-11-13 20:46:20', 3),
 (8915, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '129.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:14', '2021-11-11 00:59:14', 3),
 (8916, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '84.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:07', '2021-11-11 00:59:07', 3),
 (8917, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '147.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:07', '2021-11-11 00:59:07', 3),
@@ -20054,7 +20340,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (8930, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '81.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:47', '2021-11-11 00:58:47', 3),
 (8931, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '184.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:47', '2021-11-11 00:58:47', 3),
 (8932, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '184.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:53', '2021-11-11 00:58:53', 3),
-(8933, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:57:36', '2021-11-11 00:57:36', 3),
+(8933, 1, 17, 1, 1, 0, '0.000000', 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, '2021-11-11 00:57:36', '2021-11-13 21:01:54', 3),
 (8934, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:57:30', '2021-11-11 00:57:30', 3),
 (8935, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '275.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:57:30', '2021-11-11 00:57:30', 3),
 (8936, 1, 17, 1, 0, 0, '0.000000', 1, NULL, 0, '257.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:57:36', '2021-11-11 00:57:36', 3),
@@ -20180,7 +20466,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (15303, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '354.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:03:38', '2021-11-11 01:03:38', 3),
 (15307, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '110.032520', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:00:01', '2021-11-11 01:00:01', 3),
 (15308, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '133.203252', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:00:01', '2021-11-11 01:00:01', 3),
-(15606, 1, 16, 1, 0, 0, '0.000000', 1, NULL, 0, '324.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:33', '2021-11-11 01:05:33', 3),
+(15606, 1, 16, 1, 1, 0, '0.000000', 1, NULL, 0, '324.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:33', '2021-11-13 20:55:39', 3),
 (15607, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '499.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:03:33', '2021-11-11 01:03:33', 3),
 (15665, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '229.268293', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 3),
 (15666, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '204.878049', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:04:18', '2021-11-11 01:04:18', 3),
@@ -20217,7 +20503,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (19128, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:06:07', '2021-11-11 01:06:07', 3),
 (19129, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:48', '2021-11-11 01:05:48', 3),
 (19130, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:06:00', '2021-11-11 01:06:00', 3),
-(19131, 1, 21, 1, 0, 0, '0.000000', 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:06:07', '2021-11-11 01:06:07', 3),
+(19131, 1, 21, 1, 1, 0, '0.000000', 1, NULL, 0, '227.642276', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:06:07', '2021-11-13 20:51:27', 3),
 (19186, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:42', '2021-11-11 00:58:42', 3),
 (19187, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:58:42', '2021-11-11 00:58:42', 3),
 (19188, 1, 18, 1, 0, 0, '0.000000', 1, NULL, 0, '104.878049', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 00:59:02', '2021-11-11 00:59:02', 3),
@@ -20257,7 +20543,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (23632, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '369.918699', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:01:20', '2021-11-11 01:01:20', 3),
 (23672, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '1865.853659', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:01:23', '2021-11-11 01:01:23', 3),
 (23673, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '1865.853659', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:01:23', '2021-11-11 01:01:23', 3),
-(23709, 1, 15, 1, 0, 0, '0.000000', 1, NULL, 0, '93.504065', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:08', '2021-11-11 01:05:08', 3),
+(23709, 1, 15, 1, 1, 0, '0.000000', 1, NULL, 0, '93.504065', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:05:08', '2021-11-13 20:54:01', 3),
 (26017, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '527.642276', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:02:46', '2021-11-11 01:02:46', 3),
 (26018, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '649.593496', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:02:46', '2021-11-11 01:02:46', 3),
 (26019, 1, 20, 1, 0, 0, '0.000000', 1, NULL, 0, '382.105691', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2021-11-11 01:02:46', '2021-11-11 01:02:46', 3),
@@ -20419,7 +20705,7 @@ INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_supplier`
+-- Struktura tabeli dla tabeli `ps_product_supplier`
 --
 
 CREATE TABLE `ps_product_supplier` (
@@ -20435,7 +20721,7 @@ CREATE TABLE `ps_product_supplier` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_product_tag`
+-- Struktura tabeli dla tabeli `ps_product_tag`
 --
 
 CREATE TABLE `ps_product_tag` (
@@ -20447,7 +20733,7 @@ CREATE TABLE `ps_product_tag` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_profile`
+-- Struktura tabeli dla tabeli `ps_profile`
 --
 
 CREATE TABLE `ps_profile` (
@@ -20455,7 +20741,7 @@ CREATE TABLE `ps_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_profile`
+-- Zrzut danych tabeli `ps_profile`
 --
 
 INSERT INTO `ps_profile` (`id_profile`) VALUES
@@ -20467,7 +20753,7 @@ INSERT INTO `ps_profile` (`id_profile`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_profile_lang`
+-- Struktura tabeli dla tabeli `ps_profile_lang`
 --
 
 CREATE TABLE `ps_profile_lang` (
@@ -20477,7 +20763,7 @@ CREATE TABLE `ps_profile_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_profile_lang`
+-- Zrzut danych tabeli `ps_profile_lang`
 --
 
 INSERT INTO `ps_profile_lang` (`id_lang`, `id_profile`, `name`) VALUES
@@ -20489,7 +20775,7 @@ INSERT INTO `ps_profile_lang` (`id_lang`, `id_profile`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_psgdpr_consent`
+-- Struktura tabeli dla tabeli `ps_psgdpr_consent`
 --
 
 CREATE TABLE `ps_psgdpr_consent` (
@@ -20505,7 +20791,7 @@ CREATE TABLE `ps_psgdpr_consent` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_psgdpr_consent_lang`
+-- Struktura tabeli dla tabeli `ps_psgdpr_consent_lang`
 --
 
 CREATE TABLE `ps_psgdpr_consent_lang` (
@@ -20518,7 +20804,7 @@ CREATE TABLE `ps_psgdpr_consent_lang` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_psgdpr_log`
+-- Struktura tabeli dla tabeli `ps_psgdpr_log`
 --
 
 CREATE TABLE `ps_psgdpr_log` (
@@ -20533,16 +20819,17 @@ CREATE TABLE `ps_psgdpr_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_psgdpr_log`
+-- Zrzut danych tabeli `ps_psgdpr_log`
 --
 
 INSERT INTO `ps_psgdpr_log` (`id_gdpr_log`, `id_customer`, `id_guest`, `client_name`, `id_module`, `request_type`, `date_add`, `date_upd`) VALUES
-(1, 3, 0, 'Paweł Grajkowski', 0, 1, '2021-11-09 23:36:22', '2021-11-09 23:36:22');
+(1, 3, 0, 'Paweł Grajkowski', 0, 1, '2021-11-09 23:36:22', '2021-11-09 23:36:22'),
+(2, 4, 0, 'Weronika kjhkjhk', 0, 1, '2021-11-13 21:08:47', '2021-11-13 21:08:47');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_psreassurance`
+-- Struktura tabeli dla tabeli `ps_psreassurance`
 --
 
 CREATE TABLE `ps_psreassurance` (
@@ -20559,18 +20846,18 @@ CREATE TABLE `ps_psreassurance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_psreassurance`
+-- Zrzut danych tabeli `ps_psreassurance`
 --
 
 INSERT INTO `ps_psreassurance` (`id_psreassurance`, `icon`, `custom_icon`, `status`, `position`, `id_shop`, `type_link`, `id_cms`, `date_add`, `date_upd`) VALUES
-(1, '/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png', NULL, 1, 1, 1, NULL, NULL, '2021-11-12 22:39:30', NULL),
-(2, '/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png', NULL, 1, 2, 1, NULL, NULL, '2021-11-12 22:39:30', NULL),
-(3, '/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png', NULL, 1, 3, 1, NULL, NULL, '2021-11-12 22:39:30', NULL);
+(1, '/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png', '', 1, 1, 1, 0, 0, '2021-11-13 21:17:20', '2021-11-13 21:17:20'),
+(2, '/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png', '', 1, 2, 1, 0, 0, '2021-11-13 21:17:36', '2021-11-13 21:17:36'),
+(3, '/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png', '', 1, 3, 1, 0, 0, '2021-11-13 21:17:50', '2021-11-13 21:17:50');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_psreassurance_lang`
+-- Struktura tabeli dla tabeli `ps_psreassurance_lang`
 --
 
 CREATE TABLE `ps_psreassurance_lang` (
@@ -20583,18 +20870,18 @@ CREATE TABLE `ps_psreassurance_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_psreassurance_lang`
+-- Zrzut danych tabeli `ps_psreassurance_lang`
 --
 
 INSERT INTO `ps_psreassurance_lang` (`id_psreassurance`, `id_lang`, `id_shop`, `title`, `description`, `link`) VALUES
-(1, 1, 1, 'Polityka bezpieczeństwa (edytuj za pomocą modułu „Bezpieczeństwo klienta”)', '', ''),
-(2, 1, 1, 'Zasady dostawy (edytuj za pomocą modułu „Bezpieczeństwo klienta”)', '', ''),
-(3, 1, 1, 'Zasady zwrotu (edytuj za pomocą modułu „Bezpieczeństwo klienta”)', '', '');
+(1, 1, 1, 'Zakupy są bezpieczne', '', ''),
+(2, 1, 1, 'Dostarczamy ekspresowo', '', ''),
+(3, 1, 1, 'Masz 14 dni na zwrot', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_quick_access`
+-- Struktura tabeli dla tabeli `ps_quick_access`
 --
 
 CREATE TABLE `ps_quick_access` (
@@ -20604,7 +20891,7 @@ CREATE TABLE `ps_quick_access` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_quick_access`
+-- Zrzut danych tabeli `ps_quick_access`
 --
 
 INSERT INTO `ps_quick_access` (`id_quick_access`, `new_window`, `link`) VALUES
@@ -20618,7 +20905,7 @@ INSERT INTO `ps_quick_access` (`id_quick_access`, `new_window`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_quick_access_lang`
+-- Struktura tabeli dla tabeli `ps_quick_access_lang`
 --
 
 CREATE TABLE `ps_quick_access_lang` (
@@ -20628,7 +20915,7 @@ CREATE TABLE `ps_quick_access_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_quick_access_lang`
+-- Zrzut danych tabeli `ps_quick_access_lang`
 --
 
 INSERT INTO `ps_quick_access_lang` (`id_quick_access`, `id_lang`, `name`) VALUES
@@ -20637,12 +20924,12 @@ INSERT INTO `ps_quick_access_lang` (`id_quick_access`, `id_lang`, `name`) VALUES
 (3, 1, 'Nowy produkt'),
 (4, 1, 'Nowa kategoria'),
 (5, 1, 'Zainstalowane moduły'),
-(6, 1, 'Catalog evaluation');
+(6, 1, 'Ocena katalogu');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_range_price`
+-- Struktura tabeli dla tabeli `ps_range_price`
 --
 
 CREATE TABLE `ps_range_price` (
@@ -20653,16 +20940,21 @@ CREATE TABLE `ps_range_price` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_range_price`
+-- Zrzut danych tabeli `ps_range_price`
 --
 
 INSERT INTO `ps_range_price` (`id_range_price`, `id_carrier`, `delimiter1`, `delimiter2`) VALUES
-(1, 2, '0.000000', '10000.000000');
+(1, 2, '0.000000', '10000.000000'),
+(2, 3, '0.000000', '200.000000'),
+(3, 3, '200.000000', '500.000000'),
+(4, 3, '500.000000', '10000.000000'),
+(5, 4, '0.000000', '200.000000'),
+(6, 4, '200.000000', '10000.000000');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_range_weight`
+-- Struktura tabeli dla tabeli `ps_range_weight`
 --
 
 CREATE TABLE `ps_range_weight` (
@@ -20673,7 +20965,7 @@ CREATE TABLE `ps_range_weight` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_range_weight`
+-- Zrzut danych tabeli `ps_range_weight`
 --
 
 INSERT INTO `ps_range_weight` (`id_range_weight`, `id_carrier`, `delimiter1`, `delimiter2`) VALUES
@@ -20682,7 +20974,7 @@ INSERT INTO `ps_range_weight` (`id_range_weight`, `id_carrier`, `delimiter1`, `d
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_reassurance`
+-- Struktura tabeli dla tabeli `ps_reassurance`
 --
 
 CREATE TABLE `ps_reassurance` (
@@ -20692,7 +20984,7 @@ CREATE TABLE `ps_reassurance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_reassurance`
+-- Zrzut danych tabeli `ps_reassurance`
 --
 
 INSERT INTO `ps_reassurance` (`id_reassurance`, `id_shop`, `file_name`) VALUES
@@ -20703,7 +20995,7 @@ INSERT INTO `ps_reassurance` (`id_reassurance`, `id_shop`, `file_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_reassurance_lang`
+-- Struktura tabeli dla tabeli `ps_reassurance_lang`
 --
 
 CREATE TABLE `ps_reassurance_lang` (
@@ -20713,7 +21005,7 @@ CREATE TABLE `ps_reassurance_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ps_reassurance_lang`
+-- Zrzut danych tabeli `ps_reassurance_lang`
 --
 
 INSERT INTO `ps_reassurance_lang` (`id_reassurance`, `id_lang`, `text`) VALUES
@@ -20724,7 +21016,7 @@ INSERT INTO `ps_reassurance_lang` (`id_reassurance`, `id_lang`, `text`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_referrer`
+-- Struktura tabeli dla tabeli `ps_referrer`
 --
 
 CREATE TABLE `ps_referrer` (
@@ -20748,7 +21040,7 @@ CREATE TABLE `ps_referrer` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_referrer_cache`
+-- Struktura tabeli dla tabeli `ps_referrer_cache`
 --
 
 CREATE TABLE `ps_referrer_cache` (
@@ -20759,7 +21051,7 @@ CREATE TABLE `ps_referrer_cache` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_referrer_shop`
+-- Struktura tabeli dla tabeli `ps_referrer_shop`
 --
 
 CREATE TABLE `ps_referrer_shop` (
@@ -20778,7 +21070,7 @@ CREATE TABLE `ps_referrer_shop` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_request_sql`
+-- Struktura tabeli dla tabeli `ps_request_sql`
 --
 
 CREATE TABLE `ps_request_sql` (
@@ -20790,7 +21082,7 @@ CREATE TABLE `ps_request_sql` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_required_field`
+-- Struktura tabeli dla tabeli `ps_required_field`
 --
 
 CREATE TABLE `ps_required_field` (
@@ -20802,7 +21094,7 @@ CREATE TABLE `ps_required_field` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_risk`
+-- Struktura tabeli dla tabeli `ps_risk`
 --
 
 CREATE TABLE `ps_risk` (
@@ -20812,7 +21104,7 @@ CREATE TABLE `ps_risk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_risk`
+-- Zrzut danych tabeli `ps_risk`
 --
 
 INSERT INTO `ps_risk` (`id_risk`, `percent`, `color`) VALUES
@@ -20824,7 +21116,7 @@ INSERT INTO `ps_risk` (`id_risk`, `percent`, `color`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_risk_lang`
+-- Struktura tabeli dla tabeli `ps_risk_lang`
 --
 
 CREATE TABLE `ps_risk_lang` (
@@ -20834,7 +21126,7 @@ CREATE TABLE `ps_risk_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_risk_lang`
+-- Zrzut danych tabeli `ps_risk_lang`
 --
 
 INSERT INTO `ps_risk_lang` (`id_risk`, `id_lang`, `name`) VALUES
@@ -20846,7 +21138,7 @@ INSERT INTO `ps_risk_lang` (`id_risk`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_search_engine`
+-- Struktura tabeli dla tabeli `ps_search_engine`
 --
 
 CREATE TABLE `ps_search_engine` (
@@ -20856,7 +21148,7 @@ CREATE TABLE `ps_search_engine` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_search_engine`
+-- Zrzut danych tabeli `ps_search_engine`
 --
 
 INSERT INTO `ps_search_engine` (`id_search_engine`, `server`, `getvar`) VALUES
@@ -20902,7 +21194,7 @@ INSERT INTO `ps_search_engine` (`id_search_engine`, `server`, `getvar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_search_index`
+-- Struktura tabeli dla tabeli `ps_search_index`
 --
 
 CREATE TABLE `ps_search_index` (
@@ -20912,7 +21204,7 @@ CREATE TABLE `ps_search_index` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_search_index`
+-- Zrzut danych tabeli `ps_search_index`
 --
 
 INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
@@ -22142,36 +22434,45 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (2554, 13386, 6),
 (2685, 12697, 1),
 (2685, 12699, 1),
-(2685, 12714, 1),
 (2685, 12771, 1),
 (2685, 12940, 1),
 (2685, 13185, 1),
-(2685, 13285, 1),
 (2685, 13404, 1),
 (2685, 13405, 1),
 (2685, 13406, 1),
+(2685, 29609, 1),
+(2685, 29703, 1),
+(2685, 29706, 1),
+(2685, 29707, 1),
 (2685, 13407, 3),
 (2685, 13408, 3),
 (2685, 13409, 3),
 (2685, 13410, 3),
+(2685, 29708, 3),
+(2685, 29709, 3),
 (2685, 12941, 6),
 (2685, 13401, 6),
 (2685, 13402, 6),
 (2685, 13403, 6),
 (2686, 12697, 1),
 (2686, 12699, 1),
-(2686, 12714, 1),
 (2686, 12771, 1),
 (2686, 12940, 1),
 (2686, 13185, 1),
-(2686, 13285, 1),
 (2686, 13404, 1),
 (2686, 13405, 1),
 (2686, 13406, 1),
+(2686, 29703, 1),
+(2686, 29704, 1),
+(2686, 29705, 1),
+(2686, 29706, 1),
+(2686, 29707, 1),
 (2686, 13407, 3),
 (2686, 13408, 3),
 (2686, 13409, 3),
 (2686, 13410, 3),
+(2686, 29708, 3),
+(2686, 29709, 3),
 (2686, 12941, 6),
 (2686, 13401, 6),
 (2686, 13403, 6),
@@ -23874,7 +24175,6 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (7707, 12785, 7),
 (7707, 15071, 7),
 (7707, 14523, 12),
-(7708, 12714, 1),
 (7708, 12771, 1),
 (7708, 12786, 1),
 (7708, 12797, 1),
@@ -23898,13 +24198,17 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (7708, 15073, 1),
 (7708, 15074, 1),
 (7708, 15075, 1),
+(7708, 29794, 1),
+(7708, 29795, 1),
 (7708, 14376, 3),
 (7708, 14537, 3),
+(7708, 29749, 3),
+(7708, 14523, 6),
 (7708, 14524, 6),
 (7708, 14627, 6),
+(7708, 29565, 6),
 (7708, 12785, 7),
 (7708, 15135, 7),
-(7708, 14523, 12),
 (7709, 12714, 1),
 (7709, 12715, 1),
 (7709, 12786, 1),
@@ -24211,7 +24515,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (7719, 15435, 1),
 (7719, 15436, 1),
 (7719, 14376, 3),
-(7719, 14537, 3),
+(7719, 14537, 3);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (7719, 14524, 6),
 (7719, 15386, 6),
 (7719, 15432, 6),
@@ -24223,8 +24528,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (7720, 13272, 1),
 (7720, 14144, 1),
 (7720, 14146, 1),
-(7720, 14147, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(7720, 14147, 1),
 (7720, 14526, 1),
 (7720, 15389, 1),
 (7720, 15390, 1),
@@ -26864,6 +27168,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8638, 16489, 6),
 (8638, 16662, 6),
 (8714, 12699, 1),
+(8714, 12785, 1),
 (8714, 12838, 1),
 (8714, 12839, 1),
 (8714, 12864, 1),
@@ -26887,6 +27192,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8714, 18134, 1),
 (8714, 18135, 1),
 (8714, 18136, 1),
+(8714, 18137, 1),
 (8714, 18138, 1),
 (8714, 18139, 1),
 (8714, 18140, 1),
@@ -26898,8 +27204,14 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8714, 18146, 1),
 (8714, 18147, 1),
 (8714, 18148, 1),
-(8714, 12785, 2),
-(8714, 18137, 2),
+(8714, 29563, 1),
+(8714, 29566, 1),
+(8714, 29609, 1),
+(8714, 29656, 1),
+(8714, 29657, 1),
+(8714, 12771, 2),
+(8714, 13387, 2),
+(8714, 29942, 2),
 (8714, 13408, 3),
 (8714, 17853, 3),
 (8714, 18126, 4),
@@ -27324,7 +27636,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8790, 18125, 1),
 (8790, 18127, 1),
 (8790, 18128, 1),
-(8790, 18130, 1),
+(8790, 18130, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8790, 18132, 1),
 (8790, 18133, 1),
 (8790, 18134, 1),
@@ -27344,8 +27657,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8790, 18573, 1),
 (8790, 12785, 2),
 (8790, 18137, 2),
-(8790, 18571, 2);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(8790, 18571, 2),
 (8790, 12703, 3),
 (8790, 13408, 3),
 (8790, 18126, 4),
@@ -29465,6 +29777,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8906, 13880, 7),
 (8906, 20640, 7),
 (8914, 12699, 1),
+(8914, 12785, 1),
 (8914, 12838, 1),
 (8914, 12839, 1),
 (8914, 12864, 1),
@@ -29486,6 +29799,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8914, 18134, 1),
 (8914, 18135, 1),
 (8914, 18136, 1),
+(8914, 18137, 1),
 (8914, 18140, 1),
 (8914, 18141, 1),
 (8914, 18142, 1),
@@ -29499,8 +29813,11 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8914, 20724, 1),
 (8914, 20725, 1),
 (8914, 20726, 1),
-(8914, 12785, 2),
-(8914, 18137, 2),
+(8914, 29563, 1),
+(8914, 29564, 1),
+(8914, 29565, 1),
+(8914, 29566, 1),
+(8914, 29609, 1),
 (8914, 13408, 3),
 (8914, 17853, 3),
 (8914, 18126, 4),
@@ -30241,11 +30558,11 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8932, 19915, 7),
 (8932, 21456, 7),
 (8933, 12699, 1),
+(8933, 12785, 1),
 (8933, 12838, 1),
 (8933, 12839, 1),
 (8933, 12864, 1),
 (8933, 13067, 1),
-(8933, 13387, 1),
 (8933, 13544, 1),
 (8933, 13707, 1),
 (8933, 13710, 1),
@@ -30265,6 +30582,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8933, 18134, 1),
 (8933, 18135, 1),
 (8933, 18136, 1),
+(8933, 18137, 1),
 (8933, 18140, 1),
 (8933, 18141, 1),
 (8933, 18142, 1),
@@ -30275,8 +30593,14 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8933, 20725, 1),
 (8933, 20726, 1),
 (8933, 21499, 1),
-(8933, 12785, 2),
-(8933, 18137, 2),
+(8933, 29562, 1),
+(8933, 29563, 1),
+(8933, 29564, 1),
+(8933, 29565, 1),
+(8933, 29566, 1),
+(8933, 12771, 2),
+(8933, 29942, 2),
+(8933, 13387, 3),
 (8933, 13408, 3),
 (8933, 17853, 3),
 (8933, 18126, 4),
@@ -30433,7 +30757,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8937, 18144, 1),
 (8937, 18145, 1),
 (8937, 18147, 1),
-(8937, 18148, 1),
+(8937, 18148, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8937, 18169, 1),
 (8937, 18411, 1),
 (8937, 20725, 1),
@@ -30465,8 +30790,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (8938, 18128, 1),
 (8938, 18130, 1),
 (8938, 18132, 1),
-(8938, 18133, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(8938, 18133, 1),
 (8938, 18134, 1),
 (8938, 18135, 1),
 (8938, 18136, 1),
@@ -33403,7 +33727,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (15270, 13174, 1),
 (15270, 13200, 1),
 (15270, 13201, 1),
-(15270, 13269, 1),
+(15270, 13269, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (15270, 13272, 1),
 (15270, 23841, 1),
 (15270, 23842, 1),
@@ -33434,8 +33759,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (15271, 23844, 1),
 (15271, 23845, 1),
 (15271, 23846, 1),
-(15271, 24575, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(15271, 24575, 1),
 (15271, 12703, 3),
 (15271, 23847, 3),
 (15271, 16500, 6),
@@ -34052,7 +34376,9 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (15606, 13372, 1),
 (15606, 13373, 1),
 (15606, 25306, 1),
+(15606, 25307, 1),
 (15606, 25308, 1),
+(15606, 25309, 1),
 (15606, 25310, 1),
 (15606, 25311, 1),
 (15606, 25312, 1),
@@ -34066,10 +34392,9 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (15606, 25320, 1),
 (15606, 25321, 1),
 (15606, 25322, 1),
-(15606, 25307, 2),
+(15606, 29864, 1),
 (15606, 13319, 3),
 (15606, 13320, 3),
-(15606, 25309, 3),
 (15606, 25323, 3),
 (15606, 25324, 3),
 (15606, 13313, 6),
@@ -34785,7 +35110,6 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (19130, 12785, 7),
 (19130, 25976, 7),
 (19130, 14523, 12),
-(19131, 12714, 1),
 (19131, 12771, 1),
 (19131, 12786, 1),
 (19131, 12940, 1),
@@ -34799,14 +35123,16 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (19131, 14690, 1),
 (19131, 25657, 1),
 (19131, 25977, 1),
+(19131, 29748, 1),
 (19131, 14376, 3),
 (19131, 14537, 3),
+(19131, 29749, 3),
 (19131, 13171, 6),
+(19131, 14523, 6),
 (19131, 14524, 6),
 (19131, 14627, 6),
 (19131, 12785, 7),
 (19131, 25976, 7),
-(19131, 14523, 12),
 (19186, 12697, 1),
 (19186, 12699, 1),
 (19186, 12771, 1),
@@ -35631,6 +35957,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (23709, 14112, 6),
 (23709, 26699, 6),
 (23709, 26871, 6),
+(23709, 29563, 6),
+(23709, 29828, 6),
 (26017, 12786, 1),
 (26017, 12798, 1),
 (26017, 12943, 1),
@@ -36335,7 +36663,8 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (27359, 12748, 1),
 (27359, 12946, 1),
 (27359, 13187, 1),
-(27359, 13269, 1),
+(27359, 13269, 1);
+INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (27359, 13406, 1),
 (27359, 18143, 1),
 (27359, 27235, 1),
@@ -36370,8 +36699,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (27360, 27418, 1),
 (27360, 27419, 1),
 (27360, 27421, 1),
-(27360, 27614, 1);
-INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
+(27360, 27614, 1),
 (27360, 27615, 1),
 (27360, 27616, 1),
 (27360, 13408, 3),
@@ -38335,7 +38663,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_search_word`
+-- Struktura tabeli dla tabeli `ps_search_word`
 --
 
 CREATE TABLE `ps_search_word` (
@@ -38346,12 +38674,13 @@ CREATE TABLE `ps_search_word` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_search_word`
+-- Zrzut danych tabeli `ps_search_word`
 --
 
 INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (28003, 1, 1, '000'),
 (15799, 1, 1, '06ch'),
+(29609, 1, 1, '10'),
 (18328, 1, 1, '100'),
 (20890, 1, 1, '1000'),
 (14536, 1, 1, '1000kolor'),
@@ -38414,6 +38743,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (26374, 1, 1, '11szerokosc'),
 (20032, 1, 1, '11w'),
 (26350, 1, 1, '11x10x16materia'),
+(29564, 1, 1, '12'),
 (18411, 1, 1, '120'),
 (21175, 1, 1, '1200'),
 (19725, 1, 1, '120lm'),
@@ -38581,9 +38911,11 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (12875, 1, 1, '19wysokosc'),
 (13927, 1, 1, '19x15x14kolor'),
 (17054, 1, 1, '1e27'),
+(29749, 1, 1, '1f'),
 (14628, 1, 1, '1gu10'),
 (13172, 1, 1, '1xe14'),
 (27275, 1, 1, '1zrodlo'),
+(29705, 1, 1, '20'),
 (14441, 1, 1, '2000'),
 (13083, 1, 1, '20000wymiary'),
 (14575, 1, 1, '2000kolor'),
@@ -38620,6 +38952,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (28002, 1, 1, '216'),
 (27853, 1, 1, '218'),
 (20071, 1, 1, '21w'),
+(29704, 1, 1, '22'),
 (20810, 1, 1, '220'),
 (26533, 1, 1, '220x95x405cmmat'),
 (13269, 1, 1, '221'),
@@ -38633,6 +38966,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (19992, 1, 1, '227'),
 (17553, 1, 1, '227wysokosc'),
 (15482, 1, 1, '22glebokosc'),
+(29656, 1, 1, '23'),
 (18143, 1, 1, '230'),
 (27615, 1, 1, '230material'),
 (29332, 1, 1, '230v'),
@@ -38695,6 +39029,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (29210, 1, 1, '2670'),
 (13100, 1, 1, '26x34cm'),
 (13101, 1, 1, '26x34cmkolor'),
+(29703, 1, 1, '27'),
 (27302, 1, 1, '2700'),
 (18169, 1, 1, '27006500k'),
 (19996, 1, 1, '2700k'),
@@ -38722,6 +39057,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (12894, 1, 1, '28x12x19kolor'),
 (13071, 1, 1, '28x34cm'),
 (13084, 1, 1, '28x34cmkolor'),
+(29562, 1, 1, '29'),
 (27281, 1, 1, '290mozliwosc'),
 (28081, 1, 1, '294'),
 (16040, 1, 1, '295wysokosc'),
@@ -38822,6 +39158,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (21133, 1, 1, '393'),
 (17112, 1, 1, '3e14'),
 (16262, 1, 1, '3e27'),
+(29828, 1, 1, '3w'),
 (28907, 1, 1, '3x120'),
 (12800, 1, 1, '3xe14kolor'),
 (13439, 1, 1, '400'),
@@ -38932,6 +39269,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (25655, 1, 1, '52wysokosc'),
 (25443, 1, 1, '530wysokosc'),
 (15264, 1, 1, '53kolor'),
+(29657, 1, 1, '54'),
 (16613, 1, 1, '540400wysokosc'),
 (16333, 1, 1, '540wysokosc'),
 (16768, 1, 1, '548wysokosc'),
@@ -39593,6 +39931,8 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (29482, 1, 1, 'egg'),
 (20886, 1, 1, 'eklips'),
 (13409, 1, 1, 'eko'),
+(29709, 1, 1, 'eko-light'),
+(29708, 1, 1, 'ekolight'),
 (359, 1, 1, 'elastic'),
 (15433, 1, 1, 'elastyczn'),
 (22983, 1, 1, 'elegance'),
@@ -39749,6 +40089,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (13177, 1, 1, 'industrialnykol'),
 (13318, 1, 1, 'industrialnysre'),
 (13285, 1, 1, 'industrialnysty'),
+(29706, 1, 1, 'industrialnystyl'),
 (17552, 1, 1, 'industrialnywys'),
 (16671, 1, 1, 'inlux'),
 (22742, 1, 1, 'inside'),
@@ -39758,6 +40099,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (500, 1, 1, 'into'),
 (13704, 1, 1, 'invisible'),
 (16673, 1, 1, 'ios'),
+(29566, 1, 1, 'ip'),
 (27210, 1, 1, 'ip20szerokosc'),
 (27277, 1, 1, 'ip20wysokosc'),
 (13403, 1, 1, 'ip44'),
@@ -39878,6 +40220,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (15388, 1, 1, 'linka'),
 (29448, 1, 1, 'listopad'),
 (13217, 1, 1, 'living'),
+(29565, 1, 1, 'lm'),
 (28249, 1, 1, 'lm2700'),
 (27353, 1, 1, 'lminput'),
 (14470, 1, 1, 'lmlight'),
@@ -39968,11 +40311,15 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (13880, 1, 1, 'mini'),
 (13283, 1, 1, 'minima'),
 (12714, 1, 1, 'minimalistyczny'),
+(29748, 1, 1, 'minimalistycznysrednica'),
+(29707, 1, 1, 'minimalistycznystyl'),
+(29795, 1, 1, 'minimalistycznywysokosc'),
 (26365, 1, 1, 'miodu'),
 (13838, 1, 1, 'mirror'),
 (13473, 1, 1, 'mistrz'),
 (27756, 1, 1, 'mleczna'),
 (13405, 1, 1, 'mlight'),
+(29563, 1, 1, 'mm'),
 (27306, 1, 1, 'mmdiameter'),
 (28351, 1, 1, 'mmhigh'),
 (27307, 1, 1, 'mmlumions'),
@@ -40075,6 +40422,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (25360, 1, 1, 'odlewana'),
 (13469, 1, 1, 'odpilcie'),
 (25358, 1, 1, 'odzwierciedla'),
+(29864, 1, 1, 'of'),
 (27, 1, 1, 'offers'),
 (27786, 1, 1, 'ogniowo'),
 (27688, 1, 1, 'ogniowomaterial'),
@@ -40100,6 +40448,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (22364, 1, 1, 'opportunities'),
 (25339, 1, 1, 'oprawa'),
 (25352, 1, 1, 'oprawie'),
+(29794, 1, 1, 'or'),
 (13370, 1, 1, 'orange'),
 (27161, 1, 1, 'oraz'),
 (29049, 1, 1, 'orbiter'),
@@ -40396,7 +40745,8 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (10, 1, 1, 'stretchy'),
 (144, 1, 1, 'striped'),
 (28293, 1, 1, 'stropowa'),
-(28312, 1, 1, 'stropowe'),
+(28312, 1, 1, 'stropowe');
+INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (28265, 1, 1, 'structure'),
 (27882, 1, 1, 'strukturamateri'),
 (27440, 1, 1, 'strumien'),
@@ -40416,8 +40766,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (12786, 1, 1, 'swiatla'),
 (26716, 1, 1, 'swiatlo'),
 (25321, 1, 1, 'swiecznikowy'),
-(28000, 1, 1, 'swietlna');
-INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
+(28000, 1, 1, 'swietlna'),
 (27441, 1, 1, 'swietlny'),
 (16587, 1, 1, 'swirl'),
 (16767, 1, 1, 'switch'),
@@ -40560,6 +40909,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (22361, 1, 1, 'which'),
 (12797, 1, 1, 'white'),
 (22356, 1, 1, 'wide'),
+(29942, 1, 1, 'wielblad'),
 (27167, 1, 1, 'wielokrotna'),
 (22847, 1, 1, 'will'),
 (22352, 1, 1, 'wire'),
@@ -40638,7 +40988,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_sekeyword`
+-- Struktura tabeli dla tabeli `ps_sekeyword`
 --
 
 CREATE TABLE `ps_sekeyword` (
@@ -40652,7 +41002,7 @@ CREATE TABLE `ps_sekeyword` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_shop`
+-- Struktura tabeli dla tabeli `ps_shop`
 --
 
 CREATE TABLE `ps_shop` (
@@ -40667,16 +41017,16 @@ CREATE TABLE `ps_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_shop`
+-- Zrzut danych tabeli `ps_shop`
 --
 
 INSERT INTO `ps_shop` (`id_shop`, `id_shop_group`, `name`, `id_category`, `theme_name`, `active`, `deleted`, `color`) VALUES
-(1, 1, 'jaśniej - sklep z lampami', 2, 'classic', 1, 0, '');
+(1, 1, 'jaśniej - sklep z lampami', 2, 'child_classic', 1, 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_shop_group`
+-- Struktura tabeli dla tabeli `ps_shop_group`
 --
 
 CREATE TABLE `ps_shop_group` (
@@ -40691,7 +41041,7 @@ CREATE TABLE `ps_shop_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_shop_group`
+-- Zrzut danych tabeli `ps_shop_group`
 --
 
 INSERT INTO `ps_shop_group` (`id_shop_group`, `name`, `share_customer`, `share_order`, `share_stock`, `active`, `deleted`, `color`) VALUES
@@ -40700,7 +41050,7 @@ INSERT INTO `ps_shop_group` (`id_shop_group`, `name`, `share_customer`, `share_o
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_shop_url`
+-- Struktura tabeli dla tabeli `ps_shop_url`
 --
 
 CREATE TABLE `ps_shop_url` (
@@ -40715,7 +41065,7 @@ CREATE TABLE `ps_shop_url` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_shop_url`
+-- Zrzut danych tabeli `ps_shop_url`
 --
 
 INSERT INTO `ps_shop_url` (`id_shop_url`, `id_shop`, `domain`, `domain_ssl`, `physical_uri`, `virtual_uri`, `main`, `active`) VALUES
@@ -40724,7 +41074,7 @@ INSERT INTO `ps_shop_url` (`id_shop_url`, `id_shop`, `domain`, `domain_ssl`, `ph
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_smarty_cache`
+-- Struktura tabeli dla tabeli `ps_smarty_cache`
 --
 
 CREATE TABLE `ps_smarty_cache` (
@@ -40738,7 +41088,7 @@ CREATE TABLE `ps_smarty_cache` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_smarty_last_flush`
+-- Struktura tabeli dla tabeli `ps_smarty_last_flush`
 --
 
 CREATE TABLE `ps_smarty_last_flush` (
@@ -40749,7 +41099,7 @@ CREATE TABLE `ps_smarty_last_flush` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_smarty_lazy_cache`
+-- Struktura tabeli dla tabeli `ps_smarty_lazy_cache`
 --
 
 CREATE TABLE `ps_smarty_lazy_cache` (
@@ -40763,7 +41113,7 @@ CREATE TABLE `ps_smarty_lazy_cache` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_specific_price`
+-- Struktura tabeli dla tabeli `ps_specific_price`
 --
 
 CREATE TABLE `ps_specific_price` (
@@ -40787,10 +41137,26 @@ CREATE TABLE `ps_specific_price` (
   `to` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_specific_price`
+--
+
+INSERT INTO `ps_specific_price` (`id_specific_price`, `id_specific_price_rule`, `id_cart`, `id_product`, `id_shop`, `id_shop_group`, `id_currency`, `id_country`, `id_group`, `id_customer`, `id_product_attribute`, `price`, `from_quantity`, `reduction`, `reduction_tax`, `reduction_type`, `from`, `to`) VALUES
+(1, 0, 0, 8933, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.200000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 0, 0, 8914, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 0, 0, 8714, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.150000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 0, 0, 2686, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 0, 0, 2685, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 0, 0, 19131, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 0, 0, 7708, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 0, 0, 23709, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 0, 0, 2772, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 0, 0, 15606, 1, 0, 0, 0, 0, 0, 0, '-1.000000', 1, '0.100000', 1, 'percentage', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_specific_price_priority`
+-- Struktura tabeli dla tabeli `ps_specific_price_priority`
 --
 
 CREATE TABLE `ps_specific_price_priority` (
@@ -40799,10 +41165,26 @@ CREATE TABLE `ps_specific_price_priority` (
   `priority` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `ps_specific_price_priority`
+--
+
+INSERT INTO `ps_specific_price_priority` (`id_specific_price_priority`, `id_product`, `priority`) VALUES
+(1, 8933, 'id_shop;id_currency;id_country;id_group'),
+(2, 8914, 'id_shop;id_currency;id_country;id_group'),
+(3, 8714, 'id_shop;id_currency;id_country;id_group'),
+(4, 2686, 'id_shop;id_currency;id_country;id_group'),
+(5, 2685, 'id_shop;id_currency;id_country;id_group'),
+(6, 19131, 'id_shop;id_currency;id_country;id_group'),
+(8, 7708, 'id_shop;id_currency;id_country;id_group'),
+(9, 23709, 'id_shop;id_currency;id_country;id_group'),
+(10, 2772, 'id_shop;id_currency;id_country;id_group'),
+(11, 15606, 'id_shop;id_currency;id_country;id_group');
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_specific_price_rule`
+-- Struktura tabeli dla tabeli `ps_specific_price_rule`
 --
 
 CREATE TABLE `ps_specific_price_rule` (
@@ -40824,7 +41206,7 @@ CREATE TABLE `ps_specific_price_rule` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_specific_price_rule_condition`
+-- Struktura tabeli dla tabeli `ps_specific_price_rule_condition`
 --
 
 CREATE TABLE `ps_specific_price_rule_condition` (
@@ -40837,7 +41219,7 @@ CREATE TABLE `ps_specific_price_rule_condition` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_specific_price_rule_condition_group`
+-- Struktura tabeli dla tabeli `ps_specific_price_rule_condition_group`
 --
 
 CREATE TABLE `ps_specific_price_rule_condition_group` (
@@ -40848,7 +41230,7 @@ CREATE TABLE `ps_specific_price_rule_condition_group` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_state`
+-- Struktura tabeli dla tabeli `ps_state`
 --
 
 CREATE TABLE `ps_state` (
@@ -40862,7 +41244,7 @@ CREATE TABLE `ps_state` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_state`
+-- Zrzut danych tabeli `ps_state`
 --
 
 INSERT INTO `ps_state` (`id_state`, `id_country`, `id_zone`, `name`, `iso_code`, `tax_behavior`, `active`) VALUES
@@ -41194,7 +41576,7 @@ INSERT INTO `ps_state` (`id_state`, `id_country`, `id_zone`, `name`, `iso_code`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_statssearch`
+-- Struktura tabeli dla tabeli `ps_statssearch`
 --
 
 CREATE TABLE `ps_statssearch` (
@@ -41209,7 +41591,7 @@ CREATE TABLE `ps_statssearch` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_stock`
+-- Struktura tabeli dla tabeli `ps_stock`
 --
 
 CREATE TABLE `ps_stock` (
@@ -41230,7 +41612,7 @@ CREATE TABLE `ps_stock` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_stock_available`
+-- Struktura tabeli dla tabeli `ps_stock_available`
 --
 
 CREATE TABLE `ps_stock_available` (
@@ -41248,626 +41630,626 @@ CREATE TABLE `ps_stock_available` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_stock_available`
+-- Zrzut danych tabeli `ps_stock_available`
 --
 
 INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_product_attribute`, `id_shop`, `id_shop_group`, `quantity`, `physical_quantity`, `reserved_quantity`, `depends_on_stock`, `out_of_stock`, `location`) VALUES
-(1, 8774, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(2, 8744, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(3, 8731, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(4, 8729, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(5, 8733, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(6, 8722, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(7, 8730, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(8, 8714, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(9, 8745, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(10, 8856, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(11, 8855, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(12, 8849, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(13, 8847, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(14, 8838, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(15, 8837, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(16, 8836, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(17, 8834, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(18, 8835, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(19, 8833, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(20, 8831, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(21, 8832, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(22, 8830, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(23, 8828, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(24, 8827, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(25, 8829, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(26, 8826, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(27, 8821, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(28, 8822, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(29, 8820, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(30, 8825, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(31, 19200, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(32, 19194, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(33, 19191, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(34, 8619, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(35, 8599, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(36, 8581, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(37, 8622, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(38, 8578, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(39, 8942, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(40, 8941, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(41, 8591, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(42, 8940, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(43, 8939, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(44, 8938, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(45, 8937, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(46, 8935, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(47, 8934, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(48, 8936, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(49, 8933, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(50, 27385, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(51, 27384, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(52, 27383, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(53, 27382, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(54, 27381, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(55, 27378, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(56, 27379, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(57, 27374, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(58, 27373, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(59, 27372, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(60, 27371, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(61, 27370, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(62, 27369, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(63, 27368, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(64, 27365, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(65, 27364, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(66, 27363, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(67, 27360, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(68, 27361, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(69, 27359, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(70, 27358, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(71, 27357, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(72, 27355, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(73, 27354, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(74, 27348, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(75, 19592, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(76, 19201, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(77, 19202, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(78, 19196, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(79, 19213, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(80, 19198, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(81, 19204, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(82, 8906, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(83, 8914, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(84, 8905, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(85, 8903, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(86, 8901, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(87, 8898, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(88, 8896, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(89, 8895, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(90, 8893, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(91, 8894, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(92, 8892, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(93, 8891, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(94, 8889, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(95, 8890, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(96, 8887, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(97, 8888, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(98, 8819, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(99, 8886, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(100, 8813, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(101, 8812, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(102, 8811, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(103, 8810, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(104, 8787, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(105, 29488, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(106, 8791, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(107, 8792, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(108, 8788, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(109, 19187, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(110, 19193, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(111, 19186, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(112, 8790, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(113, 19189, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(114, 8572, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(115, 8930, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(116, 8931, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(117, 8929, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(118, 8928, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(119, 8932, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(120, 8927, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(121, 8926, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(122, 8925, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(123, 8924, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(124, 8922, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(125, 27375, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(126, 27376, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(127, 27386, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(128, 27356, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(129, 8923, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(130, 27343, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(131, 19188, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(132, 19212, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(133, 19192, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(134, 8921, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(135, 8920, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(136, 8919, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(137, 8918, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(138, 8916, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(139, 8917, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(140, 8915, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(141, 8904, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(142, 8802, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(143, 8801, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(144, 8798, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(145, 8797, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(146, 8796, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(147, 8795, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(148, 8794, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(149, 8793, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(150, 30279, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(151, 2686, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(152, 30278, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(153, 2685, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(154, 2552, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(155, 1521, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(156, 1730, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(157, 2506, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(158, 2553, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(159, 2554, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(160, 1691, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(161, 2822, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(162, 2819, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(163, 2814, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(164, 2811, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(165, 2792, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(166, 2810, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(167, 2813, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(168, 2777, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(169, 2764, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(170, 2694, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(171, 2763, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(172, 2693, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(173, 2692, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(174, 2691, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(175, 2690, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(176, 2520, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(177, 2708, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(178, 2521, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(179, 2452, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(180, 15240, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(181, 15238, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(182, 15247, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(183, 15243, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(184, 15242, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(185, 15237, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(186, 15308, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(187, 15286, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(188, 15284, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(189, 15307, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(190, 15285, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(191, 15283, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(192, 15282, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(193, 10159, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(194, 10158, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(195, 10157, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(196, 2711, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(197, 10152, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(198, 2710, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(199, 2495, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(200, 2494, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(201, 2738, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(202, 2737, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(203, 15275, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(204, 15270, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(205, 15278, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(206, 15268, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(207, 15273, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(208, 15277, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(209, 15272, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(210, 15267, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(211, 15289, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(212, 15291, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(213, 15290, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(214, 15287, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(215, 15266, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(216, 15288, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(217, 15261, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(218, 15259, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(219, 15256, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(220, 15254, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(221, 15264, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(222, 15265, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(223, 15260, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(224, 15255, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(225, 15263, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(226, 8474, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(227, 8187, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(228, 7997, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(229, 7873, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(230, 8396, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(231, 8471, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(232, 8059, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(233, 7927, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(234, 8467, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(235, 8386, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(236, 7687, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(237, 7912, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(238, 8463, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(239, 7977, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(240, 8521, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(241, 7958, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(242, 7684, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(243, 8368, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(244, 7662, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(245, 8478, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(246, 8194, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(247, 7913, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(248, 8056, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(249, 8464, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(250, 7685, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(251, 7910, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(252, 8370, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(253, 7663, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(254, 8476, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(255, 7956, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(256, 8195, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(257, 8312, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(258, 8191, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(259, 8001, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(260, 8398, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(261, 8473, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(262, 7996, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(263, 8394, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(264, 7871, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(265, 8470, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(266, 7929, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(267, 8058, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(268, 7926, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(269, 8465, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(270, 19393, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(271, 22659, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(272, 22657, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(273, 22641, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(274, 22695, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(275, 22694, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(276, 23482, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(277, 23632, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(278, 23630, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(279, 23631, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(280, 23672, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(281, 8468, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(282, 23673, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(283, 7852, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(284, 18913, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(285, 7851, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(286, 18874, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(287, 18916, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(288, 18867, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(289, 18875, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(290, 18918, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(291, 18866, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(292, 7955, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(293, 29362, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(294, 29448, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(295, 29360, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(296, 29314, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(297, 29313, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(298, 29309, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(299, 29298, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(300, 29312, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(301, 27438, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(302, 27507, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(303, 27181, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(304, 27172, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(305, 27162, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(306, 27161, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(307, 27160, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(308, 26799, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(309, 27140, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(310, 26798, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(311, 26796, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(312, 19013, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(313, 26051, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(314, 29711, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(315, 29710, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(316, 29691, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(317, 29689, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(318, 29684, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(319, 29666, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(320, 29665, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(321, 29663, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(322, 29664, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(323, 29661, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(324, 29639, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(325, 29660, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(326, 29637, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(327, 29638, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(328, 29636, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(329, 29634, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(330, 29633, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(331, 29632, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(332, 29631, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(333, 29622, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(334, 29620, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(335, 29610, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(336, 30001, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(337, 29998, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(338, 29997, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(339, 29937, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(340, 29987, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(341, 29981, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(342, 29934, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(343, 29915, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(344, 29916, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(345, 29864, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(346, 29911, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(347, 29848, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(348, 29841, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(349, 29846, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(350, 29845, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(351, 29843, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(352, 29844, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(353, 30393, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(354, 29826, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(355, 30392, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(356, 30389, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(357, 30307, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(358, 30388, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(359, 30305, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(360, 30300, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(361, 30306, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(362, 30293, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(363, 30292, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(364, 30291, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(365, 30283, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(366, 29989, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(367, 30201, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(368, 30007, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(369, 30011, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(370, 30004, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(371, 30003, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(372, 29822, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(373, 29816, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(374, 29815, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(375, 29779, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(376, 29767, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(377, 29782, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(378, 29766, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(379, 29765, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(380, 29764, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(381, 29756, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(382, 29751, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(383, 29742, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(384, 29748, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(385, 29741, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(386, 29736, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(387, 29738, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(388, 29607, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(389, 29599, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(390, 29731, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(391, 29595, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(392, 29561, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(393, 29560, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(394, 29559, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(395, 29513, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(396, 29503, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(397, 29502, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(398, 29494, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(399, 29504, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(400, 29501, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(401, 29474, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(402, 29465, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(403, 26028, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(404, 26027, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(405, 26026, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(406, 26024, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(407, 26025, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(408, 26023, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(409, 26022, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(410, 26018, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(411, 26021, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(412, 26020, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(413, 26019, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(414, 26017, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(415, 19391, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(416, 19390, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(417, 8475, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(418, 8190, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(419, 8309, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(420, 19392, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(421, 7998, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(422, 7874, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(423, 8397, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(424, 8472, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(425, 8060, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(426, 8469, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(427, 7995, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(428, 7870, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(429, 7990, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(430, 8387, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(431, 7928, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(432, 7686, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(433, 7973, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(434, 7911, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(435, 8520, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(436, 8367, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(437, 8477, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(438, 7957, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(439, 8192, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(440, 7890, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(441, 8399, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(442, 7954, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(443, 8002, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(444, 15607, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(445, 15248, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(446, 15302, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(447, 15303, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(448, 15301, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(449, 15300, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(450, 15281, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(451, 15276, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(452, 15271, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(453, 15274, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(454, 15279, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(455, 15269, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(456, 15253, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(457, 15280, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(458, 15258, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(459, 15257, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(460, 15262, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(461, 15252, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(462, 15246, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(463, 15251, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(464, 15241, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(465, 15249, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(466, 15244, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(467, 15250, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(468, 15239, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(469, 15245, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(470, 2736, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(471, 2735, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(472, 2733, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(473, 2734, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(474, 1615, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(475, 2726, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(476, 1612, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(477, 1613, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(478, 363, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(479, 1744, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(480, 1749, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(481, 1732, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(482, 1731, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(483, 2450, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(484, 1546, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(485, 1545, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(486, 1542, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(487, 1527, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(488, 1526, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(489, 1523, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(490, 1543, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(491, 1525, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(492, 1522, 0, 1, 0, 1, 0, 0, 0, 0, ''),
+(1, 8774, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(2, 8744, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(3, 8731, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(4, 8729, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(5, 8733, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(6, 8722, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(7, 8730, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(8, 8714, 0, 1, 0, 60, 60, 0, 0, 0, ''),
+(9, 8745, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(10, 8856, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(11, 8855, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(12, 8849, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(13, 8847, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(14, 8838, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(15, 8837, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(16, 8836, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(17, 8834, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(18, 8835, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(19, 8833, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(20, 8831, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(21, 8832, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(22, 8830, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(23, 8828, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(24, 8827, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(25, 8829, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(26, 8826, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(27, 8821, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(28, 8822, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(29, 8820, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(30, 8825, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(31, 19200, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(32, 19194, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(33, 19191, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(34, 8619, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(35, 8599, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(36, 8581, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(37, 8622, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(38, 8578, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(39, 8942, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(40, 8941, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(41, 8591, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(42, 8940, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(43, 8939, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(44, 8938, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(45, 8937, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(46, 8935, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(47, 8934, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(48, 8936, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(49, 8933, 0, 1, 0, 60, 60, 0, 0, 0, ''),
+(50, 27385, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(51, 27384, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(52, 27383, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(53, 27382, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(54, 27381, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(55, 27378, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(56, 27379, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(57, 27374, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(58, 27373, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(59, 27372, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(60, 27371, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(61, 27370, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(62, 27369, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(63, 27368, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(64, 27365, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(65, 27364, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(66, 27363, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(67, 27360, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(68, 27361, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(69, 27359, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(70, 27358, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(71, 27357, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(72, 27355, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(73, 27354, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(74, 27348, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(75, 19592, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(76, 19201, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(77, 19202, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(78, 19196, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(79, 19213, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(80, 19198, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(81, 19204, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(82, 8906, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(83, 8914, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(84, 8905, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(85, 8903, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(86, 8901, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(87, 8898, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(88, 8896, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(89, 8895, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(90, 8893, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(91, 8894, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(92, 8892, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(93, 8891, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(94, 8889, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(95, 8890, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(96, 8887, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(97, 8888, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(98, 8819, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(99, 8886, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(100, 8813, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(101, 8812, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(102, 8811, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(103, 8810, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(104, 8787, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(105, 29488, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(106, 8791, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(107, 8792, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(108, 8788, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(109, 19187, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(110, 19193, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(111, 19186, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(112, 8790, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(113, 19189, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(114, 8572, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(115, 8930, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(116, 8931, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(117, 8929, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(118, 8928, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(119, 8932, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(120, 8927, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(121, 8926, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(122, 8925, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(123, 8924, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(124, 8922, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(125, 27375, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(126, 27376, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(127, 27386, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(128, 27356, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(129, 8923, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(130, 27343, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(131, 19188, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(132, 19212, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(133, 19192, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(134, 8921, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(135, 8920, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(136, 8919, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(137, 8918, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(138, 8916, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(139, 8917, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(140, 8915, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(141, 8904, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(142, 8802, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(143, 8801, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(144, 8798, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(145, 8797, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(146, 8796, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(147, 8795, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(148, 8794, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(149, 8793, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(150, 30279, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(151, 2686, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(152, 30278, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(153, 2685, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(154, 2552, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(155, 1521, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(156, 1730, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(157, 2506, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(158, 2553, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(159, 2554, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(160, 1691, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(161, 2822, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(162, 2819, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(163, 2814, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(164, 2811, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(165, 2792, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(166, 2810, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(167, 2813, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(168, 2777, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(169, 2764, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(170, 2694, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(171, 2763, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(172, 2693, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(173, 2692, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(174, 2691, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(175, 2690, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(176, 2520, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(177, 2708, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(178, 2521, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(179, 2452, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(180, 15240, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(181, 15238, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(182, 15247, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(183, 15243, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(184, 15242, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(185, 15237, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(186, 15308, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(187, 15286, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(188, 15284, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(189, 15307, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(190, 15285, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(191, 15283, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(192, 15282, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(193, 10159, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(194, 10158, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(195, 10157, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(196, 2711, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(197, 10152, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(198, 2710, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(199, 2495, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(200, 2494, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(201, 2738, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(202, 2737, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(203, 15275, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(204, 15270, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(205, 15278, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(206, 15268, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(207, 15273, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(208, 15277, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(209, 15272, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(210, 15267, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(211, 15289, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(212, 15291, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(213, 15290, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(214, 15287, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(215, 15266, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(216, 15288, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(217, 15261, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(218, 15259, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(219, 15256, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(220, 15254, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(221, 15264, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(222, 15265, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(223, 15260, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(224, 15255, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(225, 15263, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(226, 8474, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(227, 8187, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(228, 7997, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(229, 7873, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(230, 8396, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(231, 8471, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(232, 8059, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(233, 7927, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(234, 8467, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(235, 8386, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(236, 7687, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(237, 7912, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(238, 8463, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(239, 7977, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(240, 8521, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(241, 7958, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(242, 7684, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(243, 8368, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(244, 7662, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(245, 8478, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(246, 8194, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(247, 7913, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(248, 8056, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(249, 8464, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(250, 7685, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(251, 7910, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(252, 8370, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(253, 7663, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(254, 8476, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(255, 7956, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(256, 8195, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(257, 8312, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(258, 8191, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(259, 8001, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(260, 8398, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(261, 8473, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(262, 7996, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(263, 8394, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(264, 7871, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(265, 8470, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(266, 7929, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(267, 8058, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(268, 7926, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(269, 8465, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(270, 19393, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(271, 22659, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(272, 22657, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(273, 22641, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(274, 22695, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(275, 22694, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(276, 23482, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(277, 23632, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(278, 23630, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(279, 23631, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(280, 23672, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(281, 8468, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(282, 23673, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(283, 7852, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(284, 18913, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(285, 7851, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(286, 18874, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(287, 18916, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(288, 18867, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(289, 18875, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(290, 18918, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(291, 18866, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(292, 7955, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(293, 29362, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(294, 29448, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(295, 29360, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(296, 29314, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(297, 29313, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(298, 29309, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(299, 29298, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(300, 29312, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(301, 27438, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(302, 27507, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(303, 27181, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(304, 27172, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(305, 27162, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(306, 27161, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(307, 27160, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(308, 26799, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(309, 27140, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(310, 26798, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(311, 26796, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(312, 19013, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(313, 26051, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(314, 29711, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(315, 29710, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(316, 29691, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(317, 29689, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(318, 29684, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(319, 29666, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(320, 29665, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(321, 29663, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(322, 29664, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(323, 29661, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(324, 29639, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(325, 29660, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(326, 29637, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(327, 29638, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(328, 29636, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(329, 29634, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(330, 29633, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(331, 29632, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(332, 29631, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(333, 29622, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(334, 29620, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(335, 29610, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(336, 30001, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(337, 29998, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(338, 29997, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(339, 29937, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(340, 29987, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(341, 29981, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(342, 29934, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(343, 29915, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(344, 29916, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(345, 29864, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(346, 29911, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(347, 29848, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(348, 29841, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(349, 29846, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(350, 29845, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(351, 29843, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(352, 29844, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(353, 30393, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(354, 29826, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(355, 30392, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(356, 30389, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(357, 30307, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(358, 30388, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(359, 30305, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(360, 30300, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(361, 30306, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(362, 30293, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(363, 30292, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(364, 30291, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(365, 30283, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(366, 29989, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(367, 30201, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(368, 30007, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(369, 30011, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(370, 30004, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(371, 30003, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(372, 29822, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(373, 29816, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(374, 29815, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(375, 29779, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(376, 29767, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(377, 29782, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(378, 29766, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(379, 29765, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(380, 29764, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(381, 29756, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(382, 29751, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(383, 29742, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(384, 29748, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(385, 29741, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(386, 29736, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(387, 29738, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(388, 29607, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(389, 29599, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(390, 29731, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(391, 29595, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(392, 29561, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(393, 29560, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(394, 29559, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(395, 29513, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(396, 29503, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(397, 29502, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(398, 29494, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(399, 29504, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(400, 29501, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(401, 29474, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(402, 29465, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(403, 26028, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(404, 26027, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(405, 26026, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(406, 26024, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(407, 26025, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(408, 26023, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(409, 26022, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(410, 26018, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(411, 26021, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(412, 26020, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(413, 26019, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(414, 26017, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(415, 19391, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(416, 19390, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(417, 8475, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(418, 8190, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(419, 8309, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(420, 19392, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(421, 7998, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(422, 7874, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(423, 8397, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(424, 8472, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(425, 8060, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(426, 8469, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(427, 7995, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(428, 7870, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(429, 7990, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(430, 8387, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(431, 7928, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(432, 7686, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(433, 7973, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(434, 7911, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(435, 8520, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(436, 8367, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(437, 8477, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(438, 7957, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(439, 8192, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(440, 7890, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(441, 8399, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(442, 7954, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(443, 8002, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(444, 15607, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(445, 15248, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(446, 15302, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(447, 15303, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(448, 15301, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(449, 15300, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(450, 15281, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(451, 15276, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(452, 15271, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(453, 15274, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(454, 15279, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(455, 15269, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(456, 15253, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(457, 15280, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(458, 15258, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(459, 15257, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(460, 15262, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(461, 15252, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(462, 15246, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(463, 15251, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(464, 15241, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(465, 15249, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(466, 15244, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(467, 15250, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(468, 15239, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(469, 15245, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(470, 2736, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(471, 2735, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(472, 2733, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(473, 2734, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(474, 1615, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(475, 2726, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(476, 1612, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(477, 1613, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(478, 363, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(479, 1744, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(480, 1749, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(481, 1732, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(482, 1731, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(483, 2450, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(484, 1546, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(485, 1545, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(486, 1542, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(487, 1527, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(488, 1526, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(489, 1523, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(490, 1543, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(491, 1525, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(492, 1522, 0, 1, 0, 1, 1, 0, 0, 0, ''),
 (493, 15665, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (494, 29819, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (495, 15666, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(496, 2772, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(497, 2781, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(498, 2774, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(499, 2771, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(500, 1554, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(501, 2779, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(502, 2770, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(503, 2778, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(504, 1552, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(505, 1549, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(506, 1553, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(507, 2847, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(508, 1780, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(509, 1781, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(510, 8950, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(511, 8949, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(512, 8948, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(513, 8947, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(514, 8946, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(515, 2719, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(516, 2718, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(517, 2716, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(518, 2717, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(519, 2714, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(520, 2713, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(521, 2712, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(522, 1883, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(523, 1882, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(524, 2715, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(525, 1881, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(526, 8024, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(527, 8025, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(528, 8023, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(529, 8020, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(530, 8628, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(531, 8019, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(532, 12750, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(533, 12739, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(534, 12738, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(535, 12737, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(536, 12736, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(537, 12735, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(538, 12655, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(539, 12622, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(540, 12605, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(541, 12555, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(542, 12734, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(543, 12511, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(544, 12479, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(545, 12520, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(546, 12471, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(547, 12467, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(548, 12406, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(549, 10317, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(550, 12466, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(551, 8992, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(552, 8993, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(553, 23520, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(554, 23709, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(555, 23519, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(556, 8026, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(557, 23552, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(558, 8632, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(559, 8634, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(560, 8022, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(561, 8638, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(562, 8629, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(563, 8636, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(564, 8630, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(565, 8624, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(566, 8569, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(567, 8563, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(568, 8570, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(569, 23509, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(570, 23527, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(571, 23508, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(572, 23507, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(573, 8564, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(574, 8571, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(575, 8566, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(576, 8562, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(577, 8567, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(578, 8565, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(579, 18397, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(580, 8568, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(581, 18396, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(582, 18395, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(583, 13705, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(584, 13543, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(585, 13256, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(586, 12851, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(587, 12850, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(588, 13255, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(589, 13254, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(590, 12849, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(591, 12752, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(592, 12751, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(593, 8991, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(594, 8990, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(595, 8989, 0, 1, 0, 9, 0, 0, 0, 0, ''),
-(596, 8979, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(597, 8978, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(598, 8961, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(599, 8960, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(600, 8959, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(601, 8958, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(602, 8957, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(603, 8955, 0, 1, 0, 5, 0, 0, 0, 0, ''),
-(604, 9035, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(605, 8995, 0, 1, 0, 7, 0, 0, 0, 0, ''),
-(606, 8966, 0, 1, 0, 3, 0, 0, 0, 0, ''),
-(607, 8967, 0, 1, 0, 1, 0, 0, 0, 0, ''),
-(608, 15606, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(609, 2547, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(610, 26275, 0, 1, 0, 8, 0, 0, 0, 0, ''),
-(611, 26274, 0, 1, 0, 2, 0, 0, 0, 0, ''),
-(612, 2546, 0, 1, 0, 6, 0, 0, 0, 0, ''),
-(613, 2550, 0, 1, 0, 4, 0, 0, 0, 0, ''),
-(614, 7708, 0, 1, 0, 5, 0, 0, 0, 0, ''),
+(496, 2772, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(497, 2781, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(498, 2774, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(499, 2771, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(500, 1554, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(501, 2779, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(502, 2770, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(503, 2778, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(504, 1552, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(505, 1549, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(506, 1553, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(507, 2847, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(508, 1780, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(509, 1781, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(510, 8950, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(511, 8949, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(512, 8948, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(513, 8947, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(514, 8946, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(515, 2719, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(516, 2718, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(517, 2716, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(518, 2717, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(519, 2714, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(520, 2713, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(521, 2712, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(522, 1883, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(523, 1882, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(524, 2715, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(525, 1881, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(526, 8024, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(527, 8025, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(528, 8023, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(529, 8020, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(530, 8628, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(531, 8019, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(532, 12750, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(533, 12739, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(534, 12738, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(535, 12737, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(536, 12736, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(537, 12735, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(538, 12655, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(539, 12622, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(540, 12605, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(541, 12555, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(542, 12734, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(543, 12511, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(544, 12479, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(545, 12520, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(546, 12471, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(547, 12467, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(548, 12406, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(549, 10317, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(550, 12466, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(551, 8992, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(552, 8993, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(553, 23520, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(554, 23709, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(555, 23519, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(556, 8026, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(557, 23552, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(558, 8632, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(559, 8634, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(560, 8022, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(561, 8638, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(562, 8629, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(563, 8636, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(564, 8630, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(565, 8624, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(566, 8569, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(567, 8563, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(568, 8570, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(569, 23509, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(570, 23527, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(571, 23508, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(572, 23507, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(573, 8564, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(574, 8571, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(575, 8566, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(576, 8562, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(577, 8567, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(578, 8565, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(579, 18397, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(580, 8568, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(581, 18396, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(582, 18395, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(583, 13705, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(584, 13543, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(585, 13256, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(586, 12851, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(587, 12850, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(588, 13255, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(589, 13254, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(590, 12849, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(591, 12752, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(592, 12751, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(593, 8991, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(594, 8990, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(595, 8989, 0, 1, 0, 9, 9, 0, 0, 0, ''),
+(596, 8979, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(597, 8978, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(598, 8961, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(599, 8960, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(600, 8959, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(601, 8958, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(602, 8957, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(603, 8955, 0, 1, 0, 5, 5, 0, 0, 0, ''),
+(604, 9035, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(605, 8995, 0, 1, 0, 7, 7, 0, 0, 0, ''),
+(606, 8966, 0, 1, 0, 3, 3, 0, 0, 0, ''),
+(607, 8967, 0, 1, 0, 1, 1, 0, 0, 0, ''),
+(608, 15606, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(609, 2547, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(610, 26275, 0, 1, 0, 8, 8, 0, 0, 0, ''),
+(611, 26274, 0, 1, 0, 2, 2, 0, 0, 0, ''),
+(612, 2546, 0, 1, 0, 6, 6, 0, 0, 0, ''),
+(613, 2550, 0, 1, 0, 4, 4, 0, 0, 0, ''),
+(614, 7708, 0, 1, 0, 5, 6, 1, 0, 0, ''),
 (615, 7705, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(616, 7692, 0, 1, 0, 3, 0, 0, 0, 0, ''),
+(616, 7692, 0, 1, 0, 3, 3, 0, 0, 0, ''),
 (617, 7721, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (618, 7709, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (619, 7724, 0, 1, 0, 0, 0, 0, 0, 0, ''),
@@ -41875,14 +42257,14 @@ INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_produc
 (621, 7725, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (622, 7706, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (623, 7722, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(624, 7693, 0, 1, 0, 10, 0, 0, 0, 0, ''),
+(624, 7693, 0, 1, 0, 10, 10, 0, 0, 0, ''),
 (625, 7690, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (626, 7703, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (627, 7700, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (628, 7719, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (629, 7716, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (630, 7729, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(631, 7713, 0, 1, 0, 7, 0, 0, 0, 0, ''),
+(631, 7713, 0, 1, 0, 7, 7, 0, 0, 0, ''),
 (632, 7697, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (633, 7694, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (634, 7710, 0, 1, 0, 0, 0, 0, 0, 0, ''),
@@ -41903,7 +42285,7 @@ INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_produc
 (649, 19121, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (650, 19105, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (651, 19100, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(652, 19131, 0, 1, 0, 0, 0, 0, 0, 0, ''),
+(652, 19131, 0, 1, 0, 10, 10, 0, 0, 0, ''),
 (653, 19128, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (654, 19106, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (655, 19112, 0, 1, 0, 0, 0, 0, 0, 0, ''),
@@ -41928,14 +42310,20 @@ INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_produc
 (674, 7698, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (675, 7730, 0, 1, 0, 0, 0, 0, 0, 0, ''),
 (676, 7714, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(677, 7711, 0, 1, 0, 2, 0, 0, 0, 0, ''),
+(677, 7711, 0, 1, 0, 2, 2, 0, 0, 0, ''),
 (678, 7727, 0, 1, 0, 0, 0, 0, 0, 0, ''),
-(679, 7695, 0, 1, 0, 0, 0, 0, 0, 0, '');
+(679, 7695, 0, 1, 0, 0, 0, 0, 0, 0, ''),
+(680, 8933, 1, 1, 0, 10, 10, 0, 0, 0, ''),
+(681, 8933, 2, 1, 0, 30, 30, 0, 0, 0, ''),
+(682, 8933, 3, 1, 0, 20, 20, 0, 0, 0, ''),
+(683, 8714, 4, 1, 0, 10, 10, 0, 0, 0, ''),
+(684, 8714, 5, 1, 0, 30, 30, 0, 0, 0, ''),
+(685, 8714, 6, 1, 0, 20, 20, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_stock_mvt`
+-- Struktura tabeli dla tabeli `ps_stock_mvt`
 --
 
 CREATE TABLE `ps_stock_mvt` (
@@ -41957,7 +42345,7 @@ CREATE TABLE `ps_stock_mvt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_stock_mvt`
+-- Zrzut danych tabeli `ps_stock_mvt`
 --
 
 INSERT INTO `ps_stock_mvt` (`id_stock_mvt`, `id_stock`, `id_order`, `id_supply_order`, `id_stock_mvt_reason`, `id_employee`, `employee_lastname`, `employee_firstname`, `physical_quantity`, `date_add`, `sign`, `price_te`, `last_wa`, `current_wa`, `referer`) VALUES
@@ -42576,12 +42964,19 @@ INSERT INTO `ps_stock_mvt` (`id_stock_mvt`, `id_stock`, `id_order`, `id_supply_o
 (612, 616, NULL, NULL, 11, 1, 'Admin', 'Admin', 3, '2021-11-11 01:05:40', 1, '0.000000', '0.000000', '0.000000', NULL),
 (613, 624, NULL, NULL, 11, 1, 'Admin', 'Admin', 10, '2021-11-11 01:05:44', 1, '0.000000', '0.000000', '0.000000', NULL),
 (614, 631, NULL, NULL, 11, 1, 'Admin', 'Admin', 7, '2021-11-11 01:05:48', 1, '0.000000', '0.000000', '0.000000', NULL),
-(615, 677, NULL, NULL, 11, 1, 'Admin', 'Admin', 2, '2021-11-11 01:06:28', 1, '0.000000', '0.000000', '0.000000', NULL);
+(615, 677, NULL, NULL, 11, 1, 'Admin', 'Admin', 2, '2021-11-11 01:06:28', 1, '0.000000', '0.000000', '0.000000', NULL),
+(616, 652, NULL, NULL, 11, 1, 'Admin', 'Admin', 10, '2021-11-13 20:51:27', 1, '0.000000', '0.000000', '0.000000', NULL),
+(617, 682, NULL, NULL, 11, 1, 'Admin', 'Admin', 20, '2021-11-13 21:01:37', 1, '0.000000', '0.000000', '0.000000', NULL),
+(618, 680, NULL, NULL, 11, 1, 'Admin', 'Admin', 10, '2021-11-13 21:01:37', 1, '0.000000', '0.000000', '0.000000', NULL),
+(619, 681, NULL, NULL, 11, 1, 'Admin', 'Admin', 30, '2021-11-13 21:01:37', 1, '0.000000', '0.000000', '0.000000', NULL),
+(620, 683, NULL, NULL, 11, 1, 'Admin', 'Admin', 10, '2021-11-13 21:04:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(621, 685, NULL, NULL, 11, 1, 'Admin', 'Admin', 20, '2021-11-13 21:04:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(622, 684, NULL, NULL, 11, 1, 'Admin', 'Admin', 30, '2021-11-13 21:04:20', 1, '0.000000', '0.000000', '0.000000', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_stock_mvt_reason`
+-- Struktura tabeli dla tabeli `ps_stock_mvt_reason`
 --
 
 CREATE TABLE `ps_stock_mvt_reason` (
@@ -42593,7 +42988,7 @@ CREATE TABLE `ps_stock_mvt_reason` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_stock_mvt_reason`
+-- Zrzut danych tabeli `ps_stock_mvt_reason`
 --
 
 INSERT INTO `ps_stock_mvt_reason` (`id_stock_mvt_reason`, `sign`, `date_add`, `date_upd`, `deleted`) VALUES
@@ -42613,7 +43008,7 @@ INSERT INTO `ps_stock_mvt_reason` (`id_stock_mvt_reason`, `sign`, `date_add`, `d
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_stock_mvt_reason_lang`
+-- Struktura tabeli dla tabeli `ps_stock_mvt_reason_lang`
 --
 
 CREATE TABLE `ps_stock_mvt_reason_lang` (
@@ -42623,7 +43018,7 @@ CREATE TABLE `ps_stock_mvt_reason_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_stock_mvt_reason_lang`
+-- Zrzut danych tabeli `ps_stock_mvt_reason_lang`
 --
 
 INSERT INTO `ps_stock_mvt_reason_lang` (`id_stock_mvt_reason`, `id_lang`, `name`) VALUES
@@ -42643,7 +43038,7 @@ INSERT INTO `ps_stock_mvt_reason_lang` (`id_stock_mvt_reason`, `id_lang`, `name`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_store`
+-- Struktura tabeli dla tabeli `ps_store`
 --
 
 CREATE TABLE `ps_store` (
@@ -42663,7 +43058,7 @@ CREATE TABLE `ps_store` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_store`
+-- Zrzut danych tabeli `ps_store`
 --
 
 INSERT INTO `ps_store` (`id_store`, `id_country`, `id_state`, `city`, `postcode`, `latitude`, `longitude`, `phone`, `fax`, `email`, `active`, `date_add`, `date_upd`) VALUES
@@ -42676,7 +43071,7 @@ INSERT INTO `ps_store` (`id_store`, `id_country`, `id_state`, `city`, `postcode`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_store_lang`
+-- Struktura tabeli dla tabeli `ps_store_lang`
 --
 
 CREATE TABLE `ps_store_lang` (
@@ -42690,7 +43085,7 @@ CREATE TABLE `ps_store_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_store_lang`
+-- Zrzut danych tabeli `ps_store_lang`
 --
 
 INSERT INTO `ps_store_lang` (`id_store`, `id_lang`, `name`, `address1`, `address2`, `hours`, `note`) VALUES
@@ -42703,7 +43098,7 @@ INSERT INTO `ps_store_lang` (`id_store`, `id_lang`, `name`, `address1`, `address
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_store_shop`
+-- Struktura tabeli dla tabeli `ps_store_shop`
 --
 
 CREATE TABLE `ps_store_shop` (
@@ -42712,7 +43107,7 @@ CREATE TABLE `ps_store_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_store_shop`
+-- Zrzut danych tabeli `ps_store_shop`
 --
 
 INSERT INTO `ps_store_shop` (`id_store`, `id_shop`) VALUES
@@ -42725,7 +43120,7 @@ INSERT INTO `ps_store_shop` (`id_store`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supplier`
+-- Struktura tabeli dla tabeli `ps_supplier`
 --
 
 CREATE TABLE `ps_supplier` (
@@ -42737,7 +43132,7 @@ CREATE TABLE `ps_supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_supplier`
+-- Zrzut danych tabeli `ps_supplier`
 --
 
 INSERT INTO `ps_supplier` (`id_supplier`, `name`, `date_add`, `date_upd`, `active`) VALUES
@@ -42746,7 +43141,7 @@ INSERT INTO `ps_supplier` (`id_supplier`, `name`, `date_add`, `date_upd`, `activ
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supplier_lang`
+-- Struktura tabeli dla tabeli `ps_supplier_lang`
 --
 
 CREATE TABLE `ps_supplier_lang` (
@@ -42759,7 +43154,7 @@ CREATE TABLE `ps_supplier_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_supplier_lang`
+-- Zrzut danych tabeli `ps_supplier_lang`
 --
 
 INSERT INTO `ps_supplier_lang` (`id_supplier`, `id_lang`, `description`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
@@ -42768,7 +43163,7 @@ INSERT INTO `ps_supplier_lang` (`id_supplier`, `id_lang`, `description`, `meta_t
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supplier_shop`
+-- Struktura tabeli dla tabeli `ps_supplier_shop`
 --
 
 CREATE TABLE `ps_supplier_shop` (
@@ -42777,7 +43172,7 @@ CREATE TABLE `ps_supplier_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_supplier_shop`
+-- Zrzut danych tabeli `ps_supplier_shop`
 --
 
 INSERT INTO `ps_supplier_shop` (`id_supplier`, `id_shop`) VALUES
@@ -42786,7 +43181,7 @@ INSERT INTO `ps_supplier_shop` (`id_supplier`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supply_order`
+-- Struktura tabeli dla tabeli `ps_supply_order`
 --
 
 CREATE TABLE `ps_supply_order` (
@@ -42814,7 +43209,7 @@ CREATE TABLE `ps_supply_order` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supply_order_detail`
+-- Struktura tabeli dla tabeli `ps_supply_order_detail`
 --
 
 CREATE TABLE `ps_supply_order_detail` (
@@ -42848,7 +43243,7 @@ CREATE TABLE `ps_supply_order_detail` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supply_order_history`
+-- Struktura tabeli dla tabeli `ps_supply_order_history`
 --
 
 CREATE TABLE `ps_supply_order_history` (
@@ -42864,7 +43259,7 @@ CREATE TABLE `ps_supply_order_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supply_order_receipt_history`
+-- Struktura tabeli dla tabeli `ps_supply_order_receipt_history`
 --
 
 CREATE TABLE `ps_supply_order_receipt_history` (
@@ -42881,7 +43276,7 @@ CREATE TABLE `ps_supply_order_receipt_history` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supply_order_state`
+-- Struktura tabeli dla tabeli `ps_supply_order_state`
 --
 
 CREATE TABLE `ps_supply_order_state` (
@@ -42895,7 +43290,7 @@ CREATE TABLE `ps_supply_order_state` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_supply_order_state`
+-- Zrzut danych tabeli `ps_supply_order_state`
 --
 
 INSERT INTO `ps_supply_order_state` (`id_supply_order_state`, `delivery_note`, `editable`, `receipt_state`, `pending_receipt`, `enclosed`, `color`) VALUES
@@ -42909,7 +43304,7 @@ INSERT INTO `ps_supply_order_state` (`id_supply_order_state`, `delivery_note`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_supply_order_state_lang`
+-- Struktura tabeli dla tabeli `ps_supply_order_state_lang`
 --
 
 CREATE TABLE `ps_supply_order_state_lang` (
@@ -42919,7 +43314,7 @@ CREATE TABLE `ps_supply_order_state_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_supply_order_state_lang`
+-- Zrzut danych tabeli `ps_supply_order_state_lang`
 --
 
 INSERT INTO `ps_supply_order_state_lang` (`id_supply_order_state`, `id_lang`, `name`) VALUES
@@ -42933,7 +43328,7 @@ INSERT INTO `ps_supply_order_state_lang` (`id_supply_order_state`, `id_lang`, `n
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tab`
+-- Struktura tabeli dla tabeli `ps_tab`
 --
 
 CREATE TABLE `ps_tab` (
@@ -42952,7 +43347,7 @@ CREATE TABLE `ps_tab` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tab`
+-- Zrzut danych tabeli `ps_tab`
 --
 
 INSERT INTO `ps_tab` (`id_tab`, `id_parent`, `position`, `module`, `class_name`, `active`, `hide_host_mode`, `icon`, `wording`, `wording_domain`, `enabled`, `route_name`) VALUES
@@ -43116,7 +43511,7 @@ INSERT INTO `ps_tab` (`id_tab`, `id_parent`, `position`, `module`, `class_name`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tab_advice`
+-- Struktura tabeli dla tabeli `ps_tab_advice`
 --
 
 CREATE TABLE `ps_tab_advice` (
@@ -43127,7 +43522,7 @@ CREATE TABLE `ps_tab_advice` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tab_lang`
+-- Struktura tabeli dla tabeli `ps_tab_lang`
 --
 
 CREATE TABLE `ps_tab_lang` (
@@ -43137,7 +43532,7 @@ CREATE TABLE `ps_tab_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tab_lang`
+-- Zrzut danych tabeli `ps_tab_lang`
 --
 
 INSERT INTO `ps_tab_lang` (`id_tab`, `id_lang`, `name`) VALUES
@@ -43299,7 +43694,7 @@ INSERT INTO `ps_tab_lang` (`id_tab`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tab_module_preference`
+-- Struktura tabeli dla tabeli `ps_tab_module_preference`
 --
 
 CREATE TABLE `ps_tab_module_preference` (
@@ -43312,7 +43707,7 @@ CREATE TABLE `ps_tab_module_preference` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tag`
+-- Struktura tabeli dla tabeli `ps_tag`
 --
 
 CREATE TABLE `ps_tag` (
@@ -43324,7 +43719,7 @@ CREATE TABLE `ps_tag` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tag_count`
+-- Struktura tabeli dla tabeli `ps_tag_count`
 --
 
 CREATE TABLE `ps_tag_count` (
@@ -43338,7 +43733,7 @@ CREATE TABLE `ps_tag_count` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tax`
+-- Struktura tabeli dla tabeli `ps_tax`
 --
 
 CREATE TABLE `ps_tax` (
@@ -43349,7 +43744,7 @@ CREATE TABLE `ps_tax` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tax`
+-- Zrzut danych tabeli `ps_tax`
 --
 
 INSERT INTO `ps_tax` (`id_tax`, `rate`, `active`, `deleted`) VALUES
@@ -43389,7 +43784,7 @@ INSERT INTO `ps_tax` (`id_tax`, `rate`, `active`, `deleted`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tax_lang`
+-- Struktura tabeli dla tabeli `ps_tax_lang`
 --
 
 CREATE TABLE `ps_tax_lang` (
@@ -43399,7 +43794,7 @@ CREATE TABLE `ps_tax_lang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tax_lang`
+-- Zrzut danych tabeli `ps_tax_lang`
 --
 
 INSERT INTO `ps_tax_lang` (`id_tax`, `id_lang`, `name`) VALUES
@@ -43439,7 +43834,7 @@ INSERT INTO `ps_tax_lang` (`id_tax`, `id_lang`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tax_rule`
+-- Struktura tabeli dla tabeli `ps_tax_rule`
 --
 
 CREATE TABLE `ps_tax_rule` (
@@ -43455,7 +43850,7 @@ CREATE TABLE `ps_tax_rule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tax_rule`
+-- Zrzut danych tabeli `ps_tax_rule`
 --
 
 INSERT INTO `ps_tax_rule` (`id_tax_rule`, `id_tax_rules_group`, `id_country`, `id_state`, `zipcode_from`, `zipcode_to`, `id_tax`, `behavior`, `description`) VALUES
@@ -43606,7 +44001,7 @@ INSERT INTO `ps_tax_rule` (`id_tax_rule`, `id_tax_rules_group`, `id_country`, `i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tax_rules_group`
+-- Struktura tabeli dla tabeli `ps_tax_rules_group`
 --
 
 CREATE TABLE `ps_tax_rules_group` (
@@ -43619,7 +44014,7 @@ CREATE TABLE `ps_tax_rules_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tax_rules_group`
+-- Zrzut danych tabeli `ps_tax_rules_group`
 --
 
 INSERT INTO `ps_tax_rules_group` (`id_tax_rules_group`, `name`, `active`, `deleted`, `date_add`, `date_upd`) VALUES
@@ -43632,7 +44027,7 @@ INSERT INTO `ps_tax_rules_group` (`id_tax_rules_group`, `name`, `active`, `delet
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_tax_rules_group_shop`
+-- Struktura tabeli dla tabeli `ps_tax_rules_group_shop`
 --
 
 CREATE TABLE `ps_tax_rules_group_shop` (
@@ -43641,7 +44036,7 @@ CREATE TABLE `ps_tax_rules_group_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_tax_rules_group_shop`
+-- Zrzut danych tabeli `ps_tax_rules_group_shop`
 --
 
 INSERT INTO `ps_tax_rules_group_shop` (`id_tax_rules_group`, `id_shop`) VALUES
@@ -43654,7 +44049,7 @@ INSERT INTO `ps_tax_rules_group_shop` (`id_tax_rules_group`, `id_shop`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_timezone`
+-- Struktura tabeli dla tabeli `ps_timezone`
 --
 
 CREATE TABLE `ps_timezone` (
@@ -43663,7 +44058,7 @@ CREATE TABLE `ps_timezone` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_timezone`
+-- Zrzut danych tabeli `ps_timezone`
 --
 
 INSERT INTO `ps_timezone` (`id_timezone`, `name`) VALUES
@@ -44231,7 +44626,7 @@ INSERT INTO `ps_timezone` (`id_timezone`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_translation`
+-- Struktura tabeli dla tabeli `ps_translation`
 --
 
 CREATE TABLE `ps_translation` (
@@ -44246,7 +44641,7 @@ CREATE TABLE `ps_translation` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_warehouse`
+-- Struktura tabeli dla tabeli `ps_warehouse`
 --
 
 CREATE TABLE `ps_warehouse` (
@@ -44263,7 +44658,7 @@ CREATE TABLE `ps_warehouse` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_warehouse_carrier`
+-- Struktura tabeli dla tabeli `ps_warehouse_carrier`
 --
 
 CREATE TABLE `ps_warehouse_carrier` (
@@ -44274,7 +44669,7 @@ CREATE TABLE `ps_warehouse_carrier` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_warehouse_product_location`
+-- Struktura tabeli dla tabeli `ps_warehouse_product_location`
 --
 
 CREATE TABLE `ps_warehouse_product_location` (
@@ -44288,7 +44683,7 @@ CREATE TABLE `ps_warehouse_product_location` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_warehouse_shop`
+-- Struktura tabeli dla tabeli `ps_warehouse_shop`
 --
 
 CREATE TABLE `ps_warehouse_shop` (
@@ -44299,7 +44694,7 @@ CREATE TABLE `ps_warehouse_shop` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_webservice_account`
+-- Struktura tabeli dla tabeli `ps_webservice_account`
 --
 
 CREATE TABLE `ps_webservice_account` (
@@ -44315,7 +44710,7 @@ CREATE TABLE `ps_webservice_account` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_webservice_account_shop`
+-- Struktura tabeli dla tabeli `ps_webservice_account_shop`
 --
 
 CREATE TABLE `ps_webservice_account_shop` (
@@ -44326,7 +44721,7 @@ CREATE TABLE `ps_webservice_account_shop` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_webservice_permission`
+-- Struktura tabeli dla tabeli `ps_webservice_permission`
 --
 
 CREATE TABLE `ps_webservice_permission` (
@@ -44339,7 +44734,7 @@ CREATE TABLE `ps_webservice_permission` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_web_browser`
+-- Struktura tabeli dla tabeli `ps_web_browser`
 --
 
 CREATE TABLE `ps_web_browser` (
@@ -44348,7 +44743,7 @@ CREATE TABLE `ps_web_browser` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_web_browser`
+-- Zrzut danych tabeli `ps_web_browser`
 --
 
 INSERT INTO `ps_web_browser` (`id_web_browser`, `name`) VALUES
@@ -44367,7 +44762,7 @@ INSERT INTO `ps_web_browser` (`id_web_browser`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_zone`
+-- Struktura tabeli dla tabeli `ps_zone`
 --
 
 CREATE TABLE `ps_zone` (
@@ -44377,7 +44772,7 @@ CREATE TABLE `ps_zone` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_zone`
+-- Zrzut danych tabeli `ps_zone`
 --
 
 INSERT INTO `ps_zone` (`id_zone`, `name`, `active`) VALUES
@@ -44393,7 +44788,7 @@ INSERT INTO `ps_zone` (`id_zone`, `name`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ps_zone_shop`
+-- Struktura tabeli dla tabeli `ps_zone_shop`
 --
 
 CREATE TABLE `ps_zone_shop` (
@@ -44402,7 +44797,7 @@ CREATE TABLE `ps_zone_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `ps_zone_shop`
+-- Zrzut danych tabeli `ps_zone_shop`
 --
 
 INSERT INTO `ps_zone_shop` (`id_zone`, `id_shop`) VALUES
@@ -44416,23 +44811,23 @@ INSERT INTO `ps_zone_shop` (`id_zone`, `id_shop`) VALUES
 (8, 1);
 
 --
--- Индексы сохранённых таблиц
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Индексы таблицы `ps_access`
+-- Indeksy dla tabeli `ps_access`
 --
 ALTER TABLE `ps_access`
   ADD PRIMARY KEY (`id_profile`,`id_authorization_role`);
 
 --
--- Индексы таблицы `ps_accessory`
+-- Indeksy dla tabeli `ps_accessory`
 --
 ALTER TABLE `ps_accessory`
   ADD KEY `accessory_product` (`id_product_1`,`id_product_2`);
 
 --
--- Индексы таблицы `ps_address`
+-- Indeksy dla tabeli `ps_address`
 --
 ALTER TABLE `ps_address`
   ADD PRIMARY KEY (`id_address`),
@@ -44444,64 +44839,64 @@ ALTER TABLE `ps_address`
   ADD KEY `id_warehouse` (`id_warehouse`);
 
 --
--- Индексы таблицы `ps_address_format`
+-- Indeksy dla tabeli `ps_address_format`
 --
 ALTER TABLE `ps_address_format`
   ADD PRIMARY KEY (`id_country`);
 
 --
--- Индексы таблицы `ps_admin_filter`
+-- Indeksy dla tabeli `ps_admin_filter`
 --
 ALTER TABLE `ps_admin_filter`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admin_filter_search_id_idx` (`employee`,`shop`,`controller`,`action`,`filter_id`);
 
 --
--- Индексы таблицы `ps_advice`
+-- Indeksy dla tabeli `ps_advice`
 --
 ALTER TABLE `ps_advice`
   ADD PRIMARY KEY (`id_advice`);
 
 --
--- Индексы таблицы `ps_advice_lang`
+-- Indeksy dla tabeli `ps_advice_lang`
 --
 ALTER TABLE `ps_advice_lang`
   ADD PRIMARY KEY (`id_advice`,`id_lang`);
 
 --
--- Индексы таблицы `ps_alias`
+-- Indeksy dla tabeli `ps_alias`
 --
 ALTER TABLE `ps_alias`
   ADD PRIMARY KEY (`id_alias`),
   ADD UNIQUE KEY `alias` (`alias`);
 
 --
--- Индексы таблицы `ps_attachment`
+-- Indeksy dla tabeli `ps_attachment`
 --
 ALTER TABLE `ps_attachment`
   ADD PRIMARY KEY (`id_attachment`);
 
 --
--- Индексы таблицы `ps_attachment_lang`
+-- Indeksy dla tabeli `ps_attachment_lang`
 --
 ALTER TABLE `ps_attachment_lang`
   ADD PRIMARY KEY (`id_attachment`,`id_lang`);
 
 --
--- Индексы таблицы `ps_attribute`
+-- Indeksy dla tabeli `ps_attribute`
 --
 ALTER TABLE `ps_attribute`
   ADD PRIMARY KEY (`id_attribute`),
   ADD KEY `attribute_group` (`id_attribute_group`);
 
 --
--- Индексы таблицы `ps_attribute_group`
+-- Indeksy dla tabeli `ps_attribute_group`
 --
 ALTER TABLE `ps_attribute_group`
   ADD PRIMARY KEY (`id_attribute_group`);
 
 --
--- Индексы таблицы `ps_attribute_group_lang`
+-- Indeksy dla tabeli `ps_attribute_group_lang`
 --
 ALTER TABLE `ps_attribute_group_lang`
   ADD PRIMARY KEY (`id_attribute_group`,`id_lang`),
@@ -44509,7 +44904,7 @@ ALTER TABLE `ps_attribute_group_lang`
   ADD KEY `IDX_4653726CBA299860` (`id_lang`);
 
 --
--- Индексы таблицы `ps_attribute_group_shop`
+-- Indeksy dla tabeli `ps_attribute_group_shop`
 --
 ALTER TABLE `ps_attribute_group_shop`
   ADD PRIMARY KEY (`id_attribute_group`,`id_shop`),
@@ -44517,14 +44912,14 @@ ALTER TABLE `ps_attribute_group_shop`
   ADD KEY `IDX_DB30BAAC274A50A0` (`id_shop`);
 
 --
--- Индексы таблицы `ps_attribute_impact`
+-- Indeksy dla tabeli `ps_attribute_impact`
 --
 ALTER TABLE `ps_attribute_impact`
   ADD PRIMARY KEY (`id_attribute_impact`),
   ADD UNIQUE KEY `id_product` (`id_product`,`id_attribute`);
 
 --
--- Индексы таблицы `ps_attribute_lang`
+-- Indeksy dla tabeli `ps_attribute_lang`
 --
 ALTER TABLE `ps_attribute_lang`
   ADD PRIMARY KEY (`id_attribute`,`id_lang`),
@@ -44532,7 +44927,7 @@ ALTER TABLE `ps_attribute_lang`
   ADD KEY `IDX_3ABE46A7BA299860` (`id_lang`);
 
 --
--- Индексы таблицы `ps_attribute_shop`
+-- Indeksy dla tabeli `ps_attribute_shop`
 --
 ALTER TABLE `ps_attribute_shop`
   ADD PRIMARY KEY (`id_attribute`,`id_shop`),
@@ -44540,26 +44935,26 @@ ALTER TABLE `ps_attribute_shop`
   ADD KEY `IDX_A7DD8E67274A50A0` (`id_shop`);
 
 --
--- Индексы таблицы `ps_authorization_role`
+-- Indeksy dla tabeli `ps_authorization_role`
 --
 ALTER TABLE `ps_authorization_role`
   ADD PRIMARY KEY (`id_authorization_role`),
   ADD UNIQUE KEY `slug` (`slug`);
 
 --
--- Индексы таблицы `ps_badge`
+-- Indeksy dla tabeli `ps_badge`
 --
 ALTER TABLE `ps_badge`
   ADD PRIMARY KEY (`id_badge`);
 
 --
--- Индексы таблицы `ps_badge_lang`
+-- Indeksy dla tabeli `ps_badge_lang`
 --
 ALTER TABLE `ps_badge_lang`
   ADD PRIMARY KEY (`id_badge`,`id_lang`);
 
 --
--- Индексы таблицы `ps_carrier`
+-- Indeksy dla tabeli `ps_carrier`
 --
 ALTER TABLE `ps_carrier`
   ADD PRIMARY KEY (`id_carrier`),
@@ -44568,38 +44963,38 @@ ALTER TABLE `ps_carrier`
   ADD KEY `reference` (`id_reference`,`deleted`,`active`);
 
 --
--- Индексы таблицы `ps_carrier_group`
+-- Indeksy dla tabeli `ps_carrier_group`
 --
 ALTER TABLE `ps_carrier_group`
   ADD PRIMARY KEY (`id_carrier`,`id_group`);
 
 --
--- Индексы таблицы `ps_carrier_lang`
+-- Indeksy dla tabeli `ps_carrier_lang`
 --
 ALTER TABLE `ps_carrier_lang`
   ADD PRIMARY KEY (`id_lang`,`id_shop`,`id_carrier`);
 
 --
--- Индексы таблицы `ps_carrier_shop`
+-- Indeksy dla tabeli `ps_carrier_shop`
 --
 ALTER TABLE `ps_carrier_shop`
   ADD PRIMARY KEY (`id_carrier`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_carrier_tax_rules_group_shop`
+-- Indeksy dla tabeli `ps_carrier_tax_rules_group_shop`
 --
 ALTER TABLE `ps_carrier_tax_rules_group_shop`
   ADD PRIMARY KEY (`id_carrier`,`id_tax_rules_group`,`id_shop`);
 
 --
--- Индексы таблицы `ps_carrier_zone`
+-- Indeksy dla tabeli `ps_carrier_zone`
 --
 ALTER TABLE `ps_carrier_zone`
   ADD PRIMARY KEY (`id_carrier`,`id_zone`);
 
 --
--- Индексы таблицы `ps_cart`
+-- Indeksy dla tabeli `ps_cart`
 --
 ALTER TABLE `ps_cart`
   ADD PRIMARY KEY (`id_cart`),
@@ -44615,14 +45010,14 @@ ALTER TABLE `ps_cart`
   ADD KEY `id_shop` (`id_shop`,`date_add`);
 
 --
--- Индексы таблицы `ps_cart_cart_rule`
+-- Indeksy dla tabeli `ps_cart_cart_rule`
 --
 ALTER TABLE `ps_cart_cart_rule`
   ADD PRIMARY KEY (`id_cart`,`id_cart_rule`),
   ADD KEY `id_cart_rule` (`id_cart_rule`);
 
 --
--- Индексы таблицы `ps_cart_product`
+-- Indeksy dla tabeli `ps_cart_product`
 --
 ALTER TABLE `ps_cart_product`
   ADD PRIMARY KEY (`id_cart`,`id_product`,`id_product_attribute`,`id_customization`,`id_address_delivery`),
@@ -44630,7 +45025,7 @@ ALTER TABLE `ps_cart_product`
   ADD KEY `id_cart_order` (`id_cart`,`date_add`,`id_product`,`id_product_attribute`);
 
 --
--- Индексы таблицы `ps_cart_rule`
+-- Indeksy dla tabeli `ps_cart_rule`
 --
 ALTER TABLE `ps_cart_rule`
   ADD PRIMARY KEY (`id_cart_rule`),
@@ -44642,13 +45037,13 @@ ALTER TABLE `ps_cart_rule`
   ADD KEY `date_to` (`date_to`);
 
 --
--- Индексы таблицы `ps_cart_rule_carrier`
+-- Indeksy dla tabeli `ps_cart_rule_carrier`
 --
 ALTER TABLE `ps_cart_rule_carrier`
   ADD PRIMARY KEY (`id_cart_rule`,`id_carrier`);
 
 --
--- Индексы таблицы `ps_cart_rule_combination`
+-- Indeksy dla tabeli `ps_cart_rule_combination`
 --
 ALTER TABLE `ps_cart_rule_combination`
   ADD PRIMARY KEY (`id_cart_rule_1`,`id_cart_rule_2`),
@@ -44656,49 +45051,49 @@ ALTER TABLE `ps_cart_rule_combination`
   ADD KEY `id_cart_rule_2` (`id_cart_rule_2`);
 
 --
--- Индексы таблицы `ps_cart_rule_country`
+-- Indeksy dla tabeli `ps_cart_rule_country`
 --
 ALTER TABLE `ps_cart_rule_country`
   ADD PRIMARY KEY (`id_cart_rule`,`id_country`);
 
 --
--- Индексы таблицы `ps_cart_rule_group`
+-- Indeksy dla tabeli `ps_cart_rule_group`
 --
 ALTER TABLE `ps_cart_rule_group`
   ADD PRIMARY KEY (`id_cart_rule`,`id_group`);
 
 --
--- Индексы таблицы `ps_cart_rule_lang`
+-- Indeksy dla tabeli `ps_cart_rule_lang`
 --
 ALTER TABLE `ps_cart_rule_lang`
   ADD PRIMARY KEY (`id_cart_rule`,`id_lang`);
 
 --
--- Индексы таблицы `ps_cart_rule_product_rule`
+-- Indeksy dla tabeli `ps_cart_rule_product_rule`
 --
 ALTER TABLE `ps_cart_rule_product_rule`
   ADD PRIMARY KEY (`id_product_rule`);
 
 --
--- Индексы таблицы `ps_cart_rule_product_rule_group`
+-- Indeksy dla tabeli `ps_cart_rule_product_rule_group`
 --
 ALTER TABLE `ps_cart_rule_product_rule_group`
   ADD PRIMARY KEY (`id_product_rule_group`);
 
 --
--- Индексы таблицы `ps_cart_rule_product_rule_value`
+-- Indeksy dla tabeli `ps_cart_rule_product_rule_value`
 --
 ALTER TABLE `ps_cart_rule_product_rule_value`
   ADD PRIMARY KEY (`id_product_rule`,`id_item`);
 
 --
--- Индексы таблицы `ps_cart_rule_shop`
+-- Indeksy dla tabeli `ps_cart_rule_shop`
 --
 ALTER TABLE `ps_cart_rule_shop`
   ADD PRIMARY KEY (`id_cart_rule`,`id_shop`);
 
 --
--- Индексы таблицы `ps_category`
+-- Indeksy dla tabeli `ps_category`
 --
 ALTER TABLE `ps_category`
   ADD PRIMARY KEY (`id_category`),
@@ -44710,7 +45105,7 @@ ALTER TABLE `ps_category`
   ADD KEY `activenright` (`active`,`nright`);
 
 --
--- Индексы таблицы `ps_category_group`
+-- Indeksy dla tabeli `ps_category_group`
 --
 ALTER TABLE `ps_category_group`
   ADD PRIMARY KEY (`id_category`,`id_group`),
@@ -44718,14 +45113,14 @@ ALTER TABLE `ps_category_group`
   ADD KEY `id_group` (`id_group`);
 
 --
--- Индексы таблицы `ps_category_lang`
+-- Indeksy dla tabeli `ps_category_lang`
 --
 ALTER TABLE `ps_category_lang`
   ADD PRIMARY KEY (`id_category`,`id_shop`,`id_lang`),
   ADD KEY `category_name` (`name`);
 
 --
--- Индексы таблицы `ps_category_product`
+-- Indeksy dla tabeli `ps_category_product`
 --
 ALTER TABLE `ps_category_product`
   ADD PRIMARY KEY (`id_category`,`id_product`),
@@ -44733,84 +45128,84 @@ ALTER TABLE `ps_category_product`
   ADD KEY `id_category` (`id_category`,`position`);
 
 --
--- Индексы таблицы `ps_category_shop`
+-- Indeksy dla tabeli `ps_category_shop`
 --
 ALTER TABLE `ps_category_shop`
   ADD PRIMARY KEY (`id_category`,`id_shop`);
 
 --
--- Индексы таблицы `ps_cms`
+-- Indeksy dla tabeli `ps_cms`
 --
 ALTER TABLE `ps_cms`
   ADD PRIMARY KEY (`id_cms`);
 
 --
--- Индексы таблицы `ps_cms_category`
+-- Indeksy dla tabeli `ps_cms_category`
 --
 ALTER TABLE `ps_cms_category`
   ADD PRIMARY KEY (`id_cms_category`),
   ADD KEY `category_parent` (`id_parent`);
 
 --
--- Индексы таблицы `ps_cms_category_lang`
+-- Indeksy dla tabeli `ps_cms_category_lang`
 --
 ALTER TABLE `ps_cms_category_lang`
   ADD PRIMARY KEY (`id_cms_category`,`id_shop`,`id_lang`),
   ADD KEY `category_name` (`name`);
 
 --
--- Индексы таблицы `ps_cms_category_shop`
+-- Indeksy dla tabeli `ps_cms_category_shop`
 --
 ALTER TABLE `ps_cms_category_shop`
   ADD PRIMARY KEY (`id_cms_category`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_cms_lang`
+-- Indeksy dla tabeli `ps_cms_lang`
 --
 ALTER TABLE `ps_cms_lang`
   ADD PRIMARY KEY (`id_cms`,`id_shop`,`id_lang`);
 
 --
--- Индексы таблицы `ps_cms_role`
+-- Indeksy dla tabeli `ps_cms_role`
 --
 ALTER TABLE `ps_cms_role`
   ADD PRIMARY KEY (`id_cms_role`,`id_cms`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Индексы таблицы `ps_cms_role_lang`
+-- Indeksy dla tabeli `ps_cms_role_lang`
 --
 ALTER TABLE `ps_cms_role_lang`
   ADD PRIMARY KEY (`id_cms_role`,`id_lang`,`id_shop`);
 
 --
--- Индексы таблицы `ps_cms_shop`
+-- Indeksy dla tabeli `ps_cms_shop`
 --
 ALTER TABLE `ps_cms_shop`
   ADD PRIMARY KEY (`id_cms`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_condition`
+-- Indeksy dla tabeli `ps_condition`
 --
 ALTER TABLE `ps_condition`
   ADD PRIMARY KEY (`id_condition`,`id_ps_condition`);
 
 --
--- Индексы таблицы `ps_condition_advice`
+-- Indeksy dla tabeli `ps_condition_advice`
 --
 ALTER TABLE `ps_condition_advice`
   ADD PRIMARY KEY (`id_condition`,`id_advice`);
 
 --
--- Индексы таблицы `ps_condition_badge`
+-- Indeksy dla tabeli `ps_condition_badge`
 --
 ALTER TABLE `ps_condition_badge`
   ADD PRIMARY KEY (`id_condition`,`id_badge`);
 
 --
--- Индексы таблицы `ps_configuration`
+-- Indeksy dla tabeli `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
   ADD PRIMARY KEY (`id_configuration`),
@@ -44819,7 +45214,7 @@ ALTER TABLE `ps_configuration`
   ADD KEY `id_shop_group` (`id_shop_group`);
 
 --
--- Индексы таблицы `ps_configuration_kpi`
+-- Indeksy dla tabeli `ps_configuration_kpi`
 --
 ALTER TABLE `ps_configuration_kpi`
   ADD PRIMARY KEY (`id_configuration_kpi`),
@@ -44828,19 +45223,19 @@ ALTER TABLE `ps_configuration_kpi`
   ADD KEY `id_shop_group` (`id_shop_group`);
 
 --
--- Индексы таблицы `ps_configuration_kpi_lang`
+-- Indeksy dla tabeli `ps_configuration_kpi_lang`
 --
 ALTER TABLE `ps_configuration_kpi_lang`
   ADD PRIMARY KEY (`id_configuration_kpi`,`id_lang`);
 
 --
--- Индексы таблицы `ps_configuration_lang`
+-- Indeksy dla tabeli `ps_configuration_lang`
 --
 ALTER TABLE `ps_configuration_lang`
   ADD PRIMARY KEY (`id_configuration`,`id_lang`);
 
 --
--- Индексы таблицы `ps_connections`
+-- Indeksy dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
   ADD PRIMARY KEY (`id_connections`),
@@ -44849,13 +45244,13 @@ ALTER TABLE `ps_connections`
   ADD KEY `id_page` (`id_page`);
 
 --
--- Индексы таблицы `ps_connections_page`
+-- Indeksy dla tabeli `ps_connections_page`
 --
 ALTER TABLE `ps_connections_page`
   ADD PRIMARY KEY (`id_connections`,`id_page`,`time_start`);
 
 --
--- Индексы таблицы `ps_connections_source`
+-- Indeksy dla tabeli `ps_connections_source`
 --
 ALTER TABLE `ps_connections_source`
   ADD PRIMARY KEY (`id_connections_source`),
@@ -44865,26 +45260,26 @@ ALTER TABLE `ps_connections_source`
   ADD KEY `request_uri` (`request_uri`);
 
 --
--- Индексы таблицы `ps_contact`
+-- Indeksy dla tabeli `ps_contact`
 --
 ALTER TABLE `ps_contact`
   ADD PRIMARY KEY (`id_contact`);
 
 --
--- Индексы таблицы `ps_contact_lang`
+-- Indeksy dla tabeli `ps_contact_lang`
 --
 ALTER TABLE `ps_contact_lang`
   ADD PRIMARY KEY (`id_contact`,`id_lang`);
 
 --
--- Индексы таблицы `ps_contact_shop`
+-- Indeksy dla tabeli `ps_contact_shop`
 --
 ALTER TABLE `ps_contact_shop`
   ADD PRIMARY KEY (`id_contact`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_country`
+-- Indeksy dla tabeli `ps_country`
 --
 ALTER TABLE `ps_country`
   ADD PRIMARY KEY (`id_country`),
@@ -44892,40 +45287,40 @@ ALTER TABLE `ps_country`
   ADD KEY `country_` (`id_zone`);
 
 --
--- Индексы таблицы `ps_country_lang`
+-- Indeksy dla tabeli `ps_country_lang`
 --
 ALTER TABLE `ps_country_lang`
   ADD PRIMARY KEY (`id_country`,`id_lang`);
 
 --
--- Индексы таблицы `ps_country_shop`
+-- Indeksy dla tabeli `ps_country_shop`
 --
 ALTER TABLE `ps_country_shop`
   ADD PRIMARY KEY (`id_country`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_currency`
+-- Indeksy dla tabeli `ps_currency`
 --
 ALTER TABLE `ps_currency`
   ADD PRIMARY KEY (`id_currency`),
   ADD KEY `currency_iso_code` (`iso_code`);
 
 --
--- Индексы таблицы `ps_currency_lang`
+-- Indeksy dla tabeli `ps_currency_lang`
 --
 ALTER TABLE `ps_currency_lang`
   ADD PRIMARY KEY (`id_currency`,`id_lang`);
 
 --
--- Индексы таблицы `ps_currency_shop`
+-- Indeksy dla tabeli `ps_currency_shop`
 --
 ALTER TABLE `ps_currency_shop`
   ADD PRIMARY KEY (`id_currency`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_customer`
+-- Indeksy dla tabeli `ps_customer`
 --
 ALTER TABLE `ps_customer`
   ADD PRIMARY KEY (`id_customer`),
@@ -44937,7 +45332,7 @@ ALTER TABLE `ps_customer`
   ADD KEY `id_shop` (`id_shop`,`date_add`);
 
 --
--- Индексы таблицы `ps_customer_group`
+-- Indeksy dla tabeli `ps_customer_group`
 --
 ALTER TABLE `ps_customer_group`
   ADD PRIMARY KEY (`id_customer`,`id_group`),
@@ -44945,7 +45340,7 @@ ALTER TABLE `ps_customer_group`
   ADD KEY `id_customer` (`id_customer`);
 
 --
--- Индексы таблицы `ps_customer_message`
+-- Indeksy dla tabeli `ps_customer_message`
 --
 ALTER TABLE `ps_customer_message`
   ADD PRIMARY KEY (`id_customer_message`),
@@ -44953,19 +45348,19 @@ ALTER TABLE `ps_customer_message`
   ADD KEY `id_employee` (`id_employee`);
 
 --
--- Индексы таблицы `ps_customer_message_sync_imap`
+-- Indeksy dla tabeli `ps_customer_message_sync_imap`
 --
 ALTER TABLE `ps_customer_message_sync_imap`
   ADD KEY `md5_header_index` (`md5_header`(4));
 
 --
--- Индексы таблицы `ps_customer_session`
+-- Indeksy dla tabeli `ps_customer_session`
 --
 ALTER TABLE `ps_customer_session`
   ADD PRIMARY KEY (`id_customer_session`);
 
 --
--- Индексы таблицы `ps_customer_thread`
+-- Indeksy dla tabeli `ps_customer_thread`
 --
 ALTER TABLE `ps_customer_thread`
   ADD PRIMARY KEY (`id_customer_thread`),
@@ -44977,7 +45372,7 @@ ALTER TABLE `ps_customer_thread`
   ADD KEY `id_product` (`id_product`);
 
 --
--- Индексы таблицы `ps_customization`
+-- Indeksy dla tabeli `ps_customization`
 --
 ALTER TABLE `ps_customization`
   ADD PRIMARY KEY (`id_customization`,`id_cart`,`id_product`,`id_address_delivery`),
@@ -44985,32 +45380,32 @@ ALTER TABLE `ps_customization`
   ADD KEY `id_cart_product` (`id_cart`,`id_product`,`id_product_attribute`);
 
 --
--- Индексы таблицы `ps_customization_field`
+-- Indeksy dla tabeli `ps_customization_field`
 --
 ALTER TABLE `ps_customization_field`
   ADD PRIMARY KEY (`id_customization_field`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Индексы таблицы `ps_customization_field_lang`
+-- Indeksy dla tabeli `ps_customization_field_lang`
 --
 ALTER TABLE `ps_customization_field_lang`
   ADD PRIMARY KEY (`id_customization_field`,`id_lang`,`id_shop`);
 
 --
--- Индексы таблицы `ps_customized_data`
+-- Indeksy dla tabeli `ps_customized_data`
 --
 ALTER TABLE `ps_customized_data`
   ADD PRIMARY KEY (`id_customization`,`type`,`index`);
 
 --
--- Индексы таблицы `ps_date_range`
+-- Indeksy dla tabeli `ps_date_range`
 --
 ALTER TABLE `ps_date_range`
   ADD PRIMARY KEY (`id_date_range`);
 
 --
--- Индексы таблицы `ps_delivery`
+-- Indeksy dla tabeli `ps_delivery`
 --
 ALTER TABLE `ps_delivery`
   ADD PRIMARY KEY (`id_delivery`),
@@ -45020,13 +45415,13 @@ ALTER TABLE `ps_delivery`
   ADD KEY `id_range_weight` (`id_range_weight`);
 
 --
--- Индексы таблицы `ps_emailsubscription`
+-- Indeksy dla tabeli `ps_emailsubscription`
 --
 ALTER TABLE `ps_emailsubscription`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `ps_employee`
+-- Indeksy dla tabeli `ps_employee`
 --
 ALTER TABLE `ps_employee`
   ADD PRIMARY KEY (`id_employee`),
@@ -45035,59 +45430,59 @@ ALTER TABLE `ps_employee`
   ADD KEY `id_profile` (`id_profile`);
 
 --
--- Индексы таблицы `ps_employee_session`
+-- Indeksy dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
   ADD PRIMARY KEY (`id_employee_session`);
 
 --
--- Индексы таблицы `ps_employee_shop`
+-- Indeksy dla tabeli `ps_employee_shop`
 --
 ALTER TABLE `ps_employee_shop`
   ADD PRIMARY KEY (`id_employee`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_eventbus_deleted_objects`
+-- Indeksy dla tabeli `ps_eventbus_deleted_objects`
 --
 ALTER TABLE `ps_eventbus_deleted_objects`
   ADD PRIMARY KEY (`type`,`id_object`,`id_shop`);
 
 --
--- Индексы таблицы `ps_eventbus_incremental_sync`
+-- Indeksy dla tabeli `ps_eventbus_incremental_sync`
 --
 ALTER TABLE `ps_eventbus_incremental_sync`
   ADD PRIMARY KEY (`type`,`id_object`,`id_shop`,`lang_iso`);
 
 --
--- Индексы таблицы `ps_fb_category_match`
+-- Indeksy dla tabeli `ps_fb_category_match`
 --
 ALTER TABLE `ps_fb_category_match`
   ADD PRIMARY KEY (`id_category`,`id_shop`),
   ADD KEY `id_category` (`id_category`,`google_category_id`);
 
 --
--- Индексы таблицы `ps_feature`
+-- Indeksy dla tabeli `ps_feature`
 --
 ALTER TABLE `ps_feature`
   ADD PRIMARY KEY (`id_feature`);
 
 --
--- Индексы таблицы `ps_feature_flag`
+-- Indeksy dla tabeli `ps_feature_flag`
 --
 ALTER TABLE `ps_feature_flag`
   ADD PRIMARY KEY (`id_feature_flag`),
   ADD UNIQUE KEY `UNIQ_91700F175E237E06` (`name`);
 
 --
--- Индексы таблицы `ps_feature_lang`
+-- Indeksy dla tabeli `ps_feature_lang`
 --
 ALTER TABLE `ps_feature_lang`
   ADD PRIMARY KEY (`id_feature`,`id_lang`),
   ADD KEY `id_lang` (`id_lang`,`name`);
 
 --
--- Индексы таблицы `ps_feature_product`
+-- Indeksy dla tabeli `ps_feature_product`
 --
 ALTER TABLE `ps_feature_product`
   ADD PRIMARY KEY (`id_feature`,`id_product`,`id_feature_value`),
@@ -45095,27 +45490,27 @@ ALTER TABLE `ps_feature_product`
   ADD KEY `id_product` (`id_product`);
 
 --
--- Индексы таблицы `ps_feature_shop`
+-- Indeksy dla tabeli `ps_feature_shop`
 --
 ALTER TABLE `ps_feature_shop`
   ADD PRIMARY KEY (`id_feature`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_feature_value`
+-- Indeksy dla tabeli `ps_feature_value`
 --
 ALTER TABLE `ps_feature_value`
   ADD PRIMARY KEY (`id_feature_value`),
   ADD KEY `feature` (`id_feature`);
 
 --
--- Индексы таблицы `ps_feature_value_lang`
+-- Indeksy dla tabeli `ps_feature_value_lang`
 --
 ALTER TABLE `ps_feature_value_lang`
   ADD PRIMARY KEY (`id_feature_value`,`id_lang`);
 
 --
--- Индексы таблицы `ps_ganalytics`
+-- Indeksy dla tabeli `ps_ganalytics`
 --
 ALTER TABLE `ps_ganalytics`
   ADD PRIMARY KEY (`id_google_analytics`),
@@ -45123,52 +45518,52 @@ ALTER TABLE `ps_ganalytics`
   ADD KEY `sent` (`sent`);
 
 --
--- Индексы таблицы `ps_ganalytics_data`
+-- Indeksy dla tabeli `ps_ganalytics_data`
 --
 ALTER TABLE `ps_ganalytics_data`
   ADD PRIMARY KEY (`id_cart`);
 
 --
--- Индексы таблицы `ps_gender`
+-- Indeksy dla tabeli `ps_gender`
 --
 ALTER TABLE `ps_gender`
   ADD PRIMARY KEY (`id_gender`);
 
 --
--- Индексы таблицы `ps_gender_lang`
+-- Indeksy dla tabeli `ps_gender_lang`
 --
 ALTER TABLE `ps_gender_lang`
   ADD PRIMARY KEY (`id_gender`,`id_lang`),
   ADD KEY `id_gender` (`id_gender`);
 
 --
--- Индексы таблицы `ps_group`
+-- Indeksy dla tabeli `ps_group`
 --
 ALTER TABLE `ps_group`
   ADD PRIMARY KEY (`id_group`);
 
 --
--- Индексы таблицы `ps_group_lang`
+-- Indeksy dla tabeli `ps_group_lang`
 --
 ALTER TABLE `ps_group_lang`
   ADD PRIMARY KEY (`id_group`,`id_lang`);
 
 --
--- Индексы таблицы `ps_group_reduction`
+-- Indeksy dla tabeli `ps_group_reduction`
 --
 ALTER TABLE `ps_group_reduction`
   ADD PRIMARY KEY (`id_group_reduction`),
   ADD UNIQUE KEY `id_group` (`id_group`,`id_category`);
 
 --
--- Индексы таблицы `ps_group_shop`
+-- Indeksy dla tabeli `ps_group_shop`
 --
 ALTER TABLE `ps_group_shop`
   ADD PRIMARY KEY (`id_group`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_guest`
+-- Indeksy dla tabeli `ps_guest`
 --
 ALTER TABLE `ps_guest`
   ADD PRIMARY KEY (`id_guest`),
@@ -45177,39 +45572,39 @@ ALTER TABLE `ps_guest`
   ADD KEY `id_web_browser` (`id_web_browser`);
 
 --
--- Индексы таблицы `ps_homeslider`
+-- Indeksy dla tabeli `ps_homeslider`
 --
 ALTER TABLE `ps_homeslider`
   ADD PRIMARY KEY (`id_homeslider_slides`,`id_shop`);
 
 --
--- Индексы таблицы `ps_homeslider_slides`
+-- Indeksy dla tabeli `ps_homeslider_slides`
 --
 ALTER TABLE `ps_homeslider_slides`
   ADD PRIMARY KEY (`id_homeslider_slides`);
 
 --
--- Индексы таблицы `ps_homeslider_slides_lang`
+-- Indeksy dla tabeli `ps_homeslider_slides_lang`
 --
 ALTER TABLE `ps_homeslider_slides_lang`
   ADD PRIMARY KEY (`id_homeslider_slides`,`id_lang`);
 
 --
--- Индексы таблицы `ps_hook`
+-- Indeksy dla tabeli `ps_hook`
 --
 ALTER TABLE `ps_hook`
   ADD PRIMARY KEY (`id_hook`),
   ADD UNIQUE KEY `hook_name` (`name`);
 
 --
--- Индексы таблицы `ps_hook_alias`
+-- Indeksy dla tabeli `ps_hook_alias`
 --
 ALTER TABLE `ps_hook_alias`
   ADD PRIMARY KEY (`id_hook_alias`),
   ADD UNIQUE KEY `alias` (`alias`);
 
 --
--- Индексы таблицы `ps_hook_module`
+-- Indeksy dla tabeli `ps_hook_module`
 --
 ALTER TABLE `ps_hook_module`
   ADD PRIMARY KEY (`id_module`,`id_hook`,`id_shop`),
@@ -45218,7 +45613,7 @@ ALTER TABLE `ps_hook_module`
   ADD KEY `position` (`id_shop`,`position`);
 
 --
--- Индексы таблицы `ps_hook_module_exceptions`
+-- Indeksy dla tabeli `ps_hook_module_exceptions`
 --
 ALTER TABLE `ps_hook_module_exceptions`
   ADD PRIMARY KEY (`id_hook_module_exceptions`),
@@ -45226,7 +45621,7 @@ ALTER TABLE `ps_hook_module_exceptions`
   ADD KEY `id_hook` (`id_hook`);
 
 --
--- Индексы таблицы `ps_image`
+-- Indeksy dla tabeli `ps_image`
 --
 ALTER TABLE `ps_image`
   ADD PRIMARY KEY (`id_image`),
@@ -45235,14 +45630,14 @@ ALTER TABLE `ps_image`
   ADD KEY `image_product` (`id_product`);
 
 --
--- Индексы таблицы `ps_image_lang`
+-- Indeksy dla tabeli `ps_image_lang`
 --
 ALTER TABLE `ps_image_lang`
   ADD PRIMARY KEY (`id_image`,`id_lang`),
   ADD KEY `id_image` (`id_image`);
 
 --
--- Индексы таблицы `ps_image_shop`
+-- Indeksy dla tabeli `ps_image_shop`
 --
 ALTER TABLE `ps_image_shop`
   ADD PRIMARY KEY (`id_image`,`id_shop`),
@@ -45250,44 +45645,44 @@ ALTER TABLE `ps_image_shop`
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_image_type`
+-- Indeksy dla tabeli `ps_image_type`
 --
 ALTER TABLE `ps_image_type`
   ADD PRIMARY KEY (`id_image_type`),
   ADD KEY `image_type_name` (`name`);
 
 --
--- Индексы таблицы `ps_import_match`
+-- Indeksy dla tabeli `ps_import_match`
 --
 ALTER TABLE `ps_import_match`
   ADD PRIMARY KEY (`id_import_match`);
 
 --
--- Индексы таблицы `ps_info`
+-- Indeksy dla tabeli `ps_info`
 --
 ALTER TABLE `ps_info`
   ADD PRIMARY KEY (`id_info`);
 
 --
--- Индексы таблицы `ps_info_lang`
+-- Indeksy dla tabeli `ps_info_lang`
 --
 ALTER TABLE `ps_info_lang`
   ADD PRIMARY KEY (`id_info`,`id_lang`,`id_shop`);
 
 --
--- Индексы таблицы `ps_info_shop`
+-- Indeksy dla tabeli `ps_info_shop`
 --
 ALTER TABLE `ps_info_shop`
   ADD PRIMARY KEY (`id_info`,`id_shop`);
 
 --
--- Индексы таблицы `ps_lang`
+-- Indeksy dla tabeli `ps_lang`
 --
 ALTER TABLE `ps_lang`
   ADD PRIMARY KEY (`id_lang`);
 
 --
--- Индексы таблицы `ps_lang_shop`
+-- Indeksy dla tabeli `ps_lang_shop`
 --
 ALTER TABLE `ps_lang_shop`
   ADD PRIMARY KEY (`id_lang`,`id_shop`),
@@ -45295,7 +45690,7 @@ ALTER TABLE `ps_lang_shop`
   ADD KEY `IDX_2F43BFC7274A50A0` (`id_shop`);
 
 --
--- Индексы таблицы `ps_layered_category`
+-- Indeksy dla tabeli `ps_layered_category`
 --
 ALTER TABLE `ps_layered_category`
   ADD PRIMARY KEY (`id_layered_category`),
@@ -45303,62 +45698,62 @@ ALTER TABLE `ps_layered_category`
   ADD KEY `id_category` (`id_category`,`type`);
 
 --
--- Индексы таблицы `ps_layered_filter`
+-- Indeksy dla tabeli `ps_layered_filter`
 --
 ALTER TABLE `ps_layered_filter`
   ADD PRIMARY KEY (`id_layered_filter`);
 
 --
--- Индексы таблицы `ps_layered_filter_block`
+-- Indeksy dla tabeli `ps_layered_filter_block`
 --
 ALTER TABLE `ps_layered_filter_block`
   ADD PRIMARY KEY (`hash`);
 
 --
--- Индексы таблицы `ps_layered_filter_shop`
+-- Indeksy dla tabeli `ps_layered_filter_shop`
 --
 ALTER TABLE `ps_layered_filter_shop`
   ADD PRIMARY KEY (`id_layered_filter`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_layered_indexable_attribute_group`
+-- Indeksy dla tabeli `ps_layered_indexable_attribute_group`
 --
 ALTER TABLE `ps_layered_indexable_attribute_group`
   ADD PRIMARY KEY (`id_attribute_group`);
 
 --
--- Индексы таблицы `ps_layered_indexable_attribute_group_lang_value`
+-- Indeksy dla tabeli `ps_layered_indexable_attribute_group_lang_value`
 --
 ALTER TABLE `ps_layered_indexable_attribute_group_lang_value`
   ADD PRIMARY KEY (`id_attribute_group`,`id_lang`);
 
 --
--- Индексы таблицы `ps_layered_indexable_attribute_lang_value`
+-- Indeksy dla tabeli `ps_layered_indexable_attribute_lang_value`
 --
 ALTER TABLE `ps_layered_indexable_attribute_lang_value`
   ADD PRIMARY KEY (`id_attribute`,`id_lang`);
 
 --
--- Индексы таблицы `ps_layered_indexable_feature`
+-- Indeksy dla tabeli `ps_layered_indexable_feature`
 --
 ALTER TABLE `ps_layered_indexable_feature`
   ADD PRIMARY KEY (`id_feature`);
 
 --
--- Индексы таблицы `ps_layered_indexable_feature_lang_value`
+-- Indeksy dla tabeli `ps_layered_indexable_feature_lang_value`
 --
 ALTER TABLE `ps_layered_indexable_feature_lang_value`
   ADD PRIMARY KEY (`id_feature`,`id_lang`);
 
 --
--- Индексы таблицы `ps_layered_indexable_feature_value_lang_value`
+-- Indeksy dla tabeli `ps_layered_indexable_feature_value_lang_value`
 --
 ALTER TABLE `ps_layered_indexable_feature_value_lang_value`
   ADD PRIMARY KEY (`id_feature_value`,`id_lang`);
 
 --
--- Индексы таблицы `ps_layered_price_index`
+-- Indeksy dla tabeli `ps_layered_price_index`
 --
 ALTER TABLE `ps_layered_price_index`
   ADD PRIMARY KEY (`id_product`,`id_currency`,`id_shop`,`id_country`),
@@ -45367,89 +45762,89 @@ ALTER TABLE `ps_layered_price_index`
   ADD KEY `price_max` (`price_max`);
 
 --
--- Индексы таблицы `ps_layered_product_attribute`
+-- Indeksy dla tabeli `ps_layered_product_attribute`
 --
 ALTER TABLE `ps_layered_product_attribute`
   ADD PRIMARY KEY (`id_attribute`,`id_product`,`id_shop`),
   ADD UNIQUE KEY `id_attribute_group` (`id_attribute_group`,`id_attribute`,`id_product`,`id_shop`);
 
 --
--- Индексы таблицы `ps_linksmenutop`
+-- Indeksy dla tabeli `ps_linksmenutop`
 --
 ALTER TABLE `ps_linksmenutop`
   ADD PRIMARY KEY (`id_linksmenutop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_linksmenutop_lang`
+-- Indeksy dla tabeli `ps_linksmenutop_lang`
 --
 ALTER TABLE `ps_linksmenutop_lang`
   ADD KEY `id_linksmenutop` (`id_linksmenutop`,`id_lang`,`id_shop`);
 
 --
--- Индексы таблицы `ps_link_block`
+-- Indeksy dla tabeli `ps_link_block`
 --
 ALTER TABLE `ps_link_block`
   ADD PRIMARY KEY (`id_link_block`);
 
 --
--- Индексы таблицы `ps_link_block_lang`
+-- Indeksy dla tabeli `ps_link_block_lang`
 --
 ALTER TABLE `ps_link_block_lang`
   ADD PRIMARY KEY (`id_link_block`,`id_lang`);
 
 --
--- Индексы таблицы `ps_link_block_shop`
+-- Indeksy dla tabeli `ps_link_block_shop`
 --
 ALTER TABLE `ps_link_block_shop`
   ADD PRIMARY KEY (`id_link_block`,`id_shop`);
 
 --
--- Индексы таблицы `ps_log`
+-- Indeksy dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
   ADD PRIMARY KEY (`id_log`);
 
 --
--- Индексы таблицы `ps_mail`
+-- Indeksy dla tabeli `ps_mail`
 --
 ALTER TABLE `ps_mail`
   ADD PRIMARY KEY (`id_mail`),
   ADD KEY `recipient` (`recipient`(10));
 
 --
--- Индексы таблицы `ps_mailalert_customer_oos`
+-- Indeksy dla tabeli `ps_mailalert_customer_oos`
 --
 ALTER TABLE `ps_mailalert_customer_oos`
   ADD PRIMARY KEY (`id_customer`,`customer_email`,`id_product`,`id_product_attribute`,`id_shop`);
 
 --
--- Индексы таблицы `ps_manufacturer`
+-- Indeksy dla tabeli `ps_manufacturer`
 --
 ALTER TABLE `ps_manufacturer`
   ADD PRIMARY KEY (`id_manufacturer`);
 
 --
--- Индексы таблицы `ps_manufacturer_lang`
+-- Indeksy dla tabeli `ps_manufacturer_lang`
 --
 ALTER TABLE `ps_manufacturer_lang`
   ADD PRIMARY KEY (`id_manufacturer`,`id_lang`);
 
 --
--- Индексы таблицы `ps_manufacturer_shop`
+-- Indeksy dla tabeli `ps_manufacturer_shop`
 --
 ALTER TABLE `ps_manufacturer_shop`
   ADD PRIMARY KEY (`id_manufacturer`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_memcached_servers`
+-- Indeksy dla tabeli `ps_memcached_servers`
 --
 ALTER TABLE `ps_memcached_servers`
   ADD PRIMARY KEY (`id_memcached_server`);
 
 --
--- Индексы таблицы `ps_message`
+-- Indeksy dla tabeli `ps_message`
 --
 ALTER TABLE `ps_message`
   ADD PRIMARY KEY (`id_message`),
@@ -45459,20 +45854,20 @@ ALTER TABLE `ps_message`
   ADD KEY `id_employee` (`id_employee`);
 
 --
--- Индексы таблицы `ps_message_readed`
+-- Indeksy dla tabeli `ps_message_readed`
 --
 ALTER TABLE `ps_message_readed`
   ADD PRIMARY KEY (`id_message`,`id_employee`);
 
 --
--- Индексы таблицы `ps_meta`
+-- Indeksy dla tabeli `ps_meta`
 --
 ALTER TABLE `ps_meta`
   ADD PRIMARY KEY (`id_meta`),
   ADD UNIQUE KEY `page` (`page`);
 
 --
--- Индексы таблицы `ps_meta_lang`
+-- Indeksy dla tabeli `ps_meta_lang`
 --
 ALTER TABLE `ps_meta_lang`
   ADD PRIMARY KEY (`id_meta`,`id_shop`,`id_lang`),
@@ -45480,7 +45875,7 @@ ALTER TABLE `ps_meta_lang`
   ADD KEY `id_lang` (`id_lang`);
 
 --
--- Индексы таблицы `ps_module`
+-- Indeksy dla tabeli `ps_module`
 --
 ALTER TABLE `ps_module`
   ADD PRIMARY KEY (`id_module`),
@@ -45488,64 +45883,64 @@ ALTER TABLE `ps_module`
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `ps_module_access`
+-- Indeksy dla tabeli `ps_module_access`
 --
 ALTER TABLE `ps_module_access`
   ADD PRIMARY KEY (`id_profile`,`id_authorization_role`);
 
 --
--- Индексы таблицы `ps_module_carrier`
+-- Indeksy dla tabeli `ps_module_carrier`
 --
 ALTER TABLE `ps_module_carrier`
   ADD PRIMARY KEY (`id_module`,`id_shop`,`id_reference`);
 
 --
--- Индексы таблицы `ps_module_country`
+-- Indeksy dla tabeli `ps_module_country`
 --
 ALTER TABLE `ps_module_country`
   ADD PRIMARY KEY (`id_module`,`id_shop`,`id_country`);
 
 --
--- Индексы таблицы `ps_module_currency`
+-- Indeksy dla tabeli `ps_module_currency`
 --
 ALTER TABLE `ps_module_currency`
   ADD PRIMARY KEY (`id_module`,`id_shop`,`id_currency`),
   ADD KEY `id_module` (`id_module`);
 
 --
--- Индексы таблицы `ps_module_group`
+-- Indeksy dla tabeli `ps_module_group`
 --
 ALTER TABLE `ps_module_group`
   ADD PRIMARY KEY (`id_module`,`id_shop`,`id_group`);
 
 --
--- Индексы таблицы `ps_module_history`
+-- Indeksy dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `ps_module_preference`
+-- Indeksy dla tabeli `ps_module_preference`
 --
 ALTER TABLE `ps_module_preference`
   ADD PRIMARY KEY (`id_module_preference`),
   ADD UNIQUE KEY `employee_module` (`id_employee`,`module`);
 
 --
--- Индексы таблицы `ps_module_shop`
+-- Indeksy dla tabeli `ps_module_shop`
 --
 ALTER TABLE `ps_module_shop`
   ADD PRIMARY KEY (`id_module`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_operating_system`
+-- Indeksy dla tabeli `ps_operating_system`
 --
 ALTER TABLE `ps_operating_system`
   ADD PRIMARY KEY (`id_operating_system`);
 
 --
--- Индексы таблицы `ps_orders`
+-- Indeksy dla tabeli `ps_orders`
 --
 ALTER TABLE `ps_orders`
   ADD PRIMARY KEY (`id_order`),
@@ -45564,7 +45959,7 @@ ALTER TABLE `ps_orders`
   ADD KEY `date_add` (`date_add`);
 
 --
--- Индексы таблицы `ps_order_carrier`
+-- Indeksy dla tabeli `ps_order_carrier`
 --
 ALTER TABLE `ps_order_carrier`
   ADD PRIMARY KEY (`id_order_carrier`),
@@ -45573,7 +45968,7 @@ ALTER TABLE `ps_order_carrier`
   ADD KEY `id_order_invoice` (`id_order_invoice`);
 
 --
--- Индексы таблицы `ps_order_cart_rule`
+-- Indeksy dla tabeli `ps_order_cart_rule`
 --
 ALTER TABLE `ps_order_cart_rule`
   ADD PRIMARY KEY (`id_order_cart_rule`),
@@ -45581,7 +45976,7 @@ ALTER TABLE `ps_order_cart_rule`
   ADD KEY `id_cart_rule` (`id_cart_rule`);
 
 --
--- Индексы таблицы `ps_order_detail`
+-- Indeksy dla tabeli `ps_order_detail`
 --
 ALTER TABLE `ps_order_detail`
   ADD PRIMARY KEY (`id_order_detail`),
@@ -45592,14 +45987,14 @@ ALTER TABLE `ps_order_detail`
   ADD KEY `product_id` (`product_id`,`product_attribute_id`);
 
 --
--- Индексы таблицы `ps_order_detail_tax`
+-- Indeksy dla tabeli `ps_order_detail_tax`
 --
 ALTER TABLE `ps_order_detail_tax`
   ADD KEY `id_order_detail` (`id_order_detail`),
   ADD KEY `id_tax` (`id_tax`);
 
 --
--- Индексы таблицы `ps_order_history`
+-- Indeksy dla tabeli `ps_order_history`
 --
 ALTER TABLE `ps_order_history`
   ADD PRIMARY KEY (`id_order_history`),
@@ -45608,14 +46003,14 @@ ALTER TABLE `ps_order_history`
   ADD KEY `id_order_state` (`id_order_state`);
 
 --
--- Индексы таблицы `ps_order_invoice`
+-- Indeksy dla tabeli `ps_order_invoice`
 --
 ALTER TABLE `ps_order_invoice`
   ADD PRIMARY KEY (`id_order_invoice`),
   ADD KEY `id_order` (`id_order`);
 
 --
--- Индексы таблицы `ps_order_invoice_payment`
+-- Indeksy dla tabeli `ps_order_invoice_payment`
 --
 ALTER TABLE `ps_order_invoice_payment`
   ADD PRIMARY KEY (`id_order_invoice`,`id_order_payment`),
@@ -45623,32 +46018,32 @@ ALTER TABLE `ps_order_invoice_payment`
   ADD KEY `id_order` (`id_order`);
 
 --
--- Индексы таблицы `ps_order_invoice_tax`
+-- Indeksy dla tabeli `ps_order_invoice_tax`
 --
 ALTER TABLE `ps_order_invoice_tax`
   ADD KEY `id_tax` (`id_tax`);
 
 --
--- Индексы таблицы `ps_order_message`
+-- Indeksy dla tabeli `ps_order_message`
 --
 ALTER TABLE `ps_order_message`
   ADD PRIMARY KEY (`id_order_message`);
 
 --
--- Индексы таблицы `ps_order_message_lang`
+-- Indeksy dla tabeli `ps_order_message_lang`
 --
 ALTER TABLE `ps_order_message_lang`
   ADD PRIMARY KEY (`id_order_message`,`id_lang`);
 
 --
--- Индексы таблицы `ps_order_payment`
+-- Indeksy dla tabeli `ps_order_payment`
 --
 ALTER TABLE `ps_order_payment`
   ADD PRIMARY KEY (`id_order_payment`),
   ADD KEY `order_reference` (`order_reference`);
 
 --
--- Индексы таблицы `ps_order_return`
+-- Indeksy dla tabeli `ps_order_return`
 --
 ALTER TABLE `ps_order_return`
   ADD PRIMARY KEY (`id_order_return`),
@@ -45656,25 +46051,25 @@ ALTER TABLE `ps_order_return`
   ADD KEY `id_order` (`id_order`);
 
 --
--- Индексы таблицы `ps_order_return_detail`
+-- Indeksy dla tabeli `ps_order_return_detail`
 --
 ALTER TABLE `ps_order_return_detail`
   ADD PRIMARY KEY (`id_order_return`,`id_order_detail`,`id_customization`);
 
 --
--- Индексы таблицы `ps_order_return_state`
+-- Indeksy dla tabeli `ps_order_return_state`
 --
 ALTER TABLE `ps_order_return_state`
   ADD PRIMARY KEY (`id_order_return_state`);
 
 --
--- Индексы таблицы `ps_order_return_state_lang`
+-- Indeksy dla tabeli `ps_order_return_state_lang`
 --
 ALTER TABLE `ps_order_return_state_lang`
   ADD PRIMARY KEY (`id_order_return_state`,`id_lang`);
 
 --
--- Индексы таблицы `ps_order_slip`
+-- Indeksy dla tabeli `ps_order_slip`
 --
 ALTER TABLE `ps_order_slip`
   ADD PRIMARY KEY (`id_order_slip`),
@@ -45682,40 +46077,40 @@ ALTER TABLE `ps_order_slip`
   ADD KEY `id_order` (`id_order`);
 
 --
--- Индексы таблицы `ps_order_slip_detail`
+-- Indeksy dla tabeli `ps_order_slip_detail`
 --
 ALTER TABLE `ps_order_slip_detail`
   ADD PRIMARY KEY (`id_order_slip`,`id_order_detail`);
 
 --
--- Индексы таблицы `ps_order_slip_detail_tax`
+-- Indeksy dla tabeli `ps_order_slip_detail_tax`
 --
 ALTER TABLE `ps_order_slip_detail_tax`
   ADD KEY `id_order_slip_detail` (`id_order_slip_detail`),
   ADD KEY `id_tax` (`id_tax`);
 
 --
--- Индексы таблицы `ps_order_state`
+-- Indeksy dla tabeli `ps_order_state`
 --
 ALTER TABLE `ps_order_state`
   ADD PRIMARY KEY (`id_order_state`),
   ADD KEY `module_name` (`module_name`);
 
 --
--- Индексы таблицы `ps_order_state_lang`
+-- Indeksy dla tabeli `ps_order_state_lang`
 --
 ALTER TABLE `ps_order_state_lang`
   ADD PRIMARY KEY (`id_order_state`,`id_lang`);
 
 --
--- Индексы таблицы `ps_pack`
+-- Indeksy dla tabeli `ps_pack`
 --
 ALTER TABLE `ps_pack`
   ADD PRIMARY KEY (`id_product_pack`,`id_product_item`,`id_product_attribute_item`),
   ADD KEY `product_item` (`id_product_item`,`id_product_attribute_item`);
 
 --
--- Индексы таблицы `ps_page`
+-- Indeksy dla tabeli `ps_page`
 --
 ALTER TABLE `ps_page`
   ADD PRIMARY KEY (`id_page`),
@@ -45723,57 +46118,57 @@ ALTER TABLE `ps_page`
   ADD KEY `id_object` (`id_object`);
 
 --
--- Индексы таблицы `ps_pagenotfound`
+-- Indeksy dla tabeli `ps_pagenotfound`
 --
 ALTER TABLE `ps_pagenotfound`
   ADD PRIMARY KEY (`id_pagenotfound`),
   ADD KEY `date_add` (`date_add`);
 
 --
--- Индексы таблицы `ps_page_type`
+-- Indeksy dla tabeli `ps_page_type`
 --
 ALTER TABLE `ps_page_type`
   ADD PRIMARY KEY (`id_page_type`),
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `ps_page_viewed`
+-- Indeksy dla tabeli `ps_page_viewed`
 --
 ALTER TABLE `ps_page_viewed`
   ADD PRIMARY KEY (`id_page`,`id_date_range`,`id_shop`);
 
 --
--- Индексы таблицы `ps_paypal_capture`
+-- Indeksy dla tabeli `ps_paypal_capture`
 --
 ALTER TABLE `ps_paypal_capture`
   ADD PRIMARY KEY (`id_paypal_capture`);
 
 --
--- Индексы таблицы `ps_paypal_ipn`
+-- Indeksy dla tabeli `ps_paypal_ipn`
 --
 ALTER TABLE `ps_paypal_ipn`
   ADD PRIMARY KEY (`id_paypal_ipn`);
 
 --
--- Индексы таблицы `ps_paypal_order`
+-- Indeksy dla tabeli `ps_paypal_order`
 --
 ALTER TABLE `ps_paypal_order`
   ADD PRIMARY KEY (`id_paypal_order`);
 
 --
--- Индексы таблицы `ps_paypal_processlogger`
+-- Indeksy dla tabeli `ps_paypal_processlogger`
 --
 ALTER TABLE `ps_paypal_processlogger`
   ADD PRIMARY KEY (`id_paypal_processlogger`);
 
 --
--- Индексы таблицы `ps_paypal_vaulting`
+-- Indeksy dla tabeli `ps_paypal_vaulting`
 --
 ALTER TABLE `ps_paypal_vaulting`
   ADD PRIMARY KEY (`id_paypal_vaulting`);
 
 --
--- Индексы таблицы `ps_product`
+-- Indeksy dla tabeli `ps_product`
 --
 ALTER TABLE `ps_product`
   ADD PRIMARY KEY (`id_product`),
@@ -45787,13 +46182,13 @@ ALTER TABLE `ps_product`
   ADD KEY `supplier_reference_idx` (`supplier_reference`);
 
 --
--- Индексы таблицы `ps_product_attachment`
+-- Indeksy dla tabeli `ps_product_attachment`
 --
 ALTER TABLE `ps_product_attachment`
   ADD PRIMARY KEY (`id_product`,`id_attachment`);
 
 --
--- Индексы таблицы `ps_product_attribute`
+-- Indeksy dla tabeli `ps_product_attribute`
 --
 ALTER TABLE `ps_product_attribute`
   ADD PRIMARY KEY (`id_product_attribute`),
@@ -45804,52 +46199,52 @@ ALTER TABLE `ps_product_attribute`
   ADD KEY `id_product_id_product_attribute` (`id_product_attribute`,`id_product`);
 
 --
--- Индексы таблицы `ps_product_attribute_combination`
+-- Indeksy dla tabeli `ps_product_attribute_combination`
 --
 ALTER TABLE `ps_product_attribute_combination`
   ADD PRIMARY KEY (`id_attribute`,`id_product_attribute`),
   ADD KEY `id_product_attribute` (`id_product_attribute`);
 
 --
--- Индексы таблицы `ps_product_attribute_image`
+-- Indeksy dla tabeli `ps_product_attribute_image`
 --
 ALTER TABLE `ps_product_attribute_image`
   ADD PRIMARY KEY (`id_product_attribute`,`id_image`),
   ADD KEY `id_image` (`id_image`);
 
 --
--- Индексы таблицы `ps_product_attribute_shop`
+-- Indeksy dla tabeli `ps_product_attribute_shop`
 --
 ALTER TABLE `ps_product_attribute_shop`
   ADD PRIMARY KEY (`id_product_attribute`,`id_shop`),
   ADD UNIQUE KEY `id_product` (`id_product`,`id_shop`,`default_on`);
 
 --
--- Индексы таблицы `ps_product_carrier`
+-- Indeksy dla tabeli `ps_product_carrier`
 --
 ALTER TABLE `ps_product_carrier`
   ADD PRIMARY KEY (`id_product`,`id_carrier_reference`,`id_shop`);
 
 --
--- Индексы таблицы `ps_product_country_tax`
+-- Indeksy dla tabeli `ps_product_country_tax`
 --
 ALTER TABLE `ps_product_country_tax`
   ADD PRIMARY KEY (`id_product`,`id_country`);
 
 --
--- Индексы таблицы `ps_product_download`
+-- Indeksy dla tabeli `ps_product_download`
 --
 ALTER TABLE `ps_product_download`
   ADD PRIMARY KEY (`id_product_download`);
 
 --
--- Индексы таблицы `ps_product_group_reduction_cache`
+-- Indeksy dla tabeli `ps_product_group_reduction_cache`
 --
 ALTER TABLE `ps_product_group_reduction_cache`
   ADD PRIMARY KEY (`id_product`,`id_group`);
 
 --
--- Индексы таблицы `ps_product_lang`
+-- Indeksy dla tabeli `ps_product_lang`
 --
 ALTER TABLE `ps_product_lang`
   ADD PRIMARY KEY (`id_product`,`id_shop`,`id_lang`),
@@ -45857,14 +46252,14 @@ ALTER TABLE `ps_product_lang`
   ADD KEY `name` (`name`);
 
 --
--- Индексы таблицы `ps_product_sale`
+-- Indeksy dla tabeli `ps_product_sale`
 --
 ALTER TABLE `ps_product_sale`
   ADD PRIMARY KEY (`id_product`),
   ADD KEY `quantity` (`quantity`);
 
 --
--- Индексы таблицы `ps_product_shop`
+-- Indeksy dla tabeli `ps_product_shop`
 --
 ALTER TABLE `ps_product_shop`
   ADD PRIMARY KEY (`id_product`,`id_shop`),
@@ -45873,7 +46268,7 @@ ALTER TABLE `ps_product_shop`
   ADD KEY `indexed` (`indexed`,`active`,`id_product`);
 
 --
--- Индексы таблицы `ps_product_supplier`
+-- Indeksy dla tabeli `ps_product_supplier`
 --
 ALTER TABLE `ps_product_supplier`
   ADD PRIMARY KEY (`id_product_supplier`),
@@ -45881,7 +46276,7 @@ ALTER TABLE `ps_product_supplier`
   ADD KEY `id_supplier` (`id_supplier`,`id_product`);
 
 --
--- Индексы таблицы `ps_product_tag`
+-- Indeksy dla tabeli `ps_product_tag`
 --
 ALTER TABLE `ps_product_tag`
   ADD PRIMARY KEY (`id_product`,`id_tag`),
@@ -45889,177 +46284,177 @@ ALTER TABLE `ps_product_tag`
   ADD KEY `id_lang` (`id_lang`,`id_tag`);
 
 --
--- Индексы таблицы `ps_profile`
+-- Indeksy dla tabeli `ps_profile`
 --
 ALTER TABLE `ps_profile`
   ADD PRIMARY KEY (`id_profile`);
 
 --
--- Индексы таблицы `ps_profile_lang`
+-- Indeksy dla tabeli `ps_profile_lang`
 --
 ALTER TABLE `ps_profile_lang`
   ADD PRIMARY KEY (`id_profile`,`id_lang`);
 
 --
--- Индексы таблицы `ps_psgdpr_consent`
+-- Indeksy dla tabeli `ps_psgdpr_consent`
 --
 ALTER TABLE `ps_psgdpr_consent`
   ADD PRIMARY KEY (`id_gdpr_consent`,`id_module`);
 
 --
--- Индексы таблицы `ps_psgdpr_consent_lang`
+-- Indeksy dla tabeli `ps_psgdpr_consent_lang`
 --
 ALTER TABLE `ps_psgdpr_consent_lang`
   ADD PRIMARY KEY (`id_gdpr_consent`,`id_lang`,`id_shop`);
 
 --
--- Индексы таблицы `ps_psgdpr_log`
+-- Indeksy dla tabeli `ps_psgdpr_log`
 --
 ALTER TABLE `ps_psgdpr_log`
   ADD PRIMARY KEY (`id_gdpr_log`);
 
 --
--- Индексы таблицы `ps_psreassurance`
+-- Indeksy dla tabeli `ps_psreassurance`
 --
 ALTER TABLE `ps_psreassurance`
   ADD PRIMARY KEY (`id_psreassurance`);
 
 --
--- Индексы таблицы `ps_psreassurance_lang`
+-- Indeksy dla tabeli `ps_psreassurance_lang`
 --
 ALTER TABLE `ps_psreassurance_lang`
   ADD PRIMARY KEY (`id_psreassurance`,`id_shop`,`id_lang`);
 
 --
--- Индексы таблицы `ps_quick_access`
+-- Indeksy dla tabeli `ps_quick_access`
 --
 ALTER TABLE `ps_quick_access`
   ADD PRIMARY KEY (`id_quick_access`);
 
 --
--- Индексы таблицы `ps_quick_access_lang`
+-- Indeksy dla tabeli `ps_quick_access_lang`
 --
 ALTER TABLE `ps_quick_access_lang`
   ADD PRIMARY KEY (`id_quick_access`,`id_lang`);
 
 --
--- Индексы таблицы `ps_range_price`
+-- Indeksy dla tabeli `ps_range_price`
 --
 ALTER TABLE `ps_range_price`
   ADD PRIMARY KEY (`id_range_price`),
   ADD UNIQUE KEY `id_carrier` (`id_carrier`,`delimiter1`,`delimiter2`);
 
 --
--- Индексы таблицы `ps_range_weight`
+-- Indeksy dla tabeli `ps_range_weight`
 --
 ALTER TABLE `ps_range_weight`
   ADD PRIMARY KEY (`id_range_weight`),
   ADD UNIQUE KEY `id_carrier` (`id_carrier`,`delimiter1`,`delimiter2`);
 
 --
--- Индексы таблицы `ps_reassurance`
+-- Indeksy dla tabeli `ps_reassurance`
 --
 ALTER TABLE `ps_reassurance`
   ADD PRIMARY KEY (`id_reassurance`);
 
 --
--- Индексы таблицы `ps_reassurance_lang`
+-- Indeksy dla tabeli `ps_reassurance_lang`
 --
 ALTER TABLE `ps_reassurance_lang`
   ADD PRIMARY KEY (`id_reassurance`,`id_lang`);
 
 --
--- Индексы таблицы `ps_referrer`
+-- Indeksy dla tabeli `ps_referrer`
 --
 ALTER TABLE `ps_referrer`
   ADD PRIMARY KEY (`id_referrer`);
 
 --
--- Индексы таблицы `ps_referrer_cache`
+-- Indeksy dla tabeli `ps_referrer_cache`
 --
 ALTER TABLE `ps_referrer_cache`
   ADD PRIMARY KEY (`id_connections_source`,`id_referrer`);
 
 --
--- Индексы таблицы `ps_referrer_shop`
+-- Indeksy dla tabeli `ps_referrer_shop`
 --
 ALTER TABLE `ps_referrer_shop`
   ADD PRIMARY KEY (`id_referrer`,`id_shop`);
 
 --
--- Индексы таблицы `ps_request_sql`
+-- Indeksy dla tabeli `ps_request_sql`
 --
 ALTER TABLE `ps_request_sql`
   ADD PRIMARY KEY (`id_request_sql`);
 
 --
--- Индексы таблицы `ps_required_field`
+-- Indeksy dla tabeli `ps_required_field`
 --
 ALTER TABLE `ps_required_field`
   ADD PRIMARY KEY (`id_required_field`),
   ADD KEY `object_name` (`object_name`);
 
 --
--- Индексы таблицы `ps_risk`
+-- Indeksy dla tabeli `ps_risk`
 --
 ALTER TABLE `ps_risk`
   ADD PRIMARY KEY (`id_risk`);
 
 --
--- Индексы таблицы `ps_risk_lang`
+-- Indeksy dla tabeli `ps_risk_lang`
 --
 ALTER TABLE `ps_risk_lang`
   ADD PRIMARY KEY (`id_risk`,`id_lang`),
   ADD KEY `id_risk` (`id_risk`);
 
 --
--- Индексы таблицы `ps_search_engine`
+-- Indeksy dla tabeli `ps_search_engine`
 --
 ALTER TABLE `ps_search_engine`
   ADD PRIMARY KEY (`id_search_engine`);
 
 --
--- Индексы таблицы `ps_search_index`
+-- Indeksy dla tabeli `ps_search_index`
 --
 ALTER TABLE `ps_search_index`
   ADD PRIMARY KEY (`id_word`,`id_product`),
   ADD KEY `id_product` (`id_product`,`weight`);
 
 --
--- Индексы таблицы `ps_search_word`
+-- Indeksy dla tabeli `ps_search_word`
 --
 ALTER TABLE `ps_search_word`
   ADD PRIMARY KEY (`id_word`),
   ADD UNIQUE KEY `id_lang` (`id_lang`,`id_shop`,`word`);
 
 --
--- Индексы таблицы `ps_sekeyword`
+-- Indeksy dla tabeli `ps_sekeyword`
 --
 ALTER TABLE `ps_sekeyword`
   ADD PRIMARY KEY (`id_sekeyword`);
 
 --
--- Индексы таблицы `ps_shop`
+-- Indeksy dla tabeli `ps_shop`
 --
 ALTER TABLE `ps_shop`
   ADD PRIMARY KEY (`id_shop`),
   ADD KEY `IDX_CBDFBB9EF5C9E40` (`id_shop_group`);
 
 --
--- Индексы таблицы `ps_shop_group`
+-- Indeksy dla tabeli `ps_shop_group`
 --
 ALTER TABLE `ps_shop_group`
   ADD PRIMARY KEY (`id_shop_group`);
 
 --
--- Индексы таблицы `ps_shop_url`
+-- Indeksy dla tabeli `ps_shop_url`
 --
 ALTER TABLE `ps_shop_url`
   ADD PRIMARY KEY (`id_shop_url`),
   ADD KEY `IDX_279F19DA274A50A0` (`id_shop`);
 
 --
--- Индексы таблицы `ps_smarty_cache`
+-- Indeksy dla tabeli `ps_smarty_cache`
 --
 ALTER TABLE `ps_smarty_cache`
   ADD PRIMARY KEY (`id_smarty_cache`),
@@ -46068,19 +46463,19 @@ ALTER TABLE `ps_smarty_cache`
   ADD KEY `modified` (`modified`);
 
 --
--- Индексы таблицы `ps_smarty_last_flush`
+-- Indeksy dla tabeli `ps_smarty_last_flush`
 --
 ALTER TABLE `ps_smarty_last_flush`
   ADD PRIMARY KEY (`type`);
 
 --
--- Индексы таблицы `ps_smarty_lazy_cache`
+-- Indeksy dla tabeli `ps_smarty_lazy_cache`
 --
 ALTER TABLE `ps_smarty_lazy_cache`
   ADD PRIMARY KEY (`template_hash`,`cache_id`,`compile_id`);
 
 --
--- Индексы таблицы `ps_specific_price`
+-- Indeksy dla tabeli `ps_specific_price`
 --
 ALTER TABLE `ps_specific_price`
   ADD PRIMARY KEY (`id_specific_price`),
@@ -46096,34 +46491,34 @@ ALTER TABLE `ps_specific_price`
   ADD KEY `to` (`to`);
 
 --
--- Индексы таблицы `ps_specific_price_priority`
+-- Indeksy dla tabeli `ps_specific_price_priority`
 --
 ALTER TABLE `ps_specific_price_priority`
   ADD PRIMARY KEY (`id_specific_price_priority`,`id_product`),
   ADD UNIQUE KEY `id_product` (`id_product`);
 
 --
--- Индексы таблицы `ps_specific_price_rule`
+-- Indeksy dla tabeli `ps_specific_price_rule`
 --
 ALTER TABLE `ps_specific_price_rule`
   ADD PRIMARY KEY (`id_specific_price_rule`),
   ADD KEY `id_product` (`id_shop`,`id_currency`,`id_country`,`id_group`,`from_quantity`,`from`,`to`);
 
 --
--- Индексы таблицы `ps_specific_price_rule_condition`
+-- Indeksy dla tabeli `ps_specific_price_rule_condition`
 --
 ALTER TABLE `ps_specific_price_rule_condition`
   ADD PRIMARY KEY (`id_specific_price_rule_condition`),
   ADD KEY `id_specific_price_rule_condition_group` (`id_specific_price_rule_condition_group`);
 
 --
--- Индексы таблицы `ps_specific_price_rule_condition_group`
+-- Indeksy dla tabeli `ps_specific_price_rule_condition_group`
 --
 ALTER TABLE `ps_specific_price_rule_condition_group`
   ADD PRIMARY KEY (`id_specific_price_rule_condition_group`,`id_specific_price_rule`);
 
 --
--- Индексы таблицы `ps_state`
+-- Indeksy dla tabeli `ps_state`
 --
 ALTER TABLE `ps_state`
   ADD PRIMARY KEY (`id_state`),
@@ -46132,13 +46527,13 @@ ALTER TABLE `ps_state`
   ADD KEY `id_zone` (`id_zone`);
 
 --
--- Индексы таблицы `ps_statssearch`
+-- Indeksy dla tabeli `ps_statssearch`
 --
 ALTER TABLE `ps_statssearch`
   ADD PRIMARY KEY (`id_statssearch`);
 
 --
--- Индексы таблицы `ps_stock`
+-- Indeksy dla tabeli `ps_stock`
 --
 ALTER TABLE `ps_stock`
   ADD PRIMARY KEY (`id_stock`),
@@ -46147,7 +46542,7 @@ ALTER TABLE `ps_stock`
   ADD KEY `id_product_attribute` (`id_product_attribute`);
 
 --
--- Индексы таблицы `ps_stock_available`
+-- Indeksy dla tabeli `ps_stock_available`
 --
 ALTER TABLE `ps_stock_available`
   ADD PRIMARY KEY (`id_stock_available`),
@@ -46158,7 +46553,7 @@ ALTER TABLE `ps_stock_available`
   ADD KEY `id_product_attribute` (`id_product_attribute`);
 
 --
--- Индексы таблицы `ps_stock_mvt`
+-- Indeksy dla tabeli `ps_stock_mvt`
 --
 ALTER TABLE `ps_stock_mvt`
   ADD PRIMARY KEY (`id_stock_mvt`),
@@ -46166,57 +46561,57 @@ ALTER TABLE `ps_stock_mvt`
   ADD KEY `id_stock_mvt_reason` (`id_stock_mvt_reason`);
 
 --
--- Индексы таблицы `ps_stock_mvt_reason`
+-- Indeksy dla tabeli `ps_stock_mvt_reason`
 --
 ALTER TABLE `ps_stock_mvt_reason`
   ADD PRIMARY KEY (`id_stock_mvt_reason`);
 
 --
--- Индексы таблицы `ps_stock_mvt_reason_lang`
+-- Indeksy dla tabeli `ps_stock_mvt_reason_lang`
 --
 ALTER TABLE `ps_stock_mvt_reason_lang`
   ADD PRIMARY KEY (`id_stock_mvt_reason`,`id_lang`);
 
 --
--- Индексы таблицы `ps_store`
+-- Indeksy dla tabeli `ps_store`
 --
 ALTER TABLE `ps_store`
   ADD PRIMARY KEY (`id_store`);
 
 --
--- Индексы таблицы `ps_store_lang`
+-- Indeksy dla tabeli `ps_store_lang`
 --
 ALTER TABLE `ps_store_lang`
   ADD PRIMARY KEY (`id_store`,`id_lang`);
 
 --
--- Индексы таблицы `ps_store_shop`
+-- Indeksy dla tabeli `ps_store_shop`
 --
 ALTER TABLE `ps_store_shop`
   ADD PRIMARY KEY (`id_store`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_supplier`
+-- Indeksy dla tabeli `ps_supplier`
 --
 ALTER TABLE `ps_supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
--- Индексы таблицы `ps_supplier_lang`
+-- Indeksy dla tabeli `ps_supplier_lang`
 --
 ALTER TABLE `ps_supplier_lang`
   ADD PRIMARY KEY (`id_supplier`,`id_lang`);
 
 --
--- Индексы таблицы `ps_supplier_shop`
+-- Indeksy dla tabeli `ps_supplier_shop`
 --
 ALTER TABLE `ps_supplier_shop`
   ADD PRIMARY KEY (`id_supplier`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_supply_order`
+-- Indeksy dla tabeli `ps_supply_order`
 --
 ALTER TABLE `ps_supply_order`
   ADD PRIMARY KEY (`id_supply_order`),
@@ -46225,7 +46620,7 @@ ALTER TABLE `ps_supply_order`
   ADD KEY `reference` (`reference`);
 
 --
--- Индексы таблицы `ps_supply_order_detail`
+-- Indeksy dla tabeli `ps_supply_order_detail`
 --
 ALTER TABLE `ps_supply_order_detail`
   ADD PRIMARY KEY (`id_supply_order_detail`),
@@ -46234,7 +46629,7 @@ ALTER TABLE `ps_supply_order_detail`
   ADD KEY `id_product_product_attribute` (`id_product`,`id_product_attribute`);
 
 --
--- Индексы таблицы `ps_supply_order_history`
+-- Indeksy dla tabeli `ps_supply_order_history`
 --
 ALTER TABLE `ps_supply_order_history`
   ADD PRIMARY KEY (`id_supply_order_history`),
@@ -46243,7 +46638,7 @@ ALTER TABLE `ps_supply_order_history`
   ADD KEY `id_state` (`id_state`);
 
 --
--- Индексы таблицы `ps_supply_order_receipt_history`
+-- Indeksy dla tabeli `ps_supply_order_receipt_history`
 --
 ALTER TABLE `ps_supply_order_receipt_history`
   ADD PRIMARY KEY (`id_supply_order_receipt_history`),
@@ -46251,31 +46646,31 @@ ALTER TABLE `ps_supply_order_receipt_history`
   ADD KEY `id_supply_order_state` (`id_supply_order_state`);
 
 --
--- Индексы таблицы `ps_supply_order_state`
+-- Indeksy dla tabeli `ps_supply_order_state`
 --
 ALTER TABLE `ps_supply_order_state`
   ADD PRIMARY KEY (`id_supply_order_state`);
 
 --
--- Индексы таблицы `ps_supply_order_state_lang`
+-- Indeksy dla tabeli `ps_supply_order_state_lang`
 --
 ALTER TABLE `ps_supply_order_state_lang`
   ADD PRIMARY KEY (`id_supply_order_state`,`id_lang`);
 
 --
--- Индексы таблицы `ps_tab`
+-- Indeksy dla tabeli `ps_tab`
 --
 ALTER TABLE `ps_tab`
   ADD PRIMARY KEY (`id_tab`);
 
 --
--- Индексы таблицы `ps_tab_advice`
+-- Indeksy dla tabeli `ps_tab_advice`
 --
 ALTER TABLE `ps_tab_advice`
   ADD PRIMARY KEY (`id_tab`,`id_advice`);
 
 --
--- Индексы таблицы `ps_tab_lang`
+-- Indeksy dla tabeli `ps_tab_lang`
 --
 ALTER TABLE `ps_tab_lang`
   ADD PRIMARY KEY (`id_tab`,`id_lang`),
@@ -46283,14 +46678,14 @@ ALTER TABLE `ps_tab_lang`
   ADD KEY `IDX_CFD9262DBA299860` (`id_lang`);
 
 --
--- Индексы таблицы `ps_tab_module_preference`
+-- Indeksy dla tabeli `ps_tab_module_preference`
 --
 ALTER TABLE `ps_tab_module_preference`
   ADD PRIMARY KEY (`id_tab_module_preference`),
   ADD UNIQUE KEY `employee_module` (`id_employee`,`id_tab`,`module`);
 
 --
--- Индексы таблицы `ps_tag`
+-- Indeksy dla tabeli `ps_tag`
 --
 ALTER TABLE `ps_tag`
   ADD PRIMARY KEY (`id_tag`),
@@ -46298,26 +46693,26 @@ ALTER TABLE `ps_tag`
   ADD KEY `id_lang` (`id_lang`);
 
 --
--- Индексы таблицы `ps_tag_count`
+-- Indeksy dla tabeli `ps_tag_count`
 --
 ALTER TABLE `ps_tag_count`
   ADD PRIMARY KEY (`id_group`,`id_tag`),
   ADD KEY `id_group` (`id_group`,`id_lang`,`id_shop`,`counter`);
 
 --
--- Индексы таблицы `ps_tax`
+-- Indeksy dla tabeli `ps_tax`
 --
 ALTER TABLE `ps_tax`
   ADD PRIMARY KEY (`id_tax`);
 
 --
--- Индексы таблицы `ps_tax_lang`
+-- Indeksy dla tabeli `ps_tax_lang`
 --
 ALTER TABLE `ps_tax_lang`
   ADD PRIMARY KEY (`id_tax`,`id_lang`);
 
 --
--- Индексы таблицы `ps_tax_rule`
+-- Indeksy dla tabeli `ps_tax_rule`
 --
 ALTER TABLE `ps_tax_rule`
   ADD PRIMARY KEY (`id_tax_rule`),
@@ -46326,26 +46721,26 @@ ALTER TABLE `ps_tax_rule`
   ADD KEY `category_getproducts` (`id_tax_rules_group`,`id_country`,`id_state`,`zipcode_from`);
 
 --
--- Индексы таблицы `ps_tax_rules_group`
+-- Indeksy dla tabeli `ps_tax_rules_group`
 --
 ALTER TABLE `ps_tax_rules_group`
   ADD PRIMARY KEY (`id_tax_rules_group`);
 
 --
--- Индексы таблицы `ps_tax_rules_group_shop`
+-- Indeksy dla tabeli `ps_tax_rules_group_shop`
 --
 ALTER TABLE `ps_tax_rules_group_shop`
   ADD PRIMARY KEY (`id_tax_rules_group`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_timezone`
+-- Indeksy dla tabeli `ps_timezone`
 --
 ALTER TABLE `ps_timezone`
   ADD PRIMARY KEY (`id_timezone`);
 
 --
--- Индексы таблицы `ps_translation`
+-- Indeksy dla tabeli `ps_translation`
 --
 ALTER TABLE `ps_translation`
   ADD PRIMARY KEY (`id_translation`),
@@ -46353,13 +46748,13 @@ ALTER TABLE `ps_translation`
   ADD KEY `key` (`domain`);
 
 --
--- Индексы таблицы `ps_warehouse`
+-- Indeksy dla tabeli `ps_warehouse`
 --
 ALTER TABLE `ps_warehouse`
   ADD PRIMARY KEY (`id_warehouse`);
 
 --
--- Индексы таблицы `ps_warehouse_carrier`
+-- Indeksy dla tabeli `ps_warehouse_carrier`
 --
 ALTER TABLE `ps_warehouse_carrier`
   ADD PRIMARY KEY (`id_warehouse`,`id_carrier`),
@@ -46367,14 +46762,14 @@ ALTER TABLE `ps_warehouse_carrier`
   ADD KEY `id_carrier` (`id_carrier`);
 
 --
--- Индексы таблицы `ps_warehouse_product_location`
+-- Indeksy dla tabeli `ps_warehouse_product_location`
 --
 ALTER TABLE `ps_warehouse_product_location`
   ADD PRIMARY KEY (`id_warehouse_product_location`),
   ADD UNIQUE KEY `id_product` (`id_product`,`id_product_attribute`,`id_warehouse`);
 
 --
--- Индексы таблицы `ps_warehouse_shop`
+-- Indeksy dla tabeli `ps_warehouse_shop`
 --
 ALTER TABLE `ps_warehouse_shop`
   ADD PRIMARY KEY (`id_warehouse`,`id_shop`),
@@ -46382,21 +46777,21 @@ ALTER TABLE `ps_warehouse_shop`
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_webservice_account`
+-- Indeksy dla tabeli `ps_webservice_account`
 --
 ALTER TABLE `ps_webservice_account`
   ADD PRIMARY KEY (`id_webservice_account`),
   ADD KEY `key` (`key`);
 
 --
--- Индексы таблицы `ps_webservice_account_shop`
+-- Indeksy dla tabeli `ps_webservice_account_shop`
 --
 ALTER TABLE `ps_webservice_account_shop`
   ADD PRIMARY KEY (`id_webservice_account`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- Индексы таблицы `ps_webservice_permission`
+-- Indeksy dla tabeli `ps_webservice_permission`
 --
 ALTER TABLE `ps_webservice_permission`
   ADD PRIMARY KEY (`id_webservice_permission`),
@@ -46406,924 +46801,924 @@ ALTER TABLE `ps_webservice_permission`
   ADD KEY `id_webservice_account` (`id_webservice_account`);
 
 --
--- Индексы таблицы `ps_web_browser`
+-- Indeksy dla tabeli `ps_web_browser`
 --
 ALTER TABLE `ps_web_browser`
   ADD PRIMARY KEY (`id_web_browser`);
 
 --
--- Индексы таблицы `ps_zone`
+-- Indeksy dla tabeli `ps_zone`
 --
 ALTER TABLE `ps_zone`
   ADD PRIMARY KEY (`id_zone`);
 
 --
--- Индексы таблицы `ps_zone_shop`
+-- Indeksy dla tabeli `ps_zone_shop`
 --
 ALTER TABLE `ps_zone_shop`
   ADD PRIMARY KEY (`id_zone`,`id_shop`),
   ADD KEY `id_shop` (`id_shop`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT для таблицы `ps_address`
+-- AUTO_INCREMENT dla tabeli `ps_address`
 --
 ALTER TABLE `ps_address`
-  MODIFY `id_address` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_address` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `ps_admin_filter`
+-- AUTO_INCREMENT dla tabeli `ps_admin_filter`
 --
 ALTER TABLE `ps_admin_filter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT для таблицы `ps_advice`
+-- AUTO_INCREMENT dla tabeli `ps_advice`
 --
 ALTER TABLE `ps_advice`
   MODIFY `id_advice` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_alias`
+-- AUTO_INCREMENT dla tabeli `ps_alias`
 --
 ALTER TABLE `ps_alias`
   MODIFY `id_alias` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_attachment`
+-- AUTO_INCREMENT dla tabeli `ps_attachment`
 --
 ALTER TABLE `ps_attachment`
   MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_attachment_lang`
+-- AUTO_INCREMENT dla tabeli `ps_attachment_lang`
 --
 ALTER TABLE `ps_attachment_lang`
   MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_attribute`
+-- AUTO_INCREMENT dla tabeli `ps_attribute`
 --
 ALTER TABLE `ps_attribute`
   MODIFY `id_attribute` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT для таблицы `ps_attribute_group`
+-- AUTO_INCREMENT dla tabeli `ps_attribute_group`
 --
 ALTER TABLE `ps_attribute_group`
   MODIFY `id_attribute_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_attribute_impact`
+-- AUTO_INCREMENT dla tabeli `ps_attribute_impact`
 --
 ALTER TABLE `ps_attribute_impact`
   MODIFY `id_attribute_impact` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_authorization_role`
+-- AUTO_INCREMENT dla tabeli `ps_authorization_role`
 --
 ALTER TABLE `ps_authorization_role`
-  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=901;
+  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=913;
 
 --
--- AUTO_INCREMENT для таблицы `ps_badge`
+-- AUTO_INCREMENT dla tabeli `ps_badge`
 --
 ALTER TABLE `ps_badge`
   MODIFY `id_badge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
--- AUTO_INCREMENT для таблицы `ps_carrier`
+-- AUTO_INCREMENT dla tabeli `ps_carrier`
 --
 ALTER TABLE `ps_carrier`
-  MODIFY `id_carrier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_carrier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cart`
+-- AUTO_INCREMENT dla tabeli `ps_cart`
 --
 ALTER TABLE `ps_cart`
-  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cart_rule`
+-- AUTO_INCREMENT dla tabeli `ps_cart_rule`
 --
 ALTER TABLE `ps_cart_rule`
   MODIFY `id_cart_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cart_rule_product_rule`
+-- AUTO_INCREMENT dla tabeli `ps_cart_rule_product_rule`
 --
 ALTER TABLE `ps_cart_rule_product_rule`
   MODIFY `id_product_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cart_rule_product_rule_group`
+-- AUTO_INCREMENT dla tabeli `ps_cart_rule_product_rule_group`
 --
 ALTER TABLE `ps_cart_rule_product_rule_group`
   MODIFY `id_product_rule_group` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_category`
+-- AUTO_INCREMENT dla tabeli `ps_category`
 --
 ALTER TABLE `ps_category`
   MODIFY `id_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cms`
+-- AUTO_INCREMENT dla tabeli `ps_cms`
 --
 ALTER TABLE `ps_cms`
   MODIFY `id_cms` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cms_category`
+-- AUTO_INCREMENT dla tabeli `ps_cms_category`
 --
 ALTER TABLE `ps_cms_category`
   MODIFY `id_cms_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cms_category_shop`
+-- AUTO_INCREMENT dla tabeli `ps_cms_category_shop`
 --
 ALTER TABLE `ps_cms_category_shop`
   MODIFY `id_cms_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_cms_role`
+-- AUTO_INCREMENT dla tabeli `ps_cms_role`
 --
 ALTER TABLE `ps_cms_role`
   MODIFY `id_cms_role` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_condition`
+-- AUTO_INCREMENT dla tabeli `ps_condition`
 --
 ALTER TABLE `ps_condition`
   MODIFY `id_condition` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
--- AUTO_INCREMENT для таблицы `ps_configuration`
+-- AUTO_INCREMENT dla tabeli `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
+  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=467;
 
 --
--- AUTO_INCREMENT для таблицы `ps_configuration_kpi`
+-- AUTO_INCREMENT dla tabeli `ps_configuration_kpi`
 --
 ALTER TABLE `ps_configuration_kpi`
-  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
--- AUTO_INCREMENT для таблицы `ps_connections`
+-- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT для таблицы `ps_connections_source`
+-- AUTO_INCREMENT dla tabeli `ps_connections_source`
 --
 ALTER TABLE `ps_connections_source`
   MODIFY `id_connections_source` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_contact`
+-- AUTO_INCREMENT dla tabeli `ps_contact`
 --
 ALTER TABLE `ps_contact`
   MODIFY `id_contact` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_country`
+-- AUTO_INCREMENT dla tabeli `ps_country`
 --
 ALTER TABLE `ps_country`
   MODIFY `id_country` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
--- AUTO_INCREMENT для таблицы `ps_currency`
+-- AUTO_INCREMENT dla tabeli `ps_currency`
 --
 ALTER TABLE `ps_currency`
   MODIFY `id_currency` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_customer`
+-- AUTO_INCREMENT dla tabeli `ps_customer`
 --
 ALTER TABLE `ps_customer`
-  MODIFY `id_customer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_customer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `ps_customer_message`
+-- AUTO_INCREMENT dla tabeli `ps_customer_message`
 --
 ALTER TABLE `ps_customer_message`
   MODIFY `id_customer_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_customer_session`
+-- AUTO_INCREMENT dla tabeli `ps_customer_session`
 --
 ALTER TABLE `ps_customer_session`
-  MODIFY `id_customer_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_customer_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_customer_thread`
+-- AUTO_INCREMENT dla tabeli `ps_customer_thread`
 --
 ALTER TABLE `ps_customer_thread`
   MODIFY `id_customer_thread` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_customization`
+-- AUTO_INCREMENT dla tabeli `ps_customization`
 --
 ALTER TABLE `ps_customization`
   MODIFY `id_customization` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_customization_field`
+-- AUTO_INCREMENT dla tabeli `ps_customization_field`
 --
 ALTER TABLE `ps_customization_field`
   MODIFY `id_customization_field` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_date_range`
+-- AUTO_INCREMENT dla tabeli `ps_date_range`
 --
 ALTER TABLE `ps_date_range`
   MODIFY `id_date_range` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_delivery`
+-- AUTO_INCREMENT dla tabeli `ps_delivery`
 --
 ALTER TABLE `ps_delivery`
-  MODIFY `id_delivery` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_delivery` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT для таблицы `ps_emailsubscription`
+-- AUTO_INCREMENT dla tabeli `ps_emailsubscription`
 --
 ALTER TABLE `ps_emailsubscription`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_employee`
+-- AUTO_INCREMENT dla tabeli `ps_employee`
 --
 ALTER TABLE `ps_employee`
   MODIFY `id_employee` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_employee_session`
+-- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `ps_feature`
+-- AUTO_INCREMENT dla tabeli `ps_feature`
 --
 ALTER TABLE `ps_feature`
   MODIFY `id_feature` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `ps_feature_flag`
+-- AUTO_INCREMENT dla tabeli `ps_feature_flag`
 --
 ALTER TABLE `ps_feature_flag`
   MODIFY `id_feature_flag` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_feature_value`
+-- AUTO_INCREMENT dla tabeli `ps_feature_value`
 --
 ALTER TABLE `ps_feature_value`
   MODIFY `id_feature_value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT для таблицы `ps_ganalytics`
+-- AUTO_INCREMENT dla tabeli `ps_ganalytics`
 --
 ALTER TABLE `ps_ganalytics`
   MODIFY `id_google_analytics` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_gender`
+-- AUTO_INCREMENT dla tabeli `ps_gender`
 --
 ALTER TABLE `ps_gender`
   MODIFY `id_gender` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_group`
+-- AUTO_INCREMENT dla tabeli `ps_group`
 --
 ALTER TABLE `ps_group`
   MODIFY `id_group` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_group_reduction`
+-- AUTO_INCREMENT dla tabeli `ps_group_reduction`
 --
 ALTER TABLE `ps_group_reduction`
   MODIFY `id_group_reduction` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_guest`
+-- AUTO_INCREMENT dla tabeli `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT для таблицы `ps_homeslider`
+-- AUTO_INCREMENT dla tabeli `ps_homeslider`
 --
 ALTER TABLE `ps_homeslider`
   MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_homeslider_slides`
+-- AUTO_INCREMENT dla tabeli `ps_homeslider_slides`
 --
 ALTER TABLE `ps_homeslider_slides`
   MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_hook`
+-- AUTO_INCREMENT dla tabeli `ps_hook`
 --
 ALTER TABLE `ps_hook`
-  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=733;
+  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=736;
 
 --
--- AUTO_INCREMENT для таблицы `ps_hook_alias`
+-- AUTO_INCREMENT dla tabeli `ps_hook_alias`
 --
 ALTER TABLE `ps_hook_alias`
   MODIFY `id_hook_alias` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
--- AUTO_INCREMENT для таблицы `ps_hook_module_exceptions`
+-- AUTO_INCREMENT dla tabeli `ps_hook_module_exceptions`
 --
 ALTER TABLE `ps_hook_module_exceptions`
   MODIFY `id_hook_module_exceptions` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_image`
+-- AUTO_INCREMENT dla tabeli `ps_image`
 --
 ALTER TABLE `ps_image`
-  MODIFY `id_image` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1667;
+  MODIFY `id_image` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1671;
 
 --
--- AUTO_INCREMENT для таблицы `ps_image_type`
+-- AUTO_INCREMENT dla tabeli `ps_image_type`
 --
 ALTER TABLE `ps_image_type`
   MODIFY `id_image_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `ps_import_match`
+-- AUTO_INCREMENT dla tabeli `ps_import_match`
 --
 ALTER TABLE `ps_import_match`
   MODIFY `id_import_match` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `ps_info`
+-- AUTO_INCREMENT dla tabeli `ps_info`
 --
 ALTER TABLE `ps_info`
   MODIFY `id_info` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_lang`
+-- AUTO_INCREMENT dla tabeli `ps_lang`
 --
 ALTER TABLE `ps_lang`
   MODIFY `id_lang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_layered_category`
+-- AUTO_INCREMENT dla tabeli `ps_layered_category`
 --
 ALTER TABLE `ps_layered_category`
   MODIFY `id_layered_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_layered_filter`
+-- AUTO_INCREMENT dla tabeli `ps_layered_filter`
 --
 ALTER TABLE `ps_layered_filter`
   MODIFY `id_layered_filter` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_linksmenutop`
+-- AUTO_INCREMENT dla tabeli `ps_linksmenutop`
 --
 ALTER TABLE `ps_linksmenutop`
   MODIFY `id_linksmenutop` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_link_block`
+-- AUTO_INCREMENT dla tabeli `ps_link_block`
 --
 ALTER TABLE `ps_link_block`
   MODIFY `id_link_block` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_link_block_shop`
+-- AUTO_INCREMENT dla tabeli `ps_link_block_shop`
 --
 ALTER TABLE `ps_link_block_shop`
   MODIFY `id_link_block` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_log`
+-- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=545;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=564;
 
 --
--- AUTO_INCREMENT для таблицы `ps_mail`
+-- AUTO_INCREMENT dla tabeli `ps_mail`
 --
 ALTER TABLE `ps_mail`
-  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT для таблицы `ps_manufacturer`
+-- AUTO_INCREMENT dla tabeli `ps_manufacturer`
 --
 ALTER TABLE `ps_manufacturer`
   MODIFY `id_manufacturer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT для таблицы `ps_memcached_servers`
+-- AUTO_INCREMENT dla tabeli `ps_memcached_servers`
 --
 ALTER TABLE `ps_memcached_servers`
   MODIFY `id_memcached_server` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_message`
+-- AUTO_INCREMENT dla tabeli `ps_message`
 --
 ALTER TABLE `ps_message`
   MODIFY `id_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_meta`
+-- AUTO_INCREMENT dla tabeli `ps_meta`
 --
 ALTER TABLE `ps_meta`
   MODIFY `id_meta` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT для таблицы `ps_module`
+-- AUTO_INCREMENT dla tabeli `ps_module`
 --
 ALTER TABLE `ps_module`
-  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT для таблицы `ps_module_history`
+-- AUTO_INCREMENT dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `ps_module_preference`
+-- AUTO_INCREMENT dla tabeli `ps_module_preference`
 --
 ALTER TABLE `ps_module_preference`
   MODIFY `id_module_preference` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_operating_system`
+-- AUTO_INCREMENT dla tabeli `ps_operating_system`
 --
 ALTER TABLE `ps_operating_system`
   MODIFY `id_operating_system` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT для таблицы `ps_orders`
+-- AUTO_INCREMENT dla tabeli `ps_orders`
 --
 ALTER TABLE `ps_orders`
   MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_carrier`
+-- AUTO_INCREMENT dla tabeli `ps_order_carrier`
 --
 ALTER TABLE `ps_order_carrier`
   MODIFY `id_order_carrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_cart_rule`
+-- AUTO_INCREMENT dla tabeli `ps_order_cart_rule`
 --
 ALTER TABLE `ps_order_cart_rule`
   MODIFY `id_order_cart_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_detail`
+-- AUTO_INCREMENT dla tabeli `ps_order_detail`
 --
 ALTER TABLE `ps_order_detail`
   MODIFY `id_order_detail` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_history`
+-- AUTO_INCREMENT dla tabeli `ps_order_history`
 --
 ALTER TABLE `ps_order_history`
   MODIFY `id_order_history` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_invoice`
+-- AUTO_INCREMENT dla tabeli `ps_order_invoice`
 --
 ALTER TABLE `ps_order_invoice`
   MODIFY `id_order_invoice` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_message`
+-- AUTO_INCREMENT dla tabeli `ps_order_message`
 --
 ALTER TABLE `ps_order_message`
   MODIFY `id_order_message` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_payment`
+-- AUTO_INCREMENT dla tabeli `ps_order_payment`
 --
 ALTER TABLE `ps_order_payment`
   MODIFY `id_order_payment` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_return`
+-- AUTO_INCREMENT dla tabeli `ps_order_return`
 --
 ALTER TABLE `ps_order_return`
   MODIFY `id_order_return` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_return_state`
+-- AUTO_INCREMENT dla tabeli `ps_order_return_state`
 --
 ALTER TABLE `ps_order_return_state`
   MODIFY `id_order_return_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_slip`
+-- AUTO_INCREMENT dla tabeli `ps_order_slip`
 --
 ALTER TABLE `ps_order_slip`
   MODIFY `id_order_slip` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_order_state`
+-- AUTO_INCREMENT dla tabeli `ps_order_state`
 --
 ALTER TABLE `ps_order_state`
   MODIFY `id_order_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT для таблицы `ps_page`
+-- AUTO_INCREMENT dla tabeli `ps_page`
 --
 ALTER TABLE `ps_page`
-  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_pagenotfound`
+-- AUTO_INCREMENT dla tabeli `ps_pagenotfound`
 --
 ALTER TABLE `ps_pagenotfound`
   MODIFY `id_pagenotfound` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_page_type`
+-- AUTO_INCREMENT dla tabeli `ps_page_type`
 --
 ALTER TABLE `ps_page_type`
-  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_paypal_capture`
+-- AUTO_INCREMENT dla tabeli `ps_paypal_capture`
 --
 ALTER TABLE `ps_paypal_capture`
   MODIFY `id_paypal_capture` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_paypal_ipn`
+-- AUTO_INCREMENT dla tabeli `ps_paypal_ipn`
 --
 ALTER TABLE `ps_paypal_ipn`
   MODIFY `id_paypal_ipn` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_paypal_order`
+-- AUTO_INCREMENT dla tabeli `ps_paypal_order`
 --
 ALTER TABLE `ps_paypal_order`
   MODIFY `id_paypal_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_paypal_processlogger`
+-- AUTO_INCREMENT dla tabeli `ps_paypal_processlogger`
 --
 ALTER TABLE `ps_paypal_processlogger`
   MODIFY `id_paypal_processlogger` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_paypal_vaulting`
+-- AUTO_INCREMENT dla tabeli `ps_paypal_vaulting`
 --
 ALTER TABLE `ps_paypal_vaulting`
   MODIFY `id_paypal_vaulting` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_product`
+-- AUTO_INCREMENT dla tabeli `ps_product`
 --
 ALTER TABLE `ps_product`
   MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30394;
 
 --
--- AUTO_INCREMENT для таблицы `ps_product_attribute`
+-- AUTO_INCREMENT dla tabeli `ps_product_attribute`
 --
 ALTER TABLE `ps_product_attribute`
-  MODIFY `id_product_attribute` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_product_attribute` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_product_download`
+-- AUTO_INCREMENT dla tabeli `ps_product_download`
 --
 ALTER TABLE `ps_product_download`
   MODIFY `id_product_download` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_product_supplier`
+-- AUTO_INCREMENT dla tabeli `ps_product_supplier`
 --
 ALTER TABLE `ps_product_supplier`
   MODIFY `id_product_supplier` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_profile`
+-- AUTO_INCREMENT dla tabeli `ps_profile`
 --
 ALTER TABLE `ps_profile`
   MODIFY `id_profile` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `ps_psgdpr_consent`
+-- AUTO_INCREMENT dla tabeli `ps_psgdpr_consent`
 --
 ALTER TABLE `ps_psgdpr_consent`
   MODIFY `id_gdpr_consent` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_psgdpr_consent_lang`
+-- AUTO_INCREMENT dla tabeli `ps_psgdpr_consent_lang`
 --
 ALTER TABLE `ps_psgdpr_consent_lang`
   MODIFY `id_gdpr_consent` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_psgdpr_log`
+-- AUTO_INCREMENT dla tabeli `ps_psgdpr_log`
 --
 ALTER TABLE `ps_psgdpr_log`
-  MODIFY `id_gdpr_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_gdpr_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `ps_psreassurance`
+-- AUTO_INCREMENT dla tabeli `ps_psreassurance`
 --
 ALTER TABLE `ps_psreassurance`
   MODIFY `id_psreassurance` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_quick_access`
+-- AUTO_INCREMENT dla tabeli `ps_quick_access`
 --
 ALTER TABLE `ps_quick_access`
   MODIFY `id_quick_access` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_range_price`
+-- AUTO_INCREMENT dla tabeli `ps_range_price`
 --
 ALTER TABLE `ps_range_price`
-  MODIFY `id_range_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_range_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_range_weight`
+-- AUTO_INCREMENT dla tabeli `ps_range_weight`
 --
 ALTER TABLE `ps_range_weight`
   MODIFY `id_range_weight` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_reassurance`
+-- AUTO_INCREMENT dla tabeli `ps_reassurance`
 --
 ALTER TABLE `ps_reassurance`
   MODIFY `id_reassurance` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_reassurance_lang`
+-- AUTO_INCREMENT dla tabeli `ps_reassurance_lang`
 --
 ALTER TABLE `ps_reassurance_lang`
   MODIFY `id_reassurance` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `ps_referrer`
+-- AUTO_INCREMENT dla tabeli `ps_referrer`
 --
 ALTER TABLE `ps_referrer`
   MODIFY `id_referrer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_referrer_shop`
+-- AUTO_INCREMENT dla tabeli `ps_referrer_shop`
 --
 ALTER TABLE `ps_referrer_shop`
   MODIFY `id_referrer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_request_sql`
+-- AUTO_INCREMENT dla tabeli `ps_request_sql`
 --
 ALTER TABLE `ps_request_sql`
   MODIFY `id_request_sql` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_required_field`
+-- AUTO_INCREMENT dla tabeli `ps_required_field`
 --
 ALTER TABLE `ps_required_field`
   MODIFY `id_required_field` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_risk`
+-- AUTO_INCREMENT dla tabeli `ps_risk`
 --
 ALTER TABLE `ps_risk`
   MODIFY `id_risk` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `ps_search_engine`
+-- AUTO_INCREMENT dla tabeli `ps_search_engine`
 --
 ALTER TABLE `ps_search_engine`
   MODIFY `id_search_engine` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT для таблицы `ps_search_word`
+-- AUTO_INCREMENT dla tabeli `ps_search_word`
 --
 ALTER TABLE `ps_search_word`
-  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29562;
+  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30137;
 
 --
--- AUTO_INCREMENT для таблицы `ps_sekeyword`
+-- AUTO_INCREMENT dla tabeli `ps_sekeyword`
 --
 ALTER TABLE `ps_sekeyword`
   MODIFY `id_sekeyword` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_shop`
+-- AUTO_INCREMENT dla tabeli `ps_shop`
 --
 ALTER TABLE `ps_shop`
   MODIFY `id_shop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_shop_group`
+-- AUTO_INCREMENT dla tabeli `ps_shop_group`
 --
 ALTER TABLE `ps_shop_group`
   MODIFY `id_shop_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_shop_url`
+-- AUTO_INCREMENT dla tabeli `ps_shop_url`
 --
 ALTER TABLE `ps_shop_url`
   MODIFY `id_shop_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_specific_price`
+-- AUTO_INCREMENT dla tabeli `ps_specific_price`
 --
 ALTER TABLE `ps_specific_price`
-  MODIFY `id_specific_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_specific_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблицы `ps_specific_price_priority`
+-- AUTO_INCREMENT dla tabeli `ps_specific_price_priority`
 --
 ALTER TABLE `ps_specific_price_priority`
-  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT для таблицы `ps_specific_price_rule`
+-- AUTO_INCREMENT dla tabeli `ps_specific_price_rule`
 --
 ALTER TABLE `ps_specific_price_rule`
   MODIFY `id_specific_price_rule` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_specific_price_rule_condition`
+-- AUTO_INCREMENT dla tabeli `ps_specific_price_rule_condition`
 --
 ALTER TABLE `ps_specific_price_rule_condition`
   MODIFY `id_specific_price_rule_condition` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_specific_price_rule_condition_group`
+-- AUTO_INCREMENT dla tabeli `ps_specific_price_rule_condition_group`
 --
 ALTER TABLE `ps_specific_price_rule_condition_group`
   MODIFY `id_specific_price_rule_condition_group` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_state`
+-- AUTO_INCREMENT dla tabeli `ps_state`
 --
 ALTER TABLE `ps_state`
   MODIFY `id_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
 
 --
--- AUTO_INCREMENT для таблицы `ps_statssearch`
+-- AUTO_INCREMENT dla tabeli `ps_statssearch`
 --
 ALTER TABLE `ps_statssearch`
   MODIFY `id_statssearch` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_stock`
+-- AUTO_INCREMENT dla tabeli `ps_stock`
 --
 ALTER TABLE `ps_stock`
   MODIFY `id_stock` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_stock_available`
+-- AUTO_INCREMENT dla tabeli `ps_stock_available`
 --
 ALTER TABLE `ps_stock_available`
-  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=680;
+  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=686;
 
 --
--- AUTO_INCREMENT для таблицы `ps_stock_mvt`
+-- AUTO_INCREMENT dla tabeli `ps_stock_mvt`
 --
 ALTER TABLE `ps_stock_mvt`
-  MODIFY `id_stock_mvt` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=616;
+  MODIFY `id_stock_mvt` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=623;
 
 --
--- AUTO_INCREMENT для таблицы `ps_stock_mvt_reason`
+-- AUTO_INCREMENT dla tabeli `ps_stock_mvt_reason`
 --
 ALTER TABLE `ps_stock_mvt_reason`
   MODIFY `id_stock_mvt_reason` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT для таблицы `ps_store`
+-- AUTO_INCREMENT dla tabeli `ps_store`
 --
 ALTER TABLE `ps_store`
   MODIFY `id_store` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `ps_supplier`
+-- AUTO_INCREMENT dla tabeli `ps_supplier`
 --
 ALTER TABLE `ps_supplier`
   MODIFY `id_supplier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблицы `ps_supply_order`
+-- AUTO_INCREMENT dla tabeli `ps_supply_order`
 --
 ALTER TABLE `ps_supply_order`
   MODIFY `id_supply_order` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_supply_order_detail`
+-- AUTO_INCREMENT dla tabeli `ps_supply_order_detail`
 --
 ALTER TABLE `ps_supply_order_detail`
   MODIFY `id_supply_order_detail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_supply_order_history`
+-- AUTO_INCREMENT dla tabeli `ps_supply_order_history`
 --
 ALTER TABLE `ps_supply_order_history`
   MODIFY `id_supply_order_history` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_supply_order_receipt_history`
+-- AUTO_INCREMENT dla tabeli `ps_supply_order_receipt_history`
 --
 ALTER TABLE `ps_supply_order_receipt_history`
   MODIFY `id_supply_order_receipt_history` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_supply_order_state`
+-- AUTO_INCREMENT dla tabeli `ps_supply_order_state`
 --
 ALTER TABLE `ps_supply_order_state`
   MODIFY `id_supply_order_state` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `ps_tab`
+-- AUTO_INCREMENT dla tabeli `ps_tab`
 --
 ALTER TABLE `ps_tab`
   MODIFY `id_tab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
--- AUTO_INCREMENT для таблицы `ps_tab_module_preference`
+-- AUTO_INCREMENT dla tabeli `ps_tab_module_preference`
 --
 ALTER TABLE `ps_tab_module_preference`
   MODIFY `id_tab_module_preference` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_tag`
+-- AUTO_INCREMENT dla tabeli `ps_tag`
 --
 ALTER TABLE `ps_tag`
   MODIFY `id_tag` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_tax`
+-- AUTO_INCREMENT dla tabeli `ps_tax`
 --
 ALTER TABLE `ps_tax`
   MODIFY `id_tax` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT для таблицы `ps_tax_rule`
+-- AUTO_INCREMENT dla tabeli `ps_tax_rule`
 --
 ALTER TABLE `ps_tax_rule`
   MODIFY `id_tax_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
--- AUTO_INCREMENT для таблицы `ps_tax_rules_group`
+-- AUTO_INCREMENT dla tabeli `ps_tax_rules_group`
 --
 ALTER TABLE `ps_tax_rules_group`
   MODIFY `id_tax_rules_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `ps_timezone`
+-- AUTO_INCREMENT dla tabeli `ps_timezone`
 --
 ALTER TABLE `ps_timezone`
   MODIFY `id_timezone` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=561;
 
 --
--- AUTO_INCREMENT для таблицы `ps_translation`
+-- AUTO_INCREMENT dla tabeli `ps_translation`
 --
 ALTER TABLE `ps_translation`
   MODIFY `id_translation` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_warehouse`
+-- AUTO_INCREMENT dla tabeli `ps_warehouse`
 --
 ALTER TABLE `ps_warehouse`
   MODIFY `id_warehouse` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_warehouse_product_location`
+-- AUTO_INCREMENT dla tabeli `ps_warehouse_product_location`
 --
 ALTER TABLE `ps_warehouse_product_location`
   MODIFY `id_warehouse_product_location` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_webservice_account`
+-- AUTO_INCREMENT dla tabeli `ps_webservice_account`
 --
 ALTER TABLE `ps_webservice_account`
   MODIFY `id_webservice_account` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_webservice_permission`
+-- AUTO_INCREMENT dla tabeli `ps_webservice_permission`
 --
 ALTER TABLE `ps_webservice_permission`
   MODIFY `id_webservice_permission` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `ps_web_browser`
+-- AUTO_INCREMENT dla tabeli `ps_web_browser`
 --
 ALTER TABLE `ps_web_browser`
   MODIFY `id_web_browser` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `ps_zone`
+-- AUTO_INCREMENT dla tabeli `ps_zone`
 --
 ALTER TABLE `ps_zone`
   MODIFY `id_zone` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
