@@ -2996,6 +2996,7 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
                 61 => 'ps_bestsellers',
                 62 => 'ps_specials',
                 63 => 'ps_categoryproducts',
+                64 => 'codwfeeplus',
             ],
             'ps_cache_dir' => '/var/www/html/var/cache/prod/',
             'mail_themes_uri' => '/mails/themes',

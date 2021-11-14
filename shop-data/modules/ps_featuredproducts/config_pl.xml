@@ -2,7 +2,7 @@
 <module>
     <name>ps_featuredproducts</name>
     <displayName><![CDATA[Produkty polecane]]></displayName>
-    <version><![CDATA[2.0.0]]></version>
+    <version><![CDATA[2.1.0]]></version>
     <description><![CDATA[Wyświetla polecane produkty w środkowej kolumnie strony gł&oacute;wnej.]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[]]></tab>

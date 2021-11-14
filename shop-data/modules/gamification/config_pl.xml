@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
     <name>gamification</name>
-    <displayName><![CDATA[Osiągnięcia sprzedawcy]]></displayName>
+    <displayName><![CDATA[Umiejętności sprzedawcy]]></displayName>
     <version><![CDATA[2.3.2]]></version>
     <description><![CDATA[Zostań ekspertem e-commerce w mgnieniu oka!]]></description>
     <author><![CDATA[PrestaShop]]></author>

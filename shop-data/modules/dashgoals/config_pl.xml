@@ -2,7 +2,7 @@
 <module>
     <name>dashgoals</name>
     <displayName><![CDATA[Pulpit Cel&oacute;w]]></displayName>
-    <version><![CDATA[2.0.1]]></version>
+    <version><![CDATA[2.0.2]]></version>
     <description><![CDATA[Dodaje blok z prognozami dla Twojego sklepu.]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[dashboard]]></tab>

@@ -2,7 +2,7 @@
 <module>
     <name>statscheckup</name>
     <displayName><![CDATA[Ocena katalogu]]></displayName>
-    <version><![CDATA[2.0.0]]></version>
+    <version><![CDATA[2.0.1]]></version>
     <description><![CDATA[Dodaje szybką ocenę jakości swojego katalogu w panelu statystyk.]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[analytics_stats]]></tab>

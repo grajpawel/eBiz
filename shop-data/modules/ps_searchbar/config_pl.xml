@@ -2,8 +2,8 @@
 <module>
     <name>ps_searchbar</name>
     <displayName><![CDATA[Pasek Szukania]]></displayName>
-    <version><![CDATA[2.0.1]]></version>
-    <description><![CDATA[Dodaje blok z polem szybkiego wyszukiwania]]></description>
+    <version><![CDATA[2.1.2]]></version>
+    <description><![CDATA[Help your visitors find what they are looking for, add a quick search field to your store.]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[]]></tab>
     <is_configurable>0</is_configurable>
