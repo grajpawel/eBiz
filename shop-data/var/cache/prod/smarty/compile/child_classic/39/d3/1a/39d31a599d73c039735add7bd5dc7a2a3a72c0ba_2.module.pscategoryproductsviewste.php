@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-15 00:12:38
+/* Smarty version 3.1.39, created on 2021-11-15 13:06:26
   from 'module:pscategoryproductsviewste' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619197e6109d46_91736230',
+  'unifunc' => 'content_61924d4273bb78_66973967',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '39d31a599d73c039735add7bd5dc7a2a3a72c0ba' => 
     array (
       0 => 'module:pscategoryproductsviewste',
-      1 => 1636756697,
+      1 => 1636971297,
       2 => 'module',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:catalog/_partials/productlist.tpl' => 1,
   ),
 ),false)) {
-function content_619197e6109d46_91736230 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61924d4273bb78_66973967 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="featured-products clearfix mt-3">
   <h2>
     <?php if (count($_smarty_tpl->tpl_vars['products']->value) == 1) {?>

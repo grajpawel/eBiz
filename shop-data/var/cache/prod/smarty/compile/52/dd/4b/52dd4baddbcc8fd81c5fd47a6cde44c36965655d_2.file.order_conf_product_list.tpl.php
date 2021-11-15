@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-15 00:13:18
+/* Smarty version 3.1.39, created on 2021-11-15 13:07:30
   from '/var/www/html/mails/_partials/order_conf_product_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6191980ed9e979_40720934',
+  'unifunc' => 'content_61924d8280d617_90756648',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '52dd4baddbcc8fd81c5fd47a6cde44c36965655d' => 
     array (
       0 => '/var/www/html/mails/_partials/order_conf_product_list.tpl',
-      1 => 1636758690,
+      1 => 1636971295,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6191980ed9e979_40720934 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61924d8280d617_90756648 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {

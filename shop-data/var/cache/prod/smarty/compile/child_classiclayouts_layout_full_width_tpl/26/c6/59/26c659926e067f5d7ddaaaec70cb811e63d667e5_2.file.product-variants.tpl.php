@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-15 00:12:38
+/* Smarty version 3.1.39, created on 2021-11-15 13:06:26
   from '/var/www/html/themes/classic/templates/catalog/_partials/product-variants.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619197e606ff53_80969863',
+  'unifunc' => 'content_61924d423481f3_78026652',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26c659926e067f5d7ddaaaec70cb811e63d667e5' => 
     array (
       0 => '/var/www/html/themes/classic/templates/catalog/_partials/product-variants.tpl',
-      1 => 1636756698,
+      1 => 1636971297,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619197e606ff53_80969863 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61924d423481f3_78026652 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="product-variants js-product-variants">
   <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['groups']->value, 'group', false, 'id_attribute_group');

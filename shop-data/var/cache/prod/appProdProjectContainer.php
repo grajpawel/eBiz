@@ -16,6 +16,6 @@ if (!\class_exists(appProdProjectContainer::class, false)) {
 
 return new \ContainerCbucapl\appProdProjectContainer([
     'container.build_hash' => 'Cbucapl',
-    'container.build_id' => 'eca1d519',
-    'container.build_time' => 1636931539,
+    'container.build_id' => 'b6cfafa4',
+    'container.build_time' => 1636977503,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerCbucapl');

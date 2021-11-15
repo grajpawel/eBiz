@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-15 00:13:21
+/* Smarty version 3.1.39, created on 2021-11-15 13:07:34
   from '/var/www/html/pdf/invoice.note-tab.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61919811c16cf7_57898398',
+  'unifunc' => 'content_61924d86158177_69507126',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04a8b36aba5f14ad5d2e1c84386f973e9cca9cd6' => 
     array (
       0 => '/var/www/html/pdf/invoice.note-tab.tpl',
-      1 => 1636756692,
+      1 => 1636971297,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61919811c16cf7_57898398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61924d86158177_69507126 (Smarty_Internal_Template $_smarty_tpl) {
 if ((isset($_smarty_tpl->tpl_vars['order_invoice']->value->note)) && $_smarty_tpl->tpl_vars['order_invoice']->value->note) {?>
 	<tr>
 		<td colspan="12" height="10">&nbsp;</td>

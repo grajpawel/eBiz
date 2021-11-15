@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-15 00:13:21
+/* Smarty version 3.1.39, created on 2021-11-15 13:07:34
   from '/var/www/html/pdf/invoice.summary-tab.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61919811bd3f18_71474583',
+  'unifunc' => 'content_61924d860af716_67843228',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '215f08ab30c2270c2785929859424424ba9445e2' => 
     array (
       0 => '/var/www/html/pdf/invoice.summary-tab.tpl',
-      1 => 1636756692,
+      1 => 1636971297,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61919811bd3f18_71474583 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61924d860af716_67843228 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table id="summary-tab" width="100%">
 	<tr>
 		<th class="header small" valign="middle"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Invoice Number','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-15 00:13:24
+/* Smarty version 3.1.39, created on 2021-11-15 13:07:37
   from 'module:codwfeeplusviewstemplates' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61919814e53ae2_86834241',
+  'unifunc' => 'content_61924d892a4231_25416407',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30eed5d43b512a17918f77cf08e9c074bc9a8cb3' => 
     array (
       0 => 'module:codwfeeplusviewstemplates',
-      1 => 1636929260,
+      1 => 1636971296,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61919814e53ae2_86834241 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61924d892a4231_25416407 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <p><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Your order on %s is complete.','sprintf'=>array($_smarty_tpl->tpl_vars['shop_name']->value),'mod'=>'codwfeeplus'),$_smarty_tpl ) );?>
 
