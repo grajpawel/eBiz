@@ -30,12 +30,12 @@
 		</branch>
 		<branch name="1.7" available="1" >
 			<name>1.7.8 stable</name>
-			<num>1.7.8.0</num>
+			<num>1.7.8.2</num>
 			<download>
-				<link>http://download.prestashop.com/download/releases/prestashop_1.7.8.0.zip</link>
-				<md5>db75e2cb13e8a9265a147c95b3a80747</md5>
+				<link>http://download.prestashop.com/download/releases/prestashop_1.7.8.2.zip</link>
+				<md5>99716e09a11453af4982e6333d877982</md5>
 			</download>
-			<changelog>https://build.prestashop.com/news/prestashop-1-7-8-0-available/</changelog>
+			<changelog>https://build.prestashop.com/news/prestashop-1-7-8-2-maintenance-release/</changelog>
 		</branch>
 	</channel>
 	<channel name="rc" available="1" >
