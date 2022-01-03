@@ -13,9 +13,7 @@ services:
    prestashop:
      depends_on:
        - db
-     build: 
-      context: .
-      dockerfile: Dockerfile
+     image: wercabaj/be_180061
      ports:
       - 80:80
       - 443:443
@@ -30,10 +28,6 @@ services:
        PS_DEV_MODE: 0
        PS_DOMAIN: localhost:80
        PS_FOLDER_ADMIN: admin
-       PS_FOLDER_INSTALL: install
-     volumes:
-       - ./shop-data:/var/www/html
-       - ./ssl:/etc/apache2/sites-available
 
    phpmyadmin:
      depends_on:
