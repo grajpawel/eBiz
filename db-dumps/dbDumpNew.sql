@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Czas generowania: 03 Sty 2022, 09:22
+-- Czas generowania: 03 Sty 2022, 09:52
 -- Wersja serwera: 5.7.36
 -- Wersja PHP: 7.4.20
 
@@ -5518,7 +5518,9 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (487, NULL, NULL, 'PRODUCT_COMMENTS_USEFULNESS', '1', '2022-01-02 23:52:48', '2022-01-02 23:52:48'),
 (488, NULL, NULL, 'PRODUCT_COMMENTS_COMMENTS_PER_PAGE', '5', '2022-01-02 23:52:48', '2022-01-02 23:52:48'),
 (489, NULL, NULL, 'PRODUCT_COMMENTS_ANONYMISATION', '1', '2022-01-02 23:52:48', '2022-01-02 23:53:46'),
-(490, NULL, NULL, 'PRODUCT_COMMENTS_MODERATE', '0', '2022-01-02 23:52:48', '2022-01-02 23:53:46');
+(490, NULL, NULL, 'PRODUCT_COMMENTS_MODERATE', '0', '2022-01-02 23:52:48', '2022-01-02 23:53:46'),
+(491, NULL, NULL, 'NW_CONFIRMATION_EMAIL', '1', '2022-01-03 10:49:28', '2022-01-03 10:49:28'),
+(492, NULL, NULL, 'NW_VOUCHER_CODE', NULL, '2022-01-03 10:49:28', '2022-01-03 10:49:28');
 
 -- --------------------------------------------------------
 
@@ -5742,7 +5744,8 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (37, 1, 1, 9, 7, 2886860801, '2021-11-16 15:34:46', ''),
 (38, 1, 1, 16, 5, 2886860801, '2021-11-16 15:42:02', ''),
 (39, 1, 1, 17, 1, 2886991873, '2022-01-02 23:49:04', ''),
-(40, 1, 1, 17, 1, 2886860801, '2022-01-03 09:55:05', '');
+(40, 1, 1, 17, 1, 2886860801, '2022-01-03 09:55:05', ''),
+(41, 1, 1, 17, 1, 2886860801, '2022-01-03 10:35:32', '');
 
 -- --------------------------------------------------------
 
@@ -6995,7 +6998,9 @@ CREATE TABLE `ps_emailsubscription` (
 INSERT INTO `ps_emailsubscription` (`id`, `id_shop`, `id_shop_group`, `email`, `newsletter_date_add`, `ip_registration_newsletter`, `http_referer`, `active`, `id_lang`) VALUES
 (1, 1, 1, 'qsadad2@s', '2021-11-15 12:03:59', '172.23.0.1', '', 1, 1),
 (2, 1, 1, 'nikusia.c@wp.pl', '2021-11-16 14:36:41', '172.18.0.1', '', 1, 1),
-(3, 1, 1, 'uzc42955@zwoho.com', '2021-11-16 14:37:52', '172.18.0.1', '', 1, 1);
+(3, 1, 1, 'uzc42955@zwoho.com', '2021-11-16 14:37:52', '172.18.0.1', '', 1, 1),
+(4, 1, 1, 'kti06904@cuoly.com', '2022-01-03 09:36:57', '172.18.0.1', NULL, 1, 1),
+(5, 1, 1, 'zui16856@boofx.com', '2022-01-03 09:50:19', '172.18.0.1', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -16593,7 +16598,8 @@ INSERT INTO `ps_mail` (`id_mail`, `recipient`, `template`, `subject`, `id_lang`,
 (37, 'grajpawel@gmail.com', 'order_conf', '[jaśniej - sklep z lampami] Potwierdzenie zamówienia', 1, '2021-11-16 15:42:01'),
 (38, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2022-01-03 09:54:05'),
 (39, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2022-01-03 09:54:41'),
-(40, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2022-01-03 09:55:48');
+(40, 'admin@jasniej.pl', 'productoutofstock', '[jaśniej - sklep z lampami] Product out of stock', 1, '2022-01-03 09:55:48'),
+(41, 'zui16856@boofx.com', 'newsletter_conf', '[jaśniej - sklep z lampami] Potwierdzenie newslettera', 1, '2022-01-03 10:50:22');
 
 -- --------------------------------------------------------
 
@@ -17775,7 +17781,8 @@ INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `
 (7, 1, 62, '2021-11-12 23:35:25', '2021-11-12 23:35:25'),
 (8, 1, 63, '2021-11-13 13:14:26', '2021-11-15 13:10:19'),
 (9, 1, 67, '2021-11-14 23:35:06', '2021-11-14 23:39:09'),
-(10, 1, 69, '2022-01-02 23:53:06', '2022-01-03 10:17:46');
+(10, 1, 69, '2022-01-02 23:53:06', '2022-01-03 10:17:46'),
+(11, 1, 15, '2022-01-03 10:49:06', '2022-01-03 10:51:34');
 
 -- --------------------------------------------------------
 
@@ -47650,7 +47657,7 @@ ALTER TABLE `ps_condition`
 -- AUTO_INCREMENT dla tabeli `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=491;
+  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=493;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_configuration_kpi`
@@ -47662,7 +47669,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
@@ -47740,7 +47747,7 @@ ALTER TABLE `ps_delivery`
 -- AUTO_INCREMENT dla tabeli `ps_emailsubscription`
 --
 ALTER TABLE `ps_emailsubscription`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_employee`
@@ -47902,7 +47909,7 @@ ALTER TABLE `ps_log`
 -- AUTO_INCREMENT dla tabeli `ps_mail`
 --
 ALTER TABLE `ps_mail`
-  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_manufacturer`
@@ -47938,7 +47945,7 @@ ALTER TABLE `ps_module`
 -- AUTO_INCREMENT dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_preference`
@@ -48208,7 +48215,7 @@ ALTER TABLE `ps_search_engine`
 -- AUTO_INCREMENT dla tabeli `ps_search_word`
 --
 ALTER TABLE `ps_search_word`
-  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30083;
+  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30038;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_sekeyword`
