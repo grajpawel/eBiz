@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Czas generowania: 03 Sty 2022, 09:52
+-- Czas generowania: 03 Sty 2022, 10:42
 -- Wersja serwera: 5.7.36
 -- Wersja PHP: 7.4.20
 
@@ -5040,7 +5040,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (6, NULL, NULL, 'PS_SEARCH_INDEXATION', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (7, NULL, NULL, 'PS_CURRENCY_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (8, NULL, NULL, 'PS_COUNTRY_DEFAULT', '14', '0000-00-00 00:00:00', '2021-10-23 19:40:15'),
-(9, NULL, NULL, 'PS_REWRITING_SETTINGS', NULL, '0000-00-00 00:00:00', '2022-01-03 09:49:09'),
+(9, NULL, NULL, 'PS_REWRITING_SETTINGS', '1', '0000-00-00 00:00:00', '2022-01-03 11:40:48'),
 (10, NULL, NULL, 'PS_ORDER_OUT_OF_STOCK', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (11, NULL, NULL, 'PS_LAST_QTIES', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (12, NULL, NULL, 'PS_CONDITIONS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -5474,8 +5474,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (444, NULL, NULL, 'PS_QTY_DISCOUNT_ON_COMBINATION', '0', '2021-11-13 20:47:37', '2021-11-13 20:47:37'),
 (445, NULL, NULL, 'PS_FORCE_FRIENDLY_PRODUCT', '0', '2021-11-13 20:47:37', '2021-11-13 20:47:37'),
 (446, NULL, NULL, 'PS_PRODUCT_ACTIVATION_DEFAULT', '0', '2021-11-13 20:47:37', '2021-11-13 20:47:37'),
-(447, NULL, NULL, 'PS_CCCJS_VERSION', '4', '2021-11-13 20:47:38', '2022-01-03 09:49:09'),
-(448, NULL, NULL, 'PS_CCCCSS_VERSION', '4', '2021-11-13 20:47:38', '2022-01-03 09:49:09'),
+(447, NULL, NULL, 'PS_CCCJS_VERSION', '5', '2021-11-13 20:47:38', '2022-01-03 11:40:48'),
+(448, NULL, NULL, 'PS_CCCCSS_VERSION', '5', '2021-11-13 20:47:38', '2022-01-03 11:40:48'),
 (449, NULL, NULL, 'PS_LABEL_DELIVERY_TIME_AVAILABLE', NULL, '2021-11-13 20:58:24', '2021-11-13 20:58:24'),
 (450, NULL, NULL, 'PS_LABEL_DELIVERY_TIME_OOSBOA', NULL, '2021-11-13 20:58:24', '2021-11-13 20:58:24'),
 (451, NULL, NULL, 'PS_SHOWCASECARD_CMS_PAGES_CLOSED', '1', '2021-11-13 21:26:31', '2021-11-13 21:26:31'),
@@ -5745,7 +5745,8 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (38, 1, 1, 16, 5, 2886860801, '2021-11-16 15:42:02', ''),
 (39, 1, 1, 17, 1, 2886991873, '2022-01-02 23:49:04', ''),
 (40, 1, 1, 17, 1, 2886860801, '2022-01-03 09:55:05', ''),
-(41, 1, 1, 17, 1, 2886860801, '2022-01-03 10:35:32', '');
+(41, 1, 1, 17, 1, 2886860801, '2022-01-03 10:35:32', ''),
+(42, 1, 1, 17, 2, 2886860801, '2022-01-03 11:26:12', '');
 
 -- --------------------------------------------------------
 
@@ -14788,6 +14789,9 @@ CREATE TABLE `ps_layered_filter_block` (
 --
 
 INSERT INTO `ps_layered_filter_block` (`hash`, `data`) VALUES
+('26317fbedceac39413bcc23434c639f9', 'a:1:{s:7:\"filters\";a:0:{}}'),
+('329438549f1b548ebb8ac2f36d141d32', 'a:1:{s:7:\"filters\";a:0:{}}'),
+('624352309b7e0484de018d8a2f505058', 'a:1:{s:7:\"filters\";a:0:{}}'),
 ('7294acbb02cf4688c3709ca50e31fccf', 'a:1:{s:7:\"filters\";a:0:{}}'),
 ('769b8cb94282482f9e087a9892aaf0fb', 'a:1:{s:7:\"filters\";a:0:{}}');
 
@@ -47669,7 +47673,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
